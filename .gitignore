@@ -1,0 +1,8 @@
+.env
+source/
+output/
+*.bak
+*.bak_*
+*.bak-*
+*.codex-bak-*
+docara/scripts/__pycache__/

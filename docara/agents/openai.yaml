@@ -1,0 +1,5 @@
+interface:
+  display_name: "Docara"
+  short_description: "Docara docs, publishing, and translation"
+  brand_color: "#2563EB"
+  default_prompt: "Use $docara to create, configure, publish, or translate a Docara documentation site."
