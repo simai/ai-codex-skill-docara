@@ -25,6 +25,14 @@ python3 <skill>/scripts/create-github-pages-workflow.py --root=. --docara-dir=do
 
 The repository owner still needs to set GitHub repository Settings -> Pages -> Source -> GitHub Actions.
 
+If the build job succeeds but the deploy job fails, check whether Pages is enabled before changing the workflow:
+
+```bash
+curl -s https://api.github.com/repos/<owner>/<repo>/pages
+```
+
+`404` usually means GitHub Pages is not enabled for the repository, or the repository is not configured to build from GitHub Actions. In that case the workflow can upload a valid artifact but `actions/deploy-pages` cannot publish it until an admin enables Settings -> Pages -> Source -> GitHub Actions. After changing the setting, rerun the failed workflow or push a no-op commit.
+
 If the repository uses Yarn and no root `yarn.lock` exists yet, pass the package manager explicitly:
 
 ```bash
