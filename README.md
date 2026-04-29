@@ -17,6 +17,7 @@ Use it as `$docara` when working with Docara documentation repositories.
 - Docara setup and repair.
 - Publishable documentation authoring rules.
 - GitHub Pages publication through Actions artifact deployment.
+- GitHub project Pages path-prefix handling for `https://owner.github.io/repo/`.
 - Translation drift tracking and AI-assisted translation workflow.
 - Smoke scripts for repository inspection, starter setup, Pages workflow generation, and translation state.
 - Markdown import into a contained Docara subproject for existing repositories.
@@ -63,6 +64,12 @@ For a contained `docara/` subproject:
 
 ```bash
 python3 docara/scripts/create-github-pages-workflow.py --root=/path/to/repo --docara-dir=docara --workflow=/path/to/repo/.github/workflows/docara-pages.yml
+```
+
+For project Pages, keep Docara `baseUrl` environment-driven in the target project:
+
+```php
+'baseUrl' => rtrim((string) (getenv('DOCARA_BASE_URL') ?: ''), '/'),
 ```
 
 ## Repository Hygiene

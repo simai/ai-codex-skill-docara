@@ -19,6 +19,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  DOCARA_BASE_URL: "https://${{{{ github.repository_owner }}}}.github.io/${{{{ github.event.repository.name }}}}"
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -62,7 +65,48 @@ jobs:
 
       - name: Build Docara site
         working-directory: {docara_dir}
+        env:
+          DOCARA_BASE_URL: ${{{{ env.DOCARA_BASE_URL }}}}
         run: php vendor/bin/docara build production
+
+      - name: Adjust GitHub project Pages paths
+        env:
+          DOCARA_PAGES_PREFIX: "{pages_prefix}"
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          raw_prefix = os.environ.get("DOCARA_PAGES_PREFIX", "auto").strip()
+          if raw_prefix == "auto":
+              repository = os.environ.get("GITHUB_REPOSITORY", "")
+              repo_name = repository.split("/", 1)[1] if "/" in repository else ""
+              prefix = "" if repo_name.endswith(".github.io") else f"/{{repo_name}}"
+          elif raw_prefix in ("", "none", "/"):
+              prefix = ""
+          else:
+              prefix = "/" + raw_prefix.strip("/")
+
+          if not prefix:
+              raise SystemExit(0)
+
+          root = Path("{artifact_path}")
+          patterns = [
+              (re.compile(r'(?P<attr>\\b(?:href|src|action)=["\\'])/(?!/)(?P<path>[^"\\']*)'), rf'\\g<attr>{{prefix}}/\\g<path>'),
+              (re.compile(r'(?P<attr>\\bcontent=["\\'])/(?!/)(?P<path>[^"\\']*)'), rf'\\g<attr>{{prefix}}/\\g<path>'),
+          ]
+          for path in list(root.rglob("*.html")) + list(root.rglob("*.json")):
+              text = path.read_text(encoding="utf-8")
+              updated = text
+              for pattern, replacement in patterns:
+                  updated = pattern.sub(replacement, updated)
+              updated = updated.replace('window.location.replace("', f'window.location.replace("{{prefix}}/')
+              updated = updated.replace('window.location.replace(`', f'window.location.replace(`{{prefix}}/')
+              updated = updated.replace('"url": "\\/', f'"url": "\\/{{prefix.strip("/")}}/')
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8")
+          PY
 
       - name: Disable Jekyll
         run: touch {artifact_path}/.nojekyll
@@ -101,6 +145,11 @@ def main() -> int:
     parser.add_argument("--node-version", default="20")
     parser.add_argument("--package-manager", choices=["npm", "yarn"], default=None)
     parser.add_argument("--docara-dir", default=".", help="Docara project directory relative to repository root")
+    parser.add_argument(
+        "--pages-prefix",
+        default="auto",
+        help='GitHub Pages path prefix: "auto", "none", or an explicit prefix such as "/my-repo"',
+    )
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
@@ -126,6 +175,7 @@ def main() -> int:
             artifact_path="build_production" if docara_dir == "." else f"{docara_dir}/build_production",
             install_command=install_command,
             asset_command=asset_command,
+            pages_prefix=args.pages_prefix,
         ),
         encoding="utf-8",
     )

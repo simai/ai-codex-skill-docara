@@ -51,10 +51,46 @@ The workflow should:
 6. Install frontend dependencies.
 7. Run `yarn prod` or `npm run prod`.
 8. Run `php vendor/bin/docara build production` from the Docara project directory.
-9. Upload the matching build output directory.
-10. Deploy with `actions/deploy-pages`.
+9. For GitHub project pages (`https://owner.github.io/repo/`), rewrite generated root-relative links from `/...` to `/repo/...`.
+10. Upload the matching build output directory.
+11. Deploy with `actions/deploy-pages`.
 
 If the repository was bootstrapped with npm and `webpack` was pinned locally after a real build test, commit `package-lock.json` so CI uses the same dependency graph.
+
+## Project Pages Path Prefix
+
+Docara can generate root-relative paths such as `/assets/build/...`, `/en`, and `/ru`. These are fine on a dedicated domain or an organization/user Pages repository, but they break project Pages where the site lives under `/<repo>/`.
+
+For GitHub project Pages, use the generated workflow's `Adjust GitHub project Pages paths` step. It detects `GITHUB_REPOSITORY` and prefixes HTML/JSON links with `/<repo>`. For custom domains or organization/user repositories such as `simai.github.io`, set:
+
+```yaml
+DOCARA_PAGES_PREFIX: "none"
+```
+
+If a Docara project uses `baseUrl`, make it environment-driven so CI can set the final URL:
+
+```php
+'baseUrl' => rtrim((string) (getenv('DOCARA_BASE_URL') ?: ''), '/'),
+```
+
+The generated workflow sets:
+
+```yaml
+DOCARA_BASE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+```
+
+After publishing, verify both pages and assets:
+
+```bash
+curl -I https://<owner>.github.io/<repo>/en/
+curl -I https://<owner>.github.io/<repo>/assets/build/css/main.css
+```
+
+The HTML must not contain unprefixed project-page links:
+
+```bash
+curl -s https://<owner>.github.io/<repo>/en/ | grep 'href="/assets'
+```
 
 ## Root `/docs` Publishing
 

@@ -122,6 +122,8 @@ assert_contains "$todo_after_change" 'index.md'
 
 python3 "$ROOT/docara/scripts/create-github-pages-workflow.py" --root="$PROJECT" --workflow="$PROJECT/.github/workflows/docara-pages.yml" >/dev/null
 grep -q 'actions/deploy-pages@v4' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing deploy action"
+grep -q 'DOCARA_BASE_URL' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing base URL env"
+grep -q 'DOCARA_PAGES_PREFIX' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing project Pages prefix handling"
 
 IMPORT_PROJECT="$TMP/import-project"
 mkdir -p "$IMPORT_PROJECT/docs"
