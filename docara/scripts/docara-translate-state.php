@@ -60,7 +60,19 @@ function load_state(string $path): array
 function save_state(string $path, array $state): void
 {
     $export = var_export($state, true);
+    $export = preg_replace('/=>[ \t]+$/m', '=>', $export) ?? $export;
     file_put_contents($path, "<?php\nreturn {$export};\n");
+}
+
+function strip_updated_at(array $value): array
+{
+    unset($value['updated_at']);
+    foreach ($value as $key => $item) {
+        if (is_array($item)) {
+            $value[$key] = strip_updated_at($item);
+        }
+    }
+    return $value;
 }
 
 function is_translatable_file(string $path): bool
@@ -146,9 +158,10 @@ if (! is_dir($sourceRoot)) {
 }
 
 $state = load_state($statePath);
+$previousState = $state;
+$now = date(DATE_ATOM);
 $state['version'] = 1;
 $state['docs_dir'] = $docsDir;
-$state['updated_at'] = date(DATE_ATOM);
 $sourceFiles = collect_files($sourceRoot);
 $force = isset($options['force']);
 $syncTargets = ! empty($options['sync-targets'])
@@ -165,10 +178,10 @@ foreach ($targets as $target) {
     $pairKey = "{$source}:{$target}";
     $targetRoot = $docsDir . '/' . $target;
     $targetFiles = collect_files($targetRoot);
-    $pair = $state['pairs'][$pairKey] ?? ['source' => $source, 'target' => $target, 'files' => []];
+    $previousPair = $state['pairs'][$pairKey] ?? ['source' => $source, 'target' => $target, 'files' => []];
+    $pair = $previousPair;
     $pair['source'] = $source;
     $pair['target'] = $target;
-    $pair['updated_at'] = date(DATE_ATOM);
     $nextFiles = [];
 
     foreach ($sourceFiles as $relative => $info) {
@@ -187,7 +200,7 @@ foreach ($targets as $target) {
             $lastTargetHash = $targetHash;
         }
 
-        $nextFiles[$relative] = [
+        $entry = [
             'source_hash' => $info['hash'],
             'source_size' => $info['size'],
             'target_hash' => $targetHash ?? $lastTargetHash,
@@ -195,8 +208,11 @@ foreach ($targets as $target) {
             'has_local_changes' => $hasLocalChanges,
             'source_path' => "{$source}/{$relative}",
             'target_path' => "{$target}/{$relative}",
-            'updated_at' => date(DATE_ATOM),
         ];
+        $entry['updated_at'] = strip_updated_at($previous) === $entry
+            ? ($previous['updated_at'] ?? $now)
+            : $now;
+        $nextFiles[$relative] = $entry;
     }
 
     $orphans = [];
@@ -212,9 +228,15 @@ foreach ($targets as $target) {
     ksort($orphans);
     $pair['files'] = $nextFiles;
     $pair['orphans'] = $orphans;
+    $pair['updated_at'] = strip_updated_at($previousPair) === strip_updated_at($pair)
+        ? ($previousPair['updated_at'] ?? $now)
+        : $now;
     $state['pairs'][$pairKey] = $pair;
 }
 
+$state['updated_at'] = strip_updated_at($previousState) === strip_updated_at($state)
+    ? ($previousState['updated_at'] ?? $now)
+    : $now;
 save_state($statePath, $state);
 
 function selected_pairs(array $state, array $targets, string $source): array
@@ -233,7 +255,7 @@ $pairs = selected_pairs($state, $targets, $source);
 
 function check_php_file(string $path): ?string
 {
-    $cmd = 'php -l ' . escapeshellarg($path) . ' 2>&1';
+    $cmd = escapeshellarg(PHP_BINARY) . ' -l ' . escapeshellarg($path) . ' 2>&1';
     exec($cmd, $out, $code);
     if ($code !== 0) {
         return trim(implode("\n", $out));
