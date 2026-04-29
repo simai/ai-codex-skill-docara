@@ -43,29 +43,34 @@ jobs:
           node-version: "{node_version}"
 
       - name: Install Composer dependencies
+        working-directory: {docara_dir}
         run: composer install --no-interaction --prefer-dist --no-progress
 
       - name: Initialize Docara
+        working-directory: {docara_dir}
         env:
           DOCARA_SKIP_FRONTEND_INSTALL: "true"
         run: php vendor/bin/docara init --update
 
       - name: Install frontend dependencies
+        working-directory: {docara_dir}
         run: {install_command}
 
       - name: Build frontend assets
+        working-directory: {docara_dir}
         run: {asset_command}
 
       - name: Build Docara site
+        working-directory: {docara_dir}
         run: php vendor/bin/docara build production
 
       - name: Disable Jekyll
-        run: touch build_production/.nojekyll
+        run: touch {artifact_path}/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build_production
+          path: {artifact_path}
 
   deploy:
     environment:
@@ -95,10 +100,13 @@ def main() -> int:
     parser.add_argument("--php-version", default="8.2")
     parser.add_argument("--node-version", default="20")
     parser.add_argument("--package-manager", choices=["npm", "yarn"], default=None)
+    parser.add_argument("--docara-dir", default=".", help="Docara project directory relative to repository root")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
-    manager = args.package_manager or detect_package_manager(root)
+    docara_dir = args.docara_dir.strip().strip("/") or "."
+    docara_root = root if docara_dir == "." else root / docara_dir
+    manager = args.package_manager or detect_package_manager(docara_root)
     if manager == "yarn":
         install_command = "yarn install"
         asset_command = "yarn prod"
@@ -114,6 +122,8 @@ def main() -> int:
         WORKFLOW.format(
             php_version=args.php_version,
             node_version=args.node_version,
+            docara_dir=docara_dir,
+            artifact_path="build_production" if docara_dir == "." else f"{docara_dir}/build_production",
             install_command=install_command,
             asset_command=asset_command,
         ),

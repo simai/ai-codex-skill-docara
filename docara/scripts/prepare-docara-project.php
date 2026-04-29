@@ -68,7 +68,7 @@ if (is_file($composerPath)) {
 }
 
 ensure_file($root . '/.env.example', "DOCS_DIR={$docsDir}\nAZURE_KEY=\nAZURE_REGION=\nAZURE_ENDPOINT=https://api.cognitive.microsofttranslator.com\n", $write, $actions);
-append_missing_lines($root . '/.gitignore', ['.env', 'source/', 'output/', '*.bak', '*.bak_*', '*.codex-bak-*'], $write, $actions);
+append_missing_lines($root . '/.gitignore', ['.env', 'vendor/', 'node_modules/', 'build_*/', '.cache/', 'source/assets/build/', 'output/', '*.bak', '*.bak_*', '*.codex-bak-*'], $write, $actions);
 
 $localeRoot = $root . '/source/' . $docsDir . '/' . $locale;
 ensure_file($localeRoot . '/.lang.php', "<?php\nreturn [\n    'search' => 'Search',\n    'edit article' => 'Edit article',\n];\n", $write, $actions);

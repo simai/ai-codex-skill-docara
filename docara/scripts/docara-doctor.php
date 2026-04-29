@@ -84,7 +84,16 @@ if ($docsDir === '') {
 
 $composer = read_json_file($root . '/composer.json');
 $package = read_json_file($root . '/package.json');
-$workflows = glob($root . '/.github/workflows/*.{yml,yaml}', GLOB_BRACE) ?: [];
+$workflowRoots = [$root . '/.github/workflows'];
+if (basename($root) === 'docara') {
+    $workflowRoots[] = dirname($root) . '/.github/workflows';
+}
+$workflows = [];
+foreach ($workflowRoots as $workflowRoot) {
+    foreach (glob($workflowRoot . '/*.{yml,yaml}', GLOB_BRACE) ?: [] as $workflow) {
+        $workflows[] = $workflow;
+    }
+}
 $buildProduction = $root . '/build_production';
 $docsPath = $root . '/source/' . $docsDir;
 $localeDirs = find_locale_dirs($docsPath);

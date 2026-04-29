@@ -70,6 +70,7 @@ Translate only TODO files unless the user requests a full refresh. If a target f
 ## Bundled Scripts
 
 - `scripts/docara-doctor.php` checks Docara installation, docs tree, locales, build output, and GitHub Pages workflow hints.
+- `scripts/import-markdown-docs.php` imports existing Markdown documentation into `source/docs/<locale>` with Docara front matter and `.settings.php` menus.
 - `scripts/docara-translate-state.php` scans source/target docs, prints TODO files, detects target drift and orphans, and syncs translation state.
 - `scripts/prepare-docara-project.php` prepares safe starter files for a Docara project in dry-run or write mode.
 - `scripts/create-github-pages-workflow.py` writes a GitHub Pages workflow that builds Docara and deploys `build_production`.
@@ -81,6 +82,12 @@ Use this default decision:
 - Same repo + GitHub Actions Pages: best default for most projects.
 - Same repo + root `/docs`: acceptable only when the repository intentionally commits built static files.
 - Separate repo: use for separate access control, separate public/private policy, independent lifecycle, or a dedicated documentation product.
+
+## Placement Decision
+
+- Existing product/tool repository with current root docs: prefer a contained `docara/` subproject. Keep Docara source in `docara/source/docs`, build output in `docara/build_production`, and publish that output.
+- Dedicated documentation-only repository: root-level Docara is acceptable and simpler.
+- If parent `.gitignore` ignores `source`, add explicit exceptions for `docara/source/` when the Docara subproject must be committed.
 
 ## Prompt Examples
 

@@ -19,6 +19,7 @@ Use it as `$docara` when working with Docara documentation repositories.
 - GitHub Pages publication through Actions artifact deployment.
 - Translation drift tracking and AI-assisted translation workflow.
 - Smoke scripts for repository inspection, starter setup, Pages workflow generation, and translation state.
+- Markdown import into a contained Docara subproject for existing repositories.
 
 ## Useful Commands
 
@@ -46,10 +47,22 @@ Prepare starter files in dry-run mode:
 php docara/scripts/prepare-docara-project.php --root=. --docs-dir=docs --locale=en
 ```
 
+Import existing Markdown docs:
+
+```bash
+php docara/scripts/import-markdown-docs.php --input=/path/to/repo --output=/path/to/repo/docara --locale=en --title="Project Documentation"
+```
+
 Generate a GitHub Pages workflow:
 
 ```bash
 python3 docara/scripts/create-github-pages-workflow.py --root=. --workflow=.github/workflows/docara-pages.yml
+```
+
+For a contained `docara/` subproject:
+
+```bash
+python3 docara/scripts/create-github-pages-workflow.py --root=/path/to/repo --docara-dir=docara --workflow=/path/to/repo/.github/workflows/docara-pages.yml
 ```
 
 ## Repository Hygiene

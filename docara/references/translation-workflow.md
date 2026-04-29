@@ -99,3 +99,5 @@ When adding a new locale:
 2. Update `config.php` `locales` map when the locale should appear in the language switcher immediately.
 3. Update `translate.config.php` `languages` if using Docara's Azure translator.
 4. Build and verify the language switcher.
+
+For partial translations, sync only files that already exist in the target locale. The state script will keep the rest in TODO with `has_local_changes=false`, which is the expected state for incremental translation.

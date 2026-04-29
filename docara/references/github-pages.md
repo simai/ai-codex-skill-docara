@@ -6,8 +6,8 @@ Use this when publishing a Docara site publicly.
 
 Prefer GitHub Actions artifact publishing:
 
-- Source docs stay in `source/docs`.
-- Build output stays uncommitted in `build_production`.
+- Source docs stay in `source/docs` for root-level Docara, or `docara/source/docs` for a contained subproject.
+- Build output stays uncommitted in `build_production` or `docara/build_production`.
 - GitHub Pages deploys the generated static site.
 - No `gh-pages` subtree or committed root `/docs` artifacts are required.
 
@@ -15,6 +15,12 @@ Generate the workflow:
 
 ```bash
 python3 <skill>/scripts/create-github-pages-workflow.py --root=. --workflow=.github/workflows/docara-pages.yml
+```
+
+For a contained `docara/` subproject:
+
+```bash
+python3 <skill>/scripts/create-github-pages-workflow.py --root=. --docara-dir=docara --workflow=.github/workflows/docara-pages.yml
 ```
 
 The repository owner still needs to set GitHub repository Settings -> Pages -> Source -> GitHub Actions.
@@ -33,12 +39,14 @@ The workflow should:
 2. Set up PHP 8.2 and Composer.
 3. Set up Node 20.
 4. Install Composer dependencies.
-5. Run `php vendor/bin/docara init --update`.
+5. Run `php vendor/bin/docara init --update` from the Docara project directory.
 6. Install frontend dependencies.
 7. Run `yarn prod` or `npm run prod`.
-8. Run `php vendor/bin/docara build production`.
-9. Upload `build_production`.
+8. Run `php vendor/bin/docara build production` from the Docara project directory.
+9. Upload the matching build output directory.
 10. Deploy with `actions/deploy-pages`.
+
+If the repository was bootstrapped with npm and `webpack` was pinned locally after a real build test, commit `package-lock.json` so CI uses the same dependency graph.
 
 ## Root `/docs` Publishing
 

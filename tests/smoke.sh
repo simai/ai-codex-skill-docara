@@ -95,6 +95,7 @@ assert_contains "$prepare_dry" 'Dry run only'
 
 php "$ROOT/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-dir=docs --locale=en --write >/dev/null
 [[ -f "$PROJECT/.env.example" ]] || fail ".env.example was not created"
+! grep -q '^source/$' "$PROJECT/.gitignore" || fail "Docara project .gitignore must not ignore source/"
 
 todo_json="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo-with-size --target=ru --json)"
 assert_contains "$todo_json" '"file": "index.md"'
@@ -121,5 +122,19 @@ assert_contains "$todo_after_change" 'index.md'
 
 python3 "$ROOT/docara/scripts/create-github-pages-workflow.py" --root="$PROJECT" --workflow="$PROJECT/.github/workflows/docara-pages.yml" >/dev/null
 grep -q 'actions/deploy-pages@v4' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing deploy action"
+
+IMPORT_PROJECT="$TMP/import-project"
+mkdir -p "$IMPORT_PROJECT/docs"
+cat > "$IMPORT_PROJECT/README.md" <<'MD'
+# Import Project
+MD
+cat > "$IMPORT_PROJECT/docs/setup.md" <<'MD'
+# Setup
+MD
+import_dry="$(php "$ROOT/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs)"
+assert_contains "$import_dry" 'WOULD_IMPORT'
+php "$ROOT/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs --write >/dev/null
+[[ -f "$IMPORT_PROJECT/docara/source/docs/en/index.md" ]] || fail "imported index.md missing"
+[[ -f "$IMPORT_PROJECT/docara/source/docs/en/docs/.settings.php" ]] || fail "imported settings missing"
 
 echo "smoke ok"

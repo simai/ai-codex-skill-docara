@@ -59,6 +59,48 @@ php <skill>/scripts/prepare-docara-project.php --root=. --docs-dir=docs --locale
 
 The script does not install Composer packages or overwrite existing files. It creates safe `.env.example`, minimal locale starter files, and required local-only `.gitignore` entries.
 
+Do not ignore `source/` inside the Docara project itself. `source/docs` is the documentation source of truth and must be tracked unless the whole Docara project is intentionally local-only. Ignore generated `source/assets/build/`, `build_*`, `.cache`, `vendor`, and `node_modules`.
+
+## Import Existing Markdown
+
+For a product repository that already has Markdown files, prefer creating a contained Docara project in `docara/`:
+
+```bash
+php <skill>/scripts/import-markdown-docs.php --input=. --output=docara --locale=en --title='Project Documentation' --include=README.md,docs,sitepack-spec --write
+```
+
+The importer copies Markdown into `docara/source/docs/<locale>`, adds Docara front matter, converts `README.md` to `index.md`, and creates `.settings.php` files for menu discovery.
+
+Use this layout when the repository already has source/docs/build conventions. In a dedicated documentation-only repository, root-level Docara is acceptable.
+
+If a parent `.gitignore` contains `source`, explicitly unignore the nested Docara source:
+
+```gitignore
+!docara/source/
+!docara/source/**
+```
+
+## Runtime Pitfalls
+
+On macOS, Homebrew PHP can be broken after ICU upgrades. If `php` fails with a missing `libicu*.dylib`, use ServBay PHP for Docara commands:
+
+```bash
+/Applications/ServBay/script/alias/php vendor/bin/docara init --update
+/Applications/ServBay/script/alias/php vendor/bin/docara build production
+```
+
+Docara's frontend build should run on Node 20. Very new Node versions can break the Laravel Mix/webpack stack. If no local Node 20 is installed, use:
+
+```bash
+npx -p node@20 -c "node node_modules/laravel-mix/bin/cli.js --production"
+```
+
+If npm installs a newer incompatible `webpack` and Mix fails with `Progress Plugin` schema errors, pin the version from Docara's bundled `source/_core/yarn.lock`:
+
+```bash
+npm install --save-dev webpack@5.99.8
+```
+
 ## Config Priorities
 
 Important `config.php` keys:
