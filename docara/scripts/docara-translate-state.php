@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 $options = getopt('', [
     'docs-dir:',
+    'state-file::',
     'source:',
     'targets::',
     'target::',
@@ -20,7 +21,7 @@ $options = getopt('', [
 ]);
 
 if (isset($options['help']) || empty($options['docs-dir']) || empty($options['source'])) {
-    echo "Usage: php docara-translate-state.php --docs-dir=source/docs --source=en [--targets=ru,de] [--target=ru] [--force] [--json] [--print-todo|--print-todo-with-size|--sync-targets=ru|--check-targets=ru|--print-locales|--print-orphans]\n";
+    echo "Usage: php docara-translate-state.php --docs-dir=source/docs --source=en [--state-file=.docara-state/translate-state.php] [--targets=ru,de] [--target=ru] [--force] [--json] [--print-todo|--print-todo-with-size|--sync-targets=ru|--check-targets=ru|--print-locales|--print-orphans]\n";
     exit(isset($options['help']) ? 0 : 2);
 }
 
@@ -46,7 +47,27 @@ if (! is_dir($docsDir)) {
     exit(2);
 }
 
-$statePath = $docsDir . '/.translate.php';
+$statePath = ! empty($options['state-file'])
+    ? (string) $options['state-file']
+    : default_state_path($docsDir);
+
+function default_state_path(string $docsDir): string
+{
+    $normalized = str_replace('\\', '/', rtrim($docsDir, '/'));
+    $marker = '/source/';
+    $position = strpos($normalized, $marker);
+
+    if ($position !== false) {
+        $projectRoot = substr($normalized, 0, $position);
+    } elseif (str_starts_with($normalized, 'source/')) {
+        $projectRoot = '.';
+    } else {
+        $projectRoot = '.';
+    }
+
+    $projectRoot = rtrim($projectRoot, '/');
+    return ($projectRoot === '' ? '.' : $projectRoot) . '/.docara-state/translate-state.php';
+}
 
 function load_state(string $path): array
 {
@@ -59,6 +80,10 @@ function load_state(string $path): array
 
 function save_state(string $path, array $state): void
 {
+    $dir = dirname($path);
+    if (! is_dir($dir)) {
+        mkdir($dir, 0777, true);
+    }
     $export = var_export($state, true);
     $export = preg_replace('/=>[ \t]+$/m', '=>', $export) ?? $export;
     file_put_contents($path, "<?php\nreturn {$export};\n");
@@ -194,18 +219,34 @@ foreach ($targets as $target) {
         $targetMissing = $targetHash === null;
         $targetNotSynced = $targetHash !== null && $lastTargetHash === null;
         $needsTranslate = ! empty($previous['needs_translate']) || $sourceChanged || $targetMissing || $targetNotSynced;
+        $reasons = [];
+        if (! empty($previous['needs_translate'])) {
+            $reasons[] = 'previous_todo';
+        }
+        if ($sourceChanged) {
+            $reasons[] = 'source_changed';
+        }
+        if ($targetMissing) {
+            $reasons[] = 'target_missing';
+        }
+        if ($targetNotSynced) {
+            $reasons[] = 'target_not_synced';
+        }
 
         if (in_array($target, $syncTargets, true) && $targetHash !== null) {
             $needsTranslate = false;
             $hasLocalChanges = false;
             $lastTargetHash = $targetHash;
+            $reasons = [];
         }
 
         $entry = [
             'source_hash' => $info['hash'],
             'source_size' => $info['size'],
             'target_hash' => $targetHash ?? $lastTargetHash,
+            'target_size' => $targetInfo['size'] ?? null,
             'needs_translate' => $needsTranslate,
+            'reasons' => $needsTranslate ? $reasons : [],
             'has_local_changes' => $hasLocalChanges,
             'source_path' => "{$source}/{$relative}",
             'target_path' => "{$target}/{$relative}",
@@ -363,6 +404,8 @@ if (isset($options['print-todo']) || isset($options['print-todo-with-size'])) {
                     'target' => $pair['target'],
                     'file' => $relative,
                     'source_size' => $entry['source_size'],
+                    'target_size' => $entry['target_size'] ?? null,
+                    'reasons' => $entry['reasons'] ?? [],
                     'has_local_changes' => ! empty($entry['has_local_changes']),
                 ];
             }

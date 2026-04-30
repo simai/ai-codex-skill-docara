@@ -11,6 +11,8 @@ Translation has two layers:
 
 Do not use AI to decide which files are stale when the script can compute it.
 
+The translation state is operational metadata, not documentation content. By default the state script writes to `.docara-state/translate-state.php` at the Docara project root. Keep `.docara-state/` ignored and do not commit old `source/docs/.translate.php` state files. If a project needs another location, pass `--state-file=<path>` explicitly and add that path to `.gitignore`.
+
 ## Commands
 
 List locales:
@@ -30,6 +32,24 @@ Use JSON when automating a batch:
 ```bash
 php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=en --targets=ru --print-todo-with-size --target=ru --json
 ```
+
+Before editing translations, inspect both summary and TODO:
+
+```bash
+php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=en --targets=ru --json
+php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=en --targets=ru --print-todo-with-size --target=ru --json
+```
+
+If TODO is not zero, the target locale is not current. Do not claim that the locale matches the source until TODO is zero and `--check-targets` passes.
+
+Read TODO reasons before choosing the next action:
+
+- `target_missing`: create and translate the target file.
+- `target_not_synced`: existing target has not yet been confirmed against the current source; inspect or translate before syncing.
+- `source_changed`: source changed after the last sync; update the target.
+- `previous_todo`: the file was already known to need translation.
+
+Only run `--sync-targets=<locale>` after the target file was actually reviewed or translated. Never use sync as a way to silence a stale locale.
 
 Force full re-check:
 
@@ -61,6 +81,19 @@ php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=e
 - If user asks "translate all" or "продолжай до конца", process all TODO until done or until local target drift appears.
 - For batch work, use `--print-todo-with-size`; group about 20-30 KB source text or 5-10 files.
 - `.settings.php` and `.lang.php` are small service files and may be grouped.
+
+## Implementation Checklist
+
+Use this order when adding translation support to a project:
+
+1. Ensure `.docara-state/` and legacy `source/docs/.translate.php` are ignored.
+2. Run summary JSON and TODO JSON before editing.
+3. Fix service files first: `.lang.php` and `.settings.php`.
+4. Translate missing target files next, starting with section `index.md` pages so navigation is not misleading.
+5. Translate or review changed existing pages in size-aware batches.
+6. After each batch, run `--check-targets=<locale>`, build production, and browser-smoke the language switcher, search, settings menu, and representative pages.
+7. Run `--sync-targets=<locale>` only for files that were reviewed or translated in that batch.
+8. Stop when TODO is zero, target checks pass, and the build/browser smoke pass. If TODO remains, report the locale as partial.
 
 ## Local Change Guard
 

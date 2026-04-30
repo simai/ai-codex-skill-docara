@@ -65,6 +65,8 @@ php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=e
 php <skill>/scripts/docara-translate-state.php --docs-dir=source/docs --source=en --print-locales
 ```
 
+The state file is local operational metadata. Keep it in the default `.docara-state/translate-state.php` or pass `--state-file`; do not commit `.docara-state/` or legacy `source/docs/.translate.php`. If TODO is non-zero, say the target locale is partial/stale rather than equivalent to the source. Read JSON TODO `reasons` before editing, and never use `--sync-targets` to silence files that were not actually reviewed or translated.
+
 Translate only TODO files unless the user requests a full refresh. If a target file has local changes, stop and ask whether to overwrite, keep a copy, or skip.
 
 ## Bundled Scripts

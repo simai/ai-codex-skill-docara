@@ -99,6 +99,11 @@ php "$ROOT/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-d
 
 todo_json="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo-with-size --target=ru --json)"
 assert_contains "$todo_json" '"file": "index.md"'
+[[ -f "$PROJECT/.docara-state/translate-state.php" ]] || fail "translation state must be stored in .docara-state"
+[[ ! -f "$PROJECT/source/docs/.translate.php" ]] || fail "translation state must not be stored in source/docs"
+grep -q '^.docara-state/$' "$PROJECT/.gitignore" || fail ".docara-state must be ignored"
+grep -q '^source/docs/.translate.php$' "$PROJECT/.gitignore" || fail "legacy source/docs/.translate.php must be ignored"
+assert_contains "$todo_json" '"reasons":'
 
 mkdir -p "$PROJECT/source/docs/ru"
 cp "$PROJECT/source/docs/en/.lang.php" "$PROJECT/source/docs/ru/.lang.php"

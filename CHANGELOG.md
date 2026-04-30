@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 - 2026-04-30
+
+- Moved translation state to ignored `.docara-state/translate-state.php` by default.
+- Added TODO reason metadata so agents can distinguish missing target files, unreviewed targets, changed sources, and previous TODO.
+- Documented that stale locales must not be silenced with sync unless files were actually reviewed or translated.
+
 ## 0.2.1 - 2026-04-30
 
 - Fixed generated Docara `.lang.php` files so settings, language, search, and actions menus receive complete UI labels.
