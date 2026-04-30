@@ -107,6 +107,7 @@ Important `config.php` keys:
 
 - `baseUrl`: canonical site URL.
 - `siteName`, `siteDescription`: visible metadata.
+- `brand`: header branding. Prefer a project-specific `brand.title` and either a custom `brand.logoSvg` or a neutral default icon. Do not leave sample logos such as `simai ui` in published project documentation.
 - `github`: repository URL used by "Edit on GitHub".
 - `locales`: map like `['en' => 'English', 'ru' => 'Русский']`.
 - `defaultLocale`: base language.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 - 2026-04-30
+
+- Documented Docara header branding rules so published docs do not keep sample logos such as `simai ui`.
+
 ## 0.2.2 - 2026-04-30
 
 - Moved translation state to ignored `.docara-state/translate-state.php` by default.
