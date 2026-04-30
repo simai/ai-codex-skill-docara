@@ -97,8 +97,11 @@ Also check common section URLs and assets after deploy. A successful `index.html
 ```bash
 curl -I https://<owner>.github.io/<repo>/<locale>/<section>/
 curl -I https://<owner>.github.io/<repo>/assets/build/css/main.css
+curl -I https://<owner>.github.io/<repo>/search-index_<locale>.json
 curl -s https://<owner>.github.io/<repo>/<locale>/ | grep '/<locale>/<locale>'
 ```
+
+Search must be tested as an interactive feature, not just by checking that `search-index_<locale>.json` exists. On project Pages, the bundled JavaScript can otherwise request `/search-index_<locale>.json` from the domain root instead of `/<repo>/search-index_<locale>.json`.
 
 ## Root `/docs` Publishing
 
