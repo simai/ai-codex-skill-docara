@@ -58,6 +58,49 @@ function append_missing_lines(string $path, array $lines, bool $write, array &$a
     }
 }
 
+function default_lang_php(string $locale): string
+{
+    if ($locale === 'ru') {
+        $values = [
+            'actions' => 'Действия',
+            'dark' => 'Тёмная тема',
+            'default' => 'Обычный',
+            'search' => 'Поиск',
+            'notFound' => 'Ничего не найдено',
+            'settings' => 'Настройки',
+            'on' => 'Вкл.',
+            'off' => 'Выкл.',
+            'edit article' => 'Редактировать статью',
+            'report a bug' => 'Сообщить об ошибке',
+            'wide' => 'Широкий режим',
+            'text size' => 'Размер текста',
+            'reduced' => 'Меньше',
+            'increased' => 'Больше',
+            'navigation' => 'Навигация',
+        ];
+    } else {
+        $values = [
+            'actions' => 'Actions',
+            'dark' => 'Dark mode',
+            'default' => 'Default',
+            'search' => 'Search',
+            'notFound' => 'Nothing found',
+            'settings' => 'Settings',
+            'on' => 'On',
+            'off' => 'Off',
+            'edit article' => 'Edit article',
+            'report a bug' => 'Report a bug',
+            'wide' => 'Wide layout',
+            'text size' => 'Text size',
+            'reduced' => 'Reduced',
+            'increased' => 'Increased',
+            'navigation' => 'Navigation',
+        ];
+    }
+
+    return "<?php\nreturn " . var_export($values, true) . ";\n";
+}
+
 $composerPath = $root . '/composer.json';
 if (is_file($composerPath)) {
     $composer = json_decode((string) file_get_contents($composerPath), true);
@@ -71,7 +114,7 @@ ensure_file($root . '/.env.example', "DOCS_DIR={$docsDir}\nAZURE_KEY=\nAZURE_REG
 append_missing_lines($root . '/.gitignore', ['.env', 'vendor/', 'node_modules/', 'build_*/', '.cache/', 'source/assets/build/', 'output/', '*.bak', '*.bak_*', '*.codex-bak-*'], $write, $actions);
 
 $localeRoot = $root . '/source/' . $docsDir . '/' . $locale;
-ensure_file($localeRoot . '/.lang.php', "<?php\nreturn [\n    'search' => 'Search',\n    'edit article' => 'Edit article',\n];\n", $write, $actions);
+ensure_file($localeRoot . '/.lang.php', default_lang_php($locale), $write, $actions);
 ensure_file($localeRoot . '/.settings.php', "<?php\nreturn [\n    'title' => 'Documentation',\n    'showInMenu' => true,\n    'order' => 10,\n    'menu' => [\n        'index' => 'Overview',\n    ],\n];\n", $write, $actions);
 ensure_file($localeRoot . '/index.md', "---\nextends: _core._layouts.documentation\nsection: content\ntitle: Documentation\ndescription: Documentation overview\n---\n\n# Documentation\n\nStart here.\n", $write, $actions);
 

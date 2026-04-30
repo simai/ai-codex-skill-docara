@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1 - 2026-04-30
+
+- Fixed generated Docara `.lang.php` files so settings, language, search, and actions menus receive complete UI labels.
+- Added the missing localized defaults to both starter project preparation and Markdown import flows.
+
 ## 0.2.0 - 2026-04-30
 
 - Validated `$docara` on the real `sitepack` repository using a contained `docara/` project.

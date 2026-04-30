@@ -85,6 +85,49 @@ function section_landing_content(string $title, array $menu): string
     return implode("\n", $lines);
 }
 
+function default_lang_php(string $locale): string
+{
+    if ($locale === 'ru') {
+        $values = [
+            'actions' => 'Действия',
+            'dark' => 'Тёмная тема',
+            'default' => 'Обычный',
+            'search' => 'Поиск',
+            'notFound' => 'Ничего не найдено',
+            'settings' => 'Настройки',
+            'on' => 'Вкл.',
+            'off' => 'Выкл.',
+            'edit article' => 'Редактировать статью',
+            'report a bug' => 'Сообщить об ошибке',
+            'wide' => 'Широкий режим',
+            'text size' => 'Размер текста',
+            'reduced' => 'Меньше',
+            'increased' => 'Больше',
+            'navigation' => 'Навигация',
+        ];
+    } else {
+        $values = [
+            'actions' => 'Actions',
+            'dark' => 'Dark mode',
+            'default' => 'Default',
+            'search' => 'Search',
+            'notFound' => 'Nothing found',
+            'settings' => 'Settings',
+            'on' => 'On',
+            'off' => 'Off',
+            'edit article' => 'Edit article',
+            'report a bug' => 'Report a bug',
+            'wide' => 'Wide layout',
+            'text size' => 'Text size',
+            'reduced' => 'Reduced',
+            'increased' => 'Increased',
+            'navigation' => 'Navigation',
+        ];
+    }
+
+    return "<?php\nreturn " . var_export($values, true) . ";\n";
+}
+
 function strip_existing_front_matter(string $text): string
 {
     return preg_replace('/^---\R.*?\R---\R*/s', '', $text, 1) ?? $text;
@@ -151,7 +194,7 @@ if ($write) {
     if (! is_dir($docsRoot)) {
         mkdir($docsRoot, 0777, true);
     }
-    file_put_contents($docsRoot . '/.lang.php', "<?php\nreturn [\n    'search' => 'Search',\n    'edit article' => 'Edit article',\n];\n");
+    file_put_contents($docsRoot . '/.lang.php', default_lang_php($locale));
     foreach (array_keys($settingsDirs) as $dir) {
         $menu = $menusByDir[$dir] ?? [];
         ksort($menu);
