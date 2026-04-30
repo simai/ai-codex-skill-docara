@@ -1,8 +1,9 @@
 .env
 source/
 output/
+.DS_Store
 *.bak
 *.bak_*
 *.bak-*
 *.codex-bak-*
-docara/scripts/__pycache__/
+skills/docara/scripts/__pycache__/

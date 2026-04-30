@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 - 2026-04-30
+
+- Moved the installable `$docara` runtime to `skills/docara/` to match the SIMAI skill repository standard.
+- Updated README command examples to point to the runtime skill folder.
+
 ## 0.2.3 - 2026-04-30
 
 - Documented Docara header branding rules so published docs do not keep sample logos such as `simai ui`.

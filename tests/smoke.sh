@@ -86,18 +86,18 @@ description: Overview
 Use `code` safely.
 MD
 
-doctor="$(php "$ROOT/docara/scripts/docara-doctor.php" --root="$PROJECT" --json)"
+doctor="$(php "$ROOT/skills/docara/scripts/docara-doctor.php" --root="$PROJECT" --json)"
 assert_contains "$doctor" '"docs_dir": "docs"'
 assert_contains "$doctor" '"locales_from_dirs":'
 
-prepare_dry="$(php "$ROOT/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-dir=docs --locale=en)"
+prepare_dry="$(php "$ROOT/skills/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-dir=docs --locale=en)"
 assert_contains "$prepare_dry" 'Dry run only'
 
-php "$ROOT/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-dir=docs --locale=en --write >/dev/null
+php "$ROOT/skills/docara/scripts/prepare-docara-project.php" --root="$PROJECT" --docs-dir=docs --locale=en --write >/dev/null
 [[ -f "$PROJECT/.env.example" ]] || fail ".env.example was not created"
 ! grep -q '^source/$' "$PROJECT/.gitignore" || fail "Docara project .gitignore must not ignore source/"
 
-todo_json="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo-with-size --target=ru --json)"
+todo_json="$(php "$ROOT/skills/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo-with-size --target=ru --json)"
 assert_contains "$todo_json" '"file": "index.md"'
 [[ -f "$PROJECT/.docara-state/translate-state.php" ]] || fail "translation state must be stored in .docara-state"
 [[ ! -f "$PROJECT/source/docs/.translate.php" ]] || fail "translation state must not be stored in source/docs"
@@ -110,11 +110,11 @@ cp "$PROJECT/source/docs/en/.lang.php" "$PROJECT/source/docs/ru/.lang.php"
 cp "$PROJECT/source/docs/en/.settings.php" "$PROJECT/source/docs/ru/.settings.php"
 cp "$PROJECT/source/docs/en/index.md" "$PROJECT/source/docs/ru/index.md"
 
-php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --sync-targets=ru >/dev/null
-todo_after_sync="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo --target=ru)"
+php "$ROOT/skills/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --sync-targets=ru >/dev/null
+todo_after_sync="$(php "$ROOT/skills/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo --target=ru)"
 [[ -z "$todo_after_sync" ]] || fail "expected empty TODO after sync, got: $todo_after_sync"
 
-check_after_sync="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --check-targets=ru)"
+check_after_sync="$(php "$ROOT/skills/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --check-targets=ru)"
 assert_contains "$check_after_sync" 'No target check issues'
 
 cat >> "$PROJECT/source/docs/en/index.md" <<'MD'
@@ -122,10 +122,10 @@ cat >> "$PROJECT/source/docs/en/index.md" <<'MD'
 New source text.
 MD
 
-todo_after_change="$(php "$ROOT/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo --target=ru)"
+todo_after_change="$(php "$ROOT/skills/docara/scripts/docara-translate-state.php" --docs-dir="$PROJECT/source/docs" --source=en --targets=ru --print-todo --target=ru)"
 assert_contains "$todo_after_change" 'index.md'
 
-python3 "$ROOT/docara/scripts/create-github-pages-workflow.py" --root="$PROJECT" --workflow="$PROJECT/.github/workflows/docara-pages.yml" >/dev/null
+python3 "$ROOT/skills/docara/scripts/create-github-pages-workflow.py" --root="$PROJECT" --workflow="$PROJECT/.github/workflows/docara-pages.yml" >/dev/null
 grep -q 'actions/deploy-pages@v4' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing deploy action"
 grep -q 'DOCARA_BASE_URL' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing base URL env"
 grep -q 'DOCARA_PAGES_PREFIX' "$PROJECT/.github/workflows/docara-pages.yml" || fail "Pages workflow missing project Pages prefix handling"
@@ -139,9 +139,9 @@ MD
 cat > "$IMPORT_PROJECT/docs/setup.md" <<'MD'
 # Setup
 MD
-import_dry="$(php "$ROOT/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs)"
+import_dry="$(php "$ROOT/skills/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs)"
 assert_contains "$import_dry" 'WOULD_IMPORT'
-php "$ROOT/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs --write >/dev/null
+php "$ROOT/skills/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs --write >/dev/null
 [[ -f "$IMPORT_PROJECT/docara/source/docs/en/index.md" ]] || fail "imported index.md missing"
 [[ -f "$IMPORT_PROJECT/docara/source/docs/en/docs/.settings.php" ]] || fail "imported settings missing"
 [[ -f "$IMPORT_PROJECT/docara/source/docs/en/docs/index.md" ]] || fail "imported section index missing"

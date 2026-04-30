@@ -7,7 +7,7 @@ Codex skill for creating, configuring, publishing, and translating documentation
 The skill lives in:
 
 ```text
-docara/
+skills/docara/
 ```
 
 Use it as `$docara` when working with Docara documentation repositories.
@@ -27,7 +27,7 @@ Use it as `$docara` when working with Docara documentation repositories.
 Validate the skill:
 
 ```bash
-python3 /Users/rim/.codex/skills/.system/skill-creator/scripts/quick_validate.py docara
+python3 /Users/rim/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/docara
 ```
 
 Run smoke tests:
@@ -39,31 +39,31 @@ bash tests/smoke.sh
 Inspect a Docara project:
 
 ```bash
-php docara/scripts/docara-doctor.php --root=. --json
+php skills/docara/scripts/docara-doctor.php --root=. --json
 ```
 
 Prepare starter files in dry-run mode:
 
 ```bash
-php docara/scripts/prepare-docara-project.php --root=. --docs-dir=docs --locale=en
+php skills/docara/scripts/prepare-docara-project.php --root=. --docs-dir=docs --locale=en
 ```
 
 Import existing Markdown docs:
 
 ```bash
-php docara/scripts/import-markdown-docs.php --input=/path/to/repo --output=/path/to/repo/docara --locale=en --title="Project Documentation"
+php skills/docara/scripts/import-markdown-docs.php --input=/path/to/repo --output=/path/to/repo/docara --locale=en --title="Project Documentation"
 ```
 
 Generate a GitHub Pages workflow:
 
 ```bash
-python3 docara/scripts/create-github-pages-workflow.py --root=. --workflow=.github/workflows/docara-pages.yml
+python3 skills/docara/scripts/create-github-pages-workflow.py --root=. --workflow=.github/workflows/docara-pages.yml
 ```
 
 For a contained `docara/` subproject:
 
 ```bash
-python3 docara/scripts/create-github-pages-workflow.py --root=/path/to/repo --docara-dir=docara --workflow=/path/to/repo/.github/workflows/docara-pages.yml
+python3 skills/docara/scripts/create-github-pages-workflow.py --root=/path/to/repo --docara-dir=docara --workflow=/path/to/repo/.github/workflows/docara-pages.yml
 ```
 
 For project Pages, keep Docara `baseUrl` environment-driven in the target project:
