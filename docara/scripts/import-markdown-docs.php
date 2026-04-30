@@ -71,6 +71,20 @@ function front_matter(string $title): string
     return "---\nextends: _core._layouts.documentation\nsection: content\ntitle: {$title}\ndescription: {$title}\n---\n\n";
 }
 
+function section_landing_content(string $title, array $menu): string
+{
+    $lines = [front_matter($title), "# {$title}", ""];
+    if ($menu) {
+        $lines[] = "## Pages";
+        $lines[] = "";
+        foreach ($menu as $slug => $label) {
+            $lines[] = "- [{$label}]({$slug})";
+        }
+        $lines[] = "";
+    }
+    return implode("\n", $lines);
+}
+
 function strip_existing_front_matter(string $text): string
 {
     return preg_replace('/^---\R.*?\R---\R*/s', '', $text, 1) ?? $text;
@@ -141,6 +155,12 @@ if ($write) {
     foreach (array_keys($settingsDirs) as $dir) {
         $menu = $menusByDir[$dir] ?? [];
         ksort($menu);
+        if ($dir !== '') {
+            $indexPath = $docsRoot . '/' . $dir . '/index.md';
+            if (! is_file($indexPath)) {
+                file_put_contents($indexPath, section_landing_content(human_title($dir), $menu));
+            }
+        }
         $settingsPath = $docsRoot . ($dir === '' ? '' : '/' . $dir) . '/.settings.php';
         if (! is_dir(dirname($settingsPath))) {
             mkdir(dirname($settingsPath), 0777, true);

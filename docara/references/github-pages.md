@@ -92,6 +92,14 @@ The HTML must not contain unprefixed project-page links:
 curl -s https://<owner>.github.io/<repo>/en/ | grep 'href="/assets'
 ```
 
+Also check common section URLs and assets after deploy. A successful `index.html` response is not enough if menu links or breadcrumbs still point to missing paths:
+
+```bash
+curl -I https://<owner>.github.io/<repo>/<locale>/<section>/
+curl -I https://<owner>.github.io/<repo>/assets/build/css/main.css
+curl -s https://<owner>.github.io/<repo>/<locale>/ | grep '/<locale>/<locale>'
+```
+
 ## Root `/docs` Publishing
 
 GitHub Pages can publish from root `/docs` on a branch, but Docara's `source/docs` is source content, not built HTML.

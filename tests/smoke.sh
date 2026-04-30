@@ -138,5 +138,6 @@ assert_contains "$import_dry" 'WOULD_IMPORT'
 php "$ROOT/docara/scripts/import-markdown-docs.php" --input="$IMPORT_PROJECT" --output="$IMPORT_PROJECT/docara" --include=README.md,docs --write >/dev/null
 [[ -f "$IMPORT_PROJECT/docara/source/docs/en/index.md" ]] || fail "imported index.md missing"
 [[ -f "$IMPORT_PROJECT/docara/source/docs/en/docs/.settings.php" ]] || fail "imported settings missing"
+[[ -f "$IMPORT_PROJECT/docara/source/docs/en/docs/index.md" ]] || fail "imported section index missing"
 
 echo "smoke ok"

@@ -192,7 +192,8 @@ foreach ($targets as $target) {
         $hasLocalChanges = $targetHash !== null && $lastTargetHash !== null && $targetHash !== $lastTargetHash;
         $sourceChanged = $force || (($previous['source_hash'] ?? null) !== $info['hash']);
         $targetMissing = $targetHash === null;
-        $needsTranslate = $sourceChanged || $targetMissing;
+        $targetNotSynced = $targetHash !== null && $lastTargetHash === null;
+        $needsTranslate = ! empty($previous['needs_translate']) || $sourceChanged || $targetMissing || $targetNotSynced;
 
         if (in_array($target, $syncTargets, true) && $targetHash !== null) {
             $needsTranslate = false;
