@@ -115,6 +115,7 @@ Important `config.php` keys:
 - `siteName`, `siteDescription`: visible metadata.
 - `brand`: header branding. Prefer a project-specific `brand.title` and either a custom `brand.logoSvg` or a neutral default icon. Do not leave sample logos such as `simai ui` in published project documentation.
 - `github`: repository URL used by "Edit on GitHub".
+- `githubEditBasePath`: project-local extension used by the `$docara` skill for contained subprojects such as `docara/`. When Docara lives under `docara/` inside a product repository, set `'githubEditBasePath' => 'docara'` and wrap `gitHubUrl` so edit links point to `docara/source/docs/...`, not root `source/docs/...`.
 - `locales`: map like `['en' => 'English', 'ru' => 'Русский']`.
 - `defaultLocale`: base language.
 - `category`: single tree vs category navigation mode.

@@ -6,6 +6,7 @@
 - Extended `docara-doctor.php` to report the locked Docara version and warn when `source/_core` is git-tracked.
 - Added a Composer ZIP extraction note for Unicode filenames on macOS.
 - Added a temporary `v1.3.39` cache-warning workaround for GitHub Pages builds.
+- Documented `githubEditBasePath` handling for contained Docara subprojects so "Edit article" links point to the real nested source path.
 
 ## 0.3.0 - 2026-04-30
 
