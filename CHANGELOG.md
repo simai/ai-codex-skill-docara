@@ -8,6 +8,7 @@
 - Added a temporary `v1.3.39` cache-warning workaround for GitHub Pages builds.
 - Documented `githubEditBasePath` handling for contained Docara subprojects so "Edit article" links point to the real nested source path.
 - Clarified that header branding should use the product/project name directly and avoid generic `Docs` or `Documentation` suffixes.
+- Added missing `previous` and `next` UI language keys to starter/import defaults for bottom navigation cards.
 
 ## 0.3.0 - 2026-04-30
 

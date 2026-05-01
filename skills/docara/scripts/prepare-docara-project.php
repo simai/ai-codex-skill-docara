@@ -77,6 +77,8 @@ function default_lang_php(string $locale): string
             'reduced' => 'Меньше',
             'increased' => 'Больше',
             'navigation' => 'Навигация',
+            'previous' => 'Назад',
+            'next' => 'Далее',
         ];
     } else {
         $values = [
@@ -95,6 +97,8 @@ function default_lang_php(string $locale): string
             'reduced' => 'Reduced',
             'increased' => 'Increased',
             'navigation' => 'Navigation',
+            'previous' => 'Previous',
+            'next' => 'Next',
         ];
     }
 

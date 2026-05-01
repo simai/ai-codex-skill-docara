@@ -67,10 +67,13 @@ Use for UI labels and repeated interface text:
 return [
     'search' => 'Search',
     'edit article' => 'Edit article',
+    'previous' => 'Previous',
+    'next' => 'Next',
 ];
 ```
 
 Translate values only. Keep keys stable because templates and JavaScript can depend on them.
+For the standard Docara UI, include service labels used by header and bottom navigation: `actions`, `settings`, `edit article`, `report a bug`, `navigation`, `previous`, and `next`.
 
 ## Content Quality
 
