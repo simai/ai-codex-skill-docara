@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 - 2026-05-01
+
+- Documented Docara `v1.3.39` update behavior: git-tracked `_core` files are preserved by `init --update`, so upstream UI fixes must be manually merged into customized projects.
+- Extended `docara-doctor.php` to report the locked Docara version and warn when `source/_core` is git-tracked.
+- Added a Composer ZIP extraction note for Unicode filenames on macOS.
+- Added a temporary `v1.3.39` cache-warning workaround for GitHub Pages builds.
+
 ## 0.3.0 - 2026-04-30
 
 - Moved the installable `$docara` runtime to `skills/docara/` to match the SIMAI skill repository standard.

@@ -43,6 +43,8 @@ DOCARA_SKIP_FRONTEND_INSTALL=true php vendor/bin/docara init --update
 
 Do not run destructive archive/delete init modes unless the user explicitly asks. `init --update` preserves existing `config.php` and `source/<DOCS_DIR>` and refreshes generated support files.
 
+In Docara `v1.3.39+`, `init --update` also protects git-tracked `source/_core` files. This is safer for project customizations, but it means upstream UI fixes may be reported as `gitSkipped` and will not appear in the project automatically. After updating `simai/docara`, compare `vendor/simai/docara/stubs/site/source/_core` with the project `source/_core` and manually merge relevant fixes such as settings controls, search markup, top-menu classes, table wrapping, and frontend event timing.
+
 ## Starter Preparation
 
 Before initializing a mixed or partially prepared repository, run a dry check:
@@ -100,6 +102,10 @@ If npm installs a newer incompatible `webpack` and Mix fails with `Progress Plug
 ```bash
 npm install --save-dev webpack@5.99.8
 ```
+
+When Composer downloads Docara from GitHub ZIP archives on macOS, `unzip` can warn on Unicode filenames such as `markdown‑aware-translation.md` and then fall back to PHP ZipArchive. Treat this as non-fatal only if Composer finishes successfully and `composer show simai/docara --locked` reports the expected version.
+
+Docara `v1.3.39` can emit PHP deprecation warnings `md5(): Passing null` while writing copied asset files when build cache is enabled. For CI and GitHub Pages builds, prefer `'cache' => false` in project `config.php` or a production override until upstream handles non-string copied file contents in cache hashing.
 
 ## Config Priorities
 

@@ -76,6 +76,37 @@ function config_locales_from_text(string $path): array
     return array_values(array_unique($locales));
 }
 
+function package_version_from_lock(string $path, string $packageName): ?string
+{
+    $lock = read_json_file($path);
+    if (! $lock) {
+        return null;
+    }
+    foreach (array_merge($lock['packages'] ?? [], $lock['packages-dev'] ?? []) as $package) {
+        if (($package['name'] ?? null) === $packageName) {
+            return is_string($package['version'] ?? null) ? $package['version'] : null;
+        }
+    }
+    return null;
+}
+
+function git_tracked_count(string $root, string $path): ?int
+{
+    if (! is_dir($root . '/.git') && ! is_dir(dirname($root) . '/.git')) {
+        return null;
+    }
+    $relative = trim(str_replace($root, '', $path), DIRECTORY_SEPARATOR);
+    if ($relative === '') {
+        return null;
+    }
+    $command = 'git -C ' . escapeshellarg($root) . ' ls-files -- ' . escapeshellarg($relative);
+    exec($command, $output, $code);
+    if ($code !== 0) {
+        return null;
+    }
+    return count(array_filter($output, static fn ($line) => trim((string) $line) !== ''));
+}
+
 $env = parse_env_file($root . '/.env');
 $docsDir = trim($env['DOCS_DIR'] ?? getenv('DOCS_DIR') ?: 'docs', "/\\");
 if ($docsDir === '') {
@@ -98,6 +129,8 @@ $buildProduction = $root . '/build_production';
 $docsPath = $root . '/source/' . $docsDir;
 $localeDirs = find_locale_dirs($docsPath);
 $configLocales = config_locales_from_text($root . '/config.php');
+$docaraLockedVersion = package_version_from_lock($root . '/composer.lock', 'simai/docara');
+$trackedCoreCount = git_tracked_count($root, $root . '/source/_core');
 
 $checks = [];
 $add = static function (string $name, string $status, string $detail = '') use (&$checks): void {
@@ -112,11 +145,19 @@ $add(
     isset($requires['simai/docara']) || $isDocaraPackageSource ? 'ok' : 'missing',
     $isDocaraPackageSource ? 'package source repository' : ($requires['simai/docara'] ?? 'not required')
 );
+$add('simai/docara locked', $docaraLockedVersion ? 'ok' : 'warn', $docaraLockedVersion ?? 'composer.lock not found or package not locked');
 $add('vendor/bin/docara', is_file($root . '/vendor/bin/docara') || is_file($root . '/docara') ? 'ok' : 'missing', 'CLI entrypoint');
 $add('.env', is_file($root . '/.env') ? 'ok' : 'missing', 'DOCS_DIR=' . $docsDir);
 $add('config.php', is_file($root . '/config.php') ? 'ok' : 'missing', 'main Docara config');
 $add('translate.config.php', is_file($root . '/translate.config.php') ? 'ok' : 'missing', 'translation config');
 $add('source/_core', is_dir($root . '/source/_core') ? 'ok' : 'missing', 'Docara core files');
+$add(
+    'source/_core update',
+    $trackedCoreCount ? 'warn' : 'ok',
+    $trackedCoreCount
+        ? "{$trackedCoreCount} tracked files; Docara init --update preserves them, compare vendor stubs and merge UI fixes manually"
+        : 'not tracked or no git-tracked files detected'
+);
 $add('docs source', is_dir($docsPath) ? 'ok' : 'missing', 'source/' . $docsDir);
 $add('locale folders', $localeDirs ? 'ok' : 'missing', implode(', ', $localeDirs) ?: 'none');
 $add('config locales', $configLocales ? 'ok' : 'warn', implode(', ', $configLocales) ?: 'not detected by text scan');
@@ -141,6 +182,8 @@ $result = [
     'docs_path' => 'source/' . $docsDir,
     'locales_from_dirs' => $localeDirs,
     'locales_from_config' => $configLocales,
+    'docara_locked_version' => $docaraLockedVersion,
+    'tracked_core_files' => $trackedCoreCount,
     'checks' => $checks,
 ];
 
