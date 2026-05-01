@@ -9,6 +9,7 @@
 - Documented `githubEditBasePath` handling for contained Docara subprojects so "Edit article" links point to the real nested source path.
 - Clarified that header branding should use the product/project name directly and avoid generic `Docs` or `Documentation` suffixes.
 - Added missing `previous` and `next` UI language keys to starter/import defaults for bottom navigation cards.
+- Added `docara-theme-vars.php` and theme workflow guidance for generating committed SIMAI UI color variable overrides from one seed color.
 
 ## 0.3.0 - 2026-04-30
 

@@ -124,6 +124,18 @@ Important `config.php` keys:
 
 Use environment-specific `config.production.php` for publication-only changes such as `baseUrl`, `production`, or `build.destination`.
 
+## Theme Overrides
+
+For a branded color theme, use `references/theme-workflow.md` and generate a committed SCSS override from one seed color:
+
+```bash
+php <skill>/scripts/docara-theme-vars.php --root=. --seed=#E81123 --install
+```
+
+This creates `source/_core/_assets/css/_theme.generated.scss` and imports it from `source/_core/_assets/css/main.scss`. The compiled `main.css` is loaded after SIMAI UI `core.css`, so the generated `--sf-*` variables override the CDN defaults during production builds.
+
+Treat the floating `data-theme-builder` palette as a design/demo aid, not as production configuration. If the public documentation should not expose it, remove the `sf-theme-builder` line from `source/_core/_layouts/main.blade.php`.
+
 ## Doctor Checklist
 
 Run:
