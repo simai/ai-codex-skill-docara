@@ -90,6 +90,30 @@ function package_version_from_lock(string $path, string $packageName): ?string
     return null;
 }
 
+function package_dependency_delta(?array $rootPackage, ?array $corePackage): array
+{
+    if (! $rootPackage || ! $corePackage) {
+        return [];
+    }
+
+    $delta = [];
+    foreach (['dependencies', 'devDependencies'] as $section) {
+        $rootDeps = is_array($rootPackage[$section] ?? null) ? $rootPackage[$section] : [];
+        $coreDeps = is_array($corePackage[$section] ?? null) ? $corePackage[$section] : [];
+        $names = array_unique(array_merge(array_keys($rootDeps), array_keys($coreDeps)));
+        sort($names);
+        foreach ($names as $name) {
+            $rootVersion = $rootDeps[$name] ?? null;
+            $coreVersion = $coreDeps[$name] ?? null;
+            if ($rootVersion !== $coreVersion) {
+                $delta[] = "{$section}.{$name}: root=" . ($rootVersion ?? 'missing') . ', core=' . ($coreVersion ?? 'missing');
+            }
+        }
+    }
+
+    return $delta;
+}
+
 function git_tracked_count(string $root, string $path): ?int
 {
     if (! is_dir($root . '/.git') && ! is_dir(dirname($root) . '/.git')) {
@@ -115,14 +139,17 @@ if ($docsDir === '') {
 
 $composer = read_json_file($root . '/composer.json');
 $package = read_json_file($root . '/package.json');
+$corePackage = read_json_file($root . '/source/_core/package.json');
 $workflowRoots = [$root . '/.github/workflows'];
 if (basename($root) === 'docara') {
     $workflowRoots[] = dirname($root) . '/.github/workflows';
 }
 $workflows = [];
+$workflowText = '';
 foreach ($workflowRoots as $workflowRoot) {
     foreach (glob($workflowRoot . '/*.{yml,yaml}', GLOB_BRACE) ?: [] as $workflow) {
         $workflows[] = $workflow;
+        $workflowText .= "\n" . (string) file_get_contents($workflow);
     }
 }
 $buildProduction = $root . '/build_production';
@@ -163,6 +190,19 @@ $add('locale folders', $localeDirs ? 'ok' : 'missing', implode(', ', $localeDirs
 $add('config locales', $configLocales ? 'ok' : 'warn', implode(', ', $configLocales) ?: 'not detected by text scan');
 $add('locale alignment', array_diff($localeDirs, $configLocales) ? 'warn' : 'ok', array_diff($localeDirs, $configLocales) ? 'folders not in config: ' . implode(', ', array_diff($localeDirs, $configLocales)) : 'folders match detected config locales');
 $add('package.json', $package ? 'ok' : 'missing', $package ? 'found' : 'not found');
+$dependencyDelta = package_dependency_delta($package, $corePackage);
+$lockSensitiveWorkflow = is_file($root . '/package-lock.json')
+    && str_contains($workflowText, 'docara init --update')
+    && preg_match('/\bnpm\s+ci\b/', $workflowText);
+$add(
+    'frontend package sync',
+    ($lockSensitiveWorkflow && $dependencyDelta) ? 'warn' : 'ok',
+    ! $corePackage
+        ? 'source/_core/package.json not found'
+        : (($lockSensitiveWorkflow && $dependencyDelta)
+            ? 'npm ci after init can fail; sync package.json with source/_core/package.json: ' . implode('; ', array_slice($dependencyDelta, 0, 5))
+            : 'package templates compatible with detected workflow')
+);
 $scripts = $package['scripts'] ?? [];
 $add('frontend build script', isset($scripts['prod']) || isset($scripts['build']) ? 'ok' : 'warn', implode(', ', array_keys($scripts)));
 $add('build_production', is_dir($buildProduction) ? 'ok' : 'missing', is_dir($buildProduction) ? 'generated output exists' : 'run build production');

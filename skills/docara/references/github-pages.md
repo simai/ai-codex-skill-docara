@@ -57,6 +57,16 @@ The workflow should:
 
 If the repository was bootstrapped with npm and `webpack` was pinned locally after a real build test, commit `package-lock.json` so CI uses the same dependency graph.
 
+If the workflow uses `npm ci`, check the package files after `docara init --update`:
+
+```bash
+php <skill>/scripts/docara-doctor.php --root=docara
+```
+
+The `frontend package sync` check must be `OK`. If it warns, mirror the dependency pin in both `docara/package.json` and `docara/source/_core/package.json`, then regenerate `docara/package-lock.json`. Otherwise `docara init --update` can leave CI with a `package.json`/`package-lock.json` mismatch and the deploy stops at `Install frontend dependencies`.
+
+For first-time GitHub Pages setup, `npm install` is more tolerant than `npm ci` because Docara initialization can refresh frontend support files. Use `npm ci` only after the project package template and lockfile are known to be synchronized.
+
 ## Project Pages Path Prefix
 
 Docara can generate root-relative paths such as `/assets/build/...`, `/en`, and `/ru`. These are fine on a dedicated domain or an organization/user Pages repository, but they break project Pages where the site lives under `/<repo>/`.

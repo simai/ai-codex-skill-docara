@@ -45,6 +45,7 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
 - Prefer `DOCS_DIR=docs`; do not confuse root `/docs` publication output with Docara source `source/docs`.
 - Do not overwrite existing `source/docs` content during `docara init`; use `--update` and inspect diffs.
 - Treat `source/_core` as generated/customizable project files. Avoid broad edits unless the task is core layout customization.
+- If frontend dependencies are pinned after testing, mirror the pin in `source/_core/package.json` as well as root `package.json` before using `npm ci` in CI. `docara init --update` can refresh root frontend files from `source/_core`, and a package/lock mismatch will stop GitHub Pages before the build.
 - For GitHub Pages, prefer Actions artifact deployment from `build_production`; use root `/docs` only when the user explicitly wants committed build output.
 
 ## Authoring Rules

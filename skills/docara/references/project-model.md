@@ -103,6 +103,13 @@ If npm installs a newer incompatible `webpack` and Mix fails with `Progress Plug
 npm install --save-dev webpack@5.99.8
 ```
 
+When a project commits `package-lock.json` and a CI workflow runs `php vendor/bin/docara init --update` before `npm ci`, keep dependency pins synchronized in both files:
+
+- `package.json`
+- `source/_core/package.json`
+
+`docara init --update` may refresh root frontend support files from `source/_core`. If only root `package.json` is patched, CI can receive a regenerated package file that no longer matches `package-lock.json`, and `npm ci` fails before the site builds. Run `docara-doctor.php` after pinning frontend dependencies; its `frontend package sync` check reports this mismatch.
+
 When Composer downloads Docara from GitHub ZIP archives on macOS, `unzip` can warn on Unicode filenames such as `markdown‑aware-translation.md` and then fall back to PHP ZipArchive. Treat this as non-fatal only if Composer finishes successfully and `composer show simai/docara --locked` reports the expected version.
 
 Docara `v1.3.39` can emit PHP deprecation warnings `md5(): Passing null` while writing copied asset files when build cache is enabled. For CI and GitHub Pages builds, prefer `'cache' => false` in project `config.php` or a production override until upstream handles non-string copied file contents in cache hashing.
