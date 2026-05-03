@@ -31,6 +31,7 @@ For a new or existing repository:
 ```bash
 composer require simai/docara
 php vendor/bin/docara init --update
+php <skill>/scripts/docara-apply-branding.php --title='Project Name' --write
 yarn prod || npm run prod
 php vendor/bin/docara build production
 ```
@@ -42,6 +43,14 @@ DOCARA_SKIP_FRONTEND_INSTALL=true php vendor/bin/docara init --update
 ```
 
 Do not run destructive archive/delete init modes unless the user explicitly asks. `init --update` preserves existing `config.php` and `source/<DOCS_DIR>` and refreshes generated support files.
+
+For a contained Docara project, pass the subproject root:
+
+```bash
+php <skill>/scripts/docara-apply-branding.php --root=docara --title='Project Name' --write
+```
+
+This step is mandatory before publishing a generated Docara site. It replaces the sample `simai ui` header logo with project branding and removes the floating `data-theme-builder` palette by default. Keep `--keep-theme-builder` only for private design/debug stands.
 
 In Docara `v1.3.39+`, `init --update` also protects git-tracked `source/_core` files. This is safer for project customizations, but it means upstream UI fixes may be reported as `gitSkipped` and will not appear in the project automatically. After updating `simai/docara`, compare `vendor/simai/docara/stubs/site/source/_core` with the project `source/_core` and manually merge relevant fixes such as settings controls, search markup, top-menu classes, table wrapping, and frontend event timing.
 
@@ -143,6 +152,14 @@ This creates `source/_core/_assets/css/_theme.generated.scss` and imports it fro
 
 Treat the floating `data-theme-builder` palette as a design/demo aid, not as production configuration. If the public documentation should not expose it, remove the `sf-theme-builder` line from `source/_core/_layouts/main.blade.php`.
 
+The preferred cleanup is:
+
+```bash
+php <skill>/scripts/docara-apply-branding.php --root=. --title='Project Name' --write
+```
+
+`docara-doctor.php` warns when the project still has no `brand` config, still contains a sample SIMAI UI logo, or still exposes the theme-builder demo.
+
 ## Doctor Checklist
 
 Run:
@@ -156,7 +173,8 @@ Then fix in this order:
 1. Composer and PHP package.
 2. `.env` and `DOCS_DIR`.
 3. `config.php` and locales.
-4. `source/<DOCS_DIR>/<locale>` tree.
-5. Frontend package manager and assets.
-6. Build output.
-7. Publication workflow.
+4. Header branding and production-only layout controls.
+5. `source/<DOCS_DIR>/<locale>` tree.
+6. Frontend package manager and assets.
+7. Build output.
+8. Publication workflow.

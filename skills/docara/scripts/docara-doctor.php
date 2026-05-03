@@ -76,6 +76,28 @@ function config_locales_from_text(string $path): array
     return array_values(array_unique($locales));
 }
 
+function config_has_brand(string $path): bool
+{
+    if (! is_file($path)) {
+        return false;
+    }
+    return (bool) preg_match("/['\"]brand['\"]\\s*=>\\s*\\[/", (string) file_get_contents($path));
+}
+
+function file_contains_any(string $path, array $needles): bool
+{
+    if (! is_file($path)) {
+        return false;
+    }
+    $text = (string) file_get_contents($path);
+    foreach ($needles as $needle) {
+        if ($needle !== '' && str_contains($text, $needle)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function package_version_from_lock(string $path, string $packageName): ?string
 {
     $lock = read_json_file($path);
@@ -158,6 +180,16 @@ $localeDirs = find_locale_dirs($docsPath);
 $configLocales = config_locales_from_text($root . '/config.php');
 $docaraLockedVersion = package_version_from_lock($root . '/composer.lock', 'simai/docara');
 $trackedCoreCount = git_tracked_count($root, $root . '/source/_core');
+$configHasBrand = config_has_brand($root . '/config.php');
+$sampleLogoDetected = file_contains_any($root . '/source/_core/_components/header/logo.blade.php', [
+    'simai ui',
+    'icon_and_text_logo',
+    'width="125"',
+]);
+$themeBuilderDetected = file_contains_any($root . '/source/_core/_layouts/main.blade.php', [
+    'data-theme-builder',
+    'sf-theme-builder',
+]);
 
 $checks = [];
 $add = static function (string $name, string $status, string $detail = '') use (&$checks): void {
@@ -176,8 +208,23 @@ $add('simai/docara locked', $docaraLockedVersion ? 'ok' : 'warn', $docaraLockedV
 $add('vendor/bin/docara', is_file($root . '/vendor/bin/docara') || is_file($root . '/docara') ? 'ok' : 'missing', 'CLI entrypoint');
 $add('.env', is_file($root . '/.env') ? 'ok' : 'missing', 'DOCS_DIR=' . $docsDir);
 $add('config.php', is_file($root . '/config.php') ? 'ok' : 'missing', 'main Docara config');
+$add(
+    'brand config',
+    ! is_file($root . '/config.php') ? 'missing' : ($configHasBrand ? 'ok' : 'warn'),
+    $configHasBrand ? 'brand key detected' : "run docara-apply-branding.php --title='<Project>' --write"
+);
 $add('translate.config.php', is_file($root . '/translate.config.php') ? 'ok' : 'missing', 'translation config');
 $add('source/_core', is_dir($root . '/source/_core') ? 'ok' : 'missing', 'Docara core files');
+$add(
+    'header logo',
+    $sampleLogoDetected ? 'warn' : 'ok',
+    $sampleLogoDetected ? 'sample SIMAI UI logo detected; apply project branding before publication' : 'no sample logo detected'
+);
+$add(
+    'theme builder demo',
+    $themeBuilderDetected ? 'warn' : 'ok',
+    $themeBuilderDetected ? 'public theme-builder palette detected; remove for production docs' : 'not present'
+);
 $add(
     'source/_core update',
     $trackedCoreCount ? 'warn' : 'ok',
@@ -224,6 +271,9 @@ $result = [
     'locales_from_config' => $configLocales,
     'docara_locked_version' => $docaraLockedVersion,
     'tracked_core_files' => $trackedCoreCount,
+    'brand_config' => $configHasBrand,
+    'sample_logo_detected' => $sampleLogoDetected,
+    'theme_builder_detected' => $themeBuilderDetected,
     'checks' => $checks,
 ];
 

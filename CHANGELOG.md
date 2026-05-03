@@ -2,6 +2,9 @@
 
 ## 0.3.1 - 2026-05-01
 
+- Added `docara-apply-branding.php` to install project header branding and remove the public theme-builder demo by default.
+- Extended `docara-doctor.php` to warn about missing `brand` config, sample `simai ui` logos, and exposed `sf-theme-builder` controls before publication.
+- Made branding cleanup an explicit required setup step after `docara init --update` or Markdown import.
 - Documented Docara `v1.3.39` update behavior: git-tracked `_core` files are preserved by `init --update`, so upstream UI fixes must be manually merged into customized projects.
 - Extended `docara-doctor.php` to report the locked Docara version and warn when `source/_core` is git-tracked.
 - Added a Composer ZIP extraction note for Unicode filenames on macOS.

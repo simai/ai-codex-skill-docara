@@ -40,13 +40,19 @@ By default, semantic status colors (`success`, `warning`, `error`) stay on SIMAI
 
 Keep the generated theme file committed with the Docara source. Do not depend on browser-local theme-builder state, copied CSS from DevTools, or an untracked `.docara-state` file.
 
-If the floating palette icon is not needed for readers, remove this line from `source/_core/_layouts/main.blade.php`:
+For public documentation, remove the floating palette icon. The standard branding script removes it by default:
+
+```bash
+php <skill>/scripts/docara-apply-branding.php --root=. --title='Project Name' --write
+```
+
+If cleaning manually, remove this line from `source/_core/_layouts/main.blade.php`:
 
 ```blade
 <div data-theme-builder="drawer" right="c8" bottom="e1" class="sf-theme-builder"></div>
 ```
 
-This line is useful while designing a theme, but public documentation should normally expose only reader controls such as theme mode, wide layout, language, search, and actions.
+This line is useful while designing a theme, but public documentation should expose only reader controls such as theme mode, wide layout, language, search, and actions. Use `--keep-theme-builder` only for private design/debug stands.
 
 ## Verification
 

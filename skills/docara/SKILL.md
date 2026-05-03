@@ -33,6 +33,7 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
    ```bash
    composer validate --no-check-publish
    php vendor/bin/docara init --update
+   php <skill>/scripts/docara-apply-branding.php --root=. --title='Project Name' --write
    yarn prod || npm run prod
    php vendor/bin/docara build production
    ```
@@ -47,6 +48,10 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
 - Treat `source/_core` as generated/customizable project files. Avoid broad edits unless the task is core layout customization.
 - If frontend dependencies are pinned after testing, mirror the pin in `source/_core/package.json` as well as root `package.json` before using `npm ci` in CI. `docara init --update` can refresh root frontend files from `source/_core`, and a package/lock mismatch will stop GitHub Pages before the build.
 - For GitHub Pages, prefer Actions artifact deployment from `build_production`; use root `/docs` only when the user explicitly wants committed build output.
+- After `docara init --update` or Markdown import, apply project branding before publication. Do not leave the sample `simai ui` logo, do not append generic `Docs` unless it is part of the product name, and remove the floating theme-builder palette for public documentation:
+  ```bash
+  php <skill>/scripts/docara-apply-branding.php --root=. --title='Project Name' --write
+  ```
 
 ## Authoring Rules
 
@@ -84,6 +89,7 @@ Translate only TODO files unless the user requests a full refresh. If a target f
 ## Bundled Scripts
 
 - `scripts/docara-doctor.php` checks Docara installation, docs tree, locales, build output, and GitHub Pages workflow hints.
+- `scripts/docara-apply-branding.php` installs project header branding and removes the public SIMAI UI theme-builder demo by default.
 - `scripts/import-markdown-docs.php` imports existing Markdown documentation into `source/docs/<locale>` with Docara front matter and `.settings.php` menus.
 - `scripts/docara-translate-state.php` scans source/target docs, prints TODO files, detects target drift and orphans, and syncs translation state.
 - `scripts/docara-theme-vars.php` generates SIMAI UI color variable overrides from one seed color and can install the generated SCSS into Docara's frontend build.
