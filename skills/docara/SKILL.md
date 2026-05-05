@@ -60,6 +60,13 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
 - Keep slugs, paths, anchors, front matter keys, PHP array keys, fenced code, inline code, and URLs stable unless the user asks for structural changes.
 - Documentation must be publishable, not just readable in chat: update menus, language packs, links, and build config together.
 
+## SEO Contract Rules
+
+- For public documentation sites, product docs, generated static output, `baseUrl`, canonical/static paths, sitemap, menu/breadcrumb structure, or SEO Contract implementation, treat `$seo` as the contract owner.
+- Implement SEO Contract fields through Docara-native documentation structure: front matter, `.settings.php`, menus, `baseUrl`, build config, static paths, section IA, titles, descriptions, breadcrumbs, and generated output.
+- Do not silently change SEO Contract decisions. If a contract conflicts with Docara build paths, GitHub Pages project paths, translation state, or versioned docs policy, report a blocker to `$seo` with the smallest safe contract adjustment.
+- Return the changed docs paths, config keys, generated output path, and target URLs for `$seo` review and `$tester` search-visibility acceptance.
+
 ## Theme Rules
 
 Use script-generated CSS variable overrides for branded Docara themes. Do not rely on the floating SIMAI UI theme-builder icon as production configuration.

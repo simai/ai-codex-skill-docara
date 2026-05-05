@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 - 2026-05-05
+
+- Added SEO Contract rules so `$docara` treats `$seo` as the owner of public documentation SEO decisions while Docara implements them through front matter, `.settings.php`, menus, `baseUrl`, build config, static paths, section IA, titles, descriptions, breadcrumbs, and generated output.
+
 ## 0.3.1 - 2026-05-01
 
 - Added `docara-apply-branding.php` to install project header branding and remove the public theme-builder demo by default.
