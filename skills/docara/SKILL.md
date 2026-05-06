@@ -9,6 +9,8 @@ metadata:
 
 Use this skill to turn repository documentation into a ready-to-build Docara site, keep the site maintainable, and publish it as static documentation. It owns the Docara project and publication mechanics, not the whole technical-writing process.
 
+Before working, load and obey [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md) when the task crosses documentation content, SEO, UX, testing, runtime, or platform ownership.
+
 Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project model is:
 
 - Source: `source/<DOCS_DIR>/<locale>`, usually `source/docs/en`.
