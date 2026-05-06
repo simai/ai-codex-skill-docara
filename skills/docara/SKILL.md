@@ -1,13 +1,13 @@
 ---
 name: docara
-description: Build, configure, publish, and maintain documentation sites with SIMAI Docara. Use when the user invokes $docara or asks to create project documentation, prepare Docara content, initialize or update Docara, configure layout/locales/menus, publish a static documentation site through GitHub Pages, or translate and synchronize multilingual Docara docs.
+description: Build, configure, publish, and maintain documentation sites with SIMAI Docara. Use when the user invokes $docara or asks to initialize/update Docara, prepare Docara source structure, configure layout/locales/menus/front matter, publish a static documentation site through GitHub Pages, or translate and synchronize multilingual Docara docs. For documentation methodology, structure, writing, screenshots, and content audit, coordinate with $docs.
 metadata:
   short-description: "Docara documentation sites"
 ---
 
 # Docara
 
-Use this skill to turn repository documentation into a ready-to-build Docara site, keep the site maintainable, and publish it as static documentation.
+Use this skill to turn repository documentation into a ready-to-build Docara site, keep the site maintainable, and publish it as static documentation. It owns the Docara project and publication mechanics, not the whole technical-writing process.
 
 Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project model is:
 
@@ -55,6 +55,7 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
 
 ## Authoring Rules
 
+- If the documentation map, reader journeys, genre split, screenshots, or source content are missing or weak, use `$docs` first or in parallel. `$docara` should not hide a weak documentation method behind a working static-site build.
 - Every navigable section should have a `.settings.php` with `title`, `order`, `showInMenu`, and `menu` where needed.
 - Markdown pages should include front matter with `extends: _core._layouts.documentation`, `section: content`, `title`, and `description`.
 - Keep slugs, paths, anchors, front matter keys, PHP array keys, fenced code, inline code, and URLs stable unless the user asks for structural changes.

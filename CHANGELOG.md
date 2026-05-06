@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Clarified `$docara` ownership boundary: Docara owns project setup, front
+  matter, menus, build, publication, and translation state; `$docs` owns
+  documentation method, content structure, screenshots, and content audit.
+
 ## 0.3.2 - 2026-05-05
 
 - Added SEO Contract rules so `$docara` treats `$seo` as the owner of public documentation SEO decisions while Docara implements them through front matter, `.settings.php`, menus, `baseUrl`, build config, static paths, section IA, titles, descriptions, breadcrumbs, and generated output.
