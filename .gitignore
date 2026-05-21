@@ -1,4 +1,6 @@
 .env
+.env.*
+!.env.example
 source/
 output/
 .DS_Store
