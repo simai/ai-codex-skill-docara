@@ -1,0 +1,73 @@
+{
+  "id": "profile.ai_skill_tz",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "ai_skill",
+  "title": "AI Skill TZ Profile",
+  "summary": "Domain profile for graph-based specifications of AI skills, agents, specialists, knowledge packs, routing rules and operational safeguards.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "contract",
+    "constraint",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "decision",
+    "adoption",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "routing",
+    "ownership",
+    "knowledge_boundary",
+    "safe_action_boundary",
+    "handoff",
+    "quality_gate",
+    "measurement"
+  ],
+  "required_acceptance": [
+    "routing_smoke",
+    "context_reduction_measurement",
+    "semantic_review",
+    "safety_guard_review",
+    "skill_handoff_review"
+  ],
+  "readiness_target": "T5_implementation_ready",
+  "evidence_policy": "AI skill readiness requires measured context behavior and semantic/domain review before graph-first runtime enablement.",
+  "generated_outputs": [
+    "skill_tz",
+    "routing_map",
+    "knowledge_map",
+    "context_pack_examples",
+    "benchmark_report"
+  ],
+  "migration_policy": "Existing skill instructions, specialists, rules, references and examples must be mapped into system/component/feature/contract/evidence objects without duplicating domain meaning."
+}

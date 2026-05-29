@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/model-change-proposal.schema.json",
+  "title": "ModelChangeProposal",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "status",
+    "title",
+    "feedback_type",
+    "problem_summary",
+    "expected_changes",
+    "affected_layers",
+    "affected_profiles",
+    "compatibility",
+    "migration_required",
+    "canonical_impact",
+    "required_release_gate",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "updated_at": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "approved",
+        "changes_requested",
+        "deferred",
+        "rejected"
+      ]
+    },
+    "title": { "type": "string" },
+    "source_feedback_ref": { "type": "string" },
+    "feedback_type": { "type": "string" },
+    "problem_summary": { "type": "string" },
+    "problem_details": { "type": "string" },
+    "expected_changes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "affected_layers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "affected_profiles": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "affected_installed_graphs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "compatibility": { "type": "string" },
+    "migration_required": { "type": "boolean" },
+    "canonical_impact": { "type": "string" },
+    "required_release_gate": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reviews": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

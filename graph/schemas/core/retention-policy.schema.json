@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/retention-policy.schema.json",
+  "title": "RetentionPolicy",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "retention_classes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retention_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "applies_to",
+          "retention"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "applies_to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "retention": {
+            "type": "string",
+            "minLength": 1
+          },
+          "storage": {
+            "type": "string"
+          },
+          "cleanup_policy": {
+            "type": "string"
+          },
+          "requires_approval_to_delete": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/evolutionary-profile.schema.json",
+  "title": "Evolutionary Graph Profile",
+  "description": "Domain or project profile for applying the Evolutionary Object Graph methodology without changing universal core.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "profile_type",
+    "title",
+    "purpose",
+    "scope",
+    "depth_mode_default",
+    "role_to_kind_mapping",
+    "generated_outputs",
+    "quality_gates",
+    "safety_policy",
+    "migration_policy",
+    "owner_skill"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_type": {
+      "type": "string",
+      "enum": [
+        "domain",
+        "project"
+      ]
+    },
+    "parent_profile": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "non_goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "depth_mode_default": {
+      "type": "string",
+      "enum": [
+        "light",
+        "standard",
+        "full"
+      ]
+    },
+    "allowed_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "role_to_kind_mapping": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "kind"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "subtype": {
+            "type": "string"
+          },
+          "type_descriptor_ref": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "required_relations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readiness_model": {
+      "type": "string"
+    },
+    "evidence_model": {
+      "type": "string"
+    },
+    "generated_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operation_subset": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_policy": {
+      "type": "string"
+    },
+    "retention_policy": {
+      "type": "string"
+    },
+    "federation_policy": {
+      "type": "string"
+    },
+    "migration_policy": {
+      "type": "string"
+    },
+    "owner_skill": {
+      "type": "string"
+    },
+    "companion_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promotion_status": {
+      "type": "string",
+      "enum": [
+        "source_draft",
+        "template_candidate",
+        "canonical_template",
+        "deprecated"
+      ]
+    },
+    "measurement_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

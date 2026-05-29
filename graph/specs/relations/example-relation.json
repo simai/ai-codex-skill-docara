@@ -1,0 +1,15 @@
+{
+  "id": "rel.example.capability.demo.depends-on.policy",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "example.capability.demo",
+  "to": "example.policy.demo",
+  "relation_type": "depends_on",
+  "status": "suggested",
+  "confidence": 0.35,
+  "evidence_status": "asserted_by_human",
+  "impact": "medium",
+  "owner": "graph",
+  "source_refs": [],
+  "evidence_refs": []
+}

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/graph-seed.schema.json",
+  "title": "Graph Seed",
+  "description": "Minimum controlled growth contract for self-deploying an Evolutionary Object Graph from a small seed.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "seed_id",
+    "target_graph_id",
+    "purpose",
+    "target_profile",
+    "target_mode",
+    "graph_dna",
+    "source_boundaries",
+    "growth_rules",
+    "review_gates",
+    "generated_views",
+    "stop_conditions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_mode": {
+      "type": "string",
+      "enum": [
+        "discovery",
+        "canonical",
+        "pilot",
+        "controlled_runtime",
+        "production_runtime"
+      ]
+    },
+    "graph_dna": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "evolution_vector",
+        "non_negotiable_principles"
+      ],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evolution_vector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "non_negotiable_principles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "source_boundaries": {
+      "type": "object",
+      "required": [
+        "allowed_sources",
+        "excluded_sources",
+        "canonical_write_allowed"
+      ],
+      "properties": {
+        "allowed_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excluded_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "canonical_write_allowed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "growth_rules": {
+      "type": "object",
+      "required": [
+        "allowed_object_families",
+        "allowed_relation_families",
+        "max_initial_objects",
+        "depth_mode"
+      ],
+      "properties": {
+        "allowed_object_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_relation_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_initial_objects": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "depth_mode": {
+          "type": "string",
+          "enum": [
+            "light",
+            "standard",
+            "full"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "review_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_views": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

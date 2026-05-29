@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "type_descriptors": [
+    {
+      "id": "descriptor.capability.feature",
+      "kind": "capability",
+      "subtype": "feature",
+      "title": "Capability Feature",
+      "description": "Trackable capability, function or behavior.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "title",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ],
+      "allowed_lifecycle": [
+        "draft",
+        "specified",
+        "implemented",
+        "validated",
+        "accepted",
+        "deprecated"
+      ],
+      "allowed_readiness": [
+        "R1_draft",
+        "R2_mapped",
+        "R3_specified",
+        "R4_validated",
+        "R5_operational"
+      ]
+    },
+    {
+      "id": "descriptor.policy.guard",
+      "kind": "policy",
+      "policy_type": "guard",
+      "title": "Policy",
+      "description": "Rule that controls behavior, access, execution or publication.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "policy_type",
+        "title",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ],
+      "allowed_lifecycle": [
+        "draft",
+        "active",
+        "superseded",
+        "deprecated"
+      ],
+      "allowed_readiness": [
+        "R1_draft",
+        "R2_mapped",
+        "R3_specified",
+        "R4_validated",
+        "R5_operational"
+      ]
+    }
+  ]
+}

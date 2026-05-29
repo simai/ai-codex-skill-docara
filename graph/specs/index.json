@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "title": "Example Graph",
+  "description": "Template graph index.",
+  "type_descriptor_files": [
+    "type-descriptors/core.json"
+  ],
+  "object_files": [
+    "objects/example-capability.json",
+    "objects/example-policy.json"
+  ],
+  "relation_files": [
+    "relations/example-relation.json"
+  ],
+  "evolution_track_files": [
+    "evolution-tracks/example-track.json"
+  ],
+  "question_files": [
+    "questions/discovery-questions.json"
+  ]
+}

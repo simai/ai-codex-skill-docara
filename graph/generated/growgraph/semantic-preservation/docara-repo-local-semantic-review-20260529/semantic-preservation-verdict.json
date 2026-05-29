@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "id": "semantic-preservation-verdict.docara-repo-local-semantic-review-20260529",
+  "operation_id": "growgraph.semantic-preservation",
+  "created_at": "2026-05-29T19:59:12.547060+00:00",
+  "target_ref": "skill:docara",
+  "target_type": "skill",
+  "owner_skill": "docara",
+  "reviewer": {
+    "reviewer_id": "docara",
+    "reviewer_type": "domain_skill",
+    "reviewer_scope": "GrowGraph semantic preservation gate"
+  },
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json"
+  ],
+  "growgraph_artifact_refs": {
+    "seed_ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+    "embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+    "control_dashboard_ref": "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+    "readiness_ref": "missing:readiness",
+    "quality_ref": "missing:quality",
+    "proposal_queue_ref": "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.json",
+    "projection_view_refs": [
+      "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/projection-view.json"
+    ]
+  },
+  "checks": {
+    "owner_boundary_preserved": "pass",
+    "core_triggers_preserved": "pass",
+    "must_rules_preserved": "pass",
+    "never_rules_preserved": "pass",
+    "companion_contracts_preserved": "pass",
+    "handoff_expectations_preserved": "pass",
+    "acceptance_gates_preserved": "pass",
+    "domain_exceptions_preserved": "pass",
+    "generated_context_preserves_constraints": "pass",
+    "projection_views_are_understandable": "pass"
+  },
+  "findings": [
+    {
+      "severity": "minor",
+      "check": "review_note",
+      "summary": "Repo-local GrowGraph companion layer preserves delivery/support ownership; generated artifacts do not replace skill source.",
+      "evidence_refs": [
+        "skills/docara/SKILL.md",
+        "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json"
+      ],
+      "required_action": "preserve note during proposal review and canonical modeling"
+    }
+  ],
+  "verdict": "pass_with_notes",
+  "semantic_preservation_allowed": true,
+  "federation_migration_allowed": false,
+  "notes": "Repo-local GrowGraph companion layer preserves delivery/support ownership; generated artifacts do not replace skill source.",
+  "next_actions": [
+    "run GrowGraph effectiveness gate",
+    "run growgraph-adoption-report"
+  ],
+  "canonical_write_allowed": false
+}

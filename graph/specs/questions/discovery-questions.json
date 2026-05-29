@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "question_sets": [
+    {
+      "id": "questions.graph-dna",
+      "title": "Graph DNA Discovery",
+      "questions": [
+        "Why does this graph exist?",
+        "What larger system does it serve?",
+        "What should never be broken while this graph evolves?",
+        "Which kinds of entities belong here?",
+        "Which kinds of entities should be separate graphs?"
+      ]
+    },
+    {
+      "id": "questions.entity-discovery",
+      "title": "Entity Discovery",
+      "questions": [
+        "What are the largest entities in this domain?",
+        "Which sub-entities have their own lifecycle?",
+        "What inputs does each entity receive?",
+        "What outputs does each entity produce?",
+        "How does each entity contribute to the parent DNA?"
+      ]
+    }
+  ]
+}

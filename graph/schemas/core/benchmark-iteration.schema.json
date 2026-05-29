@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-iteration.schema.json",
+  "title": "BenchmarkIteration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "iteration_id",
+    "experiment_id",
+    "implementation_id",
+    "mode",
+    "hypothesis",
+    "what_changed",
+    "expected_improvement",
+    "expected_risks"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "iteration_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "current",
+        "graph"
+      ]
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "what_changed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_improvement": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean"
+        ]
+      }
+    },
+    "expected_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "implementation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_run_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_comparison_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "running",
+        "measured",
+        "validated",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "seed_id": "seed.example",
+  "target_graph_id": "example.graph",
+  "purpose": "Start a controlled graph from a small reviewable seed instead of designing the full graph manually.",
+  "target_profile": "profile.skill_graph",
+  "target_mode": "discovery",
+  "graph_dna": {
+    "purpose": "Keep project knowledge coherent, machine-readable and evidence-backed.",
+    "evolution_vector": "Grow from a small candidate graph into a validated graph with useful context and impact views.",
+    "non_negotiable_principles": [
+      "Generated candidates are not canonical truth.",
+      "Every accepted object must serve the seed purpose.",
+      "Canonical write requires review."
+    ]
+  },
+  "source_boundaries": {
+    "allowed_sources": [
+      "README.md",
+      "docs/",
+      "source/"
+    ],
+    "excluded_sources": [
+      ".env",
+      "secrets",
+      "raw credentials"
+    ],
+    "canonical_write_allowed": false
+  },
+  "growth_rules": {
+    "allowed_object_families": [
+      "knowledge",
+      "capability",
+      "requirement",
+      "policy",
+      "evidence"
+    ],
+    "allowed_relation_families": [
+      "depends_on",
+      "governed_by",
+      "evidenced_by",
+      "implements",
+      "impacts"
+    ],
+    "max_initial_objects": 20,
+    "depth_mode": "light"
+  },
+  "review_gates": [
+    "human_review_before_canonical_write",
+    "validate_before_generated_context",
+    "readiness_score_before_runtime_use"
+  ],
+  "generated_views": [
+    "seed_preview",
+    "candidate_object_list",
+    "candidate_relation_list",
+    "growth_gap_report",
+    "next_action_view"
+  ],
+  "stop_conditions": [
+    "Purpose is too vague.",
+    "Target profile is missing.",
+    "Source boundaries are unclear.",
+    "Candidate count exceeds growth budget.",
+    "Canonical write is requested before review."
+  ]
+}

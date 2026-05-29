@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/stale-report.schema.json",
+  "title": "StaleReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "canonical_state_ref",
+    "stale_artifacts",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "canonical_state_ref": { "type": "string" },
+    "stale_artifacts": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "affected_queries": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rebuild_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "obsolete_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "migration_suggestions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "title": "Example Graph",
+  "graph_type": "project",
+  "owner": "graph",
+  "source_of_truth": "graph/specs",
+  "dna_path": "graph/dna",
+  "schemas_path": "graph/schemas",
+  "generated_path": "graph/generated",
+  "source_path": "graph/source",
+  "graph_runtime": {
+    "graph_required": false,
+    "graph_context_required_before_raw_source": false,
+    "fallback_to_raw_allowed": "only_with_gap_record",
+    "fallback_gap_output": "graph/source/gaps/",
+    "default_context_depth": 2,
+    "default_max_objects": 8
+  },
+  "federation": {
+    "can_export": true,
+    "can_import": true,
+    "parent_graph": null,
+    "child_graphs": []
+  },
+  "evolution": {
+    "current_iteration": 1,
+    "migration_status": "current"
+  }
+}

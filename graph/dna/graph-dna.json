@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "title": "Example Graph DNA",
+  "purpose": "Define why this graph exists and what development vector it must preserve.",
+  "parent_dna_ref": null,
+  "evolution_vector": "Keep the graph coherent, machine-readable, evidence-backed and useful for future implementation.",
+  "non_negotiable_principles": [
+    "Every object must serve the parent graph purpose or be moved to a separate graph.",
+    "Relations are explicit and reviewable.",
+    "Generated artifacts are not source of truth."
+  ],
+  "allowed_entity_families": [
+    "feature",
+    "policy",
+    "scenario",
+    "capability",
+    "evidence"
+  ],
+  "success_criteria": [
+    "Objects can be found and understood quickly.",
+    "Relations explain impact.",
+    "Evolution tracks show what changed and why."
+  ]
+}

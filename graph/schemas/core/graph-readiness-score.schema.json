@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/graph-readiness-score.schema.json",
+  "title": "GraphReadinessScore",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operation_id",
+    "score_id",
+    "created_at",
+    "target_repo",
+    "target_graph",
+    "target_mode",
+    "score",
+    "band",
+    "dimension_scores",
+    "caps_applied",
+    "evidence_refs",
+    "interpretation",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "operation_id": { "const": "graph.readiness-score" },
+    "score_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_repo": { "type": "string", "minLength": 1 },
+    "target_graph": { "type": "string", "minLength": 1 },
+    "target_mode": {
+      "type": "string",
+      "enum": ["discovery", "canonical", "pilot", "controlled_runtime", "production_runtime"]
+    },
+    "score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "band": {
+      "type": "string",
+      "enum": [
+        "G0_raw",
+        "G1_extracted",
+        "G2_canonical",
+        "G3_pilot_ready",
+        "G4_controlled_runtime_candidate",
+        "G5_runtime_stable"
+      ]
+    },
+    "dimension_scores": {
+      "type": "object",
+      "required": [
+        "canonical_structure",
+        "evidence_contracts",
+        "context_benchmark",
+        "semantic_domain_safety",
+        "runtime_operational"
+      ],
+      "properties": {
+        "canonical_structure": { "$ref": "#/$defs/dimensionScore" },
+        "evidence_contracts": { "$ref": "#/$defs/dimensionScore" },
+        "context_benchmark": { "$ref": "#/$defs/dimensionScore" },
+        "semantic_domain_safety": { "$ref": "#/$defs/dimensionScore" },
+        "runtime_operational": { "$ref": "#/$defs/dimensionScore" }
+      },
+      "additionalProperties": true
+    },
+    "caps_applied": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cap", "reason"],
+        "properties": {
+          "cap": { "type": "number", "minimum": 0, "maximum": 100 },
+          "reason": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "interpretation": { "type": "string" },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "dimensionScore": {
+      "type": "object",
+      "required": ["score", "max", "summary"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0 },
+        "max": { "type": "number", "minimum": 0 },
+        "summary": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

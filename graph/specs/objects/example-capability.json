@@ -1,0 +1,15 @@
+{
+  "id": "example.capability.demo",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "subtype": "feature",
+  "title": "Demo Capability",
+  "summary": "Example structured capability object.",
+  "owner": "domain-skill",
+  "lifecycle": "draft",
+  "readiness": "R1_draft",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [],
+  "evidence_refs": [],
+  "tags": []
+}

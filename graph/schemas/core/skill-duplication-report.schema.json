@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/skill-duplication-report.schema.json",
+  "title": "SkillDuplicationReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operation_id",
+    "created_at",
+    "skill_map_ref",
+    "duplicate_group_count",
+    "duplicates",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "operation_id": { "const": "graph.skill.duplication-check" },
+    "created_at": { "type": "string" },
+    "skill_map_ref": { "type": "string" },
+    "duplicate_group_count": { "type": "integer", "minimum": 0 },
+    "duplicates": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "canonical_write_allowed": { "const": false }
+  },
+  "additionalProperties": true
+}

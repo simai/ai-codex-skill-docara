@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/effectiveness-report.schema.json",
+  "title": "GrowGraph Effectiveness Report",
+  "description": "Generated report comparing raw skill/project workflow with GrowGraph-assisted workflow.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_ref",
+    "target_type",
+    "owner_skill",
+    "reviewer",
+    "baseline_refs",
+    "growgraph_refs",
+    "scenario_results",
+    "metrics_summary",
+    "verdict",
+    "effectiveness_allowed",
+    "blockers",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "growgraph.effectiveness-report" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "target_type": {
+      "type": "string",
+      "enum": ["skill", "project", "package", "federation_area", "federation", "other"]
+    },
+    "owner_skill": { "type": "string", "minLength": 1 },
+    "reviewer": { "type": "string", "minLength": 1 },
+    "baseline_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "growgraph_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "scenario_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scenario_id",
+          "summary",
+          "baseline_score",
+          "growgraph_score",
+          "delta",
+          "verdict",
+          "evidence_refs"
+        ],
+        "properties": {
+          "scenario_id": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "baseline_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "growgraph_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "delta": { "type": "integer", "minimum": -100, "maximum": 100 },
+          "verdict": {
+            "type": "string",
+            "enum": ["improved", "neutral", "regressed"]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "metrics_summary": {
+      "type": "object",
+      "required": [
+        "scenario_count",
+        "minimum_required_scenarios",
+        "average_baseline_score",
+        "average_growgraph_score",
+        "average_delta",
+        "verdict_counts"
+      ],
+      "properties": {
+        "scenario_count": { "type": "integer", "minimum": 0 },
+        "minimum_required_scenarios": { "type": "integer", "minimum": 1 },
+        "average_baseline_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "average_growgraph_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "average_delta": { "type": ["number", "null"], "minimum": -100, "maximum": 100 },
+        "verdict_counts": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["improved", "neutral", "regressed", "insufficient_evidence"]
+    },
+    "effectiveness_allowed": { "type": "boolean" },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "additionalProperties": true
+}

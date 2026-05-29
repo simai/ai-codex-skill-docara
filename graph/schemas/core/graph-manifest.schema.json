@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/graph-manifest.schema.json",
+  "title": "Graph Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "graph_id",
+    "title",
+    "graph_type",
+    "owner",
+    "source_of_truth",
+    "federation"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "graph_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "graph_type": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "source_of_truth": {
+      "type": "string"
+    },
+    "schemas_path": {
+      "type": "string"
+    },
+    "generated_path": {
+      "type": "string"
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "federation": {
+      "type": "object"
+    },
+    "evolution": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "current_vector": "Grow from raw ideas into structured, linked and verified objects.",
+  "current_iteration": 1,
+  "next_growth_focus": [
+    "Clarify object kinds and type descriptors.",
+    "Validate relation endpoints.",
+    "Add evidence."
+  ]
+}

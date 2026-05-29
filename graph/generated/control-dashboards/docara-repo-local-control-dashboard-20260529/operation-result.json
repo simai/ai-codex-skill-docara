@@ -1,0 +1,20 @@
+{
+  "operation_id": "graph.control-dashboard",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+    "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.md",
+    "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "run graph readiness-score for the target mode",
+    "run graph quality-review or quality-dashboard when content quality matters",
+    "review pending proposal actions before canonical write"
+  ],
+  "control_dashboard_ref": "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+  "canonical_write_allowed": false
+}

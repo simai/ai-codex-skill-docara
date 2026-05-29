@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "example.graph",
+  "principles": [
+    {
+      "id": "principle.coherence",
+      "title": "Coherence",
+      "description": "Each object should support the parent graph DNA."
+    },
+    {
+      "id": "principle.evidence",
+      "title": "Evidence",
+      "description": "Important assertions should have source or evidence references."
+    }
+  ]
+}

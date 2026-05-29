@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/ranked-candidates.schema.json",
+  "title": "RankedCandidates",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidates"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "candidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rankedCandidate" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "rankedCandidate": {
+      "type": "object",
+      "required": [
+        "object_id",
+        "score"
+      ],
+      "properties": {
+        "object_id": { "type": "string" },
+        "score": { "type": "number" },
+        "reason": { "type": "string" },
+        "path": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "effective_weight": { "type": "number" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence_status": { "type": "string" },
+        "policy_decision": { "type": "string" },
+        "omitted_reason": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

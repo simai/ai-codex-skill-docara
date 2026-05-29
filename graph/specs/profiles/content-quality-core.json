@@ -1,0 +1,47 @@
+{
+  "id": "profile.content_quality_core",
+  "schema_version": "1.0.0",
+  "profile_type": "quality_core",
+  "title": "Content Quality Core Profile",
+  "purpose": "Define universal Content Quality Score dimensions shared by profile-specific CQS reviews.",
+  "score_kind": "content_quality_score",
+  "not_for": [
+    "code readiness",
+    "runtime readiness",
+    "domain expert approval",
+    "canonical truth validation"
+  ],
+  "dimensions": [
+    "clarity",
+    "completeness",
+    "consistency",
+    "evidence",
+    "actionability",
+    "structure",
+    "relations",
+    "lifecycle",
+    "verifiability",
+    "risk_coverage"
+  ],
+  "bands": [
+    "CQS0_unusable",
+    "CQS1_raw",
+    "CQS2_structured",
+    "CQS3_needs_refinement",
+    "CQS4_action_ready",
+    "CQS5_excellent"
+  ],
+  "generated_outputs": [
+    "quality-review.json",
+    "quality-review.md",
+    "operation-result.json"
+  ],
+  "guardrails": [
+    "do not replace domain expert review",
+    "do not claim code implementation",
+    "do not treat generated AI text as validated evidence",
+    "do not confuse CQS with GRS",
+    "do not canonical-write suggested work items without approval"
+  ],
+  "promotion_status": "template_candidate"
+}

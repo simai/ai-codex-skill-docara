@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-comparison.schema.json",
+  "title": "BenchmarkComparison",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "comparison_id",
+    "experiment_id",
+    "baseline_run_ref",
+    "candidate_run_ref",
+    "compatibility",
+    "metric_deltas",
+    "final_verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "comparison_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_run_ref": {
+      "type": "string"
+    },
+    "candidate_run_ref": {
+      "type": "string"
+    },
+    "compatibility": {
+      "type": "object",
+      "required": [
+        "verdict"
+      ],
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "directly_comparable",
+            "partially_comparable",
+            "not_directly_comparable"
+          ]
+        },
+        "matching_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mismatched_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "metric_deltas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "metric",
+          "verdict"
+        ],
+        "properties": {
+          "metric": {
+            "type": "string"
+          },
+          "baseline_value": {
+            "type": [
+              "number",
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "candidate_value": {
+            "type": [
+              "number",
+              "integer",
+              "string",
+              "null"
+            ]
+          },
+          "delta": {
+            "type": [
+              "number",
+              "integer",
+              "null"
+            ]
+          },
+          "delta_percent": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "better",
+              "same",
+              "worse",
+              "inconclusive"
+            ]
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "threshold_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "wins": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "losses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inconclusive_metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_verdict": {
+      "type": "string",
+      "enum": [
+        "better",
+        "same",
+        "worse",
+        "inconclusive",
+        "not_comparable"
+      ]
+    },
+    "safe_conclusion": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

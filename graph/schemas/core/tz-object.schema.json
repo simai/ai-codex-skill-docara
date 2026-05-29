@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/tz-object.schema.json",
+  "title": "Graph TZ Object",
+  "description": "Profile-level schema for universal graph-based technical specification objects. It extends the normalized GraphObject contract through tz_role instead of introducing competing core kinds.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "kind",
+    "subtype",
+    "tz_role",
+    "title",
+    "lifecycle",
+    "readiness",
+    "source_refs"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "knowledge",
+        "capability",
+        "requirement",
+        "decision",
+        "initiative",
+        "adoption",
+        "work",
+        "source",
+        "artifact",
+        "evidence",
+        "relation",
+        "event",
+        "signal",
+        "trigger",
+        "action",
+        "observation",
+        "policy",
+        "migration",
+        "graph_contract"
+      ]
+    },
+    "subtype": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tz_role": {
+      "type": "string",
+      "enum": [
+        "system",
+        "component",
+        "feature",
+        "requirement",
+        "contract",
+        "decision",
+        "constraint",
+        "adoption",
+        "evidence",
+        "acceptance",
+        "risk",
+        "open_question",
+        "roadmap_item",
+        "implementation_batch",
+        "generated_doc"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "lifecycle": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "proposed",
+        "reviewed",
+        "accepted",
+        "implemented",
+        "validated",
+        "operating",
+        "evolving",
+        "deprecated",
+        "superseded",
+        "rejected"
+      ]
+    },
+    "readiness": {
+      "type": "string",
+      "enum": [
+        "T0_idea",
+        "T1_captured",
+        "T2_structured",
+        "T3_reviewed",
+        "T4_specification_ready",
+        "T5_implementation_ready",
+        "T6_validated",
+        "T7_operating",
+        "T8_evolving"
+      ]
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "secret"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "asserted_by_human",
+        "extracted_by_ai",
+        "validated",
+        "disputed",
+        "obsolete",
+        "superseded"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "profile_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contract_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "tz_role": {
+            "const": "system"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "knowledge"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tz_role": {
+            "const": "component"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "knowledge"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tz_role": {
+            "const": "feature"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "capability"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tz_role": {
+            "const": "contract"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "artifact"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "tz_role": {
+            "const": "constraint"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "const": "policy"
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

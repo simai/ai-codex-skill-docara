@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "id": "graph-embryo.example",
+  "operation_id": "graph.seed-preview",
+  "created_at": "2026-05-27T00:00:00+00:00",
+  "seed_ref": "graph-seed.json",
+  "target_graph_id": "example.graph",
+  "target_profile": "profile.skill_graph",
+  "target_mode": "discovery",
+  "candidate_objects": [
+    {
+      "id": "candidate.example.purpose",
+      "kind": "knowledge",
+      "title": "Example graph purpose",
+      "reason": "Seed purpose requires an explicit root object before growth.",
+      "source_refs": ["graph-seed.json"],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate"
+    }
+  ],
+  "candidate_relations": [
+    {
+      "from": "candidate.example.purpose",
+      "type": "governed_by",
+      "to": "seed.example",
+      "reason": "Candidate object is governed by the seed growth contract."
+    }
+  ],
+  "uncertain_items": [],
+  "missing_evidence": [],
+  "review_questions": [
+    "Does this embryo represent the intended graph growth direction?"
+  ],
+  "projection_view_refs": [],
+  "canonical_write_allowed": false
+}

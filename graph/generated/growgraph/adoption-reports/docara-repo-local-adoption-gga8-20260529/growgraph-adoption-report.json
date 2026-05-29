@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "id": "growgraph-adoption-report.docara-repo-local-adoption-gga8-20260529",
+  "operation_id": "growgraph.adoption-report",
+  "created_at": "2026-05-29T20:00:04.744011+00:00",
+  "target_ref": "skill:docara",
+  "target_type": "skill",
+  "owner_skill": "docara",
+  "adoption_level": 8,
+  "adoption_level_name": "federation_ready",
+  "control_dashboard_ref": "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+  "readiness_ref": null,
+  "quality_ref": null,
+  "semantic_preservation_ref": "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+  "effectiveness_ref": "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+  "federation_ref": "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+  "integration_review_ref": null,
+  "status_summary": {
+    "status": "blocked",
+    "headline": "GrowGraph adoption is at GGA8; blockers must be cleared before migration claim.",
+    "grs_score": null,
+    "cqs_score": null,
+    "semantic_verdict": "pass_with_notes",
+    "effectiveness_verdict": "improved",
+    "integration_verdict": null
+  },
+  "checks": {
+    "source_inventory_done": "pass",
+    "seed_validated": "pass",
+    "embryo_generated": "pass",
+    "control_dashboard_generated": "pass",
+    "grs_generated": "unknown",
+    "cqs_generated": "unknown",
+    "proposal_gate_available": "pass",
+    "semantic_preservation_passed": "pass",
+    "effectiveness_checked": "pass",
+    "federation_export_validated": "pass",
+    "agents_integration_reviewed": "unknown",
+    "hooks_integration_reviewed": "unknown"
+  },
+  "blockers": [
+    {
+      "blocker": "AGENTS.md and hooks integration review has not passed",
+      "owner": "graph",
+      "next_action": "run growgraph-integration-review with durable AGENTS.md and hook/CI refs",
+      "evidence_refs": []
+    }
+  ],
+  "next_actions": [
+    "run GRS/CQS or target scoring gate",
+    "run growgraph-adoption-report after each gate"
+  ],
+  "canonical_write_allowed": false
+}

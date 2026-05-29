@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/quality-review.schema.json",
+  "title": "Content Quality Review",
+  "description": "Machine-readable Content Quality Score review for graph objects and generated artifacts.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "target_ref",
+    "profile",
+    "score",
+    "band",
+    "dimensions",
+    "findings",
+    "required_actions",
+    "evidence_refs",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "band": {
+      "type": "string",
+      "enum": [
+        "CQS0_unusable",
+        "CQS1_raw",
+        "CQS2_structured",
+        "CQS3_needs_refinement",
+        "CQS4_action_ready",
+        "CQS5_excellent"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "severity",
+          "dimension",
+          "summary"
+        ],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": [
+              "info",
+              "minor",
+              "major",
+              "blocker"
+            ]
+          },
+          "dimension": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "suggested_action": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "summary"
+        ],
+        "properties": {
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_ref": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "canonical_write_allowed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "suggested_work_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interpretation_boundary": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

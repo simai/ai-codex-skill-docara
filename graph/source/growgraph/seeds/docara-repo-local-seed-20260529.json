@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "seed_id": "seed.docara-skill.growgraph-pilot.20260529",
+  "target_graph_id": "skill.docara.growgraph",
+  "purpose": "Start a controlled GrowGraph pilot for the SIMAI docara skill without changing canonical skill behavior.",
+  "target_profile": "profile.skill_graph",
+  "target_mode": "pilot",
+  "graph_dna": {
+    "purpose": "Preserve the docara skill as the owner of its domain meaning, routing rules, safety gates, handoff behavior and acceptance criteria.",
+    "evolution_vector": "Grow from source inventory into a reviewable skill graph that exposes owner boundaries, rules, activities, specialists, quality gates and companion contracts.",
+    "non_negotiable_principles": [
+      "Generated candidates are not canonical truth.",
+      "Canonical writes require proposal review and owner approval.",
+      "Domain meaning stays with the owner skill.",
+      "Companion skills retain their own domains.",
+      "Runtime or production-impacting behavior requires the relevant preflight gates."
+    ]
+  },
+  "source_boundaries": {
+    "allowed_sources": [
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/SKILL.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/rules/skill-mesh-balance.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/references/authoring-rules.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/references/github-pages.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/references/project-model.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/references/theme-workflow.md",
+      "/Users/rim/Documents/GitHub/ai-codex-skill-docara/skills/docara/references/translation-workflow.md"
+    ],
+    "excluded_sources": [
+      ".env",
+      "secrets",
+      "credentials",
+      "raw client data",
+      "production exports",
+      "screenshots",
+      "logs",
+      "generated output"
+    ],
+    "canonical_write_allowed": false
+  },
+  "growth_rules": {
+    "allowed_object_families": [
+      "skill",
+      "activity",
+      "rule",
+      "specialist",
+      "quality_gate",
+      "source_boundary",
+      "companion_contract",
+      "handoff_contract",
+      "policy",
+      "evidence"
+    ],
+    "allowed_relation_families": [
+      "owns",
+      "routes_to",
+      "requires_companion",
+      "validated_by",
+      "hands_off_to",
+      "blocks_without_gate",
+      "governed_by",
+      "evidenced_by",
+      "implements",
+      "relates_to"
+    ],
+    "max_initial_objects": 36,
+    "depth_mode": "standard"
+  },
+  "review_gates": [
+    "docara_owner_semantic_review_before_migration_claim",
+    "owner_boundary_preserved",
+    "routing_rules_preserved",
+    "safety_gates_preserved",
+    "handoff_contracts_preserved",
+    "proposal_review_before_canonical_write",
+    "effectiveness_report_before_federation_migration"
+  ],
+  "generated_views": [
+    "seed_preview",
+    "candidate_object_list",
+    "candidate_relation_list",
+    "owner_boundary_view",
+    "companion_contract_view",
+    "quality_gate_view",
+    "next_action_view"
+  ],
+  "stop_conditions": [
+    "Owner boundary is unclear.",
+    "Safety gates are missing or flattened.",
+    "Companion skills are merged into owner skill responsibilities.",
+    "Candidate count exceeds growth budget.",
+    "Canonical write is requested before owner review."
+  ]
+}

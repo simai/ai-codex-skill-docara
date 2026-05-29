@@ -1,0 +1,267 @@
+{
+  "id": "profile.marketing_graph",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "parent_profile": "profile.universal_core",
+  "title": "Marketing Graph Profile",
+  "purpose": "Represent a promotion system as graph objects for products, offers, audiences, channels, campaigns, public surfaces, content assets, metrics, evidence, hypotheses, constraints, handoffs and next actions.",
+  "scope": [
+    "product lines",
+    "products or services",
+    "offers",
+    "audience segments",
+    "buyer roles",
+    "channels",
+    "campaigns",
+    "public surfaces",
+    "content assets",
+    "conversion actions",
+    "CRM source categories",
+    "UTM source categories",
+    "metric snapshots",
+    "marketing evidence",
+    "hypotheses",
+    "constraints",
+    "blockers",
+    "companion handoffs",
+    "marketing reviews",
+    "next actions"
+  ],
+  "non_goals": [
+    "replace marketing owner review",
+    "add marketing-specific universal core kinds",
+    "store raw CRM, ad or analytics data in canonical graph templates",
+    "invent product facts, prices, clients, results or legal claims",
+    "guarantee growth in leads, revenue, conversion, ranking or traffic",
+    "replace content, SEO, UX, testing, implementation or operations owner skills"
+  ],
+  "depth_mode_default": "standard",
+  "allowed_roles": [
+    "product_line",
+    "product_or_service",
+    "offer",
+    "audience_segment",
+    "buyer_role",
+    "channel",
+    "campaign",
+    "public_surface",
+    "content_asset",
+    "conversion_action",
+    "crm_source",
+    "utm_source",
+    "metric",
+    "evidence",
+    "hypothesis",
+    "constraint",
+    "blocker",
+    "handoff",
+    "review",
+    "next_action"
+  ],
+  "role_to_kind_mapping": [
+    {
+      "role": "product_line",
+      "kind": "knowledge",
+      "subtype": "product_line"
+    },
+    {
+      "role": "product_or_service",
+      "kind": "capability",
+      "subtype": "marketable_product"
+    },
+    {
+      "role": "offer",
+      "kind": "artifact",
+      "subtype": "offer"
+    },
+    {
+      "role": "audience_segment",
+      "kind": "knowledge",
+      "subtype": "audience_segment"
+    },
+    {
+      "role": "buyer_role",
+      "kind": "knowledge",
+      "subtype": "buyer_role"
+    },
+    {
+      "role": "channel",
+      "kind": "knowledge",
+      "subtype": "marketing_channel"
+    },
+    {
+      "role": "campaign",
+      "kind": "work",
+      "subtype": "campaign"
+    },
+    {
+      "role": "public_surface",
+      "kind": "artifact",
+      "subtype": "public_surface"
+    },
+    {
+      "role": "content_asset",
+      "kind": "artifact",
+      "subtype": "content_asset"
+    },
+    {
+      "role": "conversion_action",
+      "kind": "requirement",
+      "subtype": "conversion_action"
+    },
+    {
+      "role": "crm_source",
+      "kind": "data",
+      "subtype": "crm_source"
+    },
+    {
+      "role": "utm_source",
+      "kind": "data",
+      "subtype": "utm_source"
+    },
+    {
+      "role": "metric",
+      "kind": "evidence",
+      "subtype": "metric_snapshot"
+    },
+    {
+      "role": "evidence",
+      "kind": "evidence",
+      "subtype": "marketing_evidence"
+    },
+    {
+      "role": "hypothesis",
+      "kind": "observation",
+      "subtype": "hypothesis"
+    },
+    {
+      "role": "constraint",
+      "kind": "requirement",
+      "subtype": "constraint"
+    },
+    {
+      "role": "blocker",
+      "kind": "observation",
+      "subtype": "blocker"
+    },
+    {
+      "role": "handoff",
+      "kind": "graph_contract",
+      "subtype": "companion_handoff"
+    },
+    {
+      "role": "review",
+      "kind": "evidence",
+      "subtype": "marketing_review"
+    },
+    {
+      "role": "next_action",
+      "kind": "work",
+      "subtype": "next_action"
+    }
+  ],
+  "required_relations": [
+    "uses",
+    "targets",
+    "supports",
+    "measures",
+    "documents",
+    "hands_off_to",
+    "blocks",
+    "depends_on"
+  ],
+  "required_fields": [
+    "id",
+    "schema_version",
+    "kind",
+    "title",
+    "summary",
+    "owner",
+    "lifecycle",
+    "readiness",
+    "source_refs",
+    "visibility"
+  ],
+  "readiness_model": "Universal T-level readiness with marketing gates for source facts, audience/channel clarity, metric boundaries and companion-skill ownership.",
+  "evidence_model": "Marketing claims require source refs or explicit hypothesis status; metrics are evidence snapshots with source, period and interpretation boundary.",
+  "generated_outputs": [
+    "positioning_brief",
+    "campaign_brief",
+    "content_handoff",
+    "seo_handoff",
+    "ux_page_handoff",
+    "marketplace_promotion_brief",
+    "marketing_review",
+    "channel_plan",
+    "metrics_dashboard_summary",
+    "next_action_queue",
+    "evidence_source_gap_report"
+  ],
+  "operation_subset": [
+    "guard",
+    "generate-context",
+    "what-impacts",
+    "readiness",
+    "source",
+    "extraction",
+    "review-packet",
+    "extract-review-accept",
+    "canonical-write",
+    "proposal"
+  ],
+  "quality_gates": [
+    "product or direction is explicit",
+    "audience and channel are explicit",
+    "facts, inferences, hypotheses and missing data are separated",
+    "offers and claims have source refs or are marked as hypotheses",
+    "metrics are evidence snapshots, not guaranteed outcomes",
+    "CRM, analytics and ad data are aggregated or referenced safely",
+    "companion owner is named for content, SEO, UX, testing, implementation and operations handoff",
+    "generated brief lists next executable batch"
+  ],
+  "safety_policy": "No invented customers, prices, legal claims or guaranteed growth; raw CRM, ad and analytics data stay outside canonical graph templates.",
+  "retention_policy": "Profile stores reusable structure only; campaign facts, source registries, analytics evidence and channel tactics remain in the marketing skill or project graph.",
+  "federation_policy": "Federated exports may include bounded aggregate summaries and handoff contracts, but must not expose raw CRM, ad account or analytics data.",
+  "migration_policy": "Existing marketing skill graphs are migrated as candidates, reviewed by marketing owner, and accepted only after object/relation coverage and metric-boundary checks.",
+  "owner_skill": "marketing",
+  "companion_skills": [
+    "content",
+    "seo",
+    "ux",
+    "tester",
+    "management",
+    "advisor",
+    "dev",
+    "ops"
+  ],
+  "promotion_status": "canonical_template",
+  "measurement_requirements": [
+    "object coverage by reusable marketing role",
+    "relation coverage for target/support/measure/handoff paths",
+    "source fact coverage",
+    "hypothesis separation rate",
+    "metric source and period coverage",
+    "companion handoff completeness",
+    "generated brief usefulness",
+    "second apply evidence coverage",
+    "benchmark-context comparison",
+    "readiness and contract validation"
+  ],
+  "promotion_decision": {
+    "decided_at": "2026-05-26",
+    "basis": [
+      "marketing owner review completed",
+      "real marketing migration applied in two scoped batches",
+      "69 canonical objects and 86 canonical relations validated in ai-codex-skill-marketing",
+      "second apply resolved 16 evidence-required objects using concrete local evidence refs",
+      "benchmark-context second apply run completed with average_context_reduction 0.328128",
+      "readiness verdict ready_for_external_pilot",
+      "contract-validate --all-known passed after second apply"
+    ],
+    "limits": [
+      "pilot-supported template, not broad universal superiority proof",
+      "semantic score still needs human confirmation for stronger claims",
+      "graph-first runtime enablement still requires runtime policy gate"
+    ]
+  }
+}

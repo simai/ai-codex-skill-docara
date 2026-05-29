@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-profile-report.schema.json",
+  "title": "BenchmarkProfileReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "report_id",
+    "run_ids",
+    "profile_count",
+    "profiles",
+    "warnings",
+    "blockers"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "report_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "run_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "profile_count": { "type": "integer" },
+    "best_profile": { "type": ["string", "null"] },
+    "best_run_id": { "type": ["string", "null"] },
+    "selection_rule": { "type": "string" },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "run_id",
+          "run_ref",
+          "metrics_ref",
+          "profile",
+          "total_context_size",
+          "average_context_reduction"
+        ],
+        "properties": {
+          "run_id": { "type": "string" },
+          "run_ref": { "type": "string" },
+          "metrics_ref": { "type": "string" },
+          "profile": { "type": "string" },
+          "depth": { "type": ["integer", "null"] },
+          "max_objects": { "type": ["integer", "null"] },
+          "token_budget": { "type": ["integer", "null"] },
+          "direction": { "type": ["string", "null"] },
+          "record_count": { "type": ["integer", "null"] },
+          "total_context_size": { "type": ["integer", "null"] },
+          "average_context_reduction": { "type": ["number", "null"] },
+          "average_time_to_context": { "type": ["number", "null"] },
+          "average_semantic_score": { "type": ["number", "null"] },
+          "status": { "type": ["string", "null"] },
+          "warnings": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

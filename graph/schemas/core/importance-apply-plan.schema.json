@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/importance-apply-plan.schema.json",
+  "title": "ImportanceApplyPlan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "operation_id",
+    "mode",
+    "status",
+    "reviewer",
+    "reviewed_proposal_ref",
+    "target_kind",
+    "target_id",
+    "requested_change",
+    "canonical_state_ref",
+    "warnings",
+    "blockers",
+    "canonical_write_allowed",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string" },
+    "operation_id": {
+      "type": "string",
+      "const": "graph.importance-apply"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["dry_run", "write_canonical"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["blocked", "ready_for_approval", "approved_for_write"]
+    },
+    "reviewer": { "type": "string" },
+    "reviewed_proposal_ref": { "type": "string" },
+    "target_kind": {
+      "type": "string",
+      "enum": ["object", "relation", ""]
+    },
+    "target_id": { "type": "string" },
+    "target_file": {
+      "type": ["string", "null"]
+    },
+    "requested_change": { "type": "object" },
+    "canonical_state_ref": {
+      "type": ["string", "null"]
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "type": "boolean" },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

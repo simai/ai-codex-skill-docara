@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-record.schema.json",
+  "title": "BenchmarkRecord",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_id",
+    "task_id",
+    "mode",
+    "task",
+    "metrics",
+    "evidence",
+    "review"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "current",
+        "graph"
+      ]
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "task_type",
+        "description"
+      ],
+      "properties": {
+        "task_type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "input_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_relevant_objects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expected_impacted_objects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "current_mode": {
+      "type": "object",
+      "properties": {
+        "files_read": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "context_size": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "graph_mode": {
+      "type": "object",
+      "properties": {
+        "graph_profile": {
+          "type": "string"
+        },
+        "graph_depth_mode": {
+          "type": "string",
+          "enum": [
+            "light",
+            "standard",
+            "full"
+          ]
+        },
+        "objects_considered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "relations_traversed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "context_pack_objects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_impacts_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stale_findings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "time_to_context",
+        "time_to_done",
+        "wrong_assumptions",
+        "missed_dependencies",
+        "rework_cycles",
+        "evidence_refs_used"
+      ],
+      "properties": {
+        "time_to_context": {
+          "type": "number",
+          "minimum": 0
+        },
+        "time_to_done": {
+          "type": "number",
+          "minimum": 0
+        },
+        "context_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "generated_context_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "context_precision": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "context_recall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "context_reduction": {
+          "type": "number"
+        },
+        "impact_precision": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "impact_recall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "wrong_assumptions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missed_requirements": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missed_dependencies": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "user_corrections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rework_cycles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_refs_used": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "useful_object_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "raw_task_input_ref",
+        "final_result_ref"
+      ],
+      "properties": {
+        "raw_task_input_ref": {
+          "type": "string"
+        },
+        "context_ref": {
+          "type": "string"
+        },
+        "final_result_ref": {
+          "type": "string"
+        },
+        "review_notes_ref": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "reviewer",
+        "verdict"
+      ],
+      "properties": {
+        "reviewer": {
+          "type": "string",
+          "enum": [
+            "human",
+            "ai",
+            "mixed"
+          ]
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "better",
+            "same",
+            "worse",
+            "inconclusive",
+            "baseline_only"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

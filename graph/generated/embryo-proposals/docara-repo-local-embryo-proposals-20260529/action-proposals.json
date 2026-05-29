@@ -1,0 +1,1937 @@
+{
+  "schema_version": "1.0.0",
+  "id": "action-proposals.docara-repo-local-embryo-proposals-20260529",
+  "created_at": "2026-05-29T19:59:12.243756+00:00",
+  "operation_id": "graph.loop-propose-actions",
+  "signal_queue_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+  "source_operation_id": "graph.embryo-proposals",
+  "source_embryo_id": "graph-embryo.docara-repo-local-seed-expand-20260529",
+  "source_embryo_operation_id": "graph.seed-expand",
+  "canonical_state_ref": "sha256:a29f6efa731728fc877856267e5760e95cee578ba2a42f48f49bed1cda10fe6f",
+  "summary": {
+    "candidate_object_count": 36,
+    "candidate_relation_count": 32,
+    "duplicate_group_count": 0,
+    "action_count": 68,
+    "min_accept_confidence": 0.55,
+    "action_type_counts": {
+      "accept_candidate_object": 5,
+      "reject_weak_source_relation": 31,
+      "request_domain_review": 32
+    }
+  },
+  "actions": [
+    {
+      "action_id": "action.embryo.request-domain-review.object-docara-3277e1ef",
+      "source_signal_id": "embryo.object.object-docara-3277e1ef",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.docara.3277e1ef",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Docara` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.docara.3277e1ef",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Docara",
+        "summary": "Candidate object extracted from source heading: Docara",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-workflow-d7a48414",
+      "source_signal_id": "embryo.object.object-workflow-d7a48414",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.workflow.d7a48414",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Workflow` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.workflow.d7a48414",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Workflow",
+        "summary": "Candidate object extracted from source heading: Workflow",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-setup-rules-4c49aa9b",
+      "source_signal_id": "embryo.object.object-setup-rules-4c49aa9b",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.setup-rules.4c49aa9b",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Setup Rules` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.setup-rules.4c49aa9b",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Setup Rules",
+        "summary": "Candidate object extracted from source heading: Setup Rules",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-authoring-rules-9349c4be",
+      "source_signal_id": "embryo.object.object-authoring-rules-9349c4be",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.authoring-rules.9349c4be",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Authoring Rules` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.authoring-rules.9349c4be",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Authoring Rules",
+        "summary": "Candidate object extracted from source heading: Authoring Rules",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.accept-candidate-object.object-seo-contract-rules-7e09cfb6",
+      "source_signal_id": "embryo.object.object-seo-contract-rules-7e09cfb6",
+      "action_type": "accept_candidate_object",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.seo-contract-rules.7e09cfb6",
+      "candidate_type": "object",
+      "summary": "Accept source-aware candidate object `SEO Contract Rules` into a canonical proposal after review.",
+      "confidence": 0.62,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.seo-contract-rules.7e09cfb6",
+        "schema_version": "1.0.0",
+        "kind": "policy",
+        "title": "SEO Contract Rules",
+        "summary": "Candidate object extracted from source heading: SEO Contract Rules",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-theme-rules-3b50a4e3",
+      "source_signal_id": "embryo.object.object-theme-rules-3b50a4e3",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.theme-rules.3b50a4e3",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Theme Rules` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.theme-rules.3b50a4e3",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Theme Rules",
+        "summary": "Candidate object extracted from source heading: Theme Rules",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-translation-rules-bd2fa024",
+      "source_signal_id": "embryo.object.object-translation-rules-bd2fa024",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.translation-rules.bd2fa024",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Translation Rules` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.translation-rules.bd2fa024",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Translation Rules",
+        "summary": "Candidate object extracted from source heading: Translation Rules",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-bundled-scripts-321756ff",
+      "source_signal_id": "embryo.object.object-bundled-scripts-321756ff",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.bundled-scripts.321756ff",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Bundled Scripts` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.bundled-scripts.321756ff",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Bundled Scripts",
+        "summary": "Candidate object extracted from source heading: Bundled Scripts",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-publication-decision-32e4c896",
+      "source_signal_id": "embryo.object.object-publication-decision-32e4c896",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.publication-decision.32e4c896",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Publication Decision` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.publication-decision.32e4c896",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Publication Decision",
+        "summary": "Candidate object extracted from source heading: Publication Decision",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-placement-decision-472f01a1",
+      "source_signal_id": "embryo.object.object-placement-decision-472f01a1",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.placement-decision.472f01a1",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Placement Decision` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.placement-decision.472f01a1",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Placement Decision",
+        "summary": "Candidate object extracted from source heading: Placement Decision",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-prompt-examples-9b446e48",
+      "source_signal_id": "embryo.object.object-prompt-examples-9b446e48",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.prompt-examples.9b446e48",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Prompt Examples` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.prompt-examples.9b446e48",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Prompt Examples",
+        "summary": "Candidate object extracted from source heading: Prompt Examples",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.accept-candidate-object.object-skill-mesh-balance-20a52bfd",
+      "source_signal_id": "embryo.object.object-skill-mesh-balance-20a52bfd",
+      "action_type": "accept_candidate_object",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.skill-mesh-balance.20a52bfd",
+      "candidate_type": "object",
+      "summary": "Accept source-aware candidate object `Skill Mesh Balance` into a canonical proposal after review.",
+      "confidence": 0.66,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.skill-mesh-balance.20a52bfd",
+        "schema_version": "1.0.0",
+        "kind": "skill",
+        "title": "Skill Mesh Balance",
+        "summary": "Candidate object extracted from source heading: Skill Mesh Balance",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-does-not-own-9533744f",
+      "source_signal_id": "embryo.object.object-does-not-own-9533744f",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.does-not-own.9533744f",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Does Not Own` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.does-not-own.9533744f",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Does Not Own",
+        "summary": "Candidate object extracted from source heading: Does Not Own",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-companion-contracts-8181dfe2",
+      "source_signal_id": "embryo.object.object-companion-contracts-8181dfe2",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.companion-contracts.8181dfe2",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Companion Contracts` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.companion-contracts.8181dfe2",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Companion Contracts",
+        "summary": "Candidate object extracted from source heading: Companion Contracts",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-handoff-09496b01",
+      "source_signal_id": "embryo.object.object-handoff-09496b01",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.handoff.09496b01",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Handoff` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.handoff.09496b01",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Handoff",
+        "summary": "Candidate object extracted from source heading: Handoff",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-docara-authoring-rules-f794ab6e",
+      "source_signal_id": "embryo.object.object-docara-authoring-rules-f794ab6e",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.docara-authoring-rules.f794ab6e",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Docara Authoring Rules` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.docara-authoring-rules.f794ab6e",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Docara Authoring Rules",
+        "summary": "Candidate object extracted from source heading: Docara Authoring Rules",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-directory-shape-c39ffddc",
+      "source_signal_id": "embryo.object.object-directory-shape-c39ffddc",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.directory-shape.c39ffddc",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Directory Shape` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.directory-shape.c39ffddc",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Directory Shape",
+        "summary": "Candidate object extracted from source heading: Directory Shape",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-markdown-page-template-3563cc96",
+      "source_signal_id": "embryo.object.object-markdown-page-template-3563cc96",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.markdown-page-template.3563cc96",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Markdown Page Template` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.markdown-page-template.3563cc96",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Markdown Page Template",
+        "summary": "Candidate object extracted from source heading: Markdown Page Template",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-page-title-4aeab6c0",
+      "source_signal_id": "embryo.object.object-page-title-4aeab6c0",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.page-title.4aeab6c0",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Page Title` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.page-title.4aeab6c0",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Page Title",
+        "summary": "Candidate object extracted from source heading: Page Title",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.accept-candidate-object.object-settings-php-8175bb05",
+      "source_signal_id": "embryo.object.object-settings-php-8175bb05",
+      "action_type": "accept_candidate_object",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.settings-php.8175bb05",
+      "candidate_type": "object",
+      "summary": "Accept source-aware candidate object ``.settings.php`` into a canonical proposal after review.",
+      "confidence": 0.56,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.settings-php.8175bb05",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "`.settings.php`",
+        "summary": "Candidate object extracted from source heading: `.settings.php`",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.accept-candidate-object.object-lang-php-e6ddb251",
+      "source_signal_id": "embryo.object.object-lang-php-e6ddb251",
+      "action_type": "accept_candidate_object",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.lang-php.e6ddb251",
+      "candidate_type": "object",
+      "summary": "Accept source-aware candidate object ``.lang.php`` into a canonical proposal after review.",
+      "confidence": 0.56,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.lang-php.e6ddb251",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "`.lang.php`",
+        "summary": "Candidate object extracted from source heading: `.lang.php`",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-content-quality-48e4b7ac",
+      "source_signal_id": "embryo.object.object-content-quality-48e4b7ac",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.content-quality.48e4b7ac",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Content Quality` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.content-quality.48e4b7ac",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Content Quality",
+        "summary": "Candidate object extracted from source heading: Content Quality",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-verification-03128bed",
+      "source_signal_id": "embryo.object.object-verification-03128bed",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.verification.03128bed",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Verification` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.verification.03128bed",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Verification",
+        "summary": "Candidate object extracted from source heading: Verification",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-github-pages-for-docara-abf0f9db",
+      "source_signal_id": "embryo.object.object-github-pages-for-docara-abf0f9db",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.github-pages-for-docara.abf0f9db",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `GitHub Pages for Docara` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.github-pages-for-docara.abf0f9db",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "GitHub Pages for Docara",
+        "summary": "Candidate object extracted from source heading: GitHub Pages for Docara",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-default-recommendation-cd2a0d77",
+      "source_signal_id": "embryo.object.object-default-recommendation-cd2a0d77",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.default-recommendation.cd2a0d77",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Default Recommendation` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.default-recommendation.cd2a0d77",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Default Recommendation",
+        "summary": "Candidate object extracted from source heading: Default Recommendation",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-required-workflow-shape-79643954",
+      "source_signal_id": "embryo.object.object-required-workflow-shape-79643954",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.required-workflow-shape.79643954",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Required Workflow Shape` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.required-workflow-shape.79643954",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Required Workflow Shape",
+        "summary": "Candidate object extracted from source heading: Required Workflow Shape",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-project-pages-path-prefix-aff21b12",
+      "source_signal_id": "embryo.object.object-project-pages-path-prefix-aff21b12",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.project-pages-path-prefix.aff21b12",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Project Pages Path Prefix` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.project-pages-path-prefix.aff21b12",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Project Pages Path Prefix",
+        "summary": "Candidate object extracted from source heading: Project Pages Path Prefix",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.accept-candidate-object.object-root-docs-publishing-b43ee3fd",
+      "source_signal_id": "embryo.object.object-root-docs-publishing-b43ee3fd",
+      "action_type": "accept_candidate_object",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.root-docs-publishing.b43ee3fd",
+      "candidate_type": "object",
+      "summary": "Accept source-aware candidate object `Root `/docs` Publishing` into a canonical proposal after review.",
+      "confidence": 0.56,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.root-docs-publishing.b43ee3fd",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Root `/docs` Publishing",
+        "summary": "Candidate object extracted from source heading: Root `/docs` Publishing",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-separate-repository-4448f909",
+      "source_signal_id": "embryo.object.object-separate-repository-4448f909",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.separate-repository.4448f909",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Separate Repository` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.separate-repository.4448f909",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Separate Repository",
+        "summary": "Candidate object extracted from source heading: Separate Repository",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-base-url-1dbd61f5",
+      "source_signal_id": "embryo.object.object-base-url-1dbd61f5",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.base-url.1dbd61f5",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Base URL` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.base-url.1dbd61f5",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Base URL",
+        "summary": "Candidate object extracted from source heading: Base URL",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-docara-project-model-1da1a70f",
+      "source_signal_id": "embryo.object.object-docara-project-model-1da1a70f",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.docara-project-model.1da1a70f",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Docara Project Model` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.docara-project-model.1da1a70f",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Docara Project Model",
+        "summary": "Candidate object extracted from source heading: Docara Project Model",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-runtime-c4740e4c",
+      "source_signal_id": "embryo.object.object-runtime-c4740e4c",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.runtime.c4740e4c",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Runtime` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.runtime.c4740e4c",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Runtime",
+        "summary": "Candidate object extracted from source heading: Runtime",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-files-6ce6c512",
+      "source_signal_id": "embryo.object.object-files-6ce6c512",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.files.6ce6c512",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Files` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.files.6ce6c512",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Files",
+        "summary": "Candidate object extracted from source heading: Files",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-safe-initialization-7747866c",
+      "source_signal_id": "embryo.object.object-safe-initialization-7747866c",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.safe-initialization.7747866c",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Safe Initialization` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.safe-initialization.7747866c",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Safe Initialization",
+        "summary": "Candidate object extracted from source heading: Safe Initialization",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-starter-preparation-742417cd",
+      "source_signal_id": "embryo.object.object-starter-preparation-742417cd",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.starter-preparation.742417cd",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Starter Preparation` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.starter-preparation.742417cd",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Starter Preparation",
+        "summary": "Candidate object extracted from source heading: Starter Preparation",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-import-existing-markdown-c8bc0a08",
+      "source_signal_id": "embryo.object.object-import-existing-markdown-c8bc0a08",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "object.import-existing-markdown.c8bc0a08",
+      "candidate_type": "object",
+      "summary": "Request domain review for low-confidence candidate object `Import Existing Markdown` before canonical proposal.",
+      "confidence": 0.5,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_object": {
+        "id": "object.import-existing-markdown.c8bc0a08",
+        "schema_version": "1.0.0",
+        "kind": "knowledge",
+        "title": "Import Existing Markdown",
+        "summary": "Candidate object extracted from source heading: Import Existing Markdown",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "lifecycle": "candidate",
+        "readiness": "R0_candidate"
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.request-domain-review.object-docara-3277e1ef.relates-to.object-workflow-d7a48414",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.relates-to.object-workflow-d7a48414",
+      "action_type": "request_domain_review",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:relates_to:object.workflow.d7a48414",
+      "candidate_type": "relation",
+      "summary": "Request domain review for low-confidence relation `object.docara.3277e1ef` --`relates_to`--> `object.workflow.d7a48414`.",
+      "confidence": 0.32,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "relates_to",
+        "to": "object.workflow.d7a48414",
+        "summary": "Low-confidence relation inferred only from nearby source order; review before accepting.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.32
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-workflow-d7a48414",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-workflow-d7a48414",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.workflow.d7a48414",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.workflow.d7a48414` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.workflow.d7a48414",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-setup-rules-4c49aa9b",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-setup-rules-4c49aa9b",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.setup-rules.4c49aa9b",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.setup-rules.4c49aa9b` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.setup-rules.4c49aa9b",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-authoring-rules-9349c4be",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-authoring-rules-9349c4be",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.authoring-rules.9349c4be",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.authoring-rules.9349c4be` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.authoring-rules.9349c4be",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-seo-contract-rules-7e09cfb6",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-seo-contract-rules-7e09cfb6",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.seo-contract-rules.7e09cfb6",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.seo-contract-rules.7e09cfb6` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.seo-contract-rules.7e09cfb6",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-theme-rules-3b50a4e3",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-theme-rules-3b50a4e3",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.theme-rules.3b50a4e3",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.theme-rules.3b50a4e3` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.theme-rules.3b50a4e3",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-translation-rules-bd2fa024",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-translation-rules-bd2fa024",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.translation-rules.bd2fa024",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.translation-rules.bd2fa024` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.translation-rules.bd2fa024",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-bundled-scripts-321756ff",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-bundled-scripts-321756ff",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.bundled-scripts.321756ff",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.bundled-scripts.321756ff` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.bundled-scripts.321756ff",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-publication-decision-32e4c896",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-publication-decision-32e4c896",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.publication-decision.32e4c896",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.publication-decision.32e4c896` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.publication-decision.32e4c896",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-placement-decision-472f01a1",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-placement-decision-472f01a1",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.placement-decision.472f01a1",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.placement-decision.472f01a1` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.placement-decision.472f01a1",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-3277e1ef.source-related-to.object-prompt-examples-9b446e48",
+      "source_signal_id": "embryo.relation.object-docara-3277e1ef.source-related-to.object-prompt-examples-9b446e48",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara.3277e1ef:source_related_to:object.prompt-examples.9b446e48",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara.3277e1ef` --`source_related_to`--> `object.prompt-examples.9b446e48` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara.3277e1ef",
+        "type": "source_related_to",
+        "to": "object.prompt-examples.9b446e48",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+        "source_refs": [
+          "skills/docara/SKILL.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-directory-shape-c39ffddc",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-directory-shape-c39ffddc",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.directory-shape.c39ffddc",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.directory-shape.c39ffddc` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.directory-shape.c39ffddc",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-markdown-page-template-3563cc96",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-markdown-page-template-3563cc96",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.markdown-page-template.3563cc96",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.markdown-page-template.3563cc96` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.markdown-page-template.3563cc96",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-page-title-4aeab6c0",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-page-title-4aeab6c0",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.page-title.4aeab6c0",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.page-title.4aeab6c0` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.page-title.4aeab6c0",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-settings-php-8175bb05",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-settings-php-8175bb05",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.settings-php.8175bb05",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.settings-php.8175bb05` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.settings-php.8175bb05",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-lang-php-e6ddb251",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-lang-php-e6ddb251",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.lang-php.e6ddb251",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.lang-php.e6ddb251` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.lang-php.e6ddb251",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-content-quality-48e4b7ac",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-content-quality-48e4b7ac",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.content-quality.48e4b7ac",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.content-quality.48e4b7ac` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.content-quality.48e4b7ac",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-verification-03128bed",
+      "source_signal_id": "embryo.relation.object-docara-authoring-rules-f794ab6e.source-related-to.object-verification-03128bed",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-authoring-rules.f794ab6e:source_related_to:object.verification.03128bed",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-authoring-rules.f794ab6e` --`source_related_to`--> `object.verification.03128bed` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-authoring-rules.f794ab6e",
+        "type": "source_related_to",
+        "to": "object.verification.03128bed",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+        "source_refs": [
+          "skills/docara/references/authoring-rules.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-default-recommendation-cd2a0d77",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-default-recommendation-cd2a0d77",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.default-recommendation.cd2a0d77",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.default-recommendation.cd2a0d77` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.default-recommendation.cd2a0d77",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-required-workflow-shape-79643954",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-required-workflow-shape-79643954",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.required-workflow-shape.79643954",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.required-workflow-shape.79643954` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.required-workflow-shape.79643954",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-project-pages-path-prefix-aff21b12",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-project-pages-path-prefix-aff21b12",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.project-pages-path-prefix.aff21b12",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.project-pages-path-prefix.aff21b12` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.project-pages-path-prefix.aff21b12",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-root-docs-publishing-b43ee3fd",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-root-docs-publishing-b43ee3fd",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.root-docs-publishing.b43ee3fd",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.root-docs-publishing.b43ee3fd` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.root-docs-publishing.b43ee3fd",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-separate-repository-4448f909",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-separate-repository-4448f909",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.separate-repository.4448f909",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.separate-repository.4448f909` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.separate-repository.4448f909",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-base-url-1dbd61f5",
+      "source_signal_id": "embryo.relation.object-github-pages-for-docara-abf0f9db.source-related-to.object-base-url-1dbd61f5",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.github-pages-for-docara.abf0f9db:source_related_to:object.base-url.1dbd61f5",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.github-pages-for-docara.abf0f9db` --`source_related_to`--> `object.base-url.1dbd61f5` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.github-pages-for-docara.abf0f9db",
+        "type": "source_related_to",
+        "to": "object.base-url.1dbd61f5",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+        "source_refs": [
+          "skills/docara/references/github-pages.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-project-model-1da1a70f.source-related-to.object-runtime-c4740e4c",
+      "source_signal_id": "embryo.relation.object-docara-project-model-1da1a70f.source-related-to.object-runtime-c4740e4c",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-project-model.1da1a70f:source_related_to:object.runtime.c4740e4c",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-project-model.1da1a70f` --`source_related_to`--> `object.runtime.c4740e4c` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-project-model.1da1a70f",
+        "type": "source_related_to",
+        "to": "object.runtime.c4740e4c",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-project-model-1da1a70f.source-related-to.object-files-6ce6c512",
+      "source_signal_id": "embryo.relation.object-docara-project-model-1da1a70f.source-related-to.object-files-6ce6c512",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-project-model.1da1a70f:source_related_to:object.files.6ce6c512",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-project-model.1da1a70f` --`source_related_to`--> `object.files.6ce6c512` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-project-model.1da1a70f",
+        "type": "source_related_to",
+        "to": "object.files.6ce6c512",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-project-model-1da1a70f.source-related-to.object-safe-initialization-7747866c",
+      "source_signal_id": "embryo.relation.object-docara-project-model-1da1a70f.source-related-to.object-safe-initialization-7747866c",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-project-model.1da1a70f:source_related_to:object.safe-initialization.7747866c",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-project-model.1da1a70f` --`source_related_to`--> `object.safe-initialization.7747866c` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-project-model.1da1a70f",
+        "type": "source_related_to",
+        "to": "object.safe-initialization.7747866c",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-project-model-1da1a70f.source-related-to.object-starter-preparation-742417cd",
+      "source_signal_id": "embryo.relation.object-docara-project-model-1da1a70f.source-related-to.object-starter-preparation-742417cd",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-project-model.1da1a70f:source_related_to:object.starter-preparation.742417cd",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-project-model.1da1a70f` --`source_related_to`--> `object.starter-preparation.742417cd` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-project-model.1da1a70f",
+        "type": "source_related_to",
+        "to": "object.starter-preparation.742417cd",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-docara-project-model-1da1a70f.source-related-to.object-import-existing-markdown-c8bc0a08",
+      "source_signal_id": "embryo.relation.object-docara-project-model-1da1a70f.source-related-to.object-import-existing-markdown-c8bc0a08",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.docara-project-model.1da1a70f:source_related_to:object.import-existing-markdown.c8bc0a08",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.docara-project-model.1da1a70f` --`source_related_to`--> `object.import-existing-markdown.c8bc0a08` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.docara-project-model.1da1a70f",
+        "type": "source_related_to",
+        "to": "object.import-existing-markdown.c8bc0a08",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+        "source_refs": [
+          "skills/docara/references/project-model.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-does-not-own-9533744f",
+      "source_signal_id": "embryo.relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-does-not-own-9533744f",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.skill-mesh-balance.20a52bfd:source_related_to:object.does-not-own.9533744f",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.skill-mesh-balance.20a52bfd` --`source_related_to`--> `object.does-not-own.9533744f` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.skill-mesh-balance.20a52bfd",
+        "type": "source_related_to",
+        "to": "object.does-not-own.9533744f",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-companion-contracts-8181dfe2",
+      "source_signal_id": "embryo.relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-companion-contracts-8181dfe2",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.skill-mesh-balance.20a52bfd:source_related_to:object.companion-contracts.8181dfe2",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.skill-mesh-balance.20a52bfd` --`source_related_to`--> `object.companion-contracts.8181dfe2` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.skill-mesh-balance.20a52bfd",
+        "type": "source_related_to",
+        "to": "object.companion-contracts.8181dfe2",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    },
+    {
+      "action_id": "action.embryo.reject-weak-source-relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-handoff-09496b01",
+      "source_signal_id": "embryo.relation.object-skill-mesh-balance-20a52bfd.source-related-to.object-handoff-09496b01",
+      "action_type": "reject_weak_source_relation",
+      "status": "proposed",
+      "requires_approval": true,
+      "safe_default": "no_execute",
+      "target_ref": "relation:object.skill-mesh-balance.20a52bfd:source_related_to:object.handoff.09496b01",
+      "candidate_type": "relation",
+      "summary": "Reject weak source-group relation `object.skill-mesh-balance.20a52bfd` --`source_related_to`--> `object.handoff.09496b01` unless a reviewer replaces it with an explicit typed domain relation.",
+      "confidence": 0.45,
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+      "suggested_canonical_relation": {
+        "from": "object.skill-mesh-balance.20a52bfd",
+        "type": "source_related_to",
+        "to": "object.handoff.09496b01",
+        "summary": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+        "source_refs": [
+          "skills/docara/rules/skill-mesh-balance.md"
+        ],
+        "confidence": 0.45
+      },
+      "canonical_write_allowed": false
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "canonical_write_allowed": false,
+  "auto_execute_allowed": false
+}

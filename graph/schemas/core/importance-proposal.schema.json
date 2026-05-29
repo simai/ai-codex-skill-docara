@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/importance-proposal.schema.json",
+  "title": "ImportanceProposal",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "operation_id",
+    "status",
+    "target_id",
+    "target_kind",
+    "requested_change",
+    "reason",
+    "requested_by",
+    "canonical_state_ref",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string" },
+    "operation_id": {
+      "type": "string",
+      "const": "graph.importance-propose"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_review",
+        "accepted",
+        "rejected",
+        "deferred"
+      ]
+    },
+    "target_id": { "type": "string", "minLength": 1 },
+    "target_kind": {
+      "type": "string",
+      "enum": ["object", "relation"]
+    },
+    "requested_change": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true
+    },
+    "reason": { "type": "string", "minLength": 1 },
+    "scope": { "type": "string" },
+    "requested_by": { "type": "string", "minLength": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expires_at": {
+      "type": ["string", "null"]
+    },
+    "canonical_state_ref": { "type": "string", "minLength": 1 },
+    "safety_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "review": {
+      "type": "object",
+      "required": ["decision", "reviewer", "reviewed_at"],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": ["accept", "reject", "defer"]
+        },
+        "reviewer": { "type": "string" },
+        "reviewed_at": { "type": "string" },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

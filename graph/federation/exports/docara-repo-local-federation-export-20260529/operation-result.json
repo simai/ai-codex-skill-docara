@@ -1,0 +1,19 @@
+{
+  "operation_id": "growgraph.federation-export",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+    "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.md",
+    "graph/federation/exports/docara-repo-local-federation-export-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "update adoption report with federation export",
+    "review AGENTS.md and hooks integration before GGA9"
+  ],
+  "federation_export_ref": "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+  "canonical_write_allowed": false
+}

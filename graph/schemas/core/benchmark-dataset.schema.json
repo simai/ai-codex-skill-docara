@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-dataset.schema.json",
+  "title": "BenchmarkDataset",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "dataset_version",
+    "dataset_type",
+    "title",
+    "task_input_refs",
+    "source_material_refs",
+    "sampling_method",
+    "frozen_state_ref"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_type": {
+      "type": "string",
+      "enum": [
+        "synthetic",
+        "real_anonymized",
+        "production_derived_readonly"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "anonymization_status": {
+      "type": "string",
+      "enum": [
+        "not_required",
+        "anonymized",
+        "partially_anonymized",
+        "not_anonymized"
+      ]
+    },
+    "task_input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_material_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sampling_method": {
+      "type": "string"
+    },
+    "strata": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "task_count"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "task_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "inclusion_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exclusion_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_answer_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frozen_state_ref": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "reviewer": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "reviewed",
+            "frozen",
+            "deprecated"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

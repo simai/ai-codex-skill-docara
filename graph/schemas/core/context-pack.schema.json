@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/context-pack.schema.json",
+  "title": "ContextPack",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "request",
+    "included_objects",
+    "excluded_objects",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "request": { "type": "object" },
+    "budget": { "$ref": "query-budget.schema.json" },
+    "included_objects": {
+      "type": "array",
+      "items": { "$ref": "ranked-candidates.schema.json#/$defs/rankedCandidate" }
+    },
+    "excluded_objects": {
+      "type": "array",
+      "items": { "$ref": "ranked-candidates.schema.json#/$defs/rankedCandidate" }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_status_summary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

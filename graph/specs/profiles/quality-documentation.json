@@ -1,0 +1,36 @@
+{
+  "id": "profile.quality_documentation",
+  "schema_version": "1.0.0",
+  "profile_type": "quality_profile",
+  "parent_profile": "profile.content_quality_core",
+  "title": "Documentation Quality Profile",
+  "purpose": "Score whether documentation is useful for its audience, task and publication surface.",
+  "applies_to": [
+    "user documentation",
+    "admin documentation",
+    "developer documentation",
+    "operator guides",
+    "public documentation"
+  ],
+  "dimensions": [
+    "audience_clarity",
+    "navigation",
+    "completeness",
+    "examples",
+    "troubleshooting",
+    "update_freshness",
+    "task_fit"
+  ],
+  "required_evidence": [
+    "audience or persona",
+    "task or scenario",
+    "source references",
+    "review status"
+  ],
+  "guardrails": [
+    "CQS documentation is not product correctness",
+    "public documentation may require SEO/content gates",
+    "generated docs require source verification"
+  ],
+  "promotion_status": "template_candidate"
+}

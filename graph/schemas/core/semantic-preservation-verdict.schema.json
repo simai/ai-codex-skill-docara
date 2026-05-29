@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/semantic-preservation-verdict.schema.json",
+  "title": "GrowGraph Semantic Preservation Verdict",
+  "description": "Verdict proving whether GrowGraph adoption preserves a skill or project's domain meaning, boundaries and gates.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_ref",
+    "target_type",
+    "owner_skill",
+    "reviewer",
+    "source_refs",
+    "growgraph_artifact_refs",
+    "checks",
+    "findings",
+    "verdict",
+    "semantic_preservation_allowed",
+    "federation_migration_allowed",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "growgraph.semantic-preservation" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "target_type": {
+      "type": "string",
+      "enum": ["skill", "project", "package", "federation_area", "other"]
+    },
+    "owner_skill": { "type": "string", "minLength": 1 },
+    "reviewer": {
+      "type": "object",
+      "required": ["reviewer_id", "reviewer_type"],
+      "properties": {
+        "reviewer_id": { "type": "string", "minLength": 1 },
+        "reviewer_type": {
+          "type": "string",
+          "enum": ["human_owner", "domain_skill", "independent_ai", "tester", "mixed"]
+        },
+        "reviewer_scope": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "growgraph_artifact_refs": {
+      "type": "object",
+      "required": ["seed_ref", "embryo_ref", "control_dashboard_ref"],
+      "properties": {
+        "seed_ref": { "type": "string", "minLength": 1 },
+        "embryo_ref": { "type": "string", "minLength": 1 },
+        "control_dashboard_ref": { "type": "string", "minLength": 1 },
+        "readiness_ref": { "type": "string" },
+        "quality_ref": { "type": "string" },
+        "proposal_queue_ref": { "type": "string" },
+        "projection_view_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "owner_boundary_preserved",
+        "core_triggers_preserved",
+        "must_rules_preserved",
+        "never_rules_preserved",
+        "companion_contracts_preserved",
+        "handoff_expectations_preserved",
+        "acceptance_gates_preserved",
+        "domain_exceptions_preserved",
+        "generated_context_preserves_constraints",
+        "projection_views_are_understandable"
+      ],
+      "properties": {
+        "owner_boundary_preserved": { "$ref": "#/$defs/check" },
+        "core_triggers_preserved": { "$ref": "#/$defs/check" },
+        "must_rules_preserved": { "$ref": "#/$defs/check" },
+        "never_rules_preserved": { "$ref": "#/$defs/check" },
+        "companion_contracts_preserved": { "$ref": "#/$defs/check" },
+        "handoff_expectations_preserved": { "$ref": "#/$defs/check" },
+        "acceptance_gates_preserved": { "$ref": "#/$defs/check" },
+        "domain_exceptions_preserved": { "$ref": "#/$defs/check" },
+        "generated_context_preserves_constraints": { "$ref": "#/$defs/check" },
+        "projection_views_are_understandable": { "$ref": "#/$defs/check" }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "check", "summary", "evidence_refs"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["info", "minor", "major", "blocker"]
+          },
+          "check": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "required_action": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "pass_with_notes",
+        "blocked_semantic_loss",
+        "blocked_owner_review_required",
+        "blocked_missing_sources"
+      ]
+    },
+    "semantic_preservation_allowed": { "type": "boolean" },
+    "federation_migration_allowed": { "type": "boolean" },
+    "notes": { "type": "string" },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "check": {
+      "type": "string",
+      "enum": ["pass", "fail", "unknown", "not_applicable"]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,22 @@
+{
+  "operation_id": "graph.embryo-proposals",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.json",
+    "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.md",
+    "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "review embryo action proposals",
+    "prepare dry-run canonical proposal after accepted actions"
+  ],
+  "action_proposals_ref": "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.json",
+  "action_proposals_md_ref": "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.md",
+  "source_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+  "action_count": 68,
+  "canonical_write_allowed": false
+}

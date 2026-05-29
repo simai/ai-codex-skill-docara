@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/operation-mode-matrix.schema.json",
+  "title": "OperationModeMatrix",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "operation",
+          "default_mode",
+          "cost_class",
+          "changes",
+          "requires_dry_run",
+          "requires_approval",
+          "retention_class",
+          "result_contract"
+        ],
+        "properties": {
+          "operation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default_mode": {
+            "type": "string",
+            "enum": [
+              "read_only",
+              "suggest",
+              "draft",
+              "write_generated",
+              "write_canonical",
+              "execute_safe",
+              "requires_approval"
+            ]
+          },
+          "cost_class": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "destructive",
+              "privacy_sensitive",
+              "human_impacting"
+            ]
+          },
+          "changes": {
+            "type": "string",
+            "enum": [
+              "none",
+              "generated",
+              "canonical",
+              "external"
+            ]
+          },
+          "requires_dry_run": {
+            "type": "boolean"
+          },
+          "requires_approval": {
+            "type": "boolean"
+          },
+          "retention_class": {
+            "type": "string"
+          },
+          "result_contract": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

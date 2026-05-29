@@ -1,0 +1,22 @@
+{
+  "id": "track.example.capability.demo",
+  "schema_version": "1.0.0",
+  "object_id": "example.capability.demo",
+  "parent_dna_ref": "example.graph",
+  "current_iteration": 1,
+  "current_state": "draft",
+  "target_state": "verified",
+  "growth_vector": "Turn the demo capability from a draft object into a linked and evidence-backed object.",
+  "history": [
+    {
+      "iteration": 1,
+      "reason": "Initial template object.",
+      "changed_relations": [],
+      "evidence_refs": []
+    }
+  ],
+  "next_questions": [
+    "What parent goal does this capability support?",
+    "Which objects depend on this capability?"
+  ]
+}

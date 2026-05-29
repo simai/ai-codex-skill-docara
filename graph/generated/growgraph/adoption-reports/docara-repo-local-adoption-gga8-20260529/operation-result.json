@@ -1,0 +1,23 @@
+{
+  "operation_id": "growgraph.adoption-report",
+  "status": "blocked",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+    "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.md",
+    "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [
+    "AGENTS.md and hooks integration review has not passed"
+  ],
+  "next_suggested_operations": [
+    "run GRS/CQS or target scoring gate",
+    "run growgraph-adoption-report after each gate"
+  ],
+  "growgraph_adoption_report_ref": "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+  "adoption_level": 8,
+  "adoption_level_name": "federation_ready",
+  "canonical_write_allowed": false
+}

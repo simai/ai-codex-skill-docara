@@ -1,0 +1,72 @@
+{
+  "id": "profile.product_tz",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "product",
+  "title": "Product TZ Profile",
+  "summary": "Domain profile for graph-based product specifications, including value, users, capabilities, constraints, rollout and validation.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "decision",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "contract",
+    "constraint",
+    "adoption",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "user_value",
+    "user_roles",
+    "pricing_or_entitlement",
+    "support_boundary",
+    "analytics",
+    "rollout"
+  ],
+  "required_acceptance": [
+    "target_user_acceptance",
+    "business_value_check",
+    "operational_readiness",
+    "support_readiness",
+    "analytics_readiness"
+  ],
+  "readiness_target": "T5_implementation_ready",
+  "evidence_policy": "Product readiness requires reviewed value assumptions and at least one validation path: user research, pilot, benchmark, sales signal or operator review.",
+  "generated_outputs": [
+    "product_tz",
+    "capability_map",
+    "rollout_plan",
+    "risk_register",
+    "ai_context_pack"
+  ],
+  "migration_policy": "Existing product notes, roadmaps, pricing decisions and user feedback must be mapped into feature, requirement, decision, evidence and risk objects."
+}

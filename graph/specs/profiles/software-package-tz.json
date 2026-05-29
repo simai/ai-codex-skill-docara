@@ -1,0 +1,75 @@
+{
+  "id": "profile.software_package_tz",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "software_package",
+  "title": "Software Package TZ Profile",
+  "summary": "Domain profile for graph-based technical specifications of software packages, modules, services, libraries and adapters.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "contract",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "decision",
+    "constraint",
+    "adoption",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "public_api",
+    "configuration",
+    "data_schema",
+    "permissions",
+    "installation",
+    "upgrade",
+    "diagnostics",
+    "testing"
+  ],
+  "required_acceptance": [
+    "unit_or_static_check",
+    "integration_or_smoke",
+    "documentation_projection",
+    "migration_or_backward_compatibility_decision",
+    "security_boundary_review"
+  ],
+  "readiness_target": "T5_implementation_ready",
+  "evidence_policy": "Software package readiness requires at least reviewed specification evidence plus test or smoke evidence before T6.",
+  "generated_outputs": [
+    "package_tz",
+    "contract_inventory",
+    "implementation_batches",
+    "test_plan",
+    "impact_report",
+    "ai_context_pack"
+  ],
+  "migration_policy": "Legacy package READMEs, route lists, manifests and audit reports must be mapped into component, feature, contract, adoption and evidence objects."
+}

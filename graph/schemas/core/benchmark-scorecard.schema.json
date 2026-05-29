@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-scorecard.schema.json",
+  "title": "BenchmarkScorecard",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "scorecard_id",
+    "comparison_ref",
+    "overall_score",
+    "verdict",
+    "metric_scores",
+    "evidence_gaps",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "scorecard_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "comparison_ref": { "type": "string" },
+    "comparison_id": { "type": ["string", "null"] },
+    "overall_score": { "type": "number" },
+    "verdict": { "type": "string" },
+    "metric_scores": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "safe_conclusion": { "type": ["string", "null"] },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

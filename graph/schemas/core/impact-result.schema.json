@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/impact-result.schema.json",
+  "title": "ImpactResult",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query",
+    "source_object",
+    "results",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "query": { "type": "object" },
+    "source_object": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": { "$ref": "ranked-candidates.schema.json#/$defs/rankedCandidate" }
+    },
+    "grouped_by_kind": { "type": "object", "additionalProperties": true },
+    "grouped_by_owner": { "type": "object", "additionalProperties": true },
+    "omitted": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": true }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

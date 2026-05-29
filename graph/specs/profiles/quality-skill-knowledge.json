@@ -1,0 +1,36 @@
+{
+  "id": "profile.quality_skill_knowledge",
+  "schema_version": "1.0.0",
+  "profile_type": "quality_profile",
+  "parent_profile": "profile.content_quality_core",
+  "title": "Skill Knowledge Quality Profile",
+  "purpose": "Score whether skill knowledge, routing rules, references and reusable workflows are useful and safe for future task execution.",
+  "applies_to": [
+    "skill rules",
+    "skill references",
+    "routing knowledge",
+    "specialist behavior",
+    "workflow instructions",
+    "companion contracts"
+  ],
+  "dimensions": [
+    "retrieval_usefulness",
+    "routing_clarity",
+    "conflict_avoidance",
+    "reusable_workflow_value",
+    "evidence_level",
+    "owner_boundary_clarity"
+  ],
+  "required_evidence": [
+    "owner skill",
+    "source or rationale",
+    "routing trigger",
+    "acceptance or safety boundary"
+  ],
+  "guardrails": [
+    "CQS skill_knowledge is not runtime enablement",
+    "routing knowledge must not override owner skill boundaries",
+    "generated learning proposals require owner review"
+  ],
+  "promotion_status": "template_candidate"
+}

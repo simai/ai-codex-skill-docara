@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/source-of-truth-dry-run-plan.schema.json",
+  "title": "GrowGraph Source Of Truth Dry Run Plan",
+  "description": "Generated dry-run plan for moving a GGA10 candidate from GrowGraph companion layer toward graph-first source-of-truth scope.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_ref",
+    "owner_skill",
+    "source_of_truth_decision_ref",
+    "dry_run_mode",
+    "current_source_model",
+    "candidate_graph_first_scope",
+    "non_migratable_scope",
+    "proposed_steps",
+    "acceptance_gates",
+    "rollback_plan",
+    "blockers",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "growgraph.source-of-truth-dry-run-plan" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "owner_skill": { "type": "string", "minLength": 1 },
+    "source_of_truth_decision_ref": { "type": "string", "minLength": 1 },
+    "dry_run_mode": { "type": "string", "enum": ["planning_only", "apply_dry_run"] },
+    "current_source_model": {
+      "type": "object",
+      "required": ["primary_sources", "graph_sources", "runtime_boundary"],
+      "additionalProperties": true
+    },
+    "candidate_graph_first_scope": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scope_item" }
+    },
+    "non_migratable_scope": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/scope_item" }
+    },
+    "proposed_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step_id", "summary", "mode", "writes_allowed", "evidence_refs"],
+        "properties": {
+          "step_id": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "mode": { "type": "string", "enum": ["review", "dry_run", "apply_later"] },
+          "writes_allowed": { "type": "boolean" },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "acceptance_gates": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "rollback_plan": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "scope_item": {
+      "type": "object",
+      "required": ["scope_id", "summary", "status", "source_refs", "reason"],
+      "properties": {
+        "scope_id": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["candidate", "review_required", "blocked", "keep_raw_source"]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reason": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

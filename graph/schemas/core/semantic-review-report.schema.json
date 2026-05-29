@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/semantic-review-report.schema.json",
+  "title": "Semantic Review Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "review_id",
+    "created_at",
+    "operation_id",
+    "source_ref",
+    "review_method",
+    "verdict",
+    "human_review_required",
+    "evidence_gaps",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_id": {
+      "const": "graph.semantic-review"
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_method": {
+      "type": "string",
+      "enum": [
+        "heuristic",
+        "human",
+        "independent_evaluator",
+        "mixed"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass_with_review_required",
+        "needs_review",
+        "blocked",
+        "pass"
+      ]
+    },
+    "semantic_quality_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "context_efficiency_score": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "maximum": 1
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "safety_profile": {
+      "type": "string"
+    },
+    "safety_review_required": {
+      "type": "boolean"
+    },
+    "safety_verdict": {
+      "type": "string",
+      "enum": [
+        "requires_review",
+        "blocked",
+        "pass"
+      ]
+    },
+    "safety_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "signal",
+          "status",
+          "reason"
+        ],
+        "properties": {
+          "signal": { "type": "string" },
+          "status": { "type": "string" },
+          "reason": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "checked_signals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canonical_write_allowed": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

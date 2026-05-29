@@ -1,0 +1,1107 @@
+{
+  "schema_version": "1.0.0",
+  "id": "graph-embryo.docara-repo-local-seed-expand-20260529",
+  "created_at": "2026-05-29T19:59:12.073754+00:00",
+  "operation_id": "graph.seed-expand",
+  "seed_ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+  "target_graph_id": "skill.docara.growgraph",
+  "target_profile": "profile.skill_graph",
+  "target_mode": "pilot",
+  "canonical_state_ref": "sha256:a29f6efa731728fc877856267e5760e95cee578ba2a42f48f49bed1cda10fe6f",
+  "candidate_objects": [
+    {
+      "id": "object.docara.3277e1ef",
+      "kind": "knowledge",
+      "title": "Docara",
+      "reason": "Candidate object extracted from source heading: Docara",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.workflow.d7a48414",
+      "kind": "knowledge",
+      "title": "Workflow",
+      "reason": "Candidate object extracted from source heading: Workflow",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.setup-rules.4c49aa9b",
+      "kind": "knowledge",
+      "title": "Setup Rules",
+      "reason": "Candidate object extracted from source heading: Setup Rules",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.authoring-rules.9349c4be",
+      "kind": "knowledge",
+      "title": "Authoring Rules",
+      "reason": "Candidate object extracted from source heading: Authoring Rules",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.seo-contract-rules.7e09cfb6",
+      "kind": "policy",
+      "title": "SEO Contract Rules",
+      "reason": "Candidate object extracted from source heading: SEO Contract Rules",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.62,
+      "confidence_signals": [
+        "heading",
+        "policy-keyword"
+      ]
+    },
+    {
+      "id": "object.theme-rules.3b50a4e3",
+      "kind": "knowledge",
+      "title": "Theme Rules",
+      "reason": "Candidate object extracted from source heading: Theme Rules",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.translation-rules.bd2fa024",
+      "kind": "knowledge",
+      "title": "Translation Rules",
+      "reason": "Candidate object extracted from source heading: Translation Rules",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.bundled-scripts.321756ff",
+      "kind": "knowledge",
+      "title": "Bundled Scripts",
+      "reason": "Candidate object extracted from source heading: Bundled Scripts",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.publication-decision.32e4c896",
+      "kind": "knowledge",
+      "title": "Publication Decision",
+      "reason": "Candidate object extracted from source heading: Publication Decision",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.placement-decision.472f01a1",
+      "kind": "knowledge",
+      "title": "Placement Decision",
+      "reason": "Candidate object extracted from source heading: Placement Decision",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.prompt-examples.9b446e48",
+      "kind": "knowledge",
+      "title": "Prompt Examples",
+      "reason": "Candidate object extracted from source heading: Prompt Examples",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.skill-mesh-balance.20a52bfd",
+      "kind": "skill",
+      "title": "Skill Mesh Balance",
+      "reason": "Candidate object extracted from source heading: Skill Mesh Balance",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.66,
+      "confidence_signals": [
+        "heading",
+        "domain-unit-keyword"
+      ]
+    },
+    {
+      "id": "object.does-not-own.9533744f",
+      "kind": "knowledge",
+      "title": "Does Not Own",
+      "reason": "Candidate object extracted from source heading: Does Not Own",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.companion-contracts.8181dfe2",
+      "kind": "knowledge",
+      "title": "Companion Contracts",
+      "reason": "Candidate object extracted from source heading: Companion Contracts",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.handoff.09496b01",
+      "kind": "knowledge",
+      "title": "Handoff",
+      "reason": "Candidate object extracted from source heading: Handoff",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.docara-authoring-rules.f794ab6e",
+      "kind": "knowledge",
+      "title": "Docara Authoring Rules",
+      "reason": "Candidate object extracted from source heading: Docara Authoring Rules",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.directory-shape.c39ffddc",
+      "kind": "knowledge",
+      "title": "Directory Shape",
+      "reason": "Candidate object extracted from source heading: Directory Shape",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.markdown-page-template.3563cc96",
+      "kind": "knowledge",
+      "title": "Markdown Page Template",
+      "reason": "Candidate object extracted from source heading: Markdown Page Template",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.page-title.4aeab6c0",
+      "kind": "knowledge",
+      "title": "Page Title",
+      "reason": "Candidate object extracted from source heading: Page Title",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.settings-php.8175bb05",
+      "kind": "knowledge",
+      "title": "`.settings.php`",
+      "reason": "Candidate object extracted from source heading: `.settings.php`",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.56,
+      "confidence_signals": [
+        "heading",
+        "literal-ref"
+      ]
+    },
+    {
+      "id": "object.lang-php.e6ddb251",
+      "kind": "knowledge",
+      "title": "`.lang.php`",
+      "reason": "Candidate object extracted from source heading: `.lang.php`",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.56,
+      "confidence_signals": [
+        "heading",
+        "literal-ref"
+      ]
+    },
+    {
+      "id": "object.content-quality.48e4b7ac",
+      "kind": "knowledge",
+      "title": "Content Quality",
+      "reason": "Candidate object extracted from source heading: Content Quality",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.verification.03128bed",
+      "kind": "knowledge",
+      "title": "Verification",
+      "reason": "Candidate object extracted from source heading: Verification",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.github-pages-for-docara.abf0f9db",
+      "kind": "knowledge",
+      "title": "GitHub Pages for Docara",
+      "reason": "Candidate object extracted from source heading: GitHub Pages for Docara",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.default-recommendation.cd2a0d77",
+      "kind": "knowledge",
+      "title": "Default Recommendation",
+      "reason": "Candidate object extracted from source heading: Default Recommendation",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.required-workflow-shape.79643954",
+      "kind": "knowledge",
+      "title": "Required Workflow Shape",
+      "reason": "Candidate object extracted from source heading: Required Workflow Shape",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.project-pages-path-prefix.aff21b12",
+      "kind": "knowledge",
+      "title": "Project Pages Path Prefix",
+      "reason": "Candidate object extracted from source heading: Project Pages Path Prefix",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.root-docs-publishing.b43ee3fd",
+      "kind": "knowledge",
+      "title": "Root `/docs` Publishing",
+      "reason": "Candidate object extracted from source heading: Root `/docs` Publishing",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.56,
+      "confidence_signals": [
+        "heading",
+        "literal-ref"
+      ]
+    },
+    {
+      "id": "object.separate-repository.4448f909",
+      "kind": "knowledge",
+      "title": "Separate Repository",
+      "reason": "Candidate object extracted from source heading: Separate Repository",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.base-url.1dbd61f5",
+      "kind": "knowledge",
+      "title": "Base URL",
+      "reason": "Candidate object extracted from source heading: Base URL",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.docara-project-model.1da1a70f",
+      "kind": "knowledge",
+      "title": "Docara Project Model",
+      "reason": "Candidate object extracted from source heading: Docara Project Model",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.runtime.c4740e4c",
+      "kind": "knowledge",
+      "title": "Runtime",
+      "reason": "Candidate object extracted from source heading: Runtime",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.files.6ce6c512",
+      "kind": "knowledge",
+      "title": "Files",
+      "reason": "Candidate object extracted from source heading: Files",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.safe-initialization.7747866c",
+      "kind": "knowledge",
+      "title": "Safe Initialization",
+      "reason": "Candidate object extracted from source heading: Safe Initialization",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.starter-preparation.742417cd",
+      "kind": "knowledge",
+      "title": "Starter Preparation",
+      "reason": "Candidate object extracted from source heading: Starter Preparation",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    },
+    {
+      "id": "object.import-existing-markdown.c8bc0a08",
+      "kind": "knowledge",
+      "title": "Import Existing Markdown",
+      "reason": "Candidate object extracted from source heading: Import Existing Markdown",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "readiness": "R0_candidate",
+      "lifecycle": "candidate",
+      "confidence": 0.5,
+      "confidence_signals": [
+        "heading"
+      ]
+    }
+  ],
+  "candidate_relations": [
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "relates_to",
+      "to": "object.workflow.d7a48414",
+      "reason": "Low-confidence relation inferred only from nearby source order; review before accepting.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.32
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.workflow.d7a48414",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.setup-rules.4c49aa9b",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.authoring-rules.9349c4be",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.seo-contract-rules.7e09cfb6",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.theme-rules.3b50a4e3",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.translation-rules.bd2fa024",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.bundled-scripts.321756ff",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.publication-decision.32e4c896",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.placement-decision.472f01a1",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara.3277e1ef",
+      "type": "source_related_to",
+      "to": "object.prompt-examples.9b446e48",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/SKILL.md.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.directory-shape.c39ffddc",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.markdown-page-template.3563cc96",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.page-title.4aeab6c0",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.settings-php.8175bb05",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.lang-php.e6ddb251",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.content-quality.48e4b7ac",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-authoring-rules.f794ab6e",
+      "type": "source_related_to",
+      "to": "object.verification.03128bed",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/authoring-rules.md.",
+      "source_refs": [
+        "skills/docara/references/authoring-rules.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.default-recommendation.cd2a0d77",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.required-workflow-shape.79643954",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.project-pages-path-prefix.aff21b12",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.root-docs-publishing.b43ee3fd",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.separate-repository.4448f909",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.github-pages-for-docara.abf0f9db",
+      "type": "source_related_to",
+      "to": "object.base-url.1dbd61f5",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/github-pages.md.",
+      "source_refs": [
+        "skills/docara/references/github-pages.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-project-model.1da1a70f",
+      "type": "source_related_to",
+      "to": "object.runtime.c4740e4c",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-project-model.1da1a70f",
+      "type": "source_related_to",
+      "to": "object.files.6ce6c512",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-project-model.1da1a70f",
+      "type": "source_related_to",
+      "to": "object.safe-initialization.7747866c",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-project-model.1da1a70f",
+      "type": "source_related_to",
+      "to": "object.starter-preparation.742417cd",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.docara-project-model.1da1a70f",
+      "type": "source_related_to",
+      "to": "object.import-existing-markdown.c8bc0a08",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/references/project-model.md.",
+      "source_refs": [
+        "skills/docara/references/project-model.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.skill-mesh-balance.20a52bfd",
+      "type": "source_related_to",
+      "to": "object.does-not-own.9533744f",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.skill-mesh-balance.20a52bfd",
+      "type": "source_related_to",
+      "to": "object.companion-contracts.8181dfe2",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "confidence": 0.45
+    },
+    {
+      "from": "object.skill-mesh-balance.20a52bfd",
+      "type": "source_related_to",
+      "to": "object.handoff.09496b01",
+      "reason": "Candidates appear in the same seed expansion source group: skills/docara/rules/skill-mesh-balance.md.",
+      "source_refs": [
+        "skills/docara/rules/skill-mesh-balance.md"
+      ],
+      "confidence": 0.45
+    }
+  ],
+  "quality_summary": {
+    "candidate_object_count": 36,
+    "candidate_relation_count": 32,
+    "source_file_count": 7,
+    "by_kind": {
+      "knowledge": 34,
+      "policy": 1,
+      "skill": 1
+    },
+    "top_sources": {
+      "skills/docara/SKILL.md": 11,
+      "skills/docara/references/authoring-rules.md": 8,
+      "skills/docara/references/github-pages.md": 7,
+      "skills/docara/references/project-model.md": 6,
+      "skills/docara/rules/skill-mesh-balance.md": 4
+    },
+    "average_confidence": 0.513,
+    "high_confidence_count": 0,
+    "medium_confidence_count": 36,
+    "low_confidence_count": 0,
+    "duplicate_candidate_count": 0,
+    "duplicate_group_count": 0,
+    "review_group_count": 8
+  },
+  "review_groups": [
+    {
+      "group_id": "kind.knowledge",
+      "group_type": "kind",
+      "title": "knowledge",
+      "candidate_count": 34,
+      "candidate_ids": [
+        "object.docara.3277e1ef",
+        "object.workflow.d7a48414",
+        "object.setup-rules.4c49aa9b",
+        "object.authoring-rules.9349c4be",
+        "object.theme-rules.3b50a4e3",
+        "object.translation-rules.bd2fa024",
+        "object.bundled-scripts.321756ff",
+        "object.publication-decision.32e4c896",
+        "object.placement-decision.472f01a1",
+        "object.prompt-examples.9b446e48",
+        "object.does-not-own.9533744f",
+        "object.companion-contracts.8181dfe2",
+        "object.handoff.09496b01",
+        "object.docara-authoring-rules.f794ab6e",
+        "object.directory-shape.c39ffddc",
+        "object.markdown-page-template.3563cc96",
+        "object.page-title.4aeab6c0",
+        "object.settings-php.8175bb05",
+        "object.lang-php.e6ddb251",
+        "object.content-quality.48e4b7ac"
+      ]
+    },
+    {
+      "group_id": "kind.policy",
+      "group_type": "kind",
+      "title": "policy",
+      "candidate_count": 1,
+      "candidate_ids": [
+        "object.seo-contract-rules.7e09cfb6"
+      ]
+    },
+    {
+      "group_id": "kind.skill",
+      "group_type": "kind",
+      "title": "skill",
+      "candidate_count": 1,
+      "candidate_ids": [
+        "object.skill-mesh-balance.20a52bfd"
+      ]
+    },
+    {
+      "group_id": "source.skills-docara-skill-md",
+      "group_type": "source",
+      "title": "skills/docara/SKILL.md",
+      "candidate_count": 11,
+      "candidate_ids": [
+        "object.docara.3277e1ef",
+        "object.workflow.d7a48414",
+        "object.setup-rules.4c49aa9b",
+        "object.authoring-rules.9349c4be",
+        "object.seo-contract-rules.7e09cfb6",
+        "object.theme-rules.3b50a4e3",
+        "object.translation-rules.bd2fa024",
+        "object.bundled-scripts.321756ff",
+        "object.publication-decision.32e4c896",
+        "object.placement-decision.472f01a1",
+        "object.prompt-examples.9b446e48"
+      ]
+    },
+    {
+      "group_id": "source.skills-docara-references-authoring-rules-md",
+      "group_type": "source",
+      "title": "skills/docara/references/authoring-rules.md",
+      "candidate_count": 8,
+      "candidate_ids": [
+        "object.docara-authoring-rules.f794ab6e",
+        "object.directory-shape.c39ffddc",
+        "object.markdown-page-template.3563cc96",
+        "object.page-title.4aeab6c0",
+        "object.settings-php.8175bb05",
+        "object.lang-php.e6ddb251",
+        "object.content-quality.48e4b7ac",
+        "object.verification.03128bed"
+      ]
+    },
+    {
+      "group_id": "source.skills-docara-references-github-pages-md",
+      "group_type": "source",
+      "title": "skills/docara/references/github-pages.md",
+      "candidate_count": 7,
+      "candidate_ids": [
+        "object.github-pages-for-docara.abf0f9db",
+        "object.default-recommendation.cd2a0d77",
+        "object.required-workflow-shape.79643954",
+        "object.project-pages-path-prefix.aff21b12",
+        "object.root-docs-publishing.b43ee3fd",
+        "object.separate-repository.4448f909",
+        "object.base-url.1dbd61f5"
+      ]
+    },
+    {
+      "group_id": "source.skills-docara-references-project-model-md",
+      "group_type": "source",
+      "title": "skills/docara/references/project-model.md",
+      "candidate_count": 6,
+      "candidate_ids": [
+        "object.docara-project-model.1da1a70f",
+        "object.runtime.c4740e4c",
+        "object.files.6ce6c512",
+        "object.safe-initialization.7747866c",
+        "object.starter-preparation.742417cd",
+        "object.import-existing-markdown.c8bc0a08"
+      ]
+    },
+    {
+      "group_id": "source.skills-docara-rules-skill-mesh-balance-md",
+      "group_type": "source",
+      "title": "skills/docara/rules/skill-mesh-balance.md",
+      "candidate_count": 4,
+      "candidate_ids": [
+        "object.skill-mesh-balance.20a52bfd",
+        "object.does-not-own.9533744f",
+        "object.companion-contracts.8181dfe2",
+        "object.handoff.09496b01"
+      ]
+    }
+  ],
+  "duplicate_candidates": [],
+  "uncertain_items": [],
+  "missing_evidence": [
+    "candidates are source-aware but still require semantic review before canonical write",
+    "source-group relations are weak signals and must be accepted, rejected or replaced by explicit domain relations"
+  ],
+  "review_questions": [
+    "Which candidates have a real lifecycle, owner, relation or future usage?",
+    "Which candidates should be merged, renamed or rejected before canonical acceptance?",
+    "Does the parent graph DNA need to be updated before accepting these candidates?",
+    "Are confidence signals sufficient, or should a domain skill review semantic meaning?"
+  ],
+  "source_inventory": [
+    {
+      "source_ref": "skills/docara/SKILL.md",
+      "bytes_read": 9616,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/rules/skill-mesh-balance.md",
+      "bytes_read": 1328,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/authoring-rules.md",
+      "bytes_read": 2287,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/github-pages.md",
+      "bytes_read": 6417,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/project-model.md",
+      "bytes_read": 8688,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/theme-workflow.md",
+      "bytes_read": 2657,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/translation-workflow.md",
+      "bytes_read": 5547,
+      "truncated": false
+    }
+  ],
+  "dna_candidates": [
+    {
+      "candidate_id": "dna.graph-purpose-and-evolution-vector.6a54bed2",
+      "candidate_type": "dna",
+      "proposed_kind": "knowledge",
+      "proposed_subtype": "dna-candidate",
+      "title": "Graph purpose and evolution vector",
+      "summary": "Candidate DNA should be reviewed from extracted source themes before canonical graph DNA is changed.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/rules/skill-mesh-balance.md",
+        "skills/docara/references/authoring-rules.md",
+        "skills/docara/references/github-pages.md",
+        "skills/docara/references/project-model.md",
+        "skills/docara/references/theme-workflow.md",
+        "skills/docara/references/translation-workflow.md"
+      ],
+      "confidence": 0.45,
+      "evidence_status": "extracted_by_ai",
+      "review_status": "pending",
+      "review_action": null,
+      "review_notes": [
+        "Generated as a placeholder DNA candidate because source material produced object candidates."
+      ]
+    }
+  ],
+  "projection_view_refs": [
+    "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/projection-view.json"
+  ],
+  "canonical_write_allowed": false
+}

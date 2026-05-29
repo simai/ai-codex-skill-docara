@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/domain-review-verdict.schema.json",
+  "title": "DomainReviewVerdict",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operation_id",
+    "review_id",
+    "created_at",
+    "target_repo",
+    "target_graph",
+    "skill_or_project",
+    "domain_owner",
+    "reviewer",
+    "safety_profile",
+    "selected_profile",
+    "selected_comparison_ref",
+    "context_pack_refs",
+    "heuristic_semantic_review_ref",
+    "readiness_ref",
+    "checks",
+    "findings",
+    "verdict",
+    "runtime_enablement_allowed",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "operation_id": { "const": "graph.domain-review" },
+    "review_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_repo": { "type": "string", "minLength": 1 },
+    "target_graph": { "type": "string", "minLength": 1 },
+    "skill_or_project": { "type": "string", "minLength": 1 },
+    "domain_owner": { "type": "string", "minLength": 1 },
+    "reviewer": {
+      "type": "object",
+      "required": ["reviewer_id", "reviewer_type", "reviewer_scope"],
+      "properties": {
+        "reviewer_id": { "type": "string", "minLength": 1 },
+        "reviewer_type": {
+          "type": "string",
+          "enum": ["human", "independent_ai", "specialist_skill", "mixed"]
+        },
+        "reviewer_scope": {
+          "type": "string",
+          "enum": ["domain", "safety", "graph", "mixed"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "safety_profile": { "type": "string", "minLength": 1 },
+    "selected_profile": {
+      "type": "string",
+      "enum": ["compact", "standard", "broad", "custom"]
+    },
+    "selected_comparison_ref": { "type": "string", "minLength": 1 },
+    "context_pack_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "heuristic_semantic_review_ref": { "type": "string", "minLength": 1 },
+    "readiness_ref": { "type": "string", "minLength": 1 },
+    "checks": {
+      "type": "object",
+      "required": [
+        "mandatory_rules_retained",
+        "non_scope_retained",
+        "safety_gates_retained",
+        "owner_boundaries_retained",
+        "evidence_refs_sufficient",
+        "false_claims_absent",
+        "task_context_sufficient",
+        "sensitive_data_absent",
+        "fallback_gaps_recorded",
+        "profile_choice_justified"
+      ],
+      "properties": {
+        "mandatory_rules_retained": { "$ref": "#/$defs/checkVerdict" },
+        "non_scope_retained": { "$ref": "#/$defs/checkVerdict" },
+        "safety_gates_retained": { "$ref": "#/$defs/checkVerdict" },
+        "owner_boundaries_retained": { "$ref": "#/$defs/checkVerdict" },
+        "evidence_refs_sufficient": { "$ref": "#/$defs/checkVerdict" },
+        "false_claims_absent": { "$ref": "#/$defs/checkVerdict" },
+        "task_context_sufficient": { "$ref": "#/$defs/checkVerdict" },
+        "sensitive_data_absent": { "$ref": "#/$defs/checkVerdict" },
+        "fallback_gaps_recorded": { "$ref": "#/$defs/checkVerdict" },
+        "profile_choice_justified": { "$ref": "#/$defs/checkVerdict" }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "issue", "evidence_ref", "recommendation"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["info", "minor", "major", "blocker"]
+          },
+          "issue": { "type": "string" },
+          "evidence_ref": { "type": "string" },
+          "recommendation": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "pass",
+        "pass_with_notes",
+        "needs_more_context",
+        "semantic_regression",
+        "unsafe_context",
+        "blocked"
+      ]
+    },
+    "runtime_enablement_allowed": { "type": "boolean" },
+    "notes": { "type": "string" },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "checkVerdict": {
+      "type": "string",
+      "enum": ["pass", "fail", "unknown", "not_applicable"]
+    }
+  },
+  "additionalProperties": true
+}

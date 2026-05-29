@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/release-plan.schema.json",
+  "title": "ReleasePlan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "operation_id",
+    "status",
+    "source_proposal_ref",
+    "release_gate",
+    "version_plan",
+    "upgrade_dry_runs",
+    "apply_allowed",
+    "warnings",
+    "blockers",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "operation_id": {
+      "type": "string",
+      "const": "graph.model-change.release"
+    },
+    "status": { "type": "string" },
+    "source_proposal_ref": { "type": "string" },
+    "release_gate": {
+      "type": "object",
+      "required": ["passed", "compatibility", "migration_required"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "compatibility": { "type": "string" },
+        "migration_required": { "type": "boolean" },
+        "validation": { "type": "object" },
+        "stale_report": { "$ref": "stale-report.schema.json" },
+        "benchmark_report_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "version_plan": { "$ref": "version-plan.schema.json" },
+    "upgrade_dry_runs": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "apply_allowed": { "type": "boolean" },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

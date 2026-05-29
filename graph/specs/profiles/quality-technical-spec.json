@@ -1,0 +1,39 @@
+{
+  "id": "profile.quality_technical_spec",
+  "schema_version": "1.0.0",
+  "profile_type": "quality_profile",
+  "parent_profile": "profile.content_quality_core",
+  "title": "Technical Specification Quality Profile",
+  "purpose": "Score whether a technical specification, package TZ, contract or implementation handoff is clear, complete, testable and actionable enough for its intended work stage.",
+  "applies_to": [
+    "technical specifications",
+    "package TZ",
+    "implementation handoffs",
+    "architecture contracts",
+    "feature specifications"
+  ],
+  "dimensions": [
+    "scope_clarity",
+    "domain_model",
+    "contracts",
+    "acceptance_criteria",
+    "testability",
+    "edge_cases",
+    "security_runtime_behavior",
+    "cross_package_alignment",
+    "implementation_clarity",
+    "ai_codegen_readiness"
+  ],
+  "required_evidence": [
+    "source references",
+    "acceptance criteria",
+    "review notes or explicit waiver",
+    "testability statement"
+  ],
+  "guardrails": [
+    "CQS technical_spec is not code readiness",
+    "high CQS still requires implementation planning and domain gates",
+    "do not treat structural GRS as semantic completeness"
+  ],
+  "promotion_status": "template_candidate"
+}

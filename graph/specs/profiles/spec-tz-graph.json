@@ -1,0 +1,173 @@
+{
+  "id": "profile.spec_tz_graph",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "parent_profile": "profile.universal_core",
+  "title": "Spec TZ Graph Profile",
+  "purpose": "Turn specifications from standalone text documents into canonical graph specs with generated human-readable TZ, implementation handoff and acceptance evidence.",
+  "scope": [
+    "systems",
+    "components",
+    "features",
+    "requirements",
+    "contracts",
+    "decisions",
+    "constraints",
+    "acceptance",
+    "evidence",
+    "risks",
+    "open questions",
+    "roadmap items",
+    "implementation batches",
+    "generated documents"
+  ],
+  "non_goals": [
+    "replace universal Evolutionary Object Graph core",
+    "make Markdown the source of truth",
+    "accept AI-extracted facts without review",
+    "force every project into full graph depth"
+  ],
+  "depth_mode_default": "standard",
+  "allowed_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "contract",
+    "decision",
+    "constraint",
+    "acceptance",
+    "evidence",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "role_to_kind_mapping": [
+    {
+      "role": "system",
+      "kind": "knowledge",
+      "subtype": "system"
+    },
+    {
+      "role": "component",
+      "kind": "knowledge",
+      "subtype": "component"
+    },
+    {
+      "role": "feature",
+      "kind": "capability",
+      "subtype": "feature"
+    },
+    {
+      "role": "requirement",
+      "kind": "requirement"
+    },
+    {
+      "role": "contract",
+      "kind": "artifact",
+      "subtype": "contract"
+    },
+    {
+      "role": "acceptance",
+      "kind": "requirement",
+      "subtype": "acceptance"
+    },
+    {
+      "role": "evidence",
+      "kind": "evidence"
+    },
+    {
+      "role": "risk",
+      "kind": "observation",
+      "subtype": "risk"
+    },
+    {
+      "role": "open_question",
+      "kind": "observation",
+      "subtype": "open_question"
+    },
+    {
+      "role": "implementation_batch",
+      "kind": "work",
+      "subtype": "implementation_batch"
+    },
+    {
+      "role": "generated_doc",
+      "kind": "artifact",
+      "subtype": "generated_doc"
+    }
+  ],
+  "required_relations": [
+    "contains",
+    "depends_on",
+    "implements",
+    "documents",
+    "tests",
+    "blocks",
+    "constrains",
+    "is_generated_from"
+  ],
+  "required_fields": [
+    "id",
+    "schema_version",
+    "kind",
+    "title",
+    "summary",
+    "owner",
+    "lifecycle",
+    "readiness",
+    "source_refs",
+    "visibility"
+  ],
+  "readiness_model": "Universal T-level readiness with profile-specific gates for specification, implementation readiness and validation.",
+  "evidence_model": "Accepted specification objects require source refs; AI extraction remains candidate evidence until reviewed.",
+  "generated_outputs": [
+    "human_readable_tz",
+    "implementation_handoff",
+    "acceptance_checklist",
+    "readiness_report",
+    "impact_report",
+    "ai_context_pack"
+  ],
+  "operation_subset": [
+    "intake",
+    "extract",
+    "normalize",
+    "link",
+    "validate",
+    "what-impacts",
+    "tz-audit",
+    "tz-profile-validate",
+    "tz-generate-doc",
+    "tz-generate-handoff"
+  ],
+  "quality_gates": [
+    "accepted objects have source refs",
+    "feature has acceptance or approved exception",
+    "contract has provider and consumer when applicable",
+    "generated TZ is fresh against canonical specs",
+    "developer handoff lists owner, next batch and verification commands"
+  ],
+  "safety_policy": "No canonical write from AI extraction without review; generated TZ is projection, not source of truth.",
+  "retention_policy": "Raw sources and extraction candidates stay in graph/source; generated documents can be rebuilt from canonical specs.",
+  "federation_policy": "Specification graphs may export bounded readiness, impact and contract summaries without exposing private raw sources.",
+  "migration_policy": "Legacy text specifications are mapped into candidates, reviewed, accepted into canonical specs and kept as transitional projections or archived.",
+  "owner_skill": "graph",
+  "companion_skills": [
+    "dev",
+    "docs",
+    "tester",
+    "domain-owner"
+  ],
+  "promotion_status": "canonical_template",
+  "measurement_requirements": [
+    "requirement coverage",
+    "feature acceptance coverage",
+    "contract provider/consumer coverage",
+    "generated TZ freshness",
+    "implementation handoff completeness",
+    "impact recall"
+  ]
+}

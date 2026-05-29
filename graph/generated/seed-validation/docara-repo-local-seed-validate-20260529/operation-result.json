@@ -1,0 +1,19 @@
+{
+  "operation_id": "graph.seed-validate",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/seed-validation/docara-repo-local-seed-validate-20260529/seed-validation.json",
+    "graph/generated/seed-validation/docara-repo-local-seed-validate-20260529/seed-validation.md",
+    "graph/generated/seed-validation/docara-repo-local-seed-validate-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "run graph seed-preview"
+  ],
+  "seed_validation_ref": "graph/generated/seed-validation/docara-repo-local-seed-validate-20260529/seed-validation.json",
+  "seed_ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+  "canonical_write_allowed": false
+}

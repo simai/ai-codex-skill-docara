@@ -1,0 +1,22 @@
+{
+  "operation_id": "growgraph.integration-review",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/growgraph/integration-reviews/docara-repo-local-integration-review-active-gate-20260529/growgraph-integration-review.json",
+    "graph/generated/growgraph/integration-reviews/docara-repo-local-integration-review-active-gate-20260529/growgraph-integration-review.md",
+    "graph/generated/growgraph/integration-reviews/docara-repo-local-integration-review-active-gate-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "review hook/CI enforcement refs",
+    "update GrowGraph adoption report with integration review",
+    "do not claim GGA9 until integration_allowed is true"
+  ],
+  "integration_review_ref": "graph/generated/growgraph/integration-reviews/docara-repo-local-integration-review-active-gate-20260529/growgraph-integration-review.json",
+  "verdict": "pass_with_notes",
+  "integration_allowed": true,
+  "canonical_write_allowed": false
+}

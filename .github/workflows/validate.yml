@@ -1,0 +1,29 @@
+name: Validate skill
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate skill frontmatter
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          skill_files = list(Path('skills').glob('*/SKILL.md'))
+          assert skill_files, 'missing skill file'
+          text = skill_files[0].read_text(encoding='utf-8')
+          assert re.match(r'^---\n(.*?)\n---', text, re.S), 'missing frontmatter'
+          print('Skill frontmatter OK')
+          PY
+      - name: Compile scripts
+        run: python -m py_compile scripts/*.py
+      - name: GrowGraph contract gate
+        run: python scripts/growgraph_contract_gate.py

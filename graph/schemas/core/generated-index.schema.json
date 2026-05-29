@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/generated-index.schema.json",
+  "title": "GeneratedIndex",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "graph_id",
+    "canonical_state_ref",
+    "generated_at",
+    "generator",
+    "index_type",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "graph_id": {
+      "type": "string"
+    },
+    "canonical_state_ref": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "generator": {
+      "type": "string"
+    },
+    "index_type": {
+      "type": "string",
+      "enum": [
+        "adjacency",
+        "reverse_adjacency",
+        "object",
+        "relation",
+        "initiative_impact",
+        "capability_adoption",
+        "policy_coverage",
+        "blocker",
+        "safe_action",
+        "federation_endpoint"
+      ]
+    },
+    "entries": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

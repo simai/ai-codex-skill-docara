@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/guard-gap.schema.json",
+  "title": "GuardGap",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "feedback_type",
+    "severity",
+    "status",
+    "summary",
+    "details",
+    "source_refs",
+    "reported_from",
+    "graph_ref",
+    "task",
+    "runtime_policy",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string" },
+    "feedback_type": {
+      "type": "string",
+      "const": "fallback_to_raw_source"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "status": { "type": "string" },
+    "summary": { "type": "string" },
+    "details": { "type": "string" },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reported_from": { "type": "string" },
+    "graph_ref": { "type": "string" },
+    "task": { "type": "string" },
+    "object_id": {
+      "type": ["string", "null"]
+    },
+    "runtime_policy": { "type": "object" },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

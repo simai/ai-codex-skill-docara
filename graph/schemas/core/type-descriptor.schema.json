@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/type-descriptor.schema.json",
+  "title": "TypeDescriptor",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "kind",
+    "allowed_lifecycle",
+    "allowed_readiness"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_lifecycle": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_readiness": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_relations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_skill": {
+      "type": "string"
+    },
+    "migration_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

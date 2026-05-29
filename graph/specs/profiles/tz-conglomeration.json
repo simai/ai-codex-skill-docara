@@ -1,0 +1,186 @@
+{
+  "id": "profile.tz_conglomeration",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "ecosystem",
+  "title": "TZ Conglomeration Profile",
+  "summary": "Profile for turning many related specifications, packages, features, roadmaps and source materials into one connected graph-based specification system.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "contract",
+    "adoption",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "decision",
+    "constraint",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "contributes_to",
+    "provides",
+    "consumes",
+    "protects",
+    "visualizes",
+    "emits",
+    "indexes",
+    "gates",
+    "is_profile_of",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "package_boundary",
+    "feature_boundary",
+    "cross_package_adoption",
+    "source_of_truth",
+    "generated_projection",
+    "readiness",
+    "handoff"
+  ],
+  "required_acceptance": [
+    "source_inventory_complete",
+    "component_feature_map_reviewed",
+    "relation_inference_reviewed",
+    "adoption_matrix_generated",
+    "package_inventory_complete",
+    "feature_acceptance_complete",
+    "cross_package_adoption_visible",
+    "readiness_dashboard_fresh",
+    "gap_report_fresh",
+    "canonical_generated_boundary_validated"
+  ],
+  "required_generated_outputs": [
+    "tz_conglomeration_dashboard",
+    "component_readiness_matrix",
+    "feature_adoption_matrix",
+    "missing_relations_report",
+    "graph_standard_adoption_report",
+    "weak_component_report",
+    "readiness_dashboard",
+    "adoption_matrix",
+    "gap_report",
+    "human_readable_tz",
+    "ai_context_pack",
+    "next_batch_roadmap"
+  ],
+  "required_gap_categories": [
+    "missing_package",
+    "package_without_features",
+    "feature_without_acceptance",
+    "contract_without_provider_or_consumer",
+    "cross_package_feature_without_adoption",
+    "unknown_adoption_coverage",
+    "stale_generated_artifact",
+    "source_without_extraction",
+    "object_below_required_readiness",
+    "io_contract_gap",
+    "capability_tier_gap",
+    "profile_gap",
+    "semantic_review_gap",
+    "implementation_before_tz_ready",
+    "active_legacy_package",
+    "missing_security_access_audit_boundary",
+    "missing_license_capability_boundary"
+  ],
+  "readiness_target": "T5_implementation_ready",
+  "graph_standard_adoption_levels": [
+    "G0_unstructured",
+    "G1_inventoried",
+    "G2_objectized",
+    "G3_linked",
+    "G4_adoption_tracked",
+    "G5_review_ready",
+    "G6_handoff_ready",
+    "G7_implementation_ready",
+    "G8_evolving"
+  ],
+  "feature_io_contract": {
+    "required_when": [
+      "feature_behaves_like_operation",
+      "feature_exposes_api_or_command",
+      "feature_transforms_data",
+      "feature_has_side_effects",
+      "feature_is_used_by_multiple_components"
+    ],
+    "fields": [
+      "inputs",
+      "process",
+      "outputs",
+      "side_effects",
+      "failure_modes"
+    ]
+  },
+  "evidence_policy": "A TZ conglomeration is ready only when package/component inventory, feature acceptance, cross-package adoption, gap reports and readiness dashboards are generated from canonical graph specs and reviewed by the relevant domain owner.",
+  "generated_outputs": [
+    "conglomeration_readiness_dashboard",
+    "feature_adoption_matrix",
+    "gap_report",
+    "next_tz_batch_roadmap",
+    "scoped_human_readable_tz",
+    "scoped_handoff",
+    "ai_context_pack"
+  ],
+  "adoption_scan_policy": {
+    "required_when": [
+      "new_component_added",
+      "new_feature_added",
+      "new_initiative_accepted",
+      "component_dependency_changes",
+      "project_profile_changes"
+    ],
+    "default_mode": "dry_run",
+    "canonical_write": "requires_review",
+    "output": [
+      "candidate_adoption_records",
+      "candidate_requires_adoption_in_relations",
+      "unknown_coverage_list",
+      "missing_relation_report",
+      "tooling_gap_when_scan_is_manual"
+    ]
+  },
+  "automation_policy": {
+    "safe_without_user_confirmation": [
+      "generated_reports",
+      "review_packets",
+      "dry_run_canonical_diffs",
+      "validation",
+      "stale_check",
+      "profile_validation",
+      "workflow_updates"
+    ],
+    "requires_user_or_owner_confirmation": [
+      "canonical_rewrite",
+      "source_of_truth_change",
+      "destructive_migration",
+      "security_policy_change",
+      "licensing_policy_change",
+      "ambiguous_ownership_decision"
+    ]
+  },
+  "migration_policy": "Existing text specifications, chats, roadmaps, package graphs and generated reports must be preserved as source/evidence, converted into candidate graph objects, reviewed, then promoted to canonical specs only through approval-gated writes."
+}

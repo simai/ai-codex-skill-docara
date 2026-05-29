@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/quality-dashboard.schema.json",
+  "title": "Content Quality Dashboard",
+  "description": "Dashboard comparing Content Quality Score reviews with graph readiness scores.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "operation_id",
+    "created_at",
+    "graph_id",
+    "scope",
+    "summary",
+    "rows",
+    "interpretation",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_id": {
+      "type": "string",
+      "const": "graph.quality-dashboard"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "object",
+        "package",
+        "all"
+      ]
+    },
+    "quality_review_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readiness_score_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "row_count",
+        "verdict_counts"
+      ],
+      "properties": {
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "average_cqs": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "average_raw_cqs": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "average_grs": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "verdict_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target_ref",
+          "verdict"
+        ],
+        "properties": {
+          "target_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "package": {
+            "type": "string"
+          },
+          "quality_review_ref": {
+            "type": "string"
+          },
+          "cqs_score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "cqs_band": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "raw_cqs_score": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "score_cap": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "scope_object_count": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "grs_score": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "grs_band": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "package_readiness": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "relation_count": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "required_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verdict": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "interpretation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canonical_write_allowed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

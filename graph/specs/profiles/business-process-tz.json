@@ -1,0 +1,71 @@
+{
+  "id": "profile.business_process_tz",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "business_process",
+  "title": "Business Process TZ Profile",
+  "summary": "Domain profile for graph-based specifications of business processes, roles, steps, decisions, events, controls and evidence.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "constraint",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "contract",
+    "decision",
+    "adoption",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "role_boundary",
+    "input_output",
+    "approval",
+    "audit",
+    "handoff",
+    "exception_handling"
+  ],
+  "required_acceptance": [
+    "role_review",
+    "process_walkthrough",
+    "exception_scenario_review",
+    "auditability_check"
+  ],
+  "readiness_target": "T4_specification_ready",
+  "evidence_policy": "Business process readiness requires owner review, role boundary validation and at least one walkthrough scenario.",
+  "generated_outputs": [
+    "process_tz",
+    "role_map",
+    "handoff_map",
+    "risk_register",
+    "acceptance_checklist"
+  ],
+  "migration_policy": "Existing regulations, instructions, meeting notes and workflow diagrams must be mapped into components, requirements, constraints, evidence and work objects."
+}

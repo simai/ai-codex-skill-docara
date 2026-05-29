@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/version-plan.schema.json",
+  "title": "VersionPlan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "created_at",
+    "status",
+    "source_proposal_ref",
+    "compatibility",
+    "migration_required",
+    "current_versions",
+    "target_versions",
+    "version_changes",
+    "affected_graph_count",
+    "affected_graphs",
+    "release_gate_required",
+    "apply_allowed",
+    "next_suggested_operations"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "status": { "type": "string" },
+    "source_proposal_ref": { "type": "string" },
+    "proposal_id": {
+      "type": ["string", "null"]
+    },
+    "proposal_title": {
+      "type": ["string", "null"]
+    },
+    "compatibility": {
+      "type": ["string", "null"]
+    },
+    "migration_required": { "type": "boolean" },
+    "current_versions": { "type": "object" },
+    "target_versions": { "type": "object" },
+    "version_changes": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "affected_graph_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "affected_graphs": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "release_gate_required": { "type": "boolean" },
+    "apply_allowed": { "type": "boolean" },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

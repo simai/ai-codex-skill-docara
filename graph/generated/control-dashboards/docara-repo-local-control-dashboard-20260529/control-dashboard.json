@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "id": "control-dashboard.docara-repo-local-control-dashboard-20260529",
+  "created_at": "2026-05-29T19:59:12.398241+00:00",
+  "operation_id": "graph.control-dashboard",
+  "graph_id": "example.graph",
+  "canonical_state_ref": "sha256:a29f6efa731728fc877856267e5760e95cee578ba2a42f48f49bed1cda10fe6f",
+  "summary": {
+    "status": "control_ready",
+    "headline": "Seed and embryo are available; use projection views and score reports for next decision."
+  },
+  "seed": {
+    "status": "success",
+    "label": "seed",
+    "ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+    "operation_id": "graph-seed",
+    "id": "seed.docara-skill.growgraph-pilot.20260529",
+    "canonical_state_ref": null
+  },
+  "embryo": {
+    "status": "available",
+    "label": "embryo",
+    "ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
+    "operation_id": "graph.seed-expand",
+    "id": "graph-embryo.docara-repo-local-seed-expand-20260529",
+    "canonical_state_ref": "sha256:a29f6efa731728fc877856267e5760e95cee578ba2a42f48f49bed1cda10fe6f",
+    "quality_summary": {
+      "candidate_object_count": 36,
+      "candidate_relation_count": 32,
+      "source_file_count": 7,
+      "by_kind": {
+        "knowledge": 34,
+        "policy": 1,
+        "skill": 1
+      },
+      "top_sources": {
+        "skills/docara/SKILL.md": 11,
+        "skills/docara/references/authoring-rules.md": 8,
+        "skills/docara/references/github-pages.md": 7,
+        "skills/docara/references/project-model.md": 6,
+        "skills/docara/rules/skill-mesh-balance.md": 4
+      },
+      "average_confidence": 0.513,
+      "high_confidence_count": 0,
+      "medium_confidence_count": 36,
+      "low_confidence_count": 0,
+      "duplicate_candidate_count": 0,
+      "duplicate_group_count": 0,
+      "review_group_count": 8
+    },
+    "review_group_count": 8,
+    "duplicate_group_count": 0
+  },
+  "readiness": {
+    "status": "missing",
+    "label": "readiness",
+    "ref": null,
+    "score": null,
+    "band": null
+  },
+  "quality": {
+    "status": "missing",
+    "label": "quality",
+    "ref": null,
+    "summary": {}
+  },
+  "projection_views": [
+    {
+      "status": "available",
+      "ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/projection-view.json",
+      "view_type": "seed_summary",
+      "title": "Seed summary for skill.docara.growgraph"
+    }
+  ],
+  "proposal_queue": {
+    "status": "available",
+    "label": "proposal_queue",
+    "ref": "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.json",
+    "operation_id": "graph.loop-propose-actions",
+    "id": "action-proposals.docara-repo-local-embryo-proposals-20260529",
+    "canonical_state_ref": "sha256:a29f6efa731728fc877856267e5760e95cee578ba2a42f48f49bed1cda10fe6f",
+    "action_count": 68
+  },
+  "stale_artifacts": [],
+  "next_actions": [
+    "run graph readiness-score for the target mode",
+    "run graph quality-review or quality-dashboard when content quality matters",
+    "review pending proposal actions before canonical write"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "canonical_write_allowed": false
+}

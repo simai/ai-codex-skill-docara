@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/guard-result.schema.json",
+  "title": "GuardResult",
+  "type": "object",
+  "required": [
+    "operation_id",
+    "status",
+    "mode",
+    "changed_canonical_objects",
+    "changed_generated_artifacts",
+    "warnings",
+    "next_suggested_operations",
+    "task",
+    "graph_required",
+    "context_required",
+    "fallback_required",
+    "fallback_allowed",
+    "context_status"
+  ],
+  "properties": {
+    "operation_id": {
+      "type": "string",
+      "const": "graph.guard"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "partial", "blocked", "failed", "dry_run"]
+    },
+    "mode": { "type": "string" },
+    "changed_canonical_objects": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "changed_generated_artifacts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "next_suggested_operations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "task": { "type": "string" },
+    "graph_required": { "type": "boolean" },
+    "context_required": { "type": "boolean" },
+    "fallback_required": { "type": "boolean" },
+    "fallback_allowed": { "type": "boolean" },
+    "gap_record_ref": {
+      "type": ["string", "null"]
+    },
+    "context_status": {
+      "type": "string",
+      "enum": ["not_started", "success", "failed"]
+    },
+    "context_pack_ref": {
+      "type": ["string", "null"]
+    },
+    "stale_report": { "$ref": "stale-report.schema.json" },
+    "canonical_state_ref": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": true
+}

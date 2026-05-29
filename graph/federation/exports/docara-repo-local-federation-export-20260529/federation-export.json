@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_version": "1.0.0",
+  "graph_id": "growgraph.skill-docara",
+  "exported_at": "2026-05-29T19:59:13.142878+00:00",
+  "freshness_hash": "sha256:ce6adfacc156b4e6d859cfaa5694ae5d9cbf1cb76664cf7264cf33744e9280c5",
+  "manifest": {
+    "graph_id": "growgraph.skill-docara",
+    "title": "GrowGraph federation export for skill:docara",
+    "graph_type": "growgraph_skill_pilot",
+    "owner": "docara",
+    "source_of_truth": "generated_growgraph_pilot_artifacts",
+    "audience": "internal",
+    "canonical_write_allowed": false
+  },
+  "graph_contracts": [
+    {
+      "name": "growgraph-adoption-report",
+      "schema_ref": "schemas/core/growgraph-adoption-report.schema.json"
+    },
+    {
+      "name": "semantic-preservation-verdict",
+      "schema_ref": "schemas/core/semantic-preservation-verdict.schema.json"
+    },
+    {
+      "name": "effectiveness-report",
+      "schema_ref": "schemas/core/effectiveness-report.schema.json"
+    },
+    {
+      "name": "control-dashboard",
+      "schema_ref": "schemas/core/control-dashboard.schema.json"
+    },
+    {
+      "name": "graph-embryo",
+      "schema_ref": "schemas/core/graph-embryo.schema.json"
+    }
+  ],
+  "object_index_summary": {
+    "object_count": 36,
+    "total_object_count": 36,
+    "kinds": {
+      "knowledge": 34,
+      "policy": 1,
+      "skill": 1
+    },
+    "excluded_by_policy_count": 0
+  },
+  "relation_endpoint_summary": {
+    "relation_count": 32,
+    "relation_types": {
+      "relates_to": 1,
+      "source_related_to": 31
+    },
+    "top_endpoints": [
+      {
+        "object_id": "object.docara.3277e1ef",
+        "degree": 11
+      },
+      {
+        "object_id": "object.docara-authoring-rules.f794ab6e",
+        "degree": 7
+      },
+      {
+        "object_id": "object.github-pages-for-docara.abf0f9db",
+        "degree": 6
+      },
+      {
+        "object_id": "object.docara-project-model.1da1a70f",
+        "degree": 5
+      },
+      {
+        "object_id": "object.skill-mesh-balance.20a52bfd",
+        "degree": 3
+      },
+      {
+        "object_id": "object.workflow.d7a48414",
+        "degree": 2
+      },
+      {
+        "object_id": "object.authoring-rules.9349c4be",
+        "degree": 1
+      },
+      {
+        "object_id": "object.base-url.1dbd61f5",
+        "degree": 1
+      },
+      {
+        "object_id": "object.bundled-scripts.321756ff",
+        "degree": 1
+      },
+      {
+        "object_id": "object.companion-contracts.8181dfe2",
+        "degree": 1
+      },
+      {
+        "object_id": "object.content-quality.48e4b7ac",
+        "degree": 1
+      },
+      {
+        "object_id": "object.default-recommendation.cd2a0d77",
+        "degree": 1
+      },
+      {
+        "object_id": "object.directory-shape.c39ffddc",
+        "degree": 1
+      },
+      {
+        "object_id": "object.does-not-own.9533744f",
+        "degree": 1
+      },
+      {
+        "object_id": "object.files.6ce6c512",
+        "degree": 1
+      },
+      {
+        "object_id": "object.handoff.09496b01",
+        "degree": 1
+      },
+      {
+        "object_id": "object.import-existing-markdown.c8bc0a08",
+        "degree": 1
+      },
+      {
+        "object_id": "object.lang-php.e6ddb251",
+        "degree": 1
+      },
+      {
+        "object_id": "object.markdown-page-template.3563cc96",
+        "degree": 1
+      },
+      {
+        "object_id": "object.page-title.4aeab6c0",
+        "degree": 1
+      },
+      {
+        "object_id": "object.placement-decision.472f01a1",
+        "degree": 1
+      },
+      {
+        "object_id": "object.project-pages-path-prefix.aff21b12",
+        "degree": 1
+      },
+      {
+        "object_id": "object.prompt-examples.9b446e48",
+        "degree": 1
+      },
+      {
+        "object_id": "object.publication-decision.32e4c896",
+        "degree": 1
+      },
+      {
+        "object_id": "object.required-workflow-shape.79643954",
+        "degree": 1
+      }
+    ]
+  },
+  "readiness_summary": {
+    "adoption_level": 7,
+    "adoption_level_name": "effectiveness_checked",
+    "grs_score": null,
+    "semantic_verdict": "pass_with_notes",
+    "effectiveness_verdict": "improved"
+  },
+  "evidence_status_summary": {
+    "candidate": 36
+  },
+  "unresolved_links": [],
+  "migration_status": "federation_ready",
+  "compatibility": {
+    "kernel_version": "0.1.1",
+    "schema_version": "1.0.0",
+    "operation_model_version": "0.1.0",
+    "runtime_contract_version": "0.1.1",
+    "consumer_minimum_protocol": "1.0.0"
+  },
+  "growgraph_adoption": {
+    "target_ref": "skill:docara",
+    "owner_skill": "docara",
+    "adoption_level": 7,
+    "adoption_level_name": "effectiveness_checked",
+    "semantic_verdict": "pass_with_notes",
+    "effectiveness_verdict": "improved",
+    "source_refs": [
+      "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+      "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+      "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+      "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+      "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json"
+    ]
+  },
+  "privacy_filter": {
+    "audience": "internal",
+    "include_private": false
+  },
+  "next_actions": [
+    "update adoption report with federation export",
+    "review AGENTS.md and hooks integration before GGA9"
+  ],
+  "canonical_write_allowed": false
+}

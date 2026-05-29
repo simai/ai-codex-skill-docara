@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/control-dashboard.schema.json",
+  "title": "Universal Graph Control Dashboard",
+  "description": "Human-facing control-layer report that combines seed, embryo, readiness, quality, projection views, proposal queue and next actions.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "operation_id",
+    "created_at",
+    "graph_id",
+    "canonical_state_ref",
+    "summary",
+    "seed",
+    "embryo",
+    "readiness",
+    "quality",
+    "projection_views",
+    "proposal_queue",
+    "stale_artifacts",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "schema_version": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "graph.control-dashboard" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "graph_id": { "type": "string", "minLength": 1 },
+    "canonical_state_ref": { "type": "string", "minLength": 1 },
+    "summary": {
+      "type": "object",
+      "required": ["status", "headline"],
+      "properties": {
+        "status": { "type": "string", "minLength": 1 },
+        "headline": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "seed": { "type": "object", "additionalProperties": true },
+    "embryo": { "type": "object", "additionalProperties": true },
+    "readiness": { "type": "object", "additionalProperties": true },
+    "quality": { "type": "object", "additionalProperties": true },
+    "projection_views": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "proposal_queue": { "type": "object", "additionalProperties": true },
+    "stale_artifacts": { "type": "array", "items": { "type": "string" } },
+    "next_actions": { "type": "array", "items": { "type": "string" } },
+    "canonical_write_allowed": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

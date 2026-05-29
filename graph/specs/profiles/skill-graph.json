@@ -1,0 +1,162 @@
+{
+  "id": "profile.skill_graph",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "parent_profile": "profile.universal_core",
+  "title": "Skill Graph Profile",
+  "purpose": "Represent a skill as a graph of knowledge, scenarios, rules, tools, routing signals, companion contracts and acceptance gates.",
+  "scope": [
+    "specialists",
+    "activities",
+    "scenarios",
+    "rules",
+    "references",
+    "tools",
+    "routing signals",
+    "companion contracts",
+    "acceptance gates",
+    "learning proposals"
+  ],
+  "non_goals": [
+    "replace the skill file structure",
+    "force graph-first runtime before readiness gate",
+    "accept extracted skill knowledge without review",
+    "duplicate domain knowledge owned by another skill"
+  ],
+  "depth_mode_default": "standard",
+  "allowed_roles": [
+    "specialist",
+    "activity",
+    "scenario",
+    "rule",
+    "reference",
+    "tool",
+    "routing_signal",
+    "companion_contract",
+    "acceptance_gate",
+    "learning_proposal"
+  ],
+  "role_to_kind_mapping": [
+    {
+      "role": "specialist",
+      "kind": "knowledge",
+      "subtype": "specialist"
+    },
+    {
+      "role": "activity",
+      "kind": "knowledge",
+      "subtype": "activity"
+    },
+    {
+      "role": "scenario",
+      "kind": "knowledge",
+      "subtype": "scenario"
+    },
+    {
+      "role": "rule",
+      "kind": "knowledge",
+      "subtype": "rule"
+    },
+    {
+      "role": "reference",
+      "kind": "knowledge",
+      "subtype": "reference"
+    },
+    {
+      "role": "tool",
+      "kind": "capability",
+      "subtype": "tool"
+    },
+    {
+      "role": "routing_signal",
+      "kind": "signal",
+      "subtype": "routing"
+    },
+    {
+      "role": "companion_contract",
+      "kind": "graph_contract",
+      "subtype": "handoff"
+    },
+    {
+      "role": "acceptance_gate",
+      "kind": "requirement",
+      "subtype": "acceptance_gate"
+    },
+    {
+      "role": "learning_proposal",
+      "kind": "observation",
+      "subtype": "learning"
+    }
+  ],
+  "required_relations": [
+    "documents",
+    "depends_on",
+    "implements",
+    "uses",
+    "tests",
+    "blocks",
+    "routes_to",
+    "hands_off_to"
+  ],
+  "required_fields": [
+    "id",
+    "schema_version",
+    "kind",
+    "title",
+    "summary",
+    "owner",
+    "lifecycle",
+    "readiness",
+    "source_refs",
+    "visibility"
+  ],
+  "readiness_model": "Universal T-level readiness with graph-first runtime enablement only after readiness and runtime policy gates pass.",
+  "evidence_model": "Skill graph knowledge requires source refs, owner review or benchmark/runtime evidence before graph-first use.",
+  "generated_outputs": [
+    "request_context_pack",
+    "routing_report",
+    "stale_knowledge_report",
+    "gap_report",
+    "duplicate_overlap_report",
+    "benchmark_report"
+  ],
+  "operation_subset": [
+    "skill:index",
+    "skill:route",
+    "skill:context",
+    "skill:gaps",
+    "generate-context",
+    "what-impacts",
+    "readiness",
+    "runtime-policy"
+  ],
+  "quality_gates": [
+    "every rule has source or owner",
+    "every scenario has acceptance gate",
+    "every routing signal maps to owner skill or specialist",
+    "extracted skill knowledge is not accepted without review",
+    "stale references are visible",
+    "graph-first runtime has explicit fallback"
+  ],
+  "safety_policy": "Skill graph may route and generate context, but graph-first runtime and action suggestions remain policy-gated; dangerous actions require external approval.",
+  "retention_policy": "Raw skill sources remain in the skill repository; generated context and reports are rebuildable; learning proposals remain draft until accepted.",
+  "federation_policy": "Skill graph exports bounded summaries for federation and must not duplicate domain knowledge owned by another skill.",
+  "migration_policy": "Existing SKILL.md, specialists, rules, activities, references, quality gates and examples are indexed into graph candidates, reviewed and accepted incrementally.",
+  "owner_skill": "graph",
+  "companion_skills": [
+    "teamlead",
+    "dev",
+    "tester",
+    "domain-owner"
+  ],
+  "promotion_status": "canonical_template",
+  "measurement_requirements": [
+    "context precision",
+    "context recall",
+    "routing accuracy",
+    "stale knowledge detection",
+    "duplicate overlap detection",
+    "evidence coverage",
+    "time to context"
+  ]
+}

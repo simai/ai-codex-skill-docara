@@ -1,0 +1,61 @@
+{
+  "id": "profile.universal_tz_core",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "mixed",
+  "title": "Universal Graph TZ Core",
+  "summary": "Base profile for graph-based technical specifications across software, products, skills, processes, research and ecosystems.",
+  "extends": [],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "contract",
+    "decision",
+    "constraint",
+    "adoption",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_profile_of",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_acceptance": [
+    "feature_acceptance",
+    "profile_validation",
+    "readiness_verdict"
+  ],
+  "readiness_target": "T4_specification_ready",
+  "evidence_policy": "AI extraction creates candidates only. Canonical objects require human or domain-owner review evidence before validated readiness.",
+  "generated_outputs": [
+    "human_readable_tz",
+    "impact_report",
+    "adoption_matrix",
+    "acceptance_checklist",
+    "ai_context_pack"
+  ],
+  "migration_policy": "Old text specifications and registries must be mapped into candidates, reviewed, accepted into canonical specs, then kept as transitional projections or archived."
+}

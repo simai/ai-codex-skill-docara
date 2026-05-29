@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/graph-object.schema.json",
+  "title": "GraphObject",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "kind",
+    "title",
+    "lifecycle",
+    "readiness",
+    "source_refs"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "knowledge",
+        "capability",
+        "requirement",
+        "decision",
+        "initiative",
+        "adoption",
+        "work",
+        "source",
+        "artifact",
+        "evidence",
+        "relation",
+        "event",
+        "signal",
+        "trigger",
+        "action",
+        "observation",
+        "policy",
+        "migration",
+        "graph_contract"
+      ]
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "lifecycle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "readiness": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "confidence_method": {
+      "type": "string"
+    },
+    "evidence_status": {
+      "type": "string",
+      "enum": [
+        "asserted_by_human",
+        "extracted_by_ai",
+        "validated",
+        "disputed",
+        "obsolete",
+        "superseded"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "type_descriptor_ref": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

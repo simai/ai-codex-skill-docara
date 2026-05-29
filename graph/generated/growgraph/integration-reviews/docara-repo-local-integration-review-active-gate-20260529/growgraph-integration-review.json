@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "id": "growgraph-integration-review.docara-repo-local-integration-review-active-gate-20260529",
+  "operation_id": "growgraph.integration-review",
+  "created_at": "2026-05-29T20:00:04.896617+00:00",
+  "target_ref": "skill:docara",
+  "owner_skill": "docara",
+  "reviewer": "graph",
+  "adoption_report_ref": "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+  "federation_ref": "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+  "agents_ref": "AGENTS.md",
+  "hooks_refs": [
+    "graph/federation/hooks/growgraph-contract-gate.md"
+  ],
+  "checks": {
+    "agents_routing_reviewed": "pass",
+    "agents_owner_boundary_preserved": "pass",
+    "agents_no_duplication_preserved": "pass",
+    "hooks_contract_reviewed": "pass",
+    "hooks_validate_contracts": "pass",
+    "hooks_block_unsafe_canonical_write": "pass",
+    "hooks_do_not_force_runtime": "pass"
+  },
+  "verdict": "pass_with_notes",
+  "integration_allowed": true,
+  "findings": [
+    {
+      "severity": "minor",
+      "check": "review_note",
+      "summary": "Repo-local AGENTS.md, workflow and read-only contract gate are present; generated artifacts do not replace source files.",
+      "evidence_refs": [
+        "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+        "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+        "AGENTS.md",
+        "graph/federation/hooks/growgraph-contract-gate.md"
+      ],
+      "required_action": "preserve note in AGENTS.md/hook integration policy"
+    }
+  ],
+  "next_actions": [
+    "review hook/CI enforcement refs",
+    "update GrowGraph adoption report with integration review",
+    "do not claim GGA9 until integration_allowed is true"
+  ],
+  "canonical_write_allowed": false
+}

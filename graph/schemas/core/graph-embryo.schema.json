@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/graph-embryo.schema.json",
+  "title": "Graph Embryo",
+  "description": "Reviewable candidate graph generated from a Graph Seed before canonical write.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "operation_id",
+    "created_at",
+    "seed_ref",
+    "target_graph_id",
+    "target_profile",
+    "target_mode",
+    "candidate_objects",
+    "candidate_relations",
+    "uncertain_items",
+    "missing_evidence",
+    "review_questions",
+    "projection_view_refs",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "schema_version": { "type": "string", "minLength": 1 },
+    "operation_id": {
+      "type": "string",
+      "enum": ["graph.seed-preview", "graph.seed-expand"]
+    },
+    "created_at": { "type": "string", "minLength": 1 },
+    "seed_ref": { "type": "string", "minLength": 1 },
+    "target_graph_id": { "type": "string", "minLength": 1 },
+    "target_profile": { "type": "string", "minLength": 1 },
+    "target_mode": { "type": "string", "minLength": 1 },
+    "candidate_objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "title", "reason"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "source_refs": { "type": "array", "items": { "type": "string" } },
+          "readiness": { "type": "string" },
+          "lifecycle": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "candidate_relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "type", "to", "reason"],
+        "properties": {
+          "from": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "to": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": true
+      }
+    },
+    "uncertain_items": { "type": "array", "items": { "type": "string" } },
+    "missing_evidence": { "type": "array", "items": { "type": "string" } },
+    "review_questions": { "type": "array", "items": { "type": "string" } },
+    "projection_view_refs": { "type": "array", "items": { "type": "string" } },
+    "canonical_write_allowed": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

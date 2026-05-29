@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-dashboard.schema.json",
+  "title": "BenchmarkDashboard",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dashboard_id",
+    "scorecard_count",
+    "visible_scorecard_count",
+    "scorecards",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "dashboard_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "scorecard_count": { "type": "integer" },
+    "visible_scorecard_count": { "type": "integer" },
+    "scorecards": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

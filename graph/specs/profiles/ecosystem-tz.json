@@ -1,0 +1,75 @@
+{
+  "id": "profile.ecosystem_tz",
+  "schema_version": "1.0.0",
+  "profile_type": "domain",
+  "domain_type": "ecosystem",
+  "title": "Ecosystem TZ Profile",
+  "summary": "Domain profile for graph-based specifications of ecosystems composed of multiple projects, products, packages, skills, teams or federated graphs.",
+  "extends": [
+    "profile.universal_tz_core"
+  ],
+  "required_tz_roles": [
+    "system",
+    "component",
+    "feature",
+    "requirement",
+    "contract",
+    "adoption",
+    "decision",
+    "acceptance",
+    "evidence"
+  ],
+  "optional_tz_roles": [
+    "constraint",
+    "risk",
+    "open_question",
+    "roadmap_item",
+    "implementation_batch",
+    "generated_doc"
+  ],
+  "allowed_relation_types": [
+    "contains",
+    "depends_on",
+    "blocks",
+    "implements",
+    "documents",
+    "tests",
+    "constrains",
+    "extends",
+    "replaces",
+    "conflicts_with",
+    "uses",
+    "affects",
+    "requires_adoption_in",
+    "is_profile_of",
+    "is_projection_of",
+    "is_generated_from"
+  ],
+  "required_contracts": [
+    "federation",
+    "ownership",
+    "compatibility",
+    "versioning",
+    "migration",
+    "governance",
+    "release_or_rollout"
+  ],
+  "required_acceptance": [
+    "cross_component_impact_review",
+    "adoption_matrix_review",
+    "compatibility_review",
+    "governance_review",
+    "migration_review"
+  ],
+  "readiness_target": "T5_implementation_ready",
+  "evidence_policy": "Ecosystem readiness requires cross-component impact evidence and explicit adoption status for required participants.",
+  "generated_outputs": [
+    "ecosystem_tz",
+    "impact_map",
+    "adoption_matrix",
+    "federation_contracts",
+    "migration_plan",
+    "ai_context_pack"
+  ],
+  "migration_policy": "Existing project registries, package graphs, feature graphs, roadmaps and standards must be consolidated into canonical graph specs or marked as generated/transitional projections."
+}

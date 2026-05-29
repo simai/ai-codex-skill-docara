@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "type_descriptors": [
+    {
+      "id": "descriptor.tz.system",
+      "kind": "knowledge",
+      "subtype": "system",
+      "tz_role": "system",
+      "title": "TZ System",
+      "description": "Whole system, product, project, process or ecosystem being specified.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "tz_role",
+        "title",
+        "summary",
+        "owner",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ],
+      "allowed_readiness": [
+        "T0_idea",
+        "T1_captured",
+        "T2_structured",
+        "T3_reviewed",
+        "T4_specification_ready",
+        "T5_implementation_ready",
+        "T6_validated",
+        "T7_operating",
+        "T8_evolving"
+      ]
+    },
+    {
+      "id": "descriptor.tz.component",
+      "kind": "knowledge",
+      "subtype": "component",
+      "tz_role": "component",
+      "title": "TZ Component",
+      "description": "Part of a system: package, module, service, site section, channel, process segment or other meaningful subsystem.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "tz_role",
+        "title",
+        "owner",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ]
+    },
+    {
+      "id": "descriptor.tz.feature",
+      "kind": "capability",
+      "subtype": "feature",
+      "tz_role": "feature",
+      "title": "TZ Feature",
+      "description": "Capability or behavior the system must provide.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "tz_role",
+        "title",
+        "summary",
+        "owner",
+        "lifecycle",
+        "readiness",
+        "source_refs",
+        "acceptance_refs"
+      ]
+    },
+    {
+      "id": "descriptor.tz.contract",
+      "kind": "artifact",
+      "subtype": "contract",
+      "tz_role": "contract",
+      "title": "TZ Contract",
+      "description": "Formal interface or boundary: API, schema, manifest, file format, event, command, policy, import/export or federation contract.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "tz_role",
+        "title",
+        "owner",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ]
+    },
+    {
+      "id": "descriptor.tz.adoption",
+      "kind": "adoption",
+      "subtype": "feature_adoption",
+      "tz_role": "adoption",
+      "title": "TZ Feature Adoption",
+      "description": "Status of feature or contract adoption inside another component, package, product or process.",
+      "required_fields": [
+        "id",
+        "schema_version",
+        "kind",
+        "subtype",
+        "tz_role",
+        "title",
+        "lifecycle",
+        "readiness",
+        "source_refs"
+      ],
+      "allowed_statuses": [
+        "not_applicable",
+        "unknown",
+        "mentioned",
+        "required_not_described",
+        "drafted",
+        "reviewed",
+        "accepted",
+        "implemented",
+        "tested",
+        "blocked",
+        "deprecated"
+      ]
+    }
+  ]
+}

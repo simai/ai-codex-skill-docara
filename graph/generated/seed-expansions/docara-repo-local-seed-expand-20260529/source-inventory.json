@@ -1,0 +1,40 @@
+{
+  "source_inventory": [
+    {
+      "source_ref": "skills/docara/SKILL.md",
+      "bytes_read": 9616,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/rules/skill-mesh-balance.md",
+      "bytes_read": 1328,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/authoring-rules.md",
+      "bytes_read": 2287,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/github-pages.md",
+      "bytes_read": 6417,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/project-model.md",
+      "bytes_read": 8688,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/theme-workflow.md",
+      "bytes_read": 2657,
+      "truncated": false
+    },
+    {
+      "source_ref": "skills/docara/references/translation-workflow.md",
+      "bytes_read": 5547,
+      "truncated": false
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/extraction-quality-report.schema.json",
+  "title": "ExtractionQualityReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operation_id",
+    "quality_id",
+    "created_at",
+    "artifact_ref",
+    "verdict",
+    "candidate_count",
+    "average_confidence",
+    "min_confidence",
+    "warnings",
+    "blockers",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "operation_id": { "const": "graph.extraction.quality" },
+    "quality_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "artifact_ref": { "type": "string" },
+    "verdict": { "enum": ["pass", "needs_review", "blocked"] },
+    "candidate_count": { "type": "integer", "minimum": 0 },
+    "average_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "min_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "low_confidence_count": { "type": "integer", "minimum": 0 },
+    "missing_evidence_status_count": { "type": "integer", "minimum": 0 },
+    "missing_source_refs_count": { "type": "integer", "minimum": 0 },
+    "unreviewed_count": { "type": "integer", "minimum": 0 },
+    "missing_question_count": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "canonical_write_allowed": { "const": false }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/federation-export.schema.json",
+  "title": "FederationExport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "graph_id",
+    "exported_at",
+    "freshness_hash",
+    "manifest",
+    "graph_contracts",
+    "object_index_summary",
+    "relation_endpoint_summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "graph_id": {
+      "type": "string"
+    },
+    "exported_at": {
+      "type": "string"
+    },
+    "freshness_hash": {
+      "type": "string"
+    },
+    "manifest": {
+      "type": "object"
+    },
+    "type_descriptor_summary": {
+      "type": "object"
+    },
+    "graph_contracts": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "object_index_summary": {
+      "type": "object"
+    },
+    "relation_endpoint_summary": {
+      "type": "object"
+    },
+    "readiness_summary": {
+      "type": "object"
+    },
+    "evidence_status_summary": {
+      "type": "object"
+    },
+    "unresolved_links": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "migration_status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/tz-profile.schema.json",
+  "title": "Graph TZ Profile",
+  "description": "Domain or project profile for applying the Universal Graph TZ Standard.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "profile_type",
+    "title",
+    "extends",
+    "required_tz_roles",
+    "allowed_relation_types",
+    "readiness_target"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "profile_type": {
+      "type": "string",
+      "enum": [
+        "domain",
+        "project"
+      ]
+    },
+    "domain_type": {
+      "type": "string",
+      "enum": [
+        "software_system",
+        "software_package",
+        "website",
+        "product",
+        "business_process",
+        "marketing_system",
+        "ai_skill",
+        "research_model",
+        "ecosystem",
+        "mixed"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "extends": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_tz_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "optional_tz_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_relation_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_acceptance": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readiness_target": {
+      "type": "string"
+    },
+    "evidence_policy": {
+      "type": "string"
+    },
+    "generated_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "migration_policy": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

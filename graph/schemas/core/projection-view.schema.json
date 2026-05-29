@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/projection-view.schema.json",
+  "title": "Projection View",
+  "description": "Human-readable graph control-layer projection generated from seed, embryo, readiness, quality or proposal artifacts.",
+  "type": "object",
+  "required": [
+    "id",
+    "schema_version",
+    "operation_id",
+    "created_at",
+    "view_type",
+    "source_ref",
+    "title",
+    "sections",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "schema_version": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "graph.projection-view" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "view_type": {
+      "type": "string",
+      "enum": [
+        "seed_summary",
+        "candidate_objects",
+        "candidate_relations",
+        "readiness",
+        "quality",
+        "risk",
+        "impact",
+        "next_action",
+        "approval_queue"
+      ]
+    },
+    "source_ref": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "items"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "items": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": true
+      }
+    },
+    "next_actions": { "type": "array", "items": { "type": "string" } },
+    "canonical_write_allowed": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/benchmark-suite.schema.json",
+  "title": "BenchmarkSuite",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "suite_id",
+    "title",
+    "purpose",
+    "tasks"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "suite_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "graph_profile": {
+      "type": "string"
+    },
+    "baseline_target": {
+      "type": "string"
+    },
+    "graph_target": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "success_thresholds": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "string",
+          "boolean"
+        ]
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "task_type",
+          "description"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "input_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected_relevant_objects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expected_impacted_objects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "acceptance_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "record_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

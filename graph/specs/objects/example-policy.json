@@ -1,0 +1,15 @@
+{
+  "id": "example.policy.demo",
+  "schema_version": "1.0.0",
+  "kind": "policy",
+  "policy_type": "guard",
+  "title": "Demo Policy",
+  "summary": "Example policy object used by the demo relation.",
+  "owner": "domain-skill",
+  "lifecycle": "draft",
+  "readiness": "R1_draft",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [],
+  "evidence_refs": [],
+  "tags": []
+}
