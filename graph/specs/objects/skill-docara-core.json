@@ -1,0 +1,26 @@
+{
+  "id": "skill.docara.core",
+  "schema_version": "1.0.0",
+  "kind": "skill",
+  "title": "Docara skill core",
+  "summary": "Owns Docara documentation site setup, front matter, menu, locales, theme workflow, GitHub Pages and publication checks.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.86,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "skill",
+    "growgraph-runtime",
+    "capability-profile",
+    "docara",
+    "skill",
+    "core"
+  ],
+  "subtype": "skill_core"
+}

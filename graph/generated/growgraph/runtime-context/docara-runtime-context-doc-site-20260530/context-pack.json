@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "request": {
+    "task": "Собрать Docara documentation site: front matter, menu, locales, publish flow и smoke checks",
+    "skill": "docara",
+    "repo": "/Users/rim/Documents/GitHub/ai-codex-skill-docara",
+    "mode": "growgraph_skill_runtime_context"
+  },
+  "included_objects": [
+    {
+      "object_id": "example.capability.demo",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.5,
+      "evidence_status": "asserted_by_human",
+      "title": "Demo Capability",
+      "summary": "Example structured capability object.",
+      "source_refs": []
+    },
+    {
+      "object_id": "example.policy.demo",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.5,
+      "evidence_status": "asserted_by_human",
+      "title": "Demo Policy",
+      "summary": "Example policy object used by the demo relation.",
+      "source_refs": []
+    }
+  ],
+  "excluded_objects": [],
+  "warnings": [],
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "related_relations": [
+    {
+      "id": "rel.example.capability.demo.depends-on.policy",
+      "from": "example.capability.demo",
+      "to": "example.policy.demo",
+      "relation_type": "depends_on",
+      "impact": "medium",
+      "source_refs": []
+    }
+  ],
+  "runtime_contract": {
+    "graph_first_scope": "routing/capability/policy orientation",
+    "raw_source_authoritative": true,
+    "canonical_write_allowed": false
+  }
+}

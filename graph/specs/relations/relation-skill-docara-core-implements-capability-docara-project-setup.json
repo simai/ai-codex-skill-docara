@@ -1,0 +1,18 @@
+{
+  "id": "relation-skill-docara-core-implements-capability-docara-project-setup",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "skill.docara.core",
+  "to": "capability.docara.project-setup",
+  "relation_type": "implements",
+  "status": "accepted",
+  "confidence": 0.84,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "impact": "high",
+  "owner": "graph",
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "evidence_refs": []
+}

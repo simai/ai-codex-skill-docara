@@ -1,17 +1,43 @@
 {
   "schema_version": "1.0.0",
-  "graph_id": "example.graph",
-  "title": "Example Graph",
-  "description": "Template graph index.",
+  "graph_id": "ai-codex-skill-docara.graph",
+  "title": "Docara Skill Graph",
+  "description": "GrowGraph runtime capability profile for ai-codex-skill-docara.",
   "type_descriptor_files": [
     "type-descriptors/core.json"
   ],
   "object_files": [
-    "objects/example-capability.json",
-    "objects/example-policy.json"
+    "objects/skill-docara-core.json",
+    "objects/capability-docara-project-setup.json",
+    "objects/capability-docara-authoring-frontmatter.json",
+    "objects/capability-docara-menu-locales.json",
+    "objects/capability-docara-theme-branding.json",
+    "objects/capability-docara-publish-github-pages.json",
+    "objects/policy-docara-docs-owner-boundary.json",
+    "objects/policy-docara-publish-smoke.json",
+    "objects/gate-docara-publish-readiness.json"
   ],
   "relation_files": [
-    "relations/example-relation.json"
+    "relations/relation-skill-docara-core-implements-capability-docara-project-setup.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-authoring-frontmatter.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-menu-locales.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-theme-branding.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-publish-github-pages.json",
+    "relations/relation-capability-docara-project-setup-governed-by-policy-docara-docs-owner-boundary.json",
+    "relations/relation-capability-docara-project-setup-governed-by-policy-docara-publish-smoke.json",
+    "relations/relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-docs-owner-boundary.json",
+    "relations/relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-publish-smoke.json",
+    "relations/relation-capability-docara-menu-locales-governed-by-policy-docara-docs-owner-boundary.json",
+    "relations/relation-capability-docara-menu-locales-governed-by-policy-docara-publish-smoke.json",
+    "relations/relation-capability-docara-theme-branding-governed-by-policy-docara-docs-owner-boundary.json",
+    "relations/relation-capability-docara-theme-branding-governed-by-policy-docara-publish-smoke.json",
+    "relations/relation-capability-docara-publish-github-pages-governed-by-policy-docara-docs-owner-boundary.json",
+    "relations/relation-capability-docara-publish-github-pages-governed-by-policy-docara-publish-smoke.json",
+    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-project-setup.json",
+    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-authoring-frontmatter.json",
+    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-menu-locales.json",
+    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-theme-branding.json",
+    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-publish-github-pages.json"
   ],
   "evolution_track_files": [
     "evolution-tracks/example-track.json"

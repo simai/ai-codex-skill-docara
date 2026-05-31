@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.readiness-score",
+  "score_id": "docara-gga10-grs-backfill-20260530",
+  "created_at": "2026-05-30T10:26:19.738553+00:00",
+  "target_repo": "/Users/rim/Documents/GitHub/ai-codex-skill-docara",
+  "target_graph": "skill:docara",
+  "target_mode": "pilot",
+  "score": 80,
+  "band": "G4_controlled_runtime_candidate",
+  "dimension_scores": {
+    "canonical_structure": {
+      "score": 18,
+      "max": 20,
+      "summary": "Seed and embryo are available for pilot review.",
+      "evidence_refs": [
+        "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+        "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json"
+      ]
+    },
+    "evidence_contracts": {
+      "score": 16,
+      "max": 20,
+      "summary": "Control dashboard and proposal queue are available.",
+      "evidence_refs": [
+        "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+        "graph/generated/embryo-proposals/docara-repo-local-embryo-proposals-20260529/action-proposals.json"
+      ]
+    },
+    "context_benchmark": {
+      "score": 18,
+      "max": 20,
+      "summary": "Effectiveness gate passed.",
+      "evidence_refs": [
+        "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
+      ]
+    },
+    "semantic_domain_safety": {
+      "score": 23,
+      "max": 25,
+      "summary": "Semantic preservation gate passed.",
+      "evidence_refs": [
+        "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json"
+      ]
+    },
+    "runtime_operational": {
+      "score": 5,
+      "max": 15,
+      "summary": "Runtime gate is not required for GrowGraph pilot scoring.",
+      "evidence_refs": []
+    }
+  },
+  "caps_applied": [],
+  "evidence_refs": [
+    "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+    "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+    "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
+  ],
+  "interpretation": "GrowGraph pilot score for skill adoption gates; this is not runtime approval.",
+  "next_actions": [
+    "update GrowGraph adoption report",
+    "do not claim federation migration until semantic and effectiveness gates pass"
+  ],
+  "canonical_write_allowed": false,
+  "owner_skill": "docara",
+  "projection_view_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "relation-capability-docara-publish-github-pages-governed-by-policy-docara-publish-smoke",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "capability.docara.publish-github-pages",
+  "to": "policy.docara.publish-smoke",
+  "relation_type": "governed_by",
+  "status": "accepted",
+  "confidence": 0.84,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "impact": "medium",
+  "owner": "graph",
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "evidence_refs": []
+}

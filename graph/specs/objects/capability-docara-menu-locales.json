@@ -1,0 +1,28 @@
+{
+  "id": "capability.docara.menu-locales",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Menu and locales",
+  "summary": "Configure menus, locales and translation workflow.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.86,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/translation-workflow.md",
+    "skills/docara/scripts/docara-translate-state.php"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "skill",
+    "growgraph-runtime",
+    "capability-profile",
+    "docara",
+    "capability",
+    "capability"
+  ],
+  "subtype": "skill_capability"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "policy.docara.publish-smoke",
+  "schema_version": "1.0.0",
+  "kind": "policy",
+  "title": "Publication smoke policy",
+  "summary": "Published Docara site needs config, links/assets and smoke checks before ready.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.86,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/github-pages.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "skill",
+    "growgraph-runtime",
+    "capability-profile",
+    "docara",
+    "policy",
+    "policy"
+  ],
+  "subtype": "skill_policy"
+}

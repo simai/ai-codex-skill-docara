@@ -1,0 +1,21 @@
+{
+  "operation_id": "growgraph.pilot-score",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/graph-readiness-score.json",
+    "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/graph-readiness-score.md",
+    "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "update GrowGraph adoption report",
+    "do not claim federation migration until semantic and effectiveness gates pass"
+  ],
+  "readiness_score_ref": "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/graph-readiness-score.json",
+  "score": 80,
+  "band": "G4_controlled_runtime_candidate",
+  "canonical_write_allowed": false
+}

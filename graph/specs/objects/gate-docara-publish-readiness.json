@@ -1,0 +1,28 @@
+{
+  "id": "gate.docara.publish-readiness",
+  "schema_version": "1.0.0",
+  "kind": "gate",
+  "title": "Docara publish readiness gate",
+  "summary": "Blocks publish-ready status until project, menu/locales/theme and publication smoke are covered.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.86,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/project-model.md",
+    "skills/docara/references/github-pages.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "skill",
+    "growgraph-runtime",
+    "capability-profile",
+    "docara",
+    "gate",
+    "gate"
+  ],
+  "subtype": "quality_gate"
+}

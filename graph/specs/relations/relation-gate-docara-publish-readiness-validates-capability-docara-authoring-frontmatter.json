@@ -1,0 +1,18 @@
+{
+  "id": "relation-gate-docara-publish-readiness-validates-capability-docara-authoring-frontmatter",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "gate.docara.publish-readiness",
+  "to": "capability.docara.authoring-frontmatter",
+  "relation_type": "validates",
+  "status": "accepted",
+  "confidence": 0.84,
+  "confidence_method": "human_asserted_from_skill_contract",
+  "evidence_status": "asserted_by_human",
+  "impact": "medium",
+  "owner": "graph",
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "evidence_refs": []
+}
