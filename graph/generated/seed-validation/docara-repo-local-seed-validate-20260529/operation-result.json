@@ -14,6 +14,6 @@
     "run graph seed-preview"
   ],
   "seed_validation_ref": "graph/generated/seed-validation/docara-repo-local-seed-validate-20260529/seed-validation.json",
-  "seed_ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+  "seed_ref": "graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json",
   "canonical_write_allowed": false
 }

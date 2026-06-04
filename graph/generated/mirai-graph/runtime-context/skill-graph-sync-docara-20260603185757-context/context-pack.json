@@ -1,0 +1,356 @@
+{
+  "schema_version": "1.0.0",
+  "request": {
+    "task": "Mirai Graph federation rename",
+    "skill": "docara",
+    "repo": "/Users/rim/Documents/GitHub/ai-codex-skill-docara",
+    "mode": "mirai_graph_skill_runtime_context"
+  },
+  "included_objects": [
+    {
+      "object_id": "skill.docara.core",
+      "score": 0.15,
+      "reason": "core/policy baseline",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Docara skill core",
+      "summary": "Owns Docara documentation site setup, front matter, menu, locales, theme workflow, GitHub Pages and publication checks.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "object_id": "policy.docara.docs-owner-boundary",
+      "score": 0.15,
+      "reason": "core/policy baseline",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Docs owner boundary",
+      "summary": "Docara publishes site structure; docs skill owns content method and quality.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/rules/skill-mesh-balance.md"
+      ]
+    },
+    {
+      "object_id": "policy.docara.publish-smoke",
+      "score": 0.15,
+      "reason": "core/policy baseline",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Publication smoke policy",
+      "summary": "Published Docara site needs config, links/assets and smoke checks before ready.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/github-pages.md"
+      ]
+    },
+    {
+      "object_id": "gate.docara.publish-readiness",
+      "score": 0.15,
+      "reason": "core/policy baseline",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Docara publish readiness gate",
+      "summary": "Blocks publish-ready status until project, menu/locales/theme and publication smoke are covered.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/project-model.md",
+        "skills/docara/references/github-pages.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.project-setup",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Docara project setup",
+      "summary": "Prepare Docara project model and source structure.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/project-model.md",
+        "skills/docara/scripts/prepare-docara-project.php"
+      ]
+    },
+    {
+      "object_id": "capability.docara.authoring-frontmatter",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Authoring and front matter",
+      "summary": "Apply authoring rules, front matter and content import expectations.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/authoring-rules.md",
+        "skills/docara/scripts/import-markdown-docs.php"
+      ]
+    },
+    {
+      "object_id": "capability.docara.menu-locales",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Menu and locales",
+      "summary": "Configure menus, locales and translation workflow.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/translation-workflow.md",
+        "skills/docara/scripts/docara-translate-state.php"
+      ]
+    },
+    {
+      "object_id": "capability.docara.theme-branding",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Theme and branding",
+      "summary": "Apply Docara theme variables and branding workflow.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/theme-workflow.md",
+        "skills/docara/scripts/docara-theme-vars.php"
+      ]
+    },
+    {
+      "object_id": "capability.docara.publish-github-pages",
+      "score": 0.0,
+      "reason": "low relevance fallback",
+      "confidence": 0.86,
+      "evidence_status": "asserted_by_human",
+      "title": "Publish GitHub Pages",
+      "summary": "Prepare GitHub Pages workflow and publication checks.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/github-pages.md",
+        "skills/docara/scripts/create-github-pages-workflow.py"
+      ]
+    }
+  ],
+  "excluded_objects": [],
+  "warnings": [],
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/rules/skill-mesh-balance.md",
+    "skills/docara/references/github-pages.md",
+    "skills/docara/references/project-model.md",
+    "skills/docara/scripts/prepare-docara-project.php",
+    "skills/docara/references/authoring-rules.md",
+    "skills/docara/scripts/import-markdown-docs.php",
+    "skills/docara/references/translation-workflow.md",
+    "skills/docara/scripts/docara-translate-state.php",
+    "skills/docara/references/theme-workflow.md",
+    "skills/docara/scripts/docara-theme-vars.php",
+    "skills/docara/scripts/create-github-pages-workflow.py"
+  ],
+  "related_relations": [
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-project-setup",
+      "from": "skill.docara.core",
+      "to": "capability.docara.project-setup",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-authoring-frontmatter",
+      "from": "skill.docara.core",
+      "to": "capability.docara.authoring-frontmatter",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-menu-locales",
+      "from": "skill.docara.core",
+      "to": "capability.docara.menu-locales",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-theme-branding",
+      "from": "skill.docara.core",
+      "to": "capability.docara.theme-branding",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-publish-github-pages",
+      "from": "skill.docara.core",
+      "to": "capability.docara.publish-github-pages",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-project-setup-governed-by-policy-docara-docs-owner-boundary",
+      "from": "capability.docara.project-setup",
+      "to": "policy.docara.docs-owner-boundary",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-project-setup-governed-by-policy-docara-publish-smoke",
+      "from": "capability.docara.project-setup",
+      "to": "policy.docara.publish-smoke",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-docs-owner-boundary",
+      "from": "capability.docara.authoring-frontmatter",
+      "to": "policy.docara.docs-owner-boundary",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-publish-smoke",
+      "from": "capability.docara.authoring-frontmatter",
+      "to": "policy.docara.publish-smoke",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-menu-locales-governed-by-policy-docara-docs-owner-boundary",
+      "from": "capability.docara.menu-locales",
+      "to": "policy.docara.docs-owner-boundary",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-menu-locales-governed-by-policy-docara-publish-smoke",
+      "from": "capability.docara.menu-locales",
+      "to": "policy.docara.publish-smoke",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-theme-branding-governed-by-policy-docara-docs-owner-boundary",
+      "from": "capability.docara.theme-branding",
+      "to": "policy.docara.docs-owner-boundary",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-theme-branding-governed-by-policy-docara-publish-smoke",
+      "from": "capability.docara.theme-branding",
+      "to": "policy.docara.publish-smoke",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-publish-github-pages-governed-by-policy-docara-docs-owner-boundary",
+      "from": "capability.docara.publish-github-pages",
+      "to": "policy.docara.docs-owner-boundary",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-capability-docara-publish-github-pages-governed-by-policy-docara-publish-smoke",
+      "from": "capability.docara.publish-github-pages",
+      "to": "policy.docara.publish-smoke",
+      "relation_type": "governed_by",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-publish-readiness-validates-capability-docara-project-setup",
+      "from": "gate.docara.publish-readiness",
+      "to": "capability.docara.project-setup",
+      "relation_type": "validates",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-publish-readiness-validates-capability-docara-authoring-frontmatter",
+      "from": "gate.docara.publish-readiness",
+      "to": "capability.docara.authoring-frontmatter",
+      "relation_type": "validates",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-publish-readiness-validates-capability-docara-menu-locales",
+      "from": "gate.docara.publish-readiness",
+      "to": "capability.docara.menu-locales",
+      "relation_type": "validates",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-publish-readiness-validates-capability-docara-theme-branding",
+      "from": "gate.docara.publish-readiness",
+      "to": "capability.docara.theme-branding",
+      "relation_type": "validates",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-publish-readiness-validates-capability-docara-publish-github-pages",
+      "from": "gate.docara.publish-readiness",
+      "to": "capability.docara.publish-github-pages",
+      "relation_type": "validates",
+      "impact": "medium",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    }
+  ],
+  "runtime_contract": {
+    "graph_first_scope": "routing/capability/policy orientation",
+    "raw_source_authoritative": true,
+    "canonical_write_allowed": false
+  }
+}

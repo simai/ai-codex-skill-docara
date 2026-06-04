@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-06-03T19:25:56.184721+00:00",
+  "skill": "docara",
+  "repo": "/Users/rim/Documents/GitHub/ai-codex-skill-docara",
+  "detector_report_ref": "/var/folders/5h/9qj7mywd5170nxnv1v7_72pc0000gn/T/tmpu106gbj2.json",
+  "changed_files": [
+    {
+      "path": "scripts/mirai_graph_contract_gate.py",
+      "source_path": "scripts/mirai_graph_contract_gate.py",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": ""
+    },
+    {
+      "path": "scripts/mirai_graph_skill_runtime.py",
+      "source_path": "scripts/mirai_graph_skill_runtime.py",
+      "change_types": [
+        "runtime"
+      ],
+      "routing_impact": false,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": ""
+    },
+    {
+      "path": "scripts/mirai_graph_contract_gate.py",
+      "source_path": "scripts/mirai_graph_contract_gate.py",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "??",
+      "old_path": ""
+    },
+    {
+      "path": "scripts/mirai_graph_skill_runtime.py",
+      "source_path": "scripts/mirai_graph_skill_runtime.py",
+      "change_types": [
+        "runtime"
+      ],
+      "routing_impact": false,
+      "federation_impact": false,
+      "status": "??",
+      "old_path": ""
+    },
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": ""
+    }
+  ],
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "routing-impact",
+    "runtime"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "scripts/mirai_graph_contract_gate.py",
+    "scripts/mirai_graph_skill_runtime.py",
+    "scripts/mirai_graph_contract_gate.py",
+    "scripts/mirai_graph_skill_runtime.py",
+    "skills/docara/SKILL.md"
+  ],
+  "canonical_write_allowed": false
+}

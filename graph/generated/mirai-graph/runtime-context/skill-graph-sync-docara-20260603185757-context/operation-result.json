@@ -1,0 +1,19 @@
+{
+  "operation_id": "mirai_graph.skill-runtime.context",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/mirai-graph/runtime-context/skill-graph-sync-docara-20260603185757-context/context-pack.json",
+    "graph/generated/mirai-graph/runtime-context/skill-graph-sync-docara-20260603185757-context/context-pack.md",
+    "graph/generated/mirai-graph/runtime-context/skill-graph-sync-docara-20260603185757-context/operation-result.json"
+  ],
+  "warnings": [],
+  "next_suggested_operations": [
+    "load listed raw source refs",
+    "run repo-local mirai_graph gate"
+  ],
+  "blockers": [],
+  "context_pack_ref": "graph/generated/mirai-graph/runtime-context/skill-graph-sync-docara-20260603185757-context/context-pack.json",
+  "canonical_write_allowed": false
+}

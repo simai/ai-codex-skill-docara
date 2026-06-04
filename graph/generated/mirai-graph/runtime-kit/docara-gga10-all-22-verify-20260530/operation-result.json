@@ -1,0 +1,17 @@
+{
+  "operation_id": "mirai_graph.skill-runtime.verify",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/mirai-graph/runtime-kit/docara-gga10-all-22-verify-20260530/runtime-kit-verify.json",
+    "graph/generated/mirai-graph/runtime-kit/docara-gga10-all-22-verify-20260530/operation-result.json"
+  ],
+  "warnings": [],
+  "next_suggested_operations": [
+    "generate runtime context for a representative task"
+  ],
+  "blockers": [],
+  "runtime_verify_ref": "graph/generated/mirai-graph/runtime-kit/docara-gga10-all-22-verify-20260530/runtime-kit-verify.json",
+  "canonical_write_allowed": false
+}

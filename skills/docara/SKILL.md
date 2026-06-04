@@ -18,9 +18,9 @@ Docara is a PHP 8.2 static documentation generator based on Jigsaw. Its project 
 - Build: `php vendor/bin/docara build production`.
 - Output: `build_production` unless `config.production.php` overrides `build.destination`.
 
-## GrowGraph Runtime Entry
+## Mirai Graph Runtime Entry
 
-For substantial `docara` tasks, use repo-local `graph/specs` and the latest GrowGraph runtime context as the first machine-readable index for capability selection, routing, readiness, companion contracts and scenario evidence. The graph layer may choose the owner boundary, required gates, related skills and raw-source fallback path for Docara documentation-site setup, front matter, menus, build/publish flow and site packaging. Raw `docara` sources remain authoritative for detailed methodology, judgement, longform playbooks, sensitive rules, reporting format and final domain verdicts. This is GrowGraph Hybrid SOT, not graph-only runtime.
+For substantial `docara` tasks, use repo-local `graph/specs` and the latest Mirai Graph runtime context as the first machine-readable index for capability selection, routing, readiness, companion contracts and scenario evidence. The graph layer may choose the owner boundary, required gates, related skills and raw-source fallback path for Docara documentation-site setup, front matter, menus, build/publish flow and site packaging. Raw `docara` sources remain authoritative for detailed methodology, judgement, longform playbooks, sensitive rules, reporting format and final domain verdicts. This is Mirai Graph Hybrid SOT, not graph-only runtime.
 
 ## Workflow
 

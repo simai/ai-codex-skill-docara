@@ -25,5 +25,5 @@ jobs:
           PY
       - name: Compile scripts
         run: python -m py_compile scripts/*.py
-      - name: GrowGraph contract gate
-        run: python scripts/growgraph_contract_gate.py
+      - name: Mirai Graph contract gate
+        run: python scripts/mirai_graph_contract_gate.py

@@ -13,7 +13,7 @@
 | `evidence_contracts` | 16 | 20 | Control dashboard and proposal queue are available. |
 | `context_benchmark` | 18 | 20 | Effectiveness gate passed. |
 | `semantic_domain_safety` | 23 | 25 | Semantic preservation gate passed. |
-| `runtime_operational` | 5 | 15 | Runtime gate is not required for GrowGraph pilot scoring. |
+| `runtime_operational` | 5 | 15 | Runtime gate is not required for Mirai Graph pilot scoring. |
 
 ## Caps Applied
 
@@ -21,5 +21,5 @@
 
 ## Next Actions
 
-- update GrowGraph adoption report
+- update Mirai Graph adoption report
 - do not claim federation migration until semantic and effectiveness gates pass

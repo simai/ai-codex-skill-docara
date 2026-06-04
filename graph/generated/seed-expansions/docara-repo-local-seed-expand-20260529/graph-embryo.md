@@ -1,7 +1,7 @@
 # Graph Embryo graph-embryo.docara-repo-local-seed-expand-20260529
 
-- Seed: `graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json`
-- Target graph: `skill.docara.growgraph`
+- Seed: `graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json`
+- Target graph: `skill.docara.mirai_graph`
 - Target profile: `profile.skill_graph`
 - Target mode: `pilot`
 - Candidate objects: `36`

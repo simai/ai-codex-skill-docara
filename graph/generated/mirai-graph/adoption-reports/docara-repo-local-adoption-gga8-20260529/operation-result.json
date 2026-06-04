@@ -1,0 +1,23 @@
+{
+  "operation_id": "mirai_graph.adoption-report",
+  "status": "blocked",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/mirai-graph/adoption-reports/docara-repo-local-adoption-gga8-20260529/mirai-graph-adoption-report.json",
+    "graph/generated/mirai-graph/adoption-reports/docara-repo-local-adoption-gga8-20260529/mirai-graph-adoption-report.md",
+    "graph/generated/mirai-graph/adoption-reports/docara-repo-local-adoption-gga8-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [
+    "AGENTS.md and hooks integration review has not passed"
+  ],
+  "next_suggested_operations": [
+    "run GRS/CQS or target scoring gate",
+    "run mirai-graph-adoption-report after each gate"
+  ],
+  "mirai_graph_adoption_report_ref": "graph/generated/mirai-graph/adoption-reports/docara-repo-local-adoption-gga8-20260529/mirai-graph-adoption-report.json",
+  "adoption_level": 8,
+  "adoption_level_name": "federation_ready",
+  "canonical_write_allowed": false
+}

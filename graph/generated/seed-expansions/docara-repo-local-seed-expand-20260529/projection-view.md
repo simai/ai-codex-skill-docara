@@ -1,11 +1,11 @@
-# Seed summary for skill.docara.growgraph
+# Seed summary for skill.docara.mirai_graph
 
 - View type: `seed_summary`
 - Source: `graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json`
 
 ## Seed
 
-- purpose: Start a controlled GrowGraph pilot for the SIMAI docara skill without changing canonical skill behavior.
+- purpose: Start a controlled Mirai Graph pilot for the SIMAI docara skill without changing canonical skill behavior.
 - target_profile: profile.skill_graph
 - target_mode: pilot
 

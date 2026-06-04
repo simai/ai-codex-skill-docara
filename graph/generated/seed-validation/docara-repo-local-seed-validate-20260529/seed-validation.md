@@ -1,8 +1,8 @@
 # Graph Seed Validation seed-validation.docara-repo-local-seed-validate-20260529
 
-- Seed: `graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json`
+- Seed: `graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json`
 - Status: `success`
-- Target graph: `skill.docara.growgraph`
+- Target graph: `skill.docara.mirai_graph`
 - Target profile: `profile.skill_graph`
 - Target mode: `pilot`
 

@@ -20,7 +20,7 @@
   "graph_embryo_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
   "projection_view_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/projection-view.json",
   "source_inventory_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/source-inventory.json",
-  "seed_ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+  "seed_ref": "graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json",
   "source_file_count": 7,
   "candidate_object_count": 36,
   "candidate_relation_count": 32,

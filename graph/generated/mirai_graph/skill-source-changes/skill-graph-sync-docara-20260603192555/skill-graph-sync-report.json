@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.report",
+  "created_at": "2026-06-03T19:25:56.434051+00:00",
+  "skill": "docara",
+  "status": "success",
+  "source_change_evidence_ref": "graph/generated/mirai_graph/skill-source-changes/skill-graph-sync-docara-20260603192555/skill-source-change-evidence.json",
+  "runtime_verify_ref": "graph/generated/mirai_graph/runtime-kit/skill-graph-sync-docara-20260603192555-verify/runtime-kit-verify.json",
+  "runtime_context_ref": "graph/generated/mirai_graph/runtime-context/skill-graph-sync-docara-20260603192555-context/context-pack.json",
+  "federation_change_proposal_ref": "graph/generated/mirai_graph/federation-change/skill-graph-sync-docara-20260603192555-federation-proposal/federation-change-proposal.json",
+  "specialist_promotion_proposal_refs": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "blockers": [],
+  "canonical_write_allowed": false
+}

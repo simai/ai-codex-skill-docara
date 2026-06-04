@@ -5,12 +5,12 @@
   "operation_id": "graph.projection-view",
   "view_type": "seed_summary",
   "source_ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json",
-  "title": "Seed summary for skill.docara.growgraph",
+  "title": "Seed summary for skill.docara.mirai_graph",
   "sections": [
     {
       "title": "Seed",
       "items": [
-        "purpose: Start a controlled GrowGraph pilot for the SIMAI docara skill without changing canonical skill behavior.",
+        "purpose: Start a controlled Mirai Graph pilot for the SIMAI docara skill without changing canonical skill behavior.",
         "target_profile: profile.skill_graph",
         "target_mode: pilot"
       ]

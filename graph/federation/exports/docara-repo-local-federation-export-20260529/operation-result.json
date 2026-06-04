@@ -1,5 +1,5 @@
 {
-  "operation_id": "growgraph.federation-export",
+  "operation_id": "mirai_graph.federation-export",
   "status": "success",
   "mode": "write_generated",
   "changed_canonical_objects": [],

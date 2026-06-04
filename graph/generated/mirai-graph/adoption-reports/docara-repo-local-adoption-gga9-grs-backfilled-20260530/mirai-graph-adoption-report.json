@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "id": "mirai-graph-adoption-report.docara-repo-local-adoption-gga9-grs-backfilled-20260530",
+  "operation_id": "mirai_graph.adoption-report",
+  "created_at": "2026-05-30T10:26:19.898135+00:00",
+  "target_ref": "skill:docara",
+  "target_type": "skill",
+  "owner_skill": "docara",
+  "adoption_level": 9,
+  "adoption_level_name": "federation_integrated",
+  "control_dashboard_ref": "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
+  "readiness_ref": "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/graph-readiness-score.json",
+  "quality_ref": null,
+  "semantic_preservation_ref": "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+  "effectiveness_ref": "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+  "federation_ref": "graph/federation/exports/docara-repo-local-federation-export-20260529/federation-export.json",
+  "integration_review_ref": "graph/generated/mirai-graph/integration-reviews/docara-repo-local-integration-review-active-gate-20260529/mirai-graph-integration-review.json",
+  "status_summary": {
+    "status": "complete",
+    "headline": "Mirai Graph adoption is at GGA9; next gate is graph_first_source_candidate.",
+    "grs_score": 80,
+    "cqs_score": null,
+    "semantic_verdict": "pass_with_notes",
+    "effectiveness_verdict": "improved",
+    "integration_verdict": "pass_with_notes"
+  },
+  "checks": {
+    "source_inventory_done": "pass",
+    "seed_validated": "pass",
+    "embryo_generated": "pass",
+    "control_dashboard_generated": "pass",
+    "grs_generated": "pass",
+    "cqs_generated": "unknown",
+    "proposal_gate_available": "pass",
+    "semantic_preservation_passed": "pass",
+    "effectiveness_checked": "pass",
+    "federation_export_validated": "pass",
+    "agents_integration_reviewed": "pass",
+    "hooks_integration_reviewed": "pass"
+  },
+  "blockers": [],
+  "next_actions": [
+    "skill is federation-integrated; keep hooks and adoption report current"
+  ],
+  "canonical_write_allowed": false
+}

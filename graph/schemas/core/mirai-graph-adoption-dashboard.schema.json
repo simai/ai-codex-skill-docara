@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/mirai-graph-adoption-dashboard.schema.json",
+  "title": "Mirai Graph Adoption Dashboard",
+  "description": "Evidence-backed dashboard of Mirai Graph adoption state across multiple skill repositories.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_scope",
+    "repositories",
+    "summary",
+    "blockers",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "mirai_graph.adoption-dashboard" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_scope": { "type": "string", "minLength": 1 },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "repo_path",
+          "owner_skill",
+          "target_ref",
+          "adoption_level",
+          "adoption_level_name",
+          "status_summary",
+          "report_ref",
+          "gate_status",
+          "next_actions",
+          "canonical_write_allowed"
+        ],
+        "properties": {
+          "repo_path": { "type": "string", "minLength": 1 },
+          "owner_skill": { "type": "string", "minLength": 1 },
+          "target_ref": { "type": ["string", "null"] },
+          "adoption_level": { "type": "integer", "minimum": 0, "maximum": 10 },
+          "adoption_level_name": {
+            "type": "string",
+            "enum": [
+              "not_started",
+              "inventoried",
+              "seeded",
+              "embryo_reviewable",
+              "scored",
+              "proposal_gated",
+              "semantically_preserved",
+              "effectiveness_checked",
+              "federation_ready",
+              "federation_integrated",
+              "graph_first_source_candidate"
+            ]
+          },
+          "status_summary": { "type": "object" },
+          "report_ref": { "type": ["string", "null"] },
+          "gate_status": { "type": "string" },
+          "next_actions": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "canonical_write_allowed": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "repository_count",
+        "gga9_count",
+        "gga10_count",
+        "gate_success_count",
+        "blocked_count",
+        "average_adoption_level",
+        "canonical_write_allowed_count"
+      ],
+      "properties": {
+        "repository_count": { "type": "integer", "minimum": 0 },
+        "gga9_count": { "type": "integer", "minimum": 0 },
+        "gga10_count": { "type": "integer", "minimum": 0 },
+        "gate_success_count": { "type": "integer", "minimum": 0 },
+        "blocked_count": { "type": "integer", "minimum": 0 },
+        "average_adoption_level": { "type": "number", "minimum": 0, "maximum": 10 },
+        "average_grs_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "canonical_write_allowed_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "blockers": { "type": "array" },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "additionalProperties": true
+}

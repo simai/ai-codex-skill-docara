@@ -14,7 +14,7 @@
       "max": 20,
       "summary": "Seed and embryo are available for pilot review.",
       "evidence_refs": [
-        "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+        "graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json",
         "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json"
       ]
     },
@@ -32,7 +32,7 @@
       "max": 20,
       "summary": "Effectiveness gate passed.",
       "evidence_refs": [
-        "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
+        "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
       ]
     },
     "semantic_domain_safety": {
@@ -40,25 +40,25 @@
       "max": 25,
       "summary": "Semantic preservation gate passed.",
       "evidence_refs": [
-        "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json"
+        "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json"
       ]
     },
     "runtime_operational": {
       "score": 5,
       "max": 15,
-      "summary": "Runtime gate is not required for GrowGraph pilot scoring.",
+      "summary": "Runtime gate is not required for Mirai Graph pilot scoring.",
       "evidence_refs": []
     }
   },
   "caps_applied": [],
   "evidence_refs": [
     "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
-    "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
-    "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
+    "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+    "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json"
   ],
-  "interpretation": "GrowGraph pilot score for skill adoption gates; this is not runtime approval.",
+  "interpretation": "Mirai Graph pilot score for skill adoption gates; this is not runtime approval.",
   "next_actions": [
-    "update GrowGraph adoption report",
+    "update Mirai Graph adoption report",
     "do not claim federation migration until semantic and effectiveness gates pass"
   ],
   "canonical_write_allowed": false,

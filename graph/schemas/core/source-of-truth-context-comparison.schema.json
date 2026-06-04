@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simai.io/schemas/graph/source-of-truth-context-comparison.schema.json",
-  "title": "GrowGraph Source Of Truth Context Comparison",
+  "title": "Mirai Graph Source Of Truth Context Comparison",
   "description": "Comparison between a graph-first context pack and raw skill sources before GGA10 apply dry-run.",
   "type": "object",
   "required": [
@@ -27,7 +27,7 @@
   "properties": {
     "schema_version": { "type": "string", "minLength": 1 },
     "id": { "type": "string", "minLength": 1 },
-    "operation_id": { "type": "string", "const": "growgraph.source-of-truth-context-comparison" },
+    "operation_id": { "type": "string", "const": "mirai_graph.source-of-truth-context-comparison" },
     "created_at": { "type": "string", "minLength": 1 },
     "target_ref": { "type": "string", "minLength": 1 },
     "owner_skill": { "type": "string", "minLength": 1 },

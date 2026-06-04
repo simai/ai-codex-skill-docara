@@ -12,9 +12,9 @@
   "seed": {
     "status": "success",
     "label": "seed",
-    "ref": "graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json",
+    "ref": "graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json",
     "operation_id": "graph-seed",
-    "id": "seed.docara-skill.growgraph-pilot.20260529",
+    "id": "seed.docara-skill.mirai-graph-pilot.20260529",
     "canonical_state_ref": null
   },
   "embryo": {
@@ -69,7 +69,7 @@
       "status": "available",
       "ref": "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/projection-view.json",
       "view_type": "seed_summary",
-      "title": "Seed summary for skill.docara.growgraph"
+      "title": "Seed summary for skill.docara.mirai_graph"
     }
   ],
   "proposal_queue": {

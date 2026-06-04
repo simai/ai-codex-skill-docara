@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/mirai-graph-adoption-report.schema.json",
+  "title": "Mirai Graph Adoption Report",
+  "description": "Status report for adopting Mirai Graph in a SIMAI skill, project or federation area.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_ref",
+    "target_type",
+    "owner_skill",
+    "adoption_level",
+    "adoption_level_name",
+    "control_dashboard_ref",
+    "semantic_preservation_ref",
+    "effectiveness_ref",
+    "federation_ref",
+    "status_summary",
+    "checks",
+    "blockers",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "mirai_graph.adoption-report" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "target_type": {
+      "type": "string",
+      "enum": ["skill", "project", "package", "federation_area", "federation", "other"]
+    },
+    "owner_skill": { "type": "string", "minLength": 1 },
+    "adoption_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "adoption_level_name": {
+      "type": "string",
+      "enum": [
+        "not_started",
+        "inventoried",
+        "seeded",
+        "embryo_reviewable",
+        "scored",
+        "proposal_gated",
+        "semantically_preserved",
+        "effectiveness_checked",
+        "federation_ready",
+        "federation_integrated",
+        "graph_first_source_candidate"
+      ]
+    },
+    "control_dashboard_ref": { "type": ["string", "null"] },
+    "readiness_ref": { "type": ["string", "null"] },
+    "quality_ref": { "type": ["string", "null"] },
+    "semantic_preservation_ref": { "type": ["string", "null"] },
+    "effectiveness_ref": { "type": ["string", "null"] },
+    "federation_ref": { "type": ["string", "null"] },
+    "integration_review_ref": { "type": ["string", "null"] },
+    "status_summary": {
+      "type": "object",
+      "required": ["status", "headline"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "blocked", "ready_for_next_gate", "complete"]
+        },
+        "headline": { "type": "string", "minLength": 1 },
+        "grs_score": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
+        "cqs_score": { "type": ["integer", "null"], "minimum": 0, "maximum": 100 },
+        "semantic_verdict": { "type": ["string", "null"] },
+        "effectiveness_verdict": { "type": ["string", "null"] },
+        "integration_verdict": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "source_inventory_done",
+        "seed_validated",
+        "embryo_generated",
+        "control_dashboard_generated",
+        "grs_generated",
+        "cqs_generated",
+        "proposal_gate_available",
+        "semantic_preservation_passed",
+        "effectiveness_checked",
+        "federation_export_validated",
+        "agents_integration_reviewed",
+        "hooks_integration_reviewed"
+      ],
+      "properties": {
+        "source_inventory_done": { "$ref": "#/$defs/check" },
+        "seed_validated": { "$ref": "#/$defs/check" },
+        "embryo_generated": { "$ref": "#/$defs/check" },
+        "control_dashboard_generated": { "$ref": "#/$defs/check" },
+        "grs_generated": { "$ref": "#/$defs/check" },
+        "cqs_generated": { "$ref": "#/$defs/check" },
+        "proposal_gate_available": { "$ref": "#/$defs/check" },
+        "semantic_preservation_passed": { "$ref": "#/$defs/check" },
+        "effectiveness_checked": { "$ref": "#/$defs/check" },
+        "federation_export_validated": { "$ref": "#/$defs/check" },
+        "agents_integration_reviewed": { "$ref": "#/$defs/check" },
+        "hooks_integration_reviewed": { "$ref": "#/$defs/check" }
+      },
+      "additionalProperties": true
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["blocker", "owner", "next_action"],
+        "properties": {
+          "blocker": { "type": "string", "minLength": 1 },
+          "owner": { "type": "string", "minLength": 1 },
+          "next_action": { "type": "string", "minLength": 1 },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "check": {
+      "type": "string",
+      "enum": ["pass", "fail", "unknown", "not_applicable"]
+    }
+  },
+  "additionalProperties": true
+}

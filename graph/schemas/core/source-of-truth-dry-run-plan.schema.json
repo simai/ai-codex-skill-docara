@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simai.io/schemas/graph/source-of-truth-dry-run-plan.schema.json",
-  "title": "GrowGraph Source Of Truth Dry Run Plan",
-  "description": "Generated dry-run plan for moving a GGA10 candidate from GrowGraph companion layer toward graph-first source-of-truth scope.",
+  "title": "Mirai Graph Source Of Truth Dry Run Plan",
+  "description": "Generated dry-run plan for moving a GGA10 candidate from Mirai Graph companion layer toward graph-first source-of-truth scope.",
   "type": "object",
   "required": [
     "schema_version",
@@ -26,7 +26,7 @@
   "properties": {
     "schema_version": { "type": "string", "minLength": 1 },
     "id": { "type": "string", "minLength": 1 },
-    "operation_id": { "type": "string", "const": "growgraph.source-of-truth-dry-run-plan" },
+    "operation_id": { "type": "string", "const": "mirai_graph.source-of-truth-dry-run-plan" },
     "created_at": { "type": "string", "minLength": 1 },
     "target_ref": { "type": "string", "minLength": 1 },
     "owner_skill": { "type": "string", "minLength": 1 },

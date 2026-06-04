@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simai.io/schemas/graph/effectiveness-report.schema.json",
-  "title": "GrowGraph Effectiveness Report",
-  "description": "Generated report comparing raw skill/project workflow with GrowGraph-assisted workflow.",
+  "title": "Mirai Graph Effectiveness Report",
+  "description": "Generated report comparing raw skill/project workflow with Mirai Graph-assisted workflow.",
   "type": "object",
   "required": [
     "schema_version",
@@ -14,7 +14,7 @@
     "owner_skill",
     "reviewer",
     "baseline_refs",
-    "growgraph_refs",
+    "mirai_graph_refs",
     "scenario_results",
     "metrics_summary",
     "verdict",
@@ -26,7 +26,7 @@
   "properties": {
     "schema_version": { "type": "string", "minLength": 1 },
     "id": { "type": "string", "minLength": 1 },
-    "operation_id": { "type": "string", "const": "growgraph.effectiveness-report" },
+    "operation_id": { "type": "string", "const": "mirai_graph.effectiveness-report" },
     "created_at": { "type": "string", "minLength": 1 },
     "target_ref": { "type": "string", "minLength": 1 },
     "target_type": {
@@ -39,7 +39,7 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1 }
     },
-    "growgraph_refs": {
+    "mirai_graph_refs": {
       "type": "array",
       "items": { "type": "string", "minLength": 1 }
     },
@@ -51,7 +51,7 @@
           "scenario_id",
           "summary",
           "baseline_score",
-          "growgraph_score",
+          "mirai_graph_score",
           "delta",
           "verdict",
           "evidence_refs"
@@ -60,7 +60,7 @@
           "scenario_id": { "type": "string", "minLength": 1 },
           "summary": { "type": "string", "minLength": 1 },
           "baseline_score": { "type": "integer", "minimum": 0, "maximum": 100 },
-          "growgraph_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "mirai_graph_score": { "type": "integer", "minimum": 0, "maximum": 100 },
           "delta": { "type": "integer", "minimum": -100, "maximum": 100 },
           "verdict": {
             "type": "string",
@@ -80,7 +80,7 @@
         "scenario_count",
         "minimum_required_scenarios",
         "average_baseline_score",
-        "average_growgraph_score",
+        "average_mirai_graph_score",
         "average_delta",
         "verdict_counts"
       ],
@@ -88,7 +88,7 @@
         "scenario_count": { "type": "integer", "minimum": 0 },
         "minimum_required_scenarios": { "type": "integer", "minimum": 1 },
         "average_baseline_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
-        "average_growgraph_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+        "average_mirai_graph_score": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
         "average_delta": { "type": ["number", "null"], "minimum": -100, "maximum": 100 },
         "verdict_counts": { "type": "object" }
       },

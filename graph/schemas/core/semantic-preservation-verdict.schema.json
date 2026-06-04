@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://simai.io/schemas/graph/semantic-preservation-verdict.schema.json",
-  "title": "GrowGraph Semantic Preservation Verdict",
-  "description": "Verdict proving whether GrowGraph adoption preserves a skill or project's domain meaning, boundaries and gates.",
+  "title": "Mirai Graph Semantic Preservation Verdict",
+  "description": "Verdict proving whether Mirai Graph adoption preserves a skill or project's domain meaning, boundaries and gates.",
   "type": "object",
   "required": [
     "schema_version",
@@ -14,7 +14,7 @@
     "owner_skill",
     "reviewer",
     "source_refs",
-    "growgraph_artifact_refs",
+    "mirai_graph_artifact_refs",
     "checks",
     "findings",
     "verdict",
@@ -26,7 +26,7 @@
   "properties": {
     "schema_version": { "type": "string", "minLength": 1 },
     "id": { "type": "string", "minLength": 1 },
-    "operation_id": { "type": "string", "const": "growgraph.semantic-preservation" },
+    "operation_id": { "type": "string", "const": "mirai_graph.semantic-preservation" },
     "created_at": { "type": "string", "minLength": 1 },
     "target_ref": { "type": "string", "minLength": 1 },
     "target_type": {
@@ -51,7 +51,7 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1 }
     },
-    "growgraph_artifact_refs": {
+    "mirai_graph_artifact_refs": {
       "type": "object",
       "required": ["seed_ref", "embryo_ref", "control_dashboard_ref"],
       "properties": {

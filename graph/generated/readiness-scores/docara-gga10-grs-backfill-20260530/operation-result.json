@@ -1,5 +1,5 @@
 {
-  "operation_id": "growgraph.pilot-score",
+  "operation_id": "mirai_graph.pilot-score",
   "status": "success",
   "mode": "write_generated",
   "changed_canonical_objects": [],
@@ -11,7 +11,7 @@
   "warnings": [],
   "blockers": [],
   "next_suggested_operations": [
-    "update GrowGraph adoption report",
+    "update Mirai Graph adoption report",
     "do not claim federation migration until semantic and effectiveness gates pass"
   ],
   "readiness_score_ref": "graph/generated/readiness-scores/docara-gga10-grs-backfill-20260530/graph-readiness-score.json",

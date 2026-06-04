@@ -1,0 +1,19 @@
+{
+  "operation_id": "mirai_graph.semantic-preservation",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+    "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.md",
+    "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "run Mirai Graph effectiveness gate",
+    "run mirai-graph-adoption-report"
+  ],
+  "semantic_preservation_ref": "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+  "canonical_write_allowed": false
+}

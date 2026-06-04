@@ -1,0 +1,24 @@
+{
+  "operation_id": "mirai_graph.skill-runtime.install",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "scripts/mirai_graph_skill_runtime.py",
+    "graph/runtime/README.md",
+    "graph/federation/hooks/mirai-graph-skill-runtime-kit.md",
+    "graph/generated/mirai-graph/runtime-kit/docara-runtime-kit-install-20260530/operation-result.json"
+  ],
+  "warnings": [],
+  "next_suggested_operations": [
+    "run runtime verify",
+    "generate representative runtime context"
+  ],
+  "blockers": [],
+  "installed_files": [
+    "scripts/mirai_graph_skill_runtime.py",
+    "graph/runtime/README.md",
+    "graph/federation/hooks/mirai-graph-skill-runtime-kit.md"
+  ],
+  "canonical_write_allowed": false
+}

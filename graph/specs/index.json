@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "graph_id": "ai-codex-skill-docara.graph",
   "title": "Docara Skill Graph",
-  "description": "GrowGraph runtime capability profile for ai-codex-skill-docara.",
+  "description": "Mirai Graph runtime capability profile for ai-codex-skill-docara.",
   "type_descriptor_files": [
     "type-descriptors/core.json"
   ],

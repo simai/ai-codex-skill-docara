@@ -9,7 +9,7 @@
 
 | Surface | Status | Ref |
 | --- | --- | --- |
-| `seed` | `success` | `graph/source/growgraph/seeds/docara-repo-local-seed-20260529.json` |
+| `seed` | `success` | `graph/source/mirai-graph/seeds/docara-repo-local-seed-20260529.json` |
 | `embryo` | `available` | `graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json` |
 | `readiness` | `missing` | `` |
 | `quality` | `missing` | `` |

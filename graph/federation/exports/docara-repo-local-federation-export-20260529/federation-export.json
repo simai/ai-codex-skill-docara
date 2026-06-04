@@ -1,22 +1,22 @@
 {
   "schema_version": "1.0.0",
   "protocol_version": "1.0.0",
-  "graph_id": "growgraph.skill-docara",
+  "graph_id": "mirai_graph.skill-docara",
   "exported_at": "2026-05-29T19:59:13.142878+00:00",
   "freshness_hash": "sha256:ce6adfacc156b4e6d859cfaa5694ae5d9cbf1cb76664cf7264cf33744e9280c5",
   "manifest": {
-    "graph_id": "growgraph.skill-docara",
-    "title": "GrowGraph federation export for skill:docara",
-    "graph_type": "growgraph_skill_pilot",
+    "graph_id": "mirai_graph.skill-docara",
+    "title": "Mirai Graph federation export for skill:docara",
+    "graph_type": "mirai_graph_skill_pilot",
     "owner": "docara",
-    "source_of_truth": "generated_growgraph_pilot_artifacts",
+    "source_of_truth": "generated_mirai_graph_pilot_artifacts",
     "audience": "internal",
     "canonical_write_allowed": false
   },
   "graph_contracts": [
     {
-      "name": "growgraph-adoption-report",
-      "schema_ref": "schemas/core/growgraph-adoption-report.schema.json"
+      "name": "mirai-graph-adoption-report",
+      "schema_ref": "schemas/core/mirai-graph-adoption-report.schema.json"
     },
     {
       "name": "semantic-preservation-verdict",
@@ -173,7 +173,7 @@
     "runtime_contract_version": "0.1.1",
     "consumer_minimum_protocol": "1.0.0"
   },
-  "growgraph_adoption": {
+  "mirai_graph_adoption": {
     "target_ref": "skill:docara",
     "owner_skill": "docara",
     "adoption_level": 7,
@@ -181,10 +181,10 @@
     "semantic_verdict": "pass_with_notes",
     "effectiveness_verdict": "improved",
     "source_refs": [
-      "graph/generated/growgraph/adoption-reports/docara-repo-local-adoption-gga8-20260529/growgraph-adoption-report.json",
+      "graph/generated/mirai-graph/adoption-reports/docara-repo-local-adoption-gga8-20260529/mirai-graph-adoption-report.json",
       "graph/generated/control-dashboards/docara-repo-local-control-dashboard-20260529/control-dashboard.json",
-      "graph/generated/growgraph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
-      "graph/generated/growgraph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+      "graph/generated/mirai-graph/semantic-preservation/docara-repo-local-semantic-review-20260529/semantic-preservation-verdict.json",
+      "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
       "graph/generated/seed-expansions/docara-repo-local-seed-expand-20260529/graph-embryo.json"
     ]
   },

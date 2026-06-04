@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://simai.io/schemas/graph/mirai-graph-source-of-truth-decision.schema.json",
+  "title": "Mirai Graph Source Of Truth Decision",
+  "description": "Generated-only decision artifact for planning or dry-running GGA10 graph-first source-of-truth migration.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "operation_id",
+    "created_at",
+    "target_ref",
+    "owner_skill",
+    "decision_mode",
+    "decision",
+    "gga10_candidate_allowed",
+    "adoption_report_ref",
+    "source_plan_refs",
+    "rollback_refs",
+    "owner_approval_refs",
+    "dry_run_refs",
+    "checks",
+    "blockers",
+    "next_actions",
+    "canonical_write_allowed"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "operation_id": { "type": "string", "const": "mirai_graph.source-of-truth-decision" },
+    "created_at": { "type": "string", "minLength": 1 },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "owner_skill": { "type": "string", "minLength": 1 },
+    "decision_mode": { "type": "string", "enum": ["planning", "apply"] },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approved_for_gga10_planning",
+        "approved_for_gga10_apply_dry_run",
+        "blocked_missing_adoption_report",
+        "blocked_missing_source_plan",
+        "blocked_owner_approval_required",
+        "blocked_gga10_risk"
+      ]
+    },
+    "gga10_candidate_allowed": { "type": "boolean" },
+    "adoption_report_ref": { "type": ["string", "null"] },
+    "source_plan_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "rollback_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "owner_approval_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "dry_run_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "gate_result": { "type": "object" },
+    "checks": {
+      "type": "object",
+      "required": [
+        "adoption_report_available",
+        "adoption_level_gga9_or_better",
+        "adoption_report_unblocked",
+        "semantic_preservation_passed",
+        "effectiveness_passed",
+        "integration_review_passed",
+        "grs_threshold_met",
+        "repo_gate_passed",
+        "source_plan_present",
+        "rollback_plan_present",
+        "owner_approval_present",
+        "dry_run_present",
+        "canonical_write_currently_disabled"
+      ],
+      "additionalProperties": { "$ref": "#/$defs/check" }
+    },
+    "blockers": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "canonical_write_allowed": { "const": false }
+  },
+  "$defs": {
+    "check": {
+      "type": "string",
+      "enum": ["pass", "fail", "unknown", "not_applicable"]
+    }
+  },
+  "additionalProperties": true
+}

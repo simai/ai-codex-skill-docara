@@ -1,0 +1,20 @@
+{
+  "operation_id": "mirai_graph.effectiveness-report",
+  "status": "success",
+  "mode": "write_generated",
+  "changed_canonical_objects": [],
+  "changed_generated_artifacts": [
+    "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+    "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.md",
+    "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/operation-result.json"
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_suggested_operations": [
+    "run mirai-graph-adoption-report with effectiveness ref",
+    "do not claim federation readiness until semantic and effectiveness gates pass"
+  ],
+  "effectiveness_ref": "graph/generated/mirai-graph/effectiveness-reports/docara-repo-local-effectiveness-20260529/effectiveness-report.json",
+  "verdict": "improved",
+  "canonical_write_allowed": false
+}
