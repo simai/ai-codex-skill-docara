@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-07-22T18:33:35.078043+00:00",
+  "repo": "repo://ai-codex-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": null,
+  "base_commit": "",
+  "comparison_mode": "worktree_and_index",
+  "git": {
+    "dirty": true,
+    "ahead": 1,
+    "head": "b839bd5"
+  },
+  "changed_files": [
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "69b843029fbf5ea590948679c4fb508541d1877d85a63250f75b019b3f32c74b",
+      "source_bytes": 3888
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "routing-impact"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "3af5bd05f1304c38ac81cd3bd4cee1960262f7e11bd55b0ef043324c84e99cbe"
+}

@@ -13,8 +13,14 @@ PHP-only deterministic build rendered with Simai Framework.
 
 Before cross-domain work, read
 [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md). For substantial
-tasks, use the repo-local Mirai Graph runtime as the machine-readable index,
-then return to this source for methodology and safe-write boundaries.
+tasks, use the runtime entry below.
+
+## Mirai Graph Runtime Entry
+
+Use the repo-local `graph/specs` and latest generated runtime context as the
+machine-readable index for capability selection, routing, readiness and
+companion contracts. Return to this raw source for methodology, judgement and
+safe-write boundaries. Graph-only runtime is forbidden.
 
 ## Project contract
 

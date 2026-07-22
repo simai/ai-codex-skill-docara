@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-07-22T18:33:35.276024+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-codex-skill-docara",
+  "base": null,
+  "base_commit": "",
+  "comparison_mode": "worktree_and_index",
+  "detector_fingerprint": "3af5bd05f1304c38ac81cd3bd4cee1960262f7e11bd55b0ef043324c84e99cbe",
+  "detector_report_ref": "graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20260722183335/detector-report.json",
+  "changed_files": [
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "69b843029fbf5ea590948679c4fb508541d1877d85a63250f75b019b3f32c74b",
+      "source_bytes": 3888
+    }
+  ],
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "routing-impact"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "detected_specialists": [],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "canonical_write_allowed": false
+}
