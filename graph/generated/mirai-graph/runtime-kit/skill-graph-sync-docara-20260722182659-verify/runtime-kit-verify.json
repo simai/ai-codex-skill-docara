@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "id": "mirai-graph-skill-runtime-verify.skill-graph-sync-docara-20260722182659-verify",
+  "operation_id": "mirai_graph.skill-runtime.verify",
+  "created_at": "2026-07-22T18:26:59.683079+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-codex-skill-docara",
+  "object_count": 9,
+  "relation_count": 20,
+  "required_files": {
+    "contract_gate": "scripts/mirai_graph_contract_gate.py",
+    "agents": "AGENTS.md",
+    "hook_doc": "graph/federation/hooks/mirai-graph-contract-gate.md"
+  },
+  "missing_required": [],
+  "warnings": [],
+  "blockers": [],
+  "canonical_write_allowed": false
+}

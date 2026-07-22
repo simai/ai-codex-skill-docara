@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-07-22T18:26:59.430963+00:00",
+  "repo": "repo://ai-codex-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": null,
+  "base_commit": "",
+  "comparison_mode": "worktree_and_index",
+  "git": {
+    "dirty": true,
+    "ahead": 0,
+    "head": "c160b39"
+  },
+  "changed_files": [
+    {
+      "path": "README.md",
+      "source_path": "README.md",
+      "change_types": [
+        "documentation",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "0a5bdc666024f453989e1139a364d0791167e67e300eb100b4ed39b3613e2ab4",
+      "source_bytes": 674
+    },
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "c23a87628a033a8151e301757d77f50492b75b0614b69d6f065811e18e33ba77",
+      "source_bytes": 3685
+    },
+    {
+      "path": "skills/docara/references/authoring-rules.md",
+      "source_path": "references/authoring-rules.md",
+      "change_types": [
+        "methodology"
+      ],
+      "routing_impact": false,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "3c4b00e79e11c7e912c51fd68954027a5a686e4155ec99d939ad057ce0a28394",
+      "source_bytes": 886
+    },
+    {
+      "path": "skills/docara/references/github-pages.md",
+      "source_path": "references/github-pages.md",
+      "change_types": [
+        "methodology"
+      ],
+      "routing_impact": false,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "b9ae37e954b8f7e6d1307c80680f70d78134afb69f3a9ed2c601005f1c6caea5",
+      "source_bytes": 878
+    },
+    {
+      "path": "skills/docara/references/project-model.md",
+      "source_path": "references/project-model.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "e8d5e6f83ca9f2cfaac9e4b702d76162ef679371788bd16a6e261bdc93bd381c",
+      "source_bytes": 1714
+    },
+    {
+      "path": "skills/docara/references/theme-workflow.md",
+      "source_path": "references/theme-workflow.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/references/translation-workflow.md",
+      "source_path": "references/translation-workflow.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/rules/skill-mesh-balance.md",
+      "source_path": "rules/skill-mesh-balance.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "486da861a90566ba96d42c877832301f08666d9c8e38f7b0a3e32589ec3f83f9",
+      "source_bytes": 1323
+    },
+    {
+      "path": "skills/docara/scripts/create-github-pages-workflow.py",
+      "source_path": "scripts/create-github-pages-workflow.py",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/docara-apply-branding.php",
+      "source_path": "scripts/docara-apply-branding.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/docara-doctor.php",
+      "source_path": "scripts/docara-doctor.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/docara-theme-vars.php",
+      "source_path": "scripts/docara-theme-vars.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/docara-translate-state.php",
+      "source_path": "scripts/docara-translate-state.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/import-markdown-docs.php",
+      "source_path": "scripts/import-markdown-docs.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    },
+    {
+      "path": "skills/docara/scripts/prepare-docara-project.php",
+      "source_path": "scripts/prepare-docara-project.php",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "D",
+      "old_path": "",
+      "source_mode": "deleted",
+      "source_sha256": "deleted",
+      "source_bytes": 0
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "capability",
+    "documentation",
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "10687504f3f001bf2f74ca9214de99c46beeda960fbab16dcbbb9530f16ab5fc"
+}

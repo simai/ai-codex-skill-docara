@@ -1,79 +1,20 @@
 # ai-codex-skill-docara
 
-Codex skill for creating, configuring, publishing, and translating documentation sites based on SIMAI Docara.
+Codex owner skill for Docara 2 documentation sites.
 
-## Skill
+It covers the PHP-only JSON/Markdown project model, inherited configuration,
+Simai Framework components, deterministic build and verification, migration
+planning and static publication handoff.
 
-The skill lives in:
+The skill lives in `skills/docara/` and is invoked as `$docara`.
 
-```text
-skills/docara/
-```
-
-Use it as `$docara` when working with Docara documentation repositories.
-
-## What It Covers
-
-- Docara setup and repair.
-- Publishable documentation authoring rules.
-- GitHub Pages publication through Actions artifact deployment.
-- GitHub project Pages path-prefix handling for `https://owner.github.io/repo/`.
-- Translation drift tracking and AI-assisted translation workflow.
-- Smoke scripts for repository inspection, starter setup, Pages workflow generation, and translation state.
-- Markdown import into a contained Docara subproject for existing repositories.
-
-## Useful Commands
-
-Validate the skill:
+## Validate
 
 ```bash
 python3 /Users/rim/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/docara
-```
-
-Run smoke tests:
-
-```bash
 bash tests/smoke.sh
+python3 scripts/mirai_graph_contract_gate.py
 ```
 
-Inspect a Docara project:
-
-```bash
-php skills/docara/scripts/docara-doctor.php --root=. --json
-```
-
-Prepare starter files in dry-run mode:
-
-```bash
-php skills/docara/scripts/prepare-docara-project.php --root=. --docs-dir=docs --locale=en
-```
-
-Import existing Markdown docs:
-
-```bash
-php skills/docara/scripts/import-markdown-docs.php --input=/path/to/repo --output=/path/to/repo/docara --locale=en --title="Project Documentation"
-```
-
-Generate a GitHub Pages workflow:
-
-```bash
-python3 skills/docara/scripts/create-github-pages-workflow.py --root=. --workflow=.github/workflows/docara-pages.yml
-```
-
-For a contained `docara/` subproject:
-
-```bash
-python3 skills/docara/scripts/create-github-pages-workflow.py --root=/path/to/repo --docara-dir=docara --workflow=/path/to/repo/.github/workflows/docara-pages.yml
-```
-
-For project Pages, keep Docara `baseUrl` environment-driven in the target project:
-
-```php
-'baseUrl' => rtrim((string) (getenv('DOCARA_BASE_URL') ?: ''), '/'),
-```
-
-## Repository Hygiene
-
-- Real secrets belong in root `.env`; this repository does not need committed secrets.
-- `source/` is local working material and is ignored.
-- Release-visible changes are tracked in `CHANGELOG.md`.
+The repository contains no project initializer or theme generator of its own:
+the Docara CLI and product schemas are the executable source of truth.

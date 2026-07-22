@@ -1,94 +1,27 @@
-# Docara Authoring Rules
+# Docara 2 authoring rules
 
-Use this when creating or restructuring documentation content.
-
-## Directory Shape
-
-Default:
+## Content tree
 
 ```text
-source/docs/
+content/
   en/
-    .lang.php
-    .settings.php
+    section.json
     index.md
-    section/
-      .settings.php
-      page.md
+    guide/
+      section.json
+      install.md
+      install.page.json  # only when page-specific settings are needed
 ```
 
-Keep each locale structurally aligned unless the task is intentionally locale-specific.
+Each navigable page has one H1. Keep slugs, paths, anchors, JSON keys, component
+IDs, fenced code, inline code and URLs stable unless structure is intentionally
+changing.
 
-## Markdown Page Template
+`section.json` owns inherited title, order, navigation, layout, regions,
+reading and search behavior. A page sidecar overrides one page. Human-facing
+system strings belong to locale language packs, not shared manifests.
 
-```markdown
----
-extends: _core._layouts.documentation
-section: content
-title: Page Title
-description: Short page description
----
-
-# Page Title
-```
-
-Translate human-facing `title` and `description`; do not translate `extends`, `section`, slugs, identifiers, or paths.
-
-## `.settings.php`
-
-Section settings drive menu order and labels:
-
-```php
-<?php
-return [
-    'title' => 'Section Title',
-    'showInMenu' => true,
-    'order' => 10,
-    'menu' => [
-        'intro' => 'Introduction',
-        'setup' => 'Setup',
-    ],
-];
-```
-
-Rules:
-
-- `menu` keys are slugs and must match child folders/pages.
-- `menu` values are human-facing labels.
-- `order` should leave gaps (`10`, `20`, `30`) for future insertion.
-- `showInMenu=false` is useful for landing pages and service nodes.
-
-## `.lang.php`
-
-Use for UI labels and repeated interface text:
-
-```php
-<?php
-return [
-    'search' => 'Search',
-    'edit article' => 'Edit article',
-    'previous' => 'Previous',
-    'next' => 'Next',
-];
-```
-
-Translate values only. Keep keys stable because templates and JavaScript can depend on them.
-For the standard Docara UI, include service labels used by header and bottom navigation: `actions`, `settings`, `edit article`, `report a bug`, `navigation`, `previous`, and `next`.
-
-## Content Quality
-
-- Write docs as publishable operator/developer material, not as a chat transcript.
-- Keep pages focused and navigable; split large mixed pages into sections.
-- Preserve fenced code blocks, inline code, URLs, anchors, Blade directives, custom Docara tags, and file paths.
-- If a stable project rule emerges, place it in the appropriate docs page or `source/` artifact, not only in the final chat response.
-
-## Verification
-
-After authoring changes:
-
-```bash
-yarn prod || npm run prod
-php vendor/bin/docara build production
-```
-
-Then inspect `build_production` for generated locale directories, `index.html`, asset paths, and obvious broken links.
+Use registered components and validate their props. Preserve component JSON
+and fenced code while translating. Build and verify after each meaningful
+batch, then check menus, breadcrumbs, contents, previous/next, search, themes,
+locales and responsive behavior over HTTP.

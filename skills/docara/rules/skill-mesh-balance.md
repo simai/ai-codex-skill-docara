@@ -1,8 +1,8 @@
 # Skill Mesh Balance
 
-`$docara` owns Docara site mechanics: project initialization, front matter,
-navigation/menu wiring, locale synchronization, static build, publication
-handoff, Docara-specific troubleshooting, and Docara/Larena product proof.
+`$docara` owns Docara 2 site mechanics: project initialization, JSON settings,
+navigation, locale wiring, static build/verification, publication handoff,
+Docara-specific troubleshooting, and Docara/Larena product proof.
 
 ## Does Not Own
 
