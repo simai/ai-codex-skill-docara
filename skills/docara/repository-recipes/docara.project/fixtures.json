@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "recipe_id": "docara.project",
+  "positive": [
+    {
+      "name": "declared-base",
+      "base_recipe": "technology.repository",
+      "overlays": [
+        "docara.technology-overlay"
+      ],
+      "expected": "compatible",
+      "expected_paths": [
+        "docara.json",
+        "simai-framework.lock.json",
+        "content/{default_locale}/",
+        "assets/",
+        "redirects.json",
+        "source/",
+        "content/{default_locale}/README.md"
+      ],
+      "expected_ownership": {
+        "docara.json": "managed",
+        "simai-framework.lock.json": "managed",
+        "content/{default_locale}/": "owner_template",
+        "assets/": "owner_template",
+        "redirects.json": "managed",
+        "source/": "local_only",
+        "content/{default_locale}/README.md": "owner_template"
+      }
+    }
+  ],
+  "negative": [
+    {
+      "name": "unknown-base",
+      "base_recipe": "unknown.repository",
+      "overlays": [],
+      "expected": "incompatible",
+      "expected_diagnostics": [
+        "unsupported_base_recipe"
+      ]
+    }
+  ],
+  "compatibility": [
+    {
+      "name": "owner-overlay",
+      "base_recipe": "technology.repository",
+      "primary_owner": "docara",
+      "overlays": [
+        "docara.technology-overlay"
+      ],
+      "expected": "compatible",
+      "expected_recipe_signature": "docara.project@1.0.0"
+    }
+  ]
+}

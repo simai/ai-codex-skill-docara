@@ -1,0 +1,154 @@
+{
+  "$schema": "https://simai.io/schemas/federation/repository-recipe.schema.json",
+  "schema_version": "1.0.0",
+  "id": "docara.project",
+  "version": "1.0.0",
+  "kind": "structural_recipe",
+  "owner": "docara",
+  "title": "docara.project",
+  "repository_family": "docara",
+  "repository_kind": "project",
+  "base_recipe": "technology.repository",
+  "compatibility": {
+    "allowed_bases": [
+      "technology.repository"
+    ],
+    "allowed_overlays": [
+      "docara.technology-overlay",
+      "docs.technology-overlay",
+      "tester.technology-overlay"
+    ],
+    "incompatible_recipes": [
+      "graph.domain_atlas",
+      "client.project",
+      "bitrix.module",
+      "bitrix.client_project",
+      "larena.application",
+      "larena.package",
+      "sf4.project",
+      "sf5.project",
+      "orgportal.solution"
+    ]
+  },
+  "required_inputs": [
+    {
+      "name": "repository_name",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "default_locale",
+      "required": true,
+      "type": "string"
+    }
+  ],
+  "source_contract": {
+    "entrypoints": [
+      "skills/docara/SKILL.md",
+      "skills/docara/references/project-model.md"
+    ],
+    "processes": [
+      "skills/docara/references/authoring-rules.md"
+    ],
+    "checks": [
+      "skills/docara/references/project-model.md"
+    ]
+  },
+  "file_manifest": [
+    {
+      "path": "docara.json",
+      "ownership": "managed",
+      "required": true,
+      "materializer": "owner_generator_output"
+    },
+    {
+      "path": "simai-framework.lock.json",
+      "ownership": "managed",
+      "required": true,
+      "materializer": "owner_generator_output"
+    },
+    {
+      "path": "content/{default_locale}/",
+      "ownership": "owner_template",
+      "required": true,
+      "materializer": "directory"
+    },
+    {
+      "path": "assets/",
+      "ownership": "owner_template",
+      "required": true,
+      "materializer": "directory"
+    },
+    {
+      "path": "redirects.json",
+      "ownership": "managed",
+      "required": true,
+      "materializer": "owner_generator_output"
+    },
+    {
+      "path": "source/",
+      "ownership": "local_only",
+      "required": true,
+      "materializer": "directory"
+    },
+    {
+      "path": "content/{default_locale}/README.md",
+      "ownership": "owner_template",
+      "required": true,
+      "materializer": "template_file",
+      "source": "content/default/README.md"
+    }
+  ],
+  "technology": {
+    "task_scoped": true,
+    "may_override_federation_safety": false,
+    "may_authorize_write": false,
+    "raw_source_required": true
+  },
+  "availability": {
+    "policy": "local_skill_override",
+    "default_state": "available",
+    "disabled_state_behavior": "catalog_visible_unavailable"
+  },
+  "migrations": [],
+  "materialization": {
+    "mode": "declarative_manifest",
+    "generator_contract": "repository_factory.manifest.v1",
+    "template_root": "templates",
+    "template_files": [
+      "content/default/README.md"
+    ],
+    "owner_generator": {
+      "id": "docara.init",
+      "type": "command",
+      "argv": [
+        "php",
+        "vendor/bin/docara",
+        "init",
+        "{{target_path}}"
+      ],
+      "preconditions": [
+        "empty_target",
+        "composer_dependency:simai/docara"
+      ],
+      "produced_paths": [
+        "docara.json",
+        "redirects.json",
+        "simai-framework.lock.json",
+        "assets/",
+        "content/{default_locale}/"
+      ],
+      "validator_refs": [
+        "skills/docara/references/project-model.md"
+      ]
+    }
+  },
+  "validators": [
+    {
+      "id": "docara.source-check.1",
+      "type": "owner_source",
+      "ref": "skills/docara/references/project-model.md",
+      "required": true
+    }
+  ]
+}
