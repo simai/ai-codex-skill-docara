@@ -1,0 +1,56 @@
+{
+  "$schema": "https://mirai-graph.dev/schemas/graph-manifest.schema.json",
+  "aliases": [],
+  "evolution": {
+    "current_iteration": 1,
+    "migration_status": "current"
+  },
+  "extensions": {
+    "simai.legacy": {
+      "dna_path": "graph/dna"
+    }
+  },
+  "federation": {
+    "can_export": true,
+    "can_import": true,
+    "child_graphs": [],
+    "parent_graph": null
+  },
+  "format": "mirai-graph",
+  "graph": {
+    "generated": [
+      "graph/generated"
+    ],
+    "objects": [],
+    "raw_sources": [
+      "README.md",
+      "graph/source"
+    ],
+    "relations": [],
+    "root": "graph",
+    "schemas": [
+      "graph/schemas"
+    ],
+    "source_of_truth": [
+      "graph/specs"
+    ]
+  },
+  "id": "example.graph",
+  "imports": [],
+  "kind": "project",
+  "owner": "graph",
+  "profiles": [
+    "project"
+  ],
+  "runtime": {
+    "default_context_depth": 2,
+    "default_max_objects": 8,
+    "fallback_gap_output": "graph/source/gaps/",
+    "fallback_to_raw_allowed": "only_with_gap_record",
+    "graph_context_required_before_raw_source": false,
+    "graph_required": false
+  },
+  "schema_version": "2.0.0",
+  "scope": "repository",
+  "title": "Example Graph"
+}
