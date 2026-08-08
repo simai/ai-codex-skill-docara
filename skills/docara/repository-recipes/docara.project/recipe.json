@@ -1,17 +1,17 @@
 {
   "$schema": "https://simai.io/schemas/federation/repository-recipe.schema.json",
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "docara.project",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "kind": "structural_recipe",
   "owner": "docara",
   "title": "docara.project",
   "repository_family": "docara",
   "repository_kind": "project",
-  "base_recipe": "technology.repository",
+  "base_recipe": "generic.repository",
   "compatibility": {
     "allowed_bases": [
-      "technology.repository"
+      "generic.repository"
     ],
     "allowed_overlays": [
       "docara.technology-overlay",
@@ -30,6 +30,15 @@
       "orgportal.solution"
     ]
   },
+  "capabilities": [
+    {
+      "id": "project_technology",
+      "activation": "required"
+    }
+  ],
+  "requires_capabilities": [
+
+  ],
   "required_inputs": [
     {
       "name": "repository_name",
@@ -99,18 +108,20 @@
       "source": "content/default/README.md"
     }
   ],
-  "technology": {
-    "task_scoped": true,
-    "may_override_federation_safety": false,
-    "may_authorize_write": false,
-    "raw_source_required": true
-  },
   "availability": {
     "policy": "local_skill_override",
     "default_state": "available",
     "disabled_state_behavior": "catalog_visible_unavailable"
   },
-  "migrations": [],
+  "migrations": [
+    {
+      "id": "docara.project.v1-to-v2-project-technology-capability",
+      "from": "1.0.0",
+      "to": "2.0.0",
+      "operation": "declare_project_technology_capability",
+      "preserve_user_owned": true
+    }
+  ],
   "materialization": {
     "mode": "declarative_manifest",
     "generator_contract": "repository_factory.manifest.v1",

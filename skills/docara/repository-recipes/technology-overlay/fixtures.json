@@ -3,33 +3,45 @@
   "recipe_id": "docara.technology-overlay",
   "positive": [
     {
-      "name": "technology-base",
-      "base_recipe": "technology.repository",
-      "overlays": [
-        "docara.technology-overlay"
-      ],
-      "expected": "compatible"
-    }
-  ],
-  "negative": [
-    {
-      "name": "generic-base-rejected",
+      "name": "project-technology-capability",
       "base_recipe": "generic.repository",
       "overlays": [
         "docara.technology-overlay"
       ],
-      "expected": "incompatible"
+      "expected": "compatible",
+      "requires_capabilities": [
+        "project_technology"
+      ]
+    }
+  ],
+  "negative": [
+    {
+      "name": "missing-capability-rejected",
+      "base_recipe": "generic.repository",
+      "overlays": [
+        "docara.technology-overlay"
+      ],
+      "expected": "incompatible",
+      "requires_capabilities": [
+
+      ],
+      "expected_diagnostics": [
+        "project_technology_capability_required"
+      ]
     }
   ],
   "compatibility": [
     {
       "name": "single-owner-overlay",
-      "base_recipe": "technology.repository",
+      "base_recipe": "generic.repository",
       "primary_owner": "docara",
       "overlays": [
         "docara.technology-overlay"
       ],
-      "expected": "compatible"
+      "expected": "compatible",
+      "requires_capabilities": [
+        "project_technology"
+      ]
     }
   ]
 }

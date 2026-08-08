@@ -1,8 +1,8 @@
 {
   "$schema": "https://simai.io/schemas/federation/repository-recipe.schema.json",
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "id": "docara.technology-overlay",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "kind": "technology_overlay",
   "owner": "docara",
   "title": "docara technology overlay",
@@ -11,12 +11,24 @@
   "base_recipe": null,
   "compatibility": {
     "allowed_bases": [
-      "technology.repository"
+
     ],
-    "allowed_overlays": [],
-    "incompatible_recipes": []
+    "allowed_overlays": [
+
+    ],
+    "incompatible_recipes": [
+
+    ]
   },
-  "required_inputs": [],
+  "capabilities": [
+
+  ],
+  "requires_capabilities": [
+    "project_technology"
+  ],
+  "required_inputs": [
+
+  ],
   "source_contract": {
     "entrypoints": [
       "skills/docara/SKILL.md"
@@ -28,24 +40,24 @@
       "graph/specs/index.json"
     ]
   },
-  "file_manifest": [],
-  "technology": {
-    "task_scoped": true,
-    "may_override_federation_safety": false,
-    "may_authorize_write": false,
-    "raw_source_required": true
-  },
+  "file_manifest": [
+
+  ],
   "availability": {
     "policy": "local_skill_override",
     "default_state": "available",
     "disabled_state_behavior": "catalog_visible_unavailable"
   },
-  "migrations": [],
+  "migrations": [
+
+  ],
   "materialization": {
     "mode": "declarative_manifest",
     "generator_contract": "repository_factory.manifest.v1",
     "template_root": null,
-    "template_files": []
+    "template_files": [
+
+    ]
   },
   "validators": [
     {
