@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.owner_skill.capability_map",
+  "owner_skill": "docara",
+  "readiness": "ready",
+  "capabilities": [
+    {
+      "id": "docara.documentation_contour_build",
+      "aliases": [
+        "Docara build",
+        "документационный контур"
+      ],
+      "user_outcome": "Build a Docara documentation contour from canonical project sources without duplicating the source of truth.",
+      "readiness": "ready",
+      "canonical_source_refs": [
+        "SKILL.md"
+      ],
+      "extension_points": [
+        "owner://docara/existing-methodology"
+      ],
+      "constraints": [
+        "Use raw owner sources for methodology and judgement.",
+        "Fail closed when required owner or platform evidence is unavailable."
+      ],
+      "non_goals": [
+        "Do not create a parallel owner or duplicate an existing platform capability."
+      ],
+      "validator_refs": [
+        "federation://owner-capability-map",
+        "federation://technology-conformance"
+      ]
+    },
+    {
+      "id": "docara.runtime_reference_diagnosis",
+      "aliases": [
+        "missing refs",
+        "диагностика ссылок"
+      ],
+      "user_outcome": "Report every missing runtime reference explicitly and never return a false-green pack.",
+      "readiness": "ready",
+      "canonical_source_refs": [
+        "SKILL.md"
+      ],
+      "extension_points": [
+        "owner://docara/existing-methodology"
+      ],
+      "constraints": [
+        "Use raw owner sources for methodology and judgement.",
+        "Fail closed when required owner or platform evidence is unavailable."
+      ],
+      "non_goals": [
+        "Do not create a parallel owner or duplicate an existing platform capability."
+      ],
+      "validator_refs": [
+        "federation://owner-capability-map",
+        "federation://technology-conformance"
+      ]
+    }
+  ]
+}

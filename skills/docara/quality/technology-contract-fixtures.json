@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.owner_skill.technology_contract_fixture",
+  "skill": "docara",
+  "positive_cases": [
+    {
+      "id": "docara.paraphrase.ru",
+      "task": "Используй $docara. Выполни основную проверяемую задачу владельца docara в синтетическом проекте.",
+      "expected_process_model_id": "docara_documentation_site_publication"
+    },
+    {
+      "id": "docara.paraphrase.en",
+      "task": "Use $docara to complete the owner's primary verifiable task in a synthetic project.",
+      "expected_process_model_id": "docara_documentation_site_publication"
+    }
+  ],
+  "negative_cases": [
+    {
+      "id": "docara.owner_boundary",
+      "task": "Не используй $docara. Используй $dev для точечного backend bugfix.",
+      "expected_primary_skill": "dev"
+    }
+  ],
+  "outcome_cases": [
+    {
+      "id": "docara.documentation_contour_build.outcome",
+      "capability_id": "docara.documentation_contour_build",
+      "prompt_ru": "Используй $docara. Выполни проверяемый синтетический сценарий docara.documentation_contour_build и верни evidence без внешних или live-записей.",
+      "prompt_en": "Use $docara. Complete the synthetic docara.documentation_contour_build scenario and return evidence without external or live writes.",
+      "fixture_repository": "graph/benchmarks/owner-outcomes/fixtures/docara/documentation_contour_build",
+      "rubric_ref": "graph/benchmarks/owner-outcomes/rubrics/docara.json"
+    },
+    {
+      "id": "docara.runtime_reference_diagnosis.outcome",
+      "capability_id": "docara.runtime_reference_diagnosis",
+      "prompt_ru": "Используй $docara. Выполни проверяемый синтетический сценарий docara.runtime_reference_diagnosis и верни evidence без внешних или live-записей.",
+      "prompt_en": "Use $docara. Complete the synthetic docara.runtime_reference_diagnosis scenario and return evidence without external or live writes.",
+      "fixture_repository": "graph/benchmarks/owner-outcomes/fixtures/docara/runtime_reference_diagnosis",
+      "rubric_ref": "graph/benchmarks/owner-outcomes/rubrics/docara.json"
+    }
+  ]
+}
