@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.report",
+  "created_at": "2026-08-11T18:23:25.887327+00:00",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "origin/main",
+  "base_commit": "b7b1a4b1f860a0fed7dbd41f74d5e2d3eccb3243",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "a63b4f7a8fdd8f09c9af32e036fe7bda0aeae3e00bef45230c53fc03b51e2934",
+  "status": "success",
+  "source_change_evidence_ref": "graph/generated/mirai-graph/skill-source-changes/v810-final2-docara/skill-source-change-evidence.json",
+  "runtime_verify_ref": "graph/generated/mirai-graph/runtime-kit/v810-final2-docara-verify/runtime-kit-verify.json",
+  "runtime_context_ref": "graph/generated/mirai-graph/runtime-context/v810-final2-docara-context/context-pack.json",
+  "federation_change_proposal_ref": "repo://ai-codex-skill-graph/graph/generated/mirai-graph/federation-change/v810-final2-docara-federation-proposal/federation-change-proposal.json",
+  "specialist_promotion_proposal_refs": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "blockers": [],
+  "canonical_write_allowed": false,
+  "sync_fingerprint": "a73b1b15e9b65c705d939887fb7d8f5e8ddbe42cdf9c59965ab1caaaf83eea86",
+  "task_sha256": "f914c344a632cd4cb2e9db00795dd021add8276e5611e190dd5542012c5f0a64",
+  "task_bytes": 55
+}
