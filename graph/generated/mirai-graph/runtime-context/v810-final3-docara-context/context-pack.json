@@ -1,0 +1,368 @@
+{
+  "schema_version": "1.0.0",
+  "request": {
+    "task": "Federation 8.10.0 Docara quality after upstream architecture rebuild",
+    "skill": "docara",
+    "repo": "repo://ai-codex-skill-docara",
+    "mode": "mirai_graph_skill_runtime_context"
+  },
+  "included_objects": [
+    {
+      "object_id": "skill.docara.core",
+      "score": 0.33,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Docara skill core",
+      "summary": "Routes current standalone Docara 2 project work across authoring, settings, components, compilation, QA, updates, and publication.",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "object_id": "gate.docara.acceptance",
+      "score": 0.33,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Docara acceptance gate",
+      "summary": "Requires exact-package validation, appropriate compilation, static verification, and proportionate visible QA before an outcome is accepted.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/build-preview-and-verification.md",
+        "skills/docara/references/developer-sdk-and-qa.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.project-lifecycle",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Project lifecycle",
+      "summary": "Creates, adopts, and inspects standalone Docara projects while preserving project and package ownership.",
+      "source_refs": [
+        "skills/docara/references/architecture-and-project-model.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.settings-inheritance",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Settings and inheritance",
+      "summary": "Changes site, section, page, branding, layout, reading, search, and locale settings through the validated inheritance model.",
+      "source_refs": [
+        "skills/docara/references/settings-and-inheritance.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.content-localization-navigation",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Content, localization, and navigation",
+      "summary": "Authors and migrates Markdown, locales, routes, navigation, redirects, and translation state.",
+      "source_refs": [
+        "skills/docara/references/content-locales-and-navigation.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.components-smart-design",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Components, Smart, and design",
+      "summary": "Uses native renderers, typed components, containers, design artifacts, and admitted Smart artifacts without bypassing contracts.",
+      "source_refs": [
+        "skills/docara/references/components-smart-and-design.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.build-preview-verification",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Build, preview, and verification",
+      "summary": "Selects full or single-page compilation, verifies exact static bytes, and performs proportionate browser acceptance.",
+      "source_refs": [
+        "skills/docara/references/build-preview-and-verification.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.developer-sdk-qa",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Developer SDK and QA",
+      "summary": "Discovers registries, scaffolds hash-bound artifacts, validates, tests, previews, and records structured QA evidence.",
+      "source_refs": [
+        "skills/docara/references/developer-sdk-and-qa.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.update-release-publication",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Update, release, and publication",
+      "summary": "Runs transactional engine updates and separates rollback, release readiness, package publication, and deployment.",
+      "source_refs": [
+        "skills/docara/references/update-release-and-publication.md"
+      ]
+    },
+    {
+      "object_id": "capability.docara.security-troubleshooting",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Security and troubleshooting",
+      "summary": "Diagnoses failures while preserving path, ownership, lock, namespace, schema, hash, and static-output protections.",
+      "source_refs": [
+        "skills/docara/references/security-and-troubleshooting.md"
+      ]
+    },
+    {
+      "object_id": "policy.docara.source-ownership",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Docara source ownership",
+      "summary": "Edits project-owned inputs and rejects generated build output or package-owned engine state as authoring sources.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/architecture-and-project-model.md"
+      ]
+    },
+    {
+      "object_id": "policy.docara.lifecycle-separation",
+      "score": 0.18,
+      "reason": "keyword match",
+      "confidence": 0.96,
+      "evidence_status": "verified",
+      "title": "Docara lifecycle separation",
+      "summary": "Keeps build, static verification, browser acceptance, release, publication, and deployment as separate evidence states.",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/update-release-and-publication.md"
+      ]
+    }
+  ],
+  "excluded_objects": [],
+  "warnings": [],
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/build-preview-and-verification.md",
+    "skills/docara/references/developer-sdk-and-qa.md",
+    "skills/docara/references/architecture-and-project-model.md",
+    "skills/docara/references/settings-and-inheritance.md",
+    "skills/docara/references/content-locales-and-navigation.md",
+    "skills/docara/references/components-smart-and-design.md",
+    "skills/docara/references/update-release-and-publication.md",
+    "skills/docara/references/security-and-troubleshooting.md"
+  ],
+  "missing_source_refs": [],
+  "related_relations": [
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-project-lifecycle",
+      "from": "skill.docara.core",
+      "to": "capability.docara.project-lifecycle",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-project-lifecycle",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.project-lifecycle",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/architecture-and-project-model.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-settings-inheritance",
+      "from": "skill.docara.core",
+      "to": "capability.docara.settings-inheritance",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-settings-inheritance",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.settings-inheritance",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/settings-and-inheritance.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-content-localization-navigation",
+      "from": "skill.docara.core",
+      "to": "capability.docara.content-localization-navigation",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-content-localization-navigation",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.content-localization-navigation",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/content-locales-and-navigation.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-components-smart-design",
+      "from": "skill.docara.core",
+      "to": "capability.docara.components-smart-design",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-components-smart-design",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.components-smart-design",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/components-smart-and-design.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-build-preview-verification",
+      "from": "skill.docara.core",
+      "to": "capability.docara.build-preview-verification",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.build-preview-verification",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/build-preview-and-verification.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-developer-sdk-qa",
+      "from": "skill.docara.core",
+      "to": "capability.docara.developer-sdk-qa",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-developer-sdk-qa",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.developer-sdk-qa",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/developer-sdk-and-qa.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-update-release-publication",
+      "from": "skill.docara.core",
+      "to": "capability.docara.update-release-publication",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-update-release-publication",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.update-release-publication",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/update-release-and-publication.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-implements-capability-docara-security-troubleshooting",
+      "from": "skill.docara.core",
+      "to": "capability.docara.security-troubleshooting",
+      "relation_type": "implements",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-gate-docara-acceptance-validates-capability-docara-security-troubleshooting",
+      "from": "gate.docara.acceptance",
+      "to": "capability.docara.security-troubleshooting",
+      "relation_type": "validates",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md",
+        "skills/docara/references/security-and-troubleshooting.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-governed-by-policy-docara-source-ownership",
+      "from": "skill.docara.core",
+      "to": "policy.docara.source-ownership",
+      "relation_type": "governed_by",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    },
+    {
+      "id": "relation-skill-docara-core-governed-by-policy-docara-lifecycle-separation",
+      "from": "skill.docara.core",
+      "to": "policy.docara.lifecycle-separation",
+      "relation_type": "governed_by",
+      "impact": "high",
+      "source_refs": [
+        "skills/docara/SKILL.md"
+      ]
+    }
+  ],
+  "runtime_contract": {
+    "graph_first_scope": "routing/capability/policy orientation",
+    "raw_source_authoritative": true,
+    "canonical_write_allowed": false
+  }
+}
