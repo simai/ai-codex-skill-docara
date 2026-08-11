@@ -3,24 +3,21 @@
   "schema_version": "1.0.0",
   "kind": "skill",
   "title": "Docara skill core",
-  "summary": "Owns Docara documentation site setup, front matter, menu, locales, theme workflow, GitHub Pages and publication checks.",
+  "summary": "Routes current standalone Docara 2 project work across authoring, settings, components, compilation, QA, updates, and publication.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",
-  "confidence": 0.86,
-  "confidence_method": "human_asserted_from_skill_contract",
-  "evidence_status": "asserted_by_human",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
   "source_refs": [
     "skills/docara/SKILL.md"
   ],
   "evidence_refs": [],
   "tags": [
-    "skill",
-    "mirai-graph-runtime",
-    "capability-profile",
     "docara",
-    "skill",
-    "core"
+    "skill-runtime",
+    "skill"
   ],
   "subtype": "skill_core"
 }

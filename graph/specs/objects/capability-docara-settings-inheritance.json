@@ -1,0 +1,23 @@
+{
+  "id": "capability.docara.settings-inheritance",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Settings and inheritance",
+  "summary": "Changes site, section, page, branding, layout, reading, search, and locale settings through the validated inheritance model.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "source_refs": [
+    "skills/docara/references/settings-and-inheritance.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "docara",
+    "skill-runtime",
+    "capability"
+  ],
+  "subtype": "domain_capability"
+}

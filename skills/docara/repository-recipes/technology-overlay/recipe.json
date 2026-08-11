@@ -2,7 +2,7 @@
   "$schema": "https://simai.io/schemas/federation/repository-recipe.schema.json",
   "schema_version": "2.0.0",
   "id": "docara.technology-overlay",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "kind": "technology_overlay",
   "owner": "docara",
   "title": "docara technology overlay",
@@ -31,13 +31,15 @@
   ],
   "source_contract": {
     "entrypoints": [
-      "skills/docara/SKILL.md"
+      "skills/docara/SKILL.md",
+      "graph/specs/index.json"
     ],
     "processes": [
-      "graph/specs/index.json"
+      "skills/docara/references/developer-sdk-and-qa.md"
     ],
     "checks": [
-      "graph/specs/index.json"
+      "scripts/validate_skill_contract.py",
+      "tests/smoke.sh"
     ]
   },
   "file_manifest": [

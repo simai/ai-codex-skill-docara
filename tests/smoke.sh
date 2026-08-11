@@ -5,15 +5,18 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SKILL="$ROOT/skills/docara"
 
 grep -q '^name: docara$' "$SKILL/SKILL.md"
-grep -q 'docara init' "$SKILL/SKILL.md"
-grep -q 'docara verify-static' "$SKILL/SKILL.md"
-grep -q 'content/<locale>' "$SKILL/SKILL.md"
-grep -q 'section.json' "$SKILL/references/project-model.md"
-grep -q 'build_production' "$SKILL/references/github-pages.md"
+grep -q 'update --verify' "$SKILL/SKILL.md"
+grep -q 'verify-static' "$SKILL/SKILL.md"
+grep -q 'Smart' "$SKILL/references/components-smart-and-design.md"
+grep -q 'scaffold' "$SKILL/references/developer-sdk-and-qa.md"
+grep -q 'single-page' "$SKILL/references/build-preview-and-verification.md"
 
-if grep -R -n -E 'Jigsaw|Laravel Mix|source/_core|\.settings\.php|init --portable' "$SKILL"; then
-  echo 'FAIL: legacy Docara contract remains in skill sources' >&2
+python3 "$ROOT/scripts/validate_skill_contract.py"
+
+if grep -R -n -E 'Jigsaw|Laravel Mix|source/_core|\.settings\.php|init --portable' \
+  "$SKILL" "$ROOT/README.md" "$ROOT/CHANGELOG.md"; then
+  echo 'FAIL: legacy Docara contract remains in canonical sources' >&2
   exit 1
 fi
 
-echo 'smoke ok'
+echo 'docara skill smoke: ok'

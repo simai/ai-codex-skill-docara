@@ -1,0 +1,23 @@
+{
+  "id": "capability.docara.components-smart-design",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Components, Smart, and design",
+  "summary": "Uses native renderers, typed components, containers, design artifacts, and admitted Smart artifacts without bypassing contracts.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "source_refs": [
+    "skills/docara/references/components-smart-and-design.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "docara",
+    "skill-runtime",
+    "capability"
+  ],
+  "subtype": "domain_capability"
+}

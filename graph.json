@@ -1,56 +1,54 @@
 {
   "$schema": "https://mirai-graph.dev/schemas/graph-manifest.schema.json",
+  "schema_version": "2.0.0",
+  "id": "ai-codex-skill-docara.graph",
+  "title": "Docara Owner Skill Graph",
+  "kind": "skill",
+  "scope": "skill",
+  "owner": "docara",
   "aliases": [],
-  "evolution": {
-    "current_iteration": 1,
-    "migration_status": "current"
+  "profiles": [
+    "skill_runtime"
+  ],
+  "imports": [],
+  "graph": {
+    "root": "graph",
+    "objects": [
+      "graph/specs/objects"
+    ],
+    "relations": [
+      "graph/specs/relations"
+    ],
+    "source_of_truth": [
+      "graph/specs"
+    ],
+    "raw_sources": [
+      "skills/docara/SKILL.md",
+      "skills/docara/references",
+      "skills/docara/rules",
+      "README.md"
+    ],
+    "generated": [
+      "graph/generated"
+    ],
+    "schemas": []
   },
-  "extensions": {
-    "simai.legacy": {
-      "dna_path": "graph/dna"
-    }
+  "runtime": {
+    "default_context_depth": 2,
+    "default_max_objects": 12,
+    "graph_required": false,
+    "graph_context_required_before_raw_source": false,
+    "fallback_to_raw_allowed": "with_explicit_gap",
+    "fallback_gap_output": "source/memory/graph-gaps/"
   },
   "federation": {
     "can_export": true,
     "can_import": true,
-    "child_graphs": [],
-    "parent_graph": null
+    "parent_graph": null,
+    "child_graphs": []
   },
-  "format": "mirai-graph",
-  "graph": {
-    "generated": [
-      "graph/generated"
-    ],
-    "objects": [],
-    "raw_sources": [
-      "README.md",
-      "graph/source"
-    ],
-    "relations": [],
-    "root": "graph",
-    "schemas": [
-      "graph/schemas"
-    ],
-    "source_of_truth": [
-      "graph/specs"
-    ]
-  },
-  "id": "ai-codex-skill-docara.graph",
-  "imports": [],
-  "kind": "skill",
-  "owner": "docara",
-  "profiles": [
-    "skill"
-  ],
-  "runtime": {
-    "default_context_depth": 2,
-    "default_max_objects": 8,
-    "fallback_gap_output": "graph/source/gaps/",
-    "fallback_to_raw_allowed": "only_with_gap_record",
-    "graph_context_required_before_raw_source": false,
-    "graph_required": false
-  },
-  "schema_version": "2.0.0",
-  "scope": "skill",
-  "title": "Example Graph"
+  "evolution": {
+    "current_iteration": 2,
+    "migration_status": "current"
+  }
 }

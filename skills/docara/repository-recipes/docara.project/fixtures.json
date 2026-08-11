@@ -15,8 +15,8 @@
         "content/{default_locale}/",
         "assets/",
         "redirects.json",
-        "source/",
-        "content/{default_locale}/README.md"
+        "smart/",
+        "design/"
       ],
       "expected_ownership": {
         "docara.json": "managed",
@@ -24,8 +24,8 @@
         "content/{default_locale}/": "owner_template",
         "assets/": "owner_template",
         "redirects.json": "managed",
-        "source/": "local_only",
-        "content/{default_locale}/README.md": "owner_template"
+        "smart/": "user_owned",
+        "design/": "user_owned"
       }
     }
   ],
@@ -51,7 +51,7 @@
         "docara.technology-overlay"
       ],
       "expected": "compatible",
-      "expected_recipe_signature": "docara.project@2.0.0"
+      "expected_recipe_signature": "docara.project@3.0.0"
     }
   ]
 }

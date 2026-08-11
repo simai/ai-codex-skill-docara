@@ -1,20 +1,34 @@
-# ai-codex-skill-docara
+# Docara Skill
 
-Codex owner skill for Docara 2 documentation sites.
+The canonical English owner skill for building and operating standalone
+Docara 2 sites with Codex.
 
-It covers the PHP-only JSON/Markdown project model, inherited configuration,
-Simai Framework components, deterministic build and verification, migration
-planning and static publication handoff.
+The skill understands Docara as a PHP static compiler: Markdown and validated
+project configuration become typed document IR, renderer output, admitted
+Smart components, composed layouts, static pages, derived indexes, and
+verification receipts. It covers:
 
-The skill lives in `skills/docara/` and is invoked as `$docara`.
+- project structure and ownership;
+- content, locales, routes, navigation, and redirects;
+- inherited site, section, page, reading, search, branding, and layout settings;
+- native, typed, container, Framework, Docara, and project Smart components;
+- full and single-page builds, preview, static verification, and browser QA;
+- Developer/AI SDK discovery, scaffolding, validation, tests, structured QA,
+  and MCP integration;
+- transactional engine updates, rollback, release readiness, publication, and
+  troubleshooting.
 
-## Validate
+The installable entry point is [skills/docara/SKILL.md](skills/docara/SKILL.md).
+The compact capability graph is [graph/specs/index.json](graph/specs/index.json).
+The Docara product and the target project's exact installed package remain the
+source of truth for schemas and executable behavior.
+
+## Validation
 
 ```bash
 python3 /Users/rim/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/docara
+python3 scripts/validate_skill_contract.py
 bash tests/smoke.sh
-python3 scripts/mirai_graph_contract_gate.py
 ```
 
-The repository contains no project initializer or theme generator of its own:
-the Docara CLI and product schemas are the executable source of truth.
+This repository does not install, enable, release, or deploy itself.

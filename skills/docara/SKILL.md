@@ -1,93 +1,132 @@
 ---
 name: docara
-description: Build, configure, verify, publish, migrate, and maintain static documentation and landing sites with SIMAI Docara 2 using Markdown, validated JSON, Simai Framework, and the PHP-only CLI. Coordinate substantial content work with $docs, public search contracts with $seo, acceptance with $tester, and live deployment with $ops.
-metadata:
-  short-description: "Docara 2 documentation sites"
+description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, Markdown content, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
 ---
 
 # Docara
 
-Use this skill for Docara 2 project mechanics. Docara has one project model:
-Markdown content under `content/<locale>`, validated JSON configuration and a
-PHP-only deterministic build rendered with Simai Framework.
+Own Docara-specific project mechanics. Treat Docara as a PHP compiler that
+turns Markdown, validated JSON, admitted design artifacts, and exact-pinned
+Smart components into a self-contained static site.
 
-Before cross-domain work, read
-[rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md). For substantial
-tasks, use the runtime entry below.
+## Authority and freshness
 
-## Mirai Graph Runtime Entry
+Use this precedence:
 
-Use the repo-local `graph/specs` and latest generated runtime context as the
-machine-readable index for capability selection, routing, readiness and
-companion contracts. Return to this raw source for methodology, judgement and
-safe-write boundaries. Graph-only runtime is forbidden.
+1. The target project's files and exact installed `simai/docara` package.
+2. The matching package schemas, CLI help, README, and documentation.
+3. This skill as the operational map and safety contract.
 
-## Project contract
+When a command, schema field, component, or artifact contract may have changed,
+inspect the exact installed package instead of guessing. If product sources and
+this skill disagree, follow the product and report skill drift.
 
-- Site settings: `docara.json`.
-- Framework revisions: `simai-framework.lock.json`.
-- Content: `content/<locale>/**/*.md`.
-- Inherited section settings: `section.json`.
-- Optional page settings: `<page>.page.json`.
-- Redirects: `redirects.json`.
-- Project assets: `assets/`.
-- Output: `build_<environment>`; generated `.docara` and `build_*` are not
-  authoring surfaces.
+Use the repo-local Mirai Graph only to select capabilities, relations, gates,
+and references. Raw skill sources remain authoritative for method and
+judgement. Graph output never grants write, release, or deployment authority.
 
-Read [references/project-model.md](./references/project-model.md) for setup and
-[references/authoring-rules.md](./references/authoring-rules.md) for content.
+## Start every task
 
-## Workflow
+1. Locate the project root containing `docara.json`.
+2. Inspect Git status and preserve unrelated or untracked work.
+3. Read `docara.json`, declared locale roots, the nearest relevant
+   `section.json`, an optional page sidecar, and the Framework lock reference.
+4. Discover the executable from the project (`vendor/bin/docara`) or an exact
+   package checkout; do not assume a global binary.
+5. Load only the reference that matches the task.
 
-1. Inspect `docara.json`, the locale registry, Framework lock, content tree and
-   working tree before editing.
-2. Initialize only an empty target with `php vendor/bin/docara init [path]`.
-   Use `init --update` only after reviewing its ownership contract and diff.
-3. Make the smallest complete Markdown/JSON/component change.
-4. Build and verify:
+## Task router
 
-   ```bash
-   php vendor/bin/docara build production
-   php vendor/bin/docara verify-static build_production
-   ```
+| User outcome | Load |
+| --- | --- |
+| Create, adopt, or understand a project | [architecture-and-project-model.md](./references/architecture-and-project-model.md) |
+| Change site, section, page, branding, layout, reading, search, or locale settings | [settings-and-inheritance.md](./references/settings-and-inheritance.md) |
+| Write, restructure, translate, or migrate content; change routes or navigation | [content-locales-and-navigation.md](./references/content-locales-and-navigation.md) |
+| Use native, inline, typed, container, Framework, Docara, or project Smart components | [components-smart-and-design.md](./references/components-smart-and-design.md) |
+| Build one page or the full site, preview, serve, or verify output | [build-preview-and-verification.md](./references/build-preview-and-verification.md) |
+| Inspect registries, scaffold artifacts, validate, test, run QA, or use MCP | [developer-sdk-and-qa.md](./references/developer-sdk-and-qa.md) |
+| Update the engine, prepare a package/release, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
+| Diagnose errors, ownership, paths, locks, links, assets, or security boundaries | [security-and-troubleshooting.md](./references/security-and-troubleshooting.md) |
 
-5. For local UI checks, serve the verified bytes over HTTP:
+Read [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md) when the task
+needs documentation, content, SEO, UX, QA, runtime, or release companions.
 
-   ```bash
-   php vendor/bin/docara serve production --host=127.0.0.1 --port=8000 --no-build
-   ```
+## Core execution loop
 
-6. Report the exact source revision, output, verification evidence and any
-   remaining publication or owner gate.
+1. Translate the request into one primary outcome and the smallest complete
+   project-owned change.
+2. Identify the authoritative input: Markdown, front matter, `docara.json`, a
+   `section.json`, a page sidecar, `lang.json`, `redirects.json`, `assets/`,
+   `smart/`, or `design/`.
+3. Validate IDs and fields against the exact schema, registry, or `inspect`
+   result before editing.
+4. Make the change without editing generated or package-owned state.
+5. Run the cheapest relevant check, then the required build path.
+6. Run `verify-static` on the exact output.
+7. For visible behavior, serve the verified bytes over HTTP and test the
+   affected routes, navigation, search, themes, responsiveness, and keyboard
+   behavior as appropriate.
+8. Report changed owners, commands, output path, evidence, and any separate
+   publication or acceptance gate.
 
-## Safety rules
+## Build selection
 
-- Never edit generated `build_*` or `.docara` files.
-- Never treat `init` as an in-place converter for a pre-Docara-2 project.
-- Before `init --update`, preserve authored content/settings and verify the
-  engine-owned versus project-owned file contract.
-- Keep secrets outside the project format; Docara does not require `.env`.
-- Do not replace immutable Framework revisions with branches or moving URLs.
-- Do not bypass schema, template, component-prop, path or static verification.
-- Use backup, rollback and `$ops` before live deployment.
+Use a single-page build only for an existing route after an accepted complete
+build and only when the engine, dependency tuple, build purpose, topology, and
+global registries remain unchanged:
 
-## Authoring and components
+```bash
+php vendor/bin/docara build production --page=/public/route/
+```
 
-- Ordinary Markdown pages do not need a JSON sidecar.
-- Use `section.json` only for inherited directory behavior and
-  `<page>.page.json` only for page-specific behavior.
-- Prefer native Markdown, then registered Docara components, then admitted
-  `ui.*` Smart components. Do not invent product CSS when a Framework utility
-  or component already expresses the design.
-- Treat the generated `/components/catalog/` for the exact build as the
-  authoritative component inventory.
-- Add locale UI strings to language packs; do not embed one language in layout,
-  region or component manifests.
+Use a complete build after adding, deleting, or renaming a route; changing
+`docara.json`, locale copy, navigation topology, redirects, Framework lock,
+shared registries, section inheritance, or other cross-page state:
 
-## Publication
+```bash
+php vendor/bin/docara build production
+php vendor/bin/docara verify-static build_production
+```
 
-GitHub Pages or another static host publishes `build_production` only after
-`verify-static` succeeds. Read
-[references/github-pages.md](./references/github-pages.md) for Pages. Public
-release, package publication and production deployment are separate gated
-operations.
+Open exactly those verified bytes over HTTP:
+
+```bash
+php vendor/bin/docara serve production \
+  --host=127.0.0.1 --port=8000 --no-build
+```
+
+## Non-negotiable boundaries
+
+- Never edit `build_*`, build-local `.docara`, or package-owned
+  `.docara/engine` as source.
+- Never use `init --update`; it is a disabled compatibility guard. Use the
+  transactional `update --verify -> --dry-run -> --apply` workflow.
+- Never initialize a non-empty target or use `init` as a legacy converter.
+- Never replace an exact Framework lock with a branch, moving URL, or `latest`.
+- Never admit a component from catalogue prose alone. Require its real
+  manifest/provider/lock/registry contract.
+- Never pass PHP classes, callbacks, executable hooks, arbitrary template
+  paths, raw project CSS, or unsafe filesystem paths through content/config.
+- Never weaken traversal, symlink, hardlink, ownership, namespace, schema,
+  hash, slot, prop, or static-output checks to make a build pass.
+- Keep secrets and private content out of source and static output.
+- Treat `build`, `verify-static`, browser acceptance, release readiness,
+  package publication, and deployment as separate states.
+- Require `$ops`, backup, rollback, and an explicit live authorization before
+  deployment or destructive runtime work.
+
+## Output contract
+
+Return:
+
+- project root and exact package/source revision when relevant;
+- source owners changed and the effective scope (`site`, `section`, `page`,
+  content, Smart, design, engine, or publication);
+- checks and commands actually executed;
+- build output and static-verification result;
+- browser/QA coverage or a precise reason it was not required;
+- unresolved diagnostics, owner review, release, or deployment boundary;
+- the smallest safe next step.
+
+Do not call a result released, published, or production-ready unless that
+specific state has fresh evidence and authorization.

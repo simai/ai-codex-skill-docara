@@ -1,48 +1,43 @@
 {
   "schema_version": "1.0.0",
   "graph_id": "ai-codex-skill-docara.graph",
-  "title": "Docara Skill Graph",
-  "description": "Mirai Graph runtime capability profile for ai-codex-skill-docara.",
-  "type_descriptor_files": [
-    "type-descriptors/core.json"
-  ],
+  "title": "Docara Skill Runtime Graph",
+  "description": "Compact source-linked routing graph for the current standalone Docara 2 skill.",
+  "type_descriptor_files": [],
   "object_files": [
     "objects/skill-docara-core.json",
-    "objects/capability-docara-project-setup.json",
-    "objects/capability-docara-authoring-frontmatter.json",
-    "objects/capability-docara-menu-locales.json",
-    "objects/capability-docara-theme-branding.json",
-    "objects/capability-docara-publish-github-pages.json",
-    "objects/policy-docara-docs-owner-boundary.json",
-    "objects/policy-docara-publish-smoke.json",
-    "objects/gate-docara-publish-readiness.json"
+    "objects/capability-docara-project-lifecycle.json",
+    "objects/capability-docara-settings-inheritance.json",
+    "objects/capability-docara-content-localization-navigation.json",
+    "objects/capability-docara-components-smart-design.json",
+    "objects/capability-docara-build-preview-verification.json",
+    "objects/capability-docara-developer-sdk-qa.json",
+    "objects/capability-docara-update-release-publication.json",
+    "objects/capability-docara-security-troubleshooting.json",
+    "objects/policy-docara-source-ownership.json",
+    "objects/policy-docara-lifecycle-separation.json",
+    "objects/gate-docara-acceptance.json"
   ],
   "relation_files": [
-    "relations/relation-skill-docara-core-implements-capability-docara-project-setup.json",
-    "relations/relation-skill-docara-core-implements-capability-docara-authoring-frontmatter.json",
-    "relations/relation-skill-docara-core-implements-capability-docara-menu-locales.json",
-    "relations/relation-skill-docara-core-implements-capability-docara-theme-branding.json",
-    "relations/relation-skill-docara-core-implements-capability-docara-publish-github-pages.json",
-    "relations/relation-capability-docara-project-setup-governed-by-policy-docara-docs-owner-boundary.json",
-    "relations/relation-capability-docara-project-setup-governed-by-policy-docara-publish-smoke.json",
-    "relations/relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-docs-owner-boundary.json",
-    "relations/relation-capability-docara-authoring-frontmatter-governed-by-policy-docara-publish-smoke.json",
-    "relations/relation-capability-docara-menu-locales-governed-by-policy-docara-docs-owner-boundary.json",
-    "relations/relation-capability-docara-menu-locales-governed-by-policy-docara-publish-smoke.json",
-    "relations/relation-capability-docara-theme-branding-governed-by-policy-docara-docs-owner-boundary.json",
-    "relations/relation-capability-docara-theme-branding-governed-by-policy-docara-publish-smoke.json",
-    "relations/relation-capability-docara-publish-github-pages-governed-by-policy-docara-docs-owner-boundary.json",
-    "relations/relation-capability-docara-publish-github-pages-governed-by-policy-docara-publish-smoke.json",
-    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-project-setup.json",
-    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-authoring-frontmatter.json",
-    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-menu-locales.json",
-    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-theme-branding.json",
-    "relations/relation-gate-docara-publish-readiness-validates-capability-docara-publish-github-pages.json"
+    "relations/relation-skill-docara-core-implements-capability-docara-project-lifecycle.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-project-lifecycle.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-settings-inheritance.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-content-localization-navigation.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-content-localization-navigation.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-components-smart-design.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-components-smart-design.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-build-preview-verification.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-developer-sdk-qa.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-developer-sdk-qa.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-update-release-publication.json",
+    "relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json",
+    "relations/relation-gate-docara-acceptance-validates-capability-docara-security-troubleshooting.json",
+    "relations/relation-skill-docara-core-governed-by-policy-docara-source-ownership.json",
+    "relations/relation-skill-docara-core-governed-by-policy-docara-lifecycle-separation.json"
   ],
-  "evolution_track_files": [
-    "evolution-tracks/example-track.json"
-  ],
-  "question_files": [
-    "questions/discovery-questions.json"
-  ]
+  "evolution_track_files": [],
+  "question_files": []
 }

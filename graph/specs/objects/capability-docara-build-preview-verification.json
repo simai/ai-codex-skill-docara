@@ -1,0 +1,23 @@
+{
+  "id": "capability.docara.build-preview-verification",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Build, preview, and verification",
+  "summary": "Selects full or single-page compilation, verifies exact static bytes, and performs proportionate browser acceptance.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "source_refs": [
+    "skills/docara/references/build-preview-and-verification.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "docara",
+    "skill-runtime",
+    "capability"
+  ],
+  "subtype": "domain_capability"
+}

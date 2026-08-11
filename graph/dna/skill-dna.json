@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "id": "docara.skill-dna",
+  "purpose": "Route Docara work to the smallest current capability without replacing product schemas or raw owner guidance.",
+  "source_of_truth": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/",
+    "graph/specs/"
+  ],
+  "growth_rule": "Add or change graph knowledge only with current product evidence and synchronized raw skill sources.",
+  "prohibited_growth": [
+    "copied central schemas",
+    "historical generated evidence as source",
+    "product behavior invented by the skill"
+  ]
+}

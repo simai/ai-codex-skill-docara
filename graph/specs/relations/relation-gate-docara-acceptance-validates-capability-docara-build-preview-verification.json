@@ -1,0 +1,19 @@
+{
+  "id": "relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "gate.docara.acceptance",
+  "to": "capability.docara.build-preview-verification",
+  "relation_type": "validates",
+  "status": "accepted",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "impact": "high",
+  "owner": "docara",
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/build-preview-and-verification.md"
+  ],
+  "evidence_refs": []
+}

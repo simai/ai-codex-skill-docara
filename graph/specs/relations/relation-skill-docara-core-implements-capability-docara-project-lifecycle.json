@@ -1,0 +1,18 @@
+{
+  "id": "relation-skill-docara-core-implements-capability-docara-project-lifecycle",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "skill.docara.core",
+  "to": "capability.docara.project-lifecycle",
+  "relation_type": "implements",
+  "status": "accepted",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "impact": "high",
+  "owner": "docara",
+  "source_refs": [
+    "skills/docara/SKILL.md"
+  ],
+  "evidence_refs": []
+}

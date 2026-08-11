@@ -9,3 +9,4 @@ output/
 *.bak-*
 *.codex-bak-*
 skills/docara/scripts/__pycache__/
+graph/generated/

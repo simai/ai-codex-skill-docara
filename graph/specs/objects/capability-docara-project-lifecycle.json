@@ -1,0 +1,23 @@
+{
+  "id": "capability.docara.project-lifecycle",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Project lifecycle",
+  "summary": "Creates, adopts, and inspects standalone Docara projects while preserving project and package ownership.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.96,
+  "confidence_method": "verified_against_current_docara_product_baseline",
+  "evidence_status": "verified",
+  "source_refs": [
+    "skills/docara/references/architecture-and-project-model.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "docara",
+    "skill-runtime",
+    "capability"
+  ],
+  "subtype": "domain_capability"
+}
