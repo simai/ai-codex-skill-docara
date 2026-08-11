@@ -25,6 +25,12 @@ Use the repo-local Mirai Graph only to select capabilities, relations, gates,
 and references. Raw skill sources remain authoritative for method and
 judgement. Graph output never grants write, release, or deployment authority.
 
+## Mirai Graph Runtime Entry
+
+Use the repository launcher `scripts/mirai_graph_skill_runtime.py` for runtime
+verification and task-scoped context. It resolves only an explicit, sibling,
+or active installed Graph runtime and fails closed when none is available.
+
 ## Start every task
 
 1. Locate the project root containing `docara.json`.
