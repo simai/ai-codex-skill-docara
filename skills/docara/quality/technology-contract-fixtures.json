@@ -5,19 +5,19 @@
   "positive_cases": [
     {
       "id": "docara.paraphrase.ru",
-      "task": "Используй $docara. Выполни основную проверяемую задачу владельца docara в синтетическом проекте.",
+      "task": "Используй $docara. Выполни типовую задачу владельца docara в синтетическом проекте.",
       "expected_process_model_id": "docara_documentation_site_publication"
     },
     {
       "id": "docara.paraphrase.en",
-      "task": "Use $docara to complete the owner's primary verifiable task in a synthetic project.",
+      "task": "Use $docara to complete the owner's representative task in a synthetic project.",
       "expected_process_model_id": "docara_documentation_site_publication"
     }
   ],
   "negative_cases": [
     {
       "id": "docara.owner_boundary",
-      "task": "Не используй $docara. Используй $dev для точечного backend bugfix.",
+      "task": "Используй $dev для точечного backend bugfix в существующем API.",
       "expected_primary_skill": "dev"
     }
   ],
