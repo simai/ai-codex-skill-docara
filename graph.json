@@ -8,7 +8,7 @@
   "owner": "docara",
   "aliases": [],
   "profiles": [
-    "skill_runtime"
+    "skill"
   ],
   "imports": [],
   "graph": {
