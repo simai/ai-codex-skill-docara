@@ -16,7 +16,12 @@
         "SKILL.md"
       ],
       "extension_points": [
-        "owner://docara/existing-methodology"
+        {
+          "id": "docara.documentation_contour_build.extension",
+          "kind": "extend",
+          "source_ref": "SKILL.md",
+          "validator_ref": "federation://owner-capability-map"
+        }
       ],
       "constraints": [
         "Use raw owner sources for methodology and judgement.",
@@ -28,6 +33,140 @@
       "validator_refs": [
         "federation://owner-capability-map",
         "federation://technology-conformance"
+      ],
+      "roles": [
+        "discovery",
+        "outcome_harness"
+      ],
+      "discovery": {
+        "intent_signals": [
+          "Docara build",
+          "документационный контур",
+          "docara.documentation_contour_build",
+          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+        ],
+        "requirement_signals": [
+          "Docara build",
+          "документационный контур",
+          "docara.documentation_contour_build",
+          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+        ],
+        "project_signals": [
+          "docara"
+        ],
+        "dependency_signals": []
+      },
+      "applicability": {
+        "platform": "docara",
+        "editions": [],
+        "version_range": "exact-project-version-or-owner-contract",
+        "required_modules": []
+      },
+      "coverage": {
+        "provides": [
+          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+        ],
+        "does_not_provide": [
+          "Capabilities outside the declared owner boundary"
+        ]
+      },
+      "ownership": {
+        "data": "docara",
+        "access": "docara",
+        "lifecycle": "docara",
+        "interface": "docara",
+        "runtime": "docara"
+      },
+      "composition": {
+        "requires": [],
+        "compatible_with": [],
+        "conflicts_with": []
+      },
+      "no_fit_conditions": [
+        "A required outcome remains uncovered after checking the exact owner source and project version."
+      ]
+    },
+    {
+      "id": "docara.existing_contour",
+      "aliases": [
+        "Docara contour",
+        "docara contour",
+        "документационный контур"
+      ],
+      "user_outcome": "Расширение существующего документационного контура",
+      "readiness": "ready",
+      "canonical_source_refs": [
+        "references/architecture-and-project-model.md"
+      ],
+      "extension_points": [
+        {
+          "id": "docara.existing_contour.extension",
+          "kind": "extend",
+          "source_ref": "references/architecture-and-project-model.md",
+          "validator_ref": "federation://technology-conformance"
+        }
+      ],
+      "constraints": [
+        "Use the exact project version and native lifecycle, rights and APIs."
+      ],
+      "non_goals": [
+        "Do not create a parallel data, access, status or notification subsystem."
+      ],
+      "validator_refs": [
+        "federation://technology-conformance"
+      ],
+      "roles": [
+        "discovery",
+        "outcome_harness"
+      ],
+      "discovery": {
+        "intent_signals": [
+          "Docara contour",
+          "docara contour",
+          "документационный контур",
+          "docara.existing_contour",
+          "Расширение существующего документационного контура"
+        ],
+        "requirement_signals": [
+          "Docara contour",
+          "docara contour",
+          "документационный контур",
+          "docara.existing_contour",
+          "Расширение существующего документационного контура"
+        ],
+        "project_signals": [
+          "docara"
+        ],
+        "dependency_signals": []
+      },
+      "applicability": {
+        "platform": "docara",
+        "editions": [],
+        "version_range": "exact-project-version-or-owner-contract",
+        "required_modules": []
+      },
+      "coverage": {
+        "provides": [
+          "Расширение существующего документационного контура"
+        ],
+        "does_not_provide": [
+          "Capabilities outside the declared owner boundary"
+        ]
+      },
+      "ownership": {
+        "data": "docara",
+        "access": "docara",
+        "lifecycle": "docara",
+        "interface": "docara",
+        "runtime": "docara"
+      },
+      "composition": {
+        "requires": [],
+        "compatible_with": [],
+        "conflicts_with": []
+      },
+      "no_fit_conditions": [
+        "A required outcome remains uncovered after checking the exact owner source and project version."
       ]
     },
     {
@@ -42,7 +181,12 @@
         "SKILL.md"
       ],
       "extension_points": [
-        "owner://docara/existing-methodology"
+        {
+          "id": "docara.runtime_reference_diagnosis.extension",
+          "kind": "extend",
+          "source_ref": "SKILL.md",
+          "validator_ref": "federation://owner-capability-map"
+        }
       ],
       "constraints": [
         "Use raw owner sources for methodology and judgement.",
@@ -54,6 +198,57 @@
       "validator_refs": [
         "federation://owner-capability-map",
         "federation://technology-conformance"
+      ],
+      "roles": [
+        "discovery",
+        "outcome_harness"
+      ],
+      "discovery": {
+        "intent_signals": [
+          "missing refs",
+          "диагностика ссылок",
+          "docara.runtime_reference_diagnosis",
+          "Report every missing runtime reference explicitly and never return a false-green pack."
+        ],
+        "requirement_signals": [
+          "missing refs",
+          "диагностика ссылок",
+          "docara.runtime_reference_diagnosis",
+          "Report every missing runtime reference explicitly and never return a false-green pack."
+        ],
+        "project_signals": [
+          "docara"
+        ],
+        "dependency_signals": []
+      },
+      "applicability": {
+        "platform": "docara",
+        "editions": [],
+        "version_range": "exact-project-version-or-owner-contract",
+        "required_modules": []
+      },
+      "coverage": {
+        "provides": [
+          "Report every missing runtime reference explicitly and never return a false-green pack."
+        ],
+        "does_not_provide": [
+          "Capabilities outside the declared owner boundary"
+        ]
+      },
+      "ownership": {
+        "data": "docara",
+        "access": "docara",
+        "lifecycle": "docara",
+        "interface": "docara",
+        "runtime": "docara"
+      },
+      "composition": {
+        "requires": [],
+        "compatible_with": [],
+        "conflicts_with": []
+      },
+      "no_fit_conditions": [
+        "A required outcome remains uncovered after checking the exact owner source and project version."
       ]
     }
   ]
