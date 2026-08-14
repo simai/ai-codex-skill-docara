@@ -13,7 +13,8 @@
       "user_outcome": "Build a Docara documentation contour from canonical project sources without duplicating the source of truth.",
       "readiness": "ready",
       "canonical_source_refs": [
-        "SKILL.md"
+        "SKILL.md",
+        "quality/technology-contract-fixtures.json"
       ],
       "extension_points": [
         {
@@ -178,7 +179,8 @@
       "user_outcome": "Report every missing runtime reference explicitly and never return a false-green pack.",
       "readiness": "ready",
       "canonical_source_refs": [
-        "SKILL.md"
+        "SKILL.md",
+        "quality/technology-contract-fixtures.json"
       ],
       "extension_points": [
         {
