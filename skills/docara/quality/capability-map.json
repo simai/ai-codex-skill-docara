@@ -13,14 +13,14 @@
       "user_outcome": "Build a Docara documentation contour from canonical project sources without duplicating the source of truth.",
       "readiness": "ready",
       "canonical_source_refs": [
-        "SKILL.md",
-        "quality/technology-contract-fixtures.json"
+        "references/architecture-and-project-model.md",
+        "references/build-preview-and-verification.md"
       ],
       "extension_points": [
         {
           "id": "docara.documentation_contour_build.extension",
           "kind": "extend",
-          "source_ref": "SKILL.md",
+          "source_ref": "references/architecture-and-project-model.md",
           "validator_ref": "federation://owner-capability-map"
         }
       ],
@@ -179,14 +179,14 @@
       "user_outcome": "Report every missing runtime reference explicitly and never return a false-green pack.",
       "readiness": "ready",
       "canonical_source_refs": [
-        "SKILL.md",
-        "quality/technology-contract-fixtures.json"
+        "references/architecture-and-project-model.md",
+        "references/build-preview-and-verification.md"
       ],
       "extension_points": [
         {
           "id": "docara.runtime_reference_diagnosis.extension",
           "kind": "extend",
-          "source_ref": "SKILL.md",
+          "source_ref": "references/architecture-and-project-model.md",
           "validator_ref": "federation://owner-capability-map"
         }
       ],
