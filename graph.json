@@ -1,55 +1,91 @@
 {
   "$schema": "https://mirai-graph.dev/schemas/graph-manifest.schema.json",
-  "format": "mirai-graph",
-  "schema_version": "2.0.0",
-  "id": "ai-codex-skill-docara.graph",
-  "title": "Docara Owner Skill Graph",
-  "kind": "skill",
-  "scope": "skill",
-  "owner": "docara",
   "aliases": [],
-  "profiles": [
-    "skill"
-  ],
-  "imports": [],
-  "graph": {
-    "root": "graph",
-    "objects": [
-      "graph/specs/objects"
-    ],
-    "relations": [
-      "graph/specs/relations"
-    ],
-    "source_of_truth": [
-      "graph/specs"
-    ],
-    "raw_sources": [
-      "skills/docara/SKILL.md",
-      "skills/docara/references",
-      "skills/docara/rules",
-      "README.md"
-    ],
-    "generated": [
-      "graph/generated"
-    ],
-    "schemas": []
+  "evolution": {
+    "current_iteration": 2,
+    "migration_status": "current"
   },
-  "runtime": {
-    "default_context_depth": 2,
-    "default_max_objects": 12,
-    "graph_required": false,
-    "graph_context_required_before_raw_source": false,
-    "fallback_to_raw_allowed": "with_explicit_gap",
-    "fallback_gap_output": "source/memory/graph-gaps/"
+  "extensions": {
+    "mirai.project_technology": {
+      "context_policy": "task_scoped",
+      "contract_version": "1.0.0",
+      "enabled": true,
+      "source_boundary": "hybrid_sot"
+    }
   },
   "federation": {
     "can_export": true,
     "can_import": true,
-    "parent_graph": null,
-    "child_graphs": []
+    "child_graphs": [],
+    "parent_graph": null
   },
-  "evolution": {
-    "current_iteration": 2,
-    "migration_status": "current"
-  }
+  "format": "mirai-graph",
+  "graph": {
+    "generated": [
+      "graph/generated"
+    ],
+    "objects": [
+      "graph/specs/objects/skill-docara-core.json",
+      "graph/specs/objects/capability-docara-project-lifecycle.json",
+      "graph/specs/objects/capability-docara-settings-inheritance.json",
+      "graph/specs/objects/capability-docara-content-localization-navigation.json",
+      "graph/specs/objects/capability-docara-components-smart-design.json",
+      "graph/specs/objects/capability-docara-build-preview-verification.json",
+      "graph/specs/objects/capability-docara-developer-sdk-qa.json",
+      "graph/specs/objects/capability-docara-update-release-publication.json",
+      "graph/specs/objects/capability-docara-security-troubleshooting.json",
+      "graph/specs/objects/policy-docara-source-ownership.json",
+      "graph/specs/objects/policy-docara-lifecycle-separation.json",
+      "graph/specs/objects/gate-docara-acceptance.json"
+    ],
+    "raw_sources": [
+      "README.md",
+      "skills/docara/SKILL.md",
+      "skills/docara/references",
+      "skills/docara/rules"
+    ],
+    "relations": [
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-project-lifecycle.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-project-lifecycle.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-settings-inheritance.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-content-localization-navigation.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-content-localization-navigation.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-components-smart-design.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-components-smart-design.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-build-preview-verification.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-developer-sdk-qa.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-developer-sdk-qa.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-update-release-publication.json",
+      "graph/specs/relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json",
+      "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-security-troubleshooting.json",
+      "graph/specs/relations/relation-skill-docara-core-governed-by-policy-docara-source-ownership.json",
+      "graph/specs/relations/relation-skill-docara-core-governed-by-policy-docara-lifecycle-separation.json"
+    ],
+    "root": "graph",
+    "schemas": [],
+    "source_of_truth": [
+      "graph/specs/index.json"
+    ]
+  },
+  "id": "ai-codex-skill-docara.graph",
+  "imports": [],
+  "kind": "skill",
+  "owner": "docara",
+  "profiles": [
+    "skill_runtime"
+  ],
+  "runtime": {
+    "default_context_depth": 2,
+    "default_max_objects": 12,
+    "fallback_gap_output": "source/memory/graph-gaps/",
+    "fallback_to_raw_allowed": "with_explicit_gap",
+    "graph_context_required_before_raw_source": false,
+    "graph_required": false
+  },
+  "schema_version": "2.0.0",
+  "scope": "skill",
+  "title": "Docara Owner Skill Graph"
 }

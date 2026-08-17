@@ -10,3 +10,6 @@ output/
 *.codex-bak-*
 skills/docara/scripts/__pycache__/
 graph/generated/
+
+# Mirai Graph local Project Technology state
+.mirai-graph/project-technology/

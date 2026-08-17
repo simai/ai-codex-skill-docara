@@ -25,11 +25,12 @@ Use the repo-local Mirai Graph only to select capabilities, relations, gates,
 and references. Raw skill sources remain authoritative for method and
 judgement. Graph output never grants write, release, or deployment authority.
 
-## Mirai Graph Runtime Entry
+## Mirai Graph Project Technology
 
-Use the repository launcher `scripts/mirai_graph_skill_runtime.py` for runtime
-verification and task-scoped context. It resolves only an explicit, sibling,
-or active installed Graph runtime and fails closed when none is available.
+Use the public `mirai-graph technology verify` and `mirai-graph technology
+context --task "..."` operations for verification and task-scoped context.
+The exact Mirai Graph release is supplied by the Federation release lock; raw
+Docara sources remain authoritative and unavailable context fails closed.
 
 ## Start every task
 
