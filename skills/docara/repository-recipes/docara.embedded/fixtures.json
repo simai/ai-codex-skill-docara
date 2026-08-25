@@ -1,0 +1,1 @@
+{"positive":[{"task":"embed a Docara source site into a product repository","expected_recipe":"docara.embedded"}],"negative":[{"task":"create a standalone Docara repository","forbidden_recipe":"docara.embedded"}],"compatibility":[{"shape":"product.monorepo","compatible":true}]}

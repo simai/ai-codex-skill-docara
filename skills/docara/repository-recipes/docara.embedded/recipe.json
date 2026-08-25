@@ -1,0 +1,9 @@
+{
+  "$schema":"https://simai.io/schemas/federation/repository-recipe.schema.json","schema_version":"3.0.0","id":"docara.embedded","version":"3.0.0","kind":"capability_recipe","owner":"docara","title":"Embedded Docara source workspace","repository_family":"capability","repository_kind":"docara_embedded","base_recipe":null,
+  "compatibility":{"allowed_bases":["product.monorepo","application.repository"],"allowed_overlays":[],"incompatible_recipes":["documentation.site"]},"capabilities":[],"requires_capabilities":[],"required_inputs":[],
+  "source_contract":{"entrypoints":["skills/docara/SKILL.md"],"processes":["skills/docara/references/architecture-and-project-model.md"],"checks":["skills/docara/references/build-preview-and-verification.md"]},
+  "file_manifest":[{"path":"docara/README.md","ownership":"user_owned","required":true,"materializer":"template_file","source":"README.md"}],
+  "materialization":{"mode":"declarative_manifest","generator_contract":"repository_factory.manifest.v1","template_root":"templates","template_files":["README.md"]},
+  "validators":[{"id":"docara.structure","type":"owner_source","ref":"skills/docara/references/architecture-and-project-model.md","required":true}],
+  "availability":{"policy":"local_skill_override","default_state":"available","disabled_state_behavior":"fail_closed"},"migrations":[]
+}

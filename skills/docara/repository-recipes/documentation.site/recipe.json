@@ -1,0 +1,8 @@
+{
+  "$schema":"https://simai.io/schemas/federation/repository-recipe.schema.json","schema_version":"3.0.0","id":"documentation.site","version":"3.0.0","kind":"shape_recipe","owner":"docara","title":"Standalone documentation site","repository_family":"documentation","repository_kind":"site","base_recipe":null,
+  "compatibility":{"allowed_bases":["repository.foundation"],"allowed_overlays":[],"incompatible_recipes":["application.repository","package.repository","product.monorepo"]},"capabilities":[{"id":"project_technology","activation":"optional"}],"requires_capabilities":[],"required_inputs":[],
+  "source_contract":{"entrypoints":["skills/docara/SKILL.md"],"processes":["skills/docara/references/architecture-and-project-model.md"],"checks":["skills/docara/references/build-preview-and-verification.md"]},
+  "file_manifest":[],"materialization":{"mode":"declarative_manifest","generator_contract":"repository_factory.manifest.v1","template_root":null,"template_files":[]},
+  "validators":[{"id":"docara.structure","type":"owner_source","ref":"skills/docara/references/architecture-and-project-model.md","required":true}],
+  "availability":{"policy":"local_skill_override","default_state":"available","disabled_state_behavior":"fail_closed"},"migrations":[]
+}

@@ -1,0 +1,1 @@
+{"positive":[{"task":"create a standalone documentation website","expected_recipe":"documentation.site"}],"negative":[{"task":"embed docs into a larger product","forbidden_recipe":"documentation.site"}],"compatibility":[{"foundation":"repository.foundation","compatible":true}]}

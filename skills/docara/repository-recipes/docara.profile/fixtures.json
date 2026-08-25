@@ -1,0 +1,1 @@
+{"positive":[{"task":"use Docara at the selected native mount","expected_recipe":"docara.profile"}],"negative":[{"task":"publish compiled output as source","forbidden_behavior":"tracked_build_output"}],"compatibility":[{"shape":"documentation.site","compatible":true}]}
