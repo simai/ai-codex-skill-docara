@@ -19,20 +19,29 @@ Run from an initialized project:
 ```bash
 php vendor/bin/docara doctor --json
 php vendor/bin/docara list smart --json
+php vendor/bin/docara list page --json
 php vendor/bin/docara list layout --json
 php vendor/bin/docara inspect smart ui.alert --json
 php vendor/bin/docara inspect layout docara.docs --json
+php vendor/bin/docara inspect page /en/guide/ --json
 php vendor/bin/docara schema smart --json
+php vendor/bin/docara schema authoring --json
 php vendor/bin/docara atlas --json
 ```
 
-Available discovery kinds depend on the exact package and include Smart,
+Available discovery kinds depend on the exact package and include page, Smart,
 binding, layout, view, section, block, provider, fixture, state, and schema
 surfaces. Human and `--json` outputs project one operation result with stable
 diagnostics, ownership, provenance, and suggestions.
 
 Use discovery before writing component/design IDs or props. Do not derive an
 authoring contract from rendered HTML alone.
+
+`inspect page` returns the physical source, public route, locale, front matter,
+effective settings with provenance, optional authoring profile, component
+`docs_ref` relations, examples, links, translation relation, project lock
+descriptors, revisions, hashes, and diagnostics in
+`docara.page_inspection.v1`.
 
 ## Hash-bound scaffolding
 
@@ -43,6 +52,8 @@ php vendor/bin/docara scaffold smart project.notice \
   --dry-run --json
 php vendor/bin/docara scaffold design project.docs \
   --dry-run --json
+php vendor/bin/docara scaffold page guides/new-page \
+  --locale=en --title="New page" --profile=how_to --dry-run --json
 ```
 
 Review target paths, contents, input hashes, and `plan_id`. Apply only that
@@ -53,14 +64,17 @@ php vendor/bin/docara scaffold --apply=<exact-plan-sha256> --json
 ```
 
 Any changed input, namespace, config, target, or hash makes the plan stale.
-Scaffolding is create-only inside allowed project `smart/` or `design/` roots.
-It cannot overwrite an existing artifact or write to engine, content, assets,
-lock, build output, or external paths.
+Smart/design scaffolding is create-only inside its owned roots. Page
+scaffolding creates only an absent draft Markdown file inside the selected
+locale content root. It cannot overwrite a page or write to engine, assets,
+locks, build output, or external paths. Edit existing Markdown directly, then
+validate, build and verify it.
 
 ## Validation and tests
 
 ```bash
 php vendor/bin/docara validate project --json
+php vendor/bin/docara validate page /en/guide/ --json
 php vendor/bin/docara validate smart project.notice --json
 php vendor/bin/docara validate layout project.docs --json
 php vendor/bin/docara test smart project.notice \
@@ -75,6 +89,11 @@ page.
 
 Tests are focused artifact evidence. Complete build, static verification, and
 browser acceptance remain separate when the change affects a real site.
+
+Page profile gaps and semantic checklist items are report-only. Invalid
+Markdown, unsafe paths, missing assets/examples, broken technical links, or an
+invalid authoring schema remain technical validation errors. Build warns about
+authoring diagnostics but does not call AI, use the network, or edit sources.
 
 ## Preview
 

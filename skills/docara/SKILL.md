@@ -1,6 +1,6 @@
 ---
 name: docara
-description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, Markdown content, reusable examples, translation tracking, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
+description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, optional authoring profiles, Markdown content, reusable examples, translation tracking, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
 ---
 
 # Docara
@@ -64,7 +64,8 @@ needs documentation, content, SEO, UX, QA, runtime, or release companions.
    project-owned change.
 2. Identify the authoritative input: Markdown, front matter, `docara.json`, a
    `section.json`, a page sidecar, `lang.json`, `redirects.json`, `assets/`,
-   reusable `examples/`, `translations.lock.json`, `smart/`, or `design/`.
+   reusable `examples/`, `translations.lock.json`, optional
+   `docara.authoring.json`, `smart/`, or `design/`.
 3. Validate IDs and fields against the exact schema, registry, or `inspect`
    result before editing.
 4. Make the change without editing generated or package-owned state.

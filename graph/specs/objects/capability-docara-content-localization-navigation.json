@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Content, localization, and navigation",
-  "summary": "Authors and migrates Markdown, locales, routes, navigation, redirects, and hash-bound translation state with explicit ambiguity handling.",
+  "summary": "Authors and migrates Markdown, optional page profiles, locales, routes, navigation, redirects, and hash-bound translation state with explicit ambiguity handling.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

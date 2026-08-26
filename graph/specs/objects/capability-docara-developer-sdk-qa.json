@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Developer SDK and QA",
-  "summary": "Discovers registries, scaffolds hash-bound artifacts, validates, tests, previews, and records structured QA evidence.",
+  "summary": "Discovers registries and physical pages, inspects page provenance, scaffolds hash-bound artifacts or draft pages, validates, tests, previews, and records structured QA evidence.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

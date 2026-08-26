@@ -28,6 +28,7 @@ description: Build the first Docara site.
 tags: [start, install]
 draft: false
 translation_key: guide.install
+profile: how_to
 ---
 
 # Installation
@@ -35,6 +36,21 @@ translation_key: guide.install
 
 Do not add arbitrary front matter, layout instructions, executable code, or raw
 HTML. Raw HTML is rejected. Use an admitted component for rich content.
+
+## Optional page authoring profiles
+
+An optional root `docara.authoring.json` may declare audiences, one default
+profile, and path-to-profile rules. It must not store pages, versions, hashes,
+translation state, catalog copies, or editorial prose. Profile precedence is:
+page front matter, matching path rule, then default. Conflicting matching rules
+are an error.
+
+The built-in profiles are `landing`, `article`, `tutorial`, `how_to`,
+`reference`, and `explanation`. They provide measurable structural signals and
+an editorial checklist. Docara reports deterministic facts; clarity,
+usefulness, audience fit, rationale and semantic completeness remain
+`review_required` for a person or external agent. Absence of the authoring file
+preserves legacy behavior.
 
 ## Authoring rules
 
