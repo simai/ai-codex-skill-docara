@@ -112,6 +112,8 @@ configuration provenance, or build receipts.
 - `reading`: breadcrumbs, TOC, mobile TOC, depth, and previous/next;
 - `reader_preferences`: site-only registered preference groups/fields;
 - `locales` and `locale_routing`: site-only locale trees and public prefixes.
+- `translation_tracking`: site-only source locale, report mode, and root lock
+  filename; it does not change locale routing, fallback, or missing-page policy.
 
 Configuration selects admitted IDs and data. It never selects a PHP class,
 callback, arbitrary template, renderer, or filesystem path.

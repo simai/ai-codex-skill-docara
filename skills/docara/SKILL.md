@@ -1,6 +1,6 @@
 ---
 name: docara
-description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, Markdown content, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
+description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, Markdown content, reusable examples, translation tracking, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
 ---
 
 # Docara
@@ -48,8 +48,8 @@ Docara sources remain authoritative and unavailable context fails closed.
 | --- | --- |
 | Create, adopt, or understand a project | [architecture-and-project-model.md](./references/architecture-and-project-model.md) |
 | Change site, section, page, branding, layout, reading, search, or locale settings | [settings-and-inheritance.md](./references/settings-and-inheritance.md) |
-| Write, restructure, translate, or migrate content; change routes or navigation | [content-locales-and-navigation.md](./references/content-locales-and-navigation.md) |
-| Use native, inline, typed, container, Framework, Docara, or project Smart components | [components-smart-and-design.md](./references/components-smart-and-design.md) |
+| Write, restructure, translate, migrate, or track content; change routes or navigation | [content-locales-and-navigation.md](./references/content-locales-and-navigation.md) |
+| Use inline or reusable examples; native, typed, container, Framework, Docara, or project Smart components | [components-smart-and-design.md](./references/components-smart-and-design.md) |
 | Build one page or the full site, preview, serve, or verify output | [build-preview-and-verification.md](./references/build-preview-and-verification.md) |
 | Inspect registries, scaffold artifacts, validate, test, run QA, or use MCP | [developer-sdk-and-qa.md](./references/developer-sdk-and-qa.md) |
 | Update the engine, prepare a package/release, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
@@ -64,7 +64,7 @@ needs documentation, content, SEO, UX, QA, runtime, or release companions.
    project-owned change.
 2. Identify the authoritative input: Markdown, front matter, `docara.json`, a
    `section.json`, a page sidecar, `lang.json`, `redirects.json`, `assets/`,
-   `smart/`, or `design/`.
+   reusable `examples/`, `translations.lock.json`, `smart/`, or `design/`.
 3. Validate IDs and fields against the exact schema, registry, or `inspect`
    result before editing.
 4. Make the change without editing generated or package-owned state.
@@ -86,9 +86,10 @@ global registries remain unchanged:
 php vendor/bin/docara build production --page=/public/route/
 ```
 
-Use a complete build after adding, deleting, or renaming a route; changing
-`docara.json`, locale copy, navigation topology, redirects, Framework lock,
-shared registries, section inheritance, or other cross-page state:
+Use a complete build after adding, deleting, or renaming a route; changing a
+reusable example, `docara.json`, locale copy, navigation topology, redirects,
+Framework lock, shared registries, section inheritance, or other cross-page
+state:
 
 ```bash
 php vendor/bin/docara build production

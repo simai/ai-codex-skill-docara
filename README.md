@@ -9,9 +9,10 @@ Smart components, composed layouts, static pages, derived indexes, and
 verification receipts. It covers:
 
 - project structure and ownership;
-- content, locales, routes, navigation, and redirects;
+- content, locales, routes, navigation, redirects, and translation freshness;
 - inherited site, section, page, reading, search, branding, and layout settings;
-- native, typed, container, Framework, Docara, and project Smart components;
+- inline and reusable examples plus native, typed, container, Framework,
+  Docara, and project Smart components;
 - full and single-page builds, preview, static verification, and browser QA;
 - Developer/AI SDK discovery, scaffolding, validation, tests, structured QA,
   and MCP integration;
@@ -22,6 +23,11 @@ The installable entry point is [skills/docara/SKILL.md](skills/docara/SKILL.md).
 The compact capability graph is [graph/specs/index.json](graph/specs/index.json).
 The Docara product and the target project's exact installed package remain the
 source of truth for schemas and executable behavior.
+
+The current skill contract covers Docara 2.1 shared project examples,
+hash-bound translation acceptance, and both legacy 2.0 and layered 3.0
+Federation repository recipes. These features remain opt-in at the project
+level.
 
 ## Validation
 

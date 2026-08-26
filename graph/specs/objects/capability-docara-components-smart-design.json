@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Components, Smart, and design",
-  "summary": "Uses native renderers, typed components, containers, design artifacts, and admitted Smart artifacts without bypassing contracts.",
+  "summary": "Uses native renderers, reusable project examples, typed components, containers, design artifacts, and admitted Smart artifacts without bypassing contracts.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

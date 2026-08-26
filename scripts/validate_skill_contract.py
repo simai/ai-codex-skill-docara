@@ -114,15 +114,26 @@ def main() -> int:
 
     recipe_root = SKILL.parent / "repository-recipes"
     allowed_ownership = {"managed", "owner_template", "user_owned", "local_only"}
+    allowed_recipe_schemas = {"2.0.0", "3.0.0"}
+    allowed_recipe_kinds = {
+        "structural_recipe",
+        "technology_overlay",
+        "foundation_recipe",
+        "shape_recipe",
+        "platform_profile",
+        "capability_recipe",
+    }
     for path in sorted(recipe_root.glob("*/recipe.json")):
         relative = path.relative_to(ROOT)
         try:
             recipe = load_json(path)
             assert isinstance(recipe, dict)
-            if recipe.get("schema_version") != "2.0.0":
+            if recipe.get("schema_version") not in allowed_recipe_schemas:
                 blockers.append(f"unsupported recipe schema in {relative}")
             if recipe.get("owner") != "docara":
                 blockers.append(f"recipe owner is not docara in {relative}")
+            if recipe.get("kind") not in allowed_recipe_kinds:
+                blockers.append(f"unsupported recipe kind in {relative}: {recipe.get('kind')}")
             for group in ("entrypoints", "processes", "checks"):
                 for source_ref in (recipe.get("source_contract") or {}).get(group, []):
                     if not (ROOT / source_ref).exists():
@@ -133,6 +144,21 @@ def main() -> int:
                 manifest_path = str(item.get("path") or "")
                 if not manifest_path or manifest_path.startswith(("/", "\\")) or ".." in Path(manifest_path).parts:
                     blockers.append(f"unsafe recipe path in {relative}: {manifest_path}")
+                if item.get("materializer") == "template_file":
+                    template_root = (recipe.get("materialization") or {}).get("template_root")
+                    source = str(item.get("source") or "")
+                    if not template_root or not source or not (path.parent / template_root / source).is_file():
+                        blockers.append(f"missing recipe template source in {relative}: {source}")
+            fixture_path = path.parent / "fixtures.json"
+            if not fixture_path.is_file():
+                blockers.append(f"missing recipe fixtures for {relative}")
+            else:
+                fixtures = load_json(fixture_path)
+                if not isinstance(fixtures, dict) or not any(
+                    isinstance(fixtures.get(group), list) and fixtures[group]
+                    for group in ("positive", "negative", "compatibility")
+                ):
+                    blockers.append(f"recipe fixtures are empty or invalid for {relative}")
         except Exception as exc:  # noqa: BLE001
             blockers.append(f"invalid recipe {relative}: {exc}")
 

@@ -59,6 +59,8 @@ docara.json
 redirects.json                         # optional when no explicit redirects exist
 simai-framework.lock.json
 assets/
+examples/                              # optional shared HTML/CSS/JS demonstrations
+translations.lock.json                 # optional accepted translation state
 content/
   en/
     lang.json
@@ -89,6 +91,7 @@ Project-owned authoring surfaces:
 - `content/**`, including Markdown, `section.json`, page sidecars, `lang.json`,
   and colocated content assets;
 - root `assets/**`;
+- reusable `examples/**` and a configured `translations.lock.json`;
 - admitted project `smart/**` and `design/**` sources;
 - the exact Framework lock selected by the project.
 
@@ -98,6 +101,7 @@ Package-owned or generated surfaces:
 - update plans and rollback packages;
 - `build_*` and build-local `.docara/**` receipts;
 - generated `_docara/**` assets, search data, and catalogues.
+- generated `.docara/examples.json` and `.docara/translation-status.json`.
 
 Use product commands to update package-owned state. Never fix source behavior
 by editing generated output.

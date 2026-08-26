@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Build, preview, and verification",
-  "summary": "Selects full or single-page compilation, verifies exact static bytes, and performs proportionate browser acceptance.",
+  "summary": "Selects full or single-page compilation, verifies shared-example and translation receipts with exact static bytes, and performs proportionate browser acceptance.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

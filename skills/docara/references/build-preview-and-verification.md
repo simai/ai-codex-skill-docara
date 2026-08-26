@@ -41,7 +41,8 @@ At a high level, a complete build:
 3. resolves inherited settings and provenance for every page;
 4. compiles Markdown into typed Document IR and renders it through one registry;
 5. derives outline, locale links, backlinks, catalogues, schemas, topology,
-   menu, breadcrumbs, previous/next, search, redirects, and asset plans;
+   menu, breadcrumbs, previous/next, search, redirects, shared-example assets,
+   translation status, and asset plans;
 6. composes layout regions and verifies main-document parity;
 7. renders the publisher shell and writes all pages/assets/receipts into a
    candidate directory;
@@ -100,11 +101,18 @@ build_production/
     ├── backlinks.json
     ├── component-index.json
     ├── design-atlas.json
-    └── schema-reference.json
+    ├── examples.json
+    ├── schema-reference.json
+    └── translation-status.json         # when tracking is enabled
 ```
 
 Search files are emitted only when enabled. Assets are local and revisioned by
 hash. The static site must not rely on runtime CDN fallback.
+
+Translation issues are warnings in `report` mode and do not invalidate a
+successful build. Report them separately from build/static readiness. A changed
+reusable example invalidates isolated page rebuilding because every consumer
+must move to the same receipt.
 
 ## Static verification
 

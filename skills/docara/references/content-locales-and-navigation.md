@@ -6,6 +6,7 @@
 - [Authoring rules](#authoring-rules)
 - [Routes and assets](#routes-and-assets)
 - [Locales](#locales)
+- [Translation tracking](#translation-tracking)
 - [Navigation and reading context](#navigation-and-reading-context)
 - [Redirects](#redirects)
 - [Content workflow](#content-workflow)
@@ -87,6 +88,42 @@ Use a stable `translation_key` to connect corresponding routes across locales.
 Verify alternate links, locale menus, directionality, UI copy, and search for
 every changed locale.
 
+## Translation tracking
+
+When `docara.json` enables `translation_tracking`, treat its report as the
+current work queue for substantive content or localization work:
+
+```bash
+php vendor/bin/docara translations status
+php vendor/bin/docara translations status --locale=en
+php vendor/bin/docara translations status --status=stale --json
+```
+
+The configured source locale is authoritative. Equal locale-relative paths
+pair automatically; different paths require the same explicit
+`translation_key` on both pages. Never infer a relationship from titles or
+similar prose. A fallback used for UI copy is reported separately and does not
+count as a completed translation.
+
+Preserve code fences and their contents, URLs, component IDs and attributes,
+table/list shape, and heading levels while translating. Resolve
+`duplicate_key` and `structure_mismatch` before acceptance. Leave ambiguous
+`missing`/`orphan` pages visible as blockers or add a reviewed exclusion with a
+specific reason.
+
+After checking the translation, create and apply an exact plan:
+
+```bash
+php vendor/bin/docara translations accept \
+  --locale=en --key=guide.install --review=ai_verified --dry-run --json
+php vendor/bin/docara translations accept --apply=<plan-sha256> --json
+```
+
+Use `--kind=lang` for a `lang.json` key. Promote to `human_reviewed` only after
+an explicit editorial review. Docara never calls AI or the network and never
+edits Markdown; `status` and `build` are read-only with respect to source and
+the lock. Any changed input invalidates the plan.
+
 ## Navigation and reading context
 
 Docara derives canonical topology from physical Markdown routes and metadata.
@@ -121,11 +158,12 @@ HTML rather than editing redirect output.
 
 1. Map the requested public URL to its physical Markdown owner.
 2. Read inherited settings and related locale routes.
-3. Edit prose and the narrowest required metadata/config owner.
-4. Validate local links, component syntax, and assets.
-5. Choose single-page or complete build by impact.
-6. Run `verify-static`.
-7. For visible or multilingual changes, serve the verified output over HTTP
+3. Read the translation report when tracking is enabled.
+4. Edit prose and the narrowest required metadata/config owner.
+5. Validate local links, component syntax, assets, and translation structure.
+6. Choose single-page or complete build by impact.
+7. Run `verify-static`.
+8. For visible or multilingual changes, serve the verified output over HTTP
    and inspect representative desktop/mobile, theme, locale, navigation,
    search, and fragment scenarios.
 

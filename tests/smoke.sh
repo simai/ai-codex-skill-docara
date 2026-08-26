@@ -8,6 +8,8 @@ grep -q '^name: docara$' "$SKILL/SKILL.md"
 grep -q 'update --verify' "$SKILL/SKILL.md"
 grep -q 'verify-static' "$SKILL/SKILL.md"
 grep -q 'Smart' "$SKILL/references/components-smart-and-design.md"
+grep -q 'examples/<stable-id>/' "$SKILL/references/components-smart-and-design.md"
+grep -q 'translations status' "$SKILL/references/content-locales-and-navigation.md"
 grep -q 'scaffold' "$SKILL/references/developer-sdk-and-qa.md"
 grep -q 'single-page' "$SKILL/references/build-preview-and-verification.md"
 

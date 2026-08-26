@@ -2,7 +2,7 @@
   "$schema": "https://simai.io/schemas/federation/repository-recipe.schema.json",
   "schema_version": "2.0.0",
   "id": "docara.project",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "kind": "structural_recipe",
   "owner": "docara",
   "title": "docara.project",
@@ -91,6 +91,18 @@
       "materializer": "directory"
     },
     {
+      "path": "examples/",
+      "ownership": "user_owned",
+      "required": false,
+      "materializer": "directory"
+    },
+    {
+      "path": "translations.lock.json",
+      "ownership": "user_owned",
+      "required": false,
+      "materializer": "owner_generator_output"
+    },
+    {
       "path": "redirects.json",
       "ownership": "managed",
       "required": true,
@@ -115,6 +127,13 @@
     "disabled_state_behavior": "catalog_visible_unavailable"
   },
   "migrations": [
+    {
+      "id": "docara.project.v3-to-v3.1-shared-examples-and-translations",
+      "from": "3.0.0",
+      "to": "3.1.0",
+      "operation": "adopt_optional_shared_examples_and_translation_tracking",
+      "preserve_user_owned": true
+    },
     {
       "id": "docara.project.v2-to-v3-standalone-compiler-model",
       "from": "2.0.0",

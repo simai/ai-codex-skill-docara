@@ -93,6 +93,16 @@ A single-page build must stop when the accepted full build is absent, route is
 new/missing, purpose differs, engine/dependencies changed, or global receipts
 no longer match. Run a complete build; do not bypass the receipt check.
 
+### Shared examples and translation state
+
+- An ID-based example requires `examples/<id>/index.html` and permits only its
+  optional CSS, JavaScript, and confined assets.
+- A changed shared-example hash requires a complete build.
+- Translation acceptance cannot proceed for an orphan, duplicate key, or
+  structural mismatch and cannot apply after any bound input changes.
+- Never hand-edit generated example or translation reports to hide a source
+  problem.
+
 ## Static-output failures
 
 Typical verifier markers include:

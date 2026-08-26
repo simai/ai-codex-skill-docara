@@ -14,6 +14,8 @@
         "simai-framework.lock.json",
         "content/{default_locale}/",
         "assets/",
+        "examples/",
+        "translations.lock.json",
         "redirects.json",
         "smart/",
         "design/"
@@ -23,6 +25,8 @@
         "simai-framework.lock.json": "managed",
         "content/{default_locale}/": "owner_template",
         "assets/": "owner_template",
+        "examples/": "user_owned",
+        "translations.lock.json": "user_owned",
         "redirects.json": "managed",
         "smart/": "user_owned",
         "design/": "user_owned"
@@ -51,7 +55,7 @@
         "docara.technology-overlay"
       ],
       "expected": "compatible",
-      "expected_recipe_signature": "docara.project@3.0.0"
+      "expected_recipe_signature": "docara.project@3.1.0"
     }
   ]
 }

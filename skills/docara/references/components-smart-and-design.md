@@ -4,6 +4,7 @@
 
 - [Selection ladder](#selection-ladder)
 - [Typed Document IR](#typed-document-ir)
+- [Reusable examples](#reusable-examples)
 - [Smart providers](#smart-providers)
 - [Project-owned Smart](#project-owned-smart)
 - [Design composition](#design-composition)
@@ -46,6 +47,37 @@ The Document Renderer Registry rejects an unknown node renderer. Containers
 validate allowed children, slots, count, order, and relative subtree depth.
 The composition layer must preserve byte-semantic parity of the already
 rendered main document.
+
+## Reusable examples
+
+Keep a small one-off demonstration inline in `:::example`. When the same
+HTML/CSS/JavaScript is reused by several pages or locales, place it under:
+
+```text
+examples/<stable-id>/
+├── index.html
+├── index.css              # optional
+├── index.js               # optional
+└── assets/                # optional
+```
+
+Reference it without an inline body:
+
+```markdown
+:::example {id="utilities/animation-duration" label="Result"}
+:::
+```
+
+Use either `id` or inline fenced sources, never both. Keep shared demonstration
+copy in English unless the project has an explicit example-localization
+contract. A full build emits only existing source tabs, confines and copies
+allowed assets relative to `base_url`, and records hashes, consumers, and
+outputs in `.docara/examples.json`. Any shared-example change requires a full
+build; do not bypass the single-page receipt guard.
+
+Never use traversal, absolute source paths, symlinks, hardlinks, case-colliding
+entries, unknown file types, invalid UTF-8, or oversized sources/assets. The
+JavaScript preview remains inside the sandboxed iframe.
 
 ## Smart providers
 
