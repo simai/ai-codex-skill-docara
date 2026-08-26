@@ -1,0 +1,18 @@
+{
+  "authority": "owner_raw_source",
+  "evidence": [],
+  "expansion_policy": "terminal",
+  "id": "source.docara.architecture-and-project-model-md.c56846a2a33f",
+  "kind": "source",
+  "lifecycle": "accepted",
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/references/architecture-and-project-model.md"
+  ],
+  "subtype": "owner_raw_source_ref",
+  "summary": "Owner-authoritative raw source used by task-scoped context.",
+  "title": "architecture-and-project-model.md"
+}

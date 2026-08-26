@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.existing_contour",
+  "id": "relation.capability-docara-existing-contour.validated-by.gate-docara-capability-map-conformance",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "validated_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.existing_contour",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "gate.docara.capability-map-conformance",
+  "to": "gate.docara.capability-map-conformance",
+  "type": "validated_by"
+}

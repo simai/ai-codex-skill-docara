@@ -1,0 +1,18 @@
+{
+  "authority": "owner_raw_source",
+  "evidence": [],
+  "expansion_policy": "terminal",
+  "id": "source.docara.build-preview-and-verification-md.f26452b7ea3b",
+  "kind": "source",
+  "lifecycle": "accepted",
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/references/build-preview-and-verification.md"
+  ],
+  "subtype": "owner_raw_source_ref",
+  "summary": "Owner-authoritative raw source used by task-scoped context.",
+  "title": "build-preview-and-verification.md"
+}

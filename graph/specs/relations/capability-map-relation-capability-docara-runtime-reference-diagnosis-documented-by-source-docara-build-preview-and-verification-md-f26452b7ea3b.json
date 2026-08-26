@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.runtime_reference_diagnosis",
+  "id": "relation.capability-docara-runtime-reference-diagnosis.documented-by.source-docara-build-preview-and-verification-md-f26452b7ea3b",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "documented_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.runtime_reference_diagnosis",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "source.docara.build-preview-and-verification-md.f26452b7ea3b",
+  "to": "source.docara.build-preview-and-verification-md.f26452b7ea3b",
+  "type": "documented_by"
+}

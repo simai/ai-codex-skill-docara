@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.existing_contour",
+  "id": "relation.capability-docara-existing-contour.governed-by.constraint-docara-capability-map-boundary",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "governed_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.existing_contour",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "constraint.docara.capability-map-boundary",
+  "to": "constraint.docara.capability-map-boundary",
+  "type": "governed_by"
+}

@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.runtime_reference_diagnosis",
+  "id": "relation.capability-docara-runtime-reference-diagnosis.governed-by.constraint-docara-capability-map-boundary",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "governed_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.runtime_reference_diagnosis",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "constraint.docara.capability-map-boundary",
+  "to": "constraint.docara.capability-map-boundary",
+  "type": "governed_by"
+}

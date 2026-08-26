@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "skill.docara.core",
+  "id": "relation.skill-docara-core.contains.capability-docara-existing-contour",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "contains",
+  "schema_version": "1.0.0",
+  "source": "skill.docara.core",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "capability.docara.existing_contour",
+  "to": "capability.docara.existing_contour",
+  "type": "contains"
+}

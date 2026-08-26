@@ -1,0 +1,23 @@
+{
+  "evidence": [],
+  "expansion_policy": "terminal",
+  "id": "constraint.docara.capability-map-boundary",
+  "kind": "constraint",
+  "lifecycle": "accepted",
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "rules": [
+    "Do not create a parallel data, access, status or notification subsystem.",
+    "Do not create a parallel owner or duplicate an existing platform capability.",
+    "Fail closed when required owner or platform evidence is unavailable.",
+    "Use raw owner sources for methodology and judgement.",
+    "Use the exact project version and native lifecycle, rights and APIs."
+  ],
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "summary": "Owner-declared constraints and non-goals for task-scoped capability use.",
+  "title": "docara capability boundaries"
+}

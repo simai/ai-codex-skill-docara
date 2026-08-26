@@ -1,0 +1,33 @@
+{
+  "aliases": [
+    "missing refs",
+    "диагностика ссылок"
+  ],
+  "applicability": {
+    "editions": [],
+    "platform": "docara",
+    "required_modules": [],
+    "version_range": "exact-project-version-or-owner-contract"
+  },
+  "authority": "owner_capability_map",
+  "evidence": [],
+  "expansion_policy": "expandable",
+  "id": "capability.docara.runtime_reference_diagnosis",
+  "kind": "capability",
+  "lifecycle": "accepted",
+  "negative_boundaries": [
+    "Do not create a parallel owner or duplicate an existing platform capability."
+  ],
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json",
+    "skills/docara/references/architecture-and-project-model.md",
+    "skills/docara/references/build-preview-and-verification.md"
+  ],
+  "subtype": "owner_capability_map_entry",
+  "summary": "Report every missing runtime reference explicitly and never return a false-green pack.",
+  "title": "Report every missing runtime reference explicitly and never return a false-green pack."
+}

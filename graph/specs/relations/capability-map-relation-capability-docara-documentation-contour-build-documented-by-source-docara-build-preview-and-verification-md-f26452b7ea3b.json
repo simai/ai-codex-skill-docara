@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.documentation_contour_build",
+  "id": "relation.capability-docara-documentation-contour-build.documented-by.source-docara-build-preview-and-verification-md-f26452b7ea3b",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "documented_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.documentation_contour_build",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "source.docara.build-preview-and-verification-md.f26452b7ea3b",
+  "to": "source.docara.build-preview-and-verification-md.f26452b7ea3b",
+  "type": "documented_by"
+}
