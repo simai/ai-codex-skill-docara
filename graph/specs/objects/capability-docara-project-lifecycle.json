@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Project lifecycle",
-  "summary": "Creates, adopts, and inspects standalone Docara projects while preserving project and package ownership.",
+  "summary": "Creates, adopts, inspects and capability-discovers project-local Docara runtimes while preserving project and package ownership.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

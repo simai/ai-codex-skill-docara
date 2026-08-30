@@ -1,126 +1,142 @@
-# Update, release, and publication
+# Upgrade, update, release, and publication
 
 ## Contents
 
-- [Transactional engine update](#transactional-engine-update)
+- [Capability handshake](#capability-handshake)
+- [Project-local upgrade](#project-local-upgrade)
 - [Rollback](#rollback)
-- [Release package preparation](#release-package-preparation)
+- [Legacy transition and low-level update](#legacy-transition-and-low-level-update)
+- [Release and skill gate](#release-and-skill-gate)
 - [Static publication](#static-publication)
-- [GitHub Pages](#github-pages)
 - [State boundaries](#state-boundaries)
 
-## Transactional engine update
+## Capability handshake
 
-Select an exact new `simai/docara` package version or source revision first.
-The consumer owns dependency selection and `composer.lock`; `docara update`
-does not run Composer or change that lock.
+Find the exact project-local executable first:
 
-Use this sequence:
+```bash
+php vendor/bin/docara capabilities --json
+```
+
+Use the returned command definitions, schemas, lifecycle flags and
+`docara.ai_contract` version. One installed canonical skill may serve several
+Docara 2.x projects; never replace this handshake with assumptions about the
+newest package. If an old exact package has no `capabilities`, inspect its help,
+README and update documentation and use the legacy path below.
+
+## Project-local upgrade
+
+For a project that owns `composer.json`, `composer.lock` and `vendor/`, the
+normal compatible update is:
 
 ```bash
 git status --short
-php vendor/bin/docara verify-static build_production
-php vendor/bin/docara update --verify --json
-php vendor/bin/docara update --dry-run --json
+php vendor/bin/docara upgrade
 ```
 
-Review every planned add/replace/delete. The plan may target only
-`.docara/engine` package-owned state. Stop if it includes content, assets,
-`docara.json`, redirects, section/page settings, locale files, Framework lock,
-or `composer.lock`.
+The explicit invocation may use Composer/network. It resolves only a stable
+patch/minor version inside the current major and project constraint, installs
+an independent candidate, runs candidate doctor, project validation, engine
+sync, production build and static verification, then re-hashes every input.
+Only after all checks pass may it promote dependencies, engine and the verified
+build.
 
-Apply only the unchanged plan:
+For reviewable automation:
 
 ```bash
-php vendor/bin/docara update --apply --json
-php vendor/bin/docara build production
-php vendor/bin/docara verify-static build_production
-php vendor/bin/docara serve production \
-  --host=127.0.0.1 --port=8000 --no-build
+php vendor/bin/docara upgrade --check --json
+php vendor/bin/docara upgrade --to=2.5.0 --dry-run --json
+php vendor/bin/docara upgrade --apply=<exact-plan-sha256> --json
 ```
 
-Unknown files, dirty engine ownership, conflicts, symlinks, or stale/hash-
-mismatched plans must fail before mutation. Never use `init --update`.
+`--to` must be an exact stable `X.Y.Z`. Reject a branch, moving reference,
+prerelease, downgrade, constraint violation or different major. Changed
+Composer files, content, examples, assets, settings, translations, Framework
+lock, Smart/design source, engine or verified build make the plan stale.
+
+Build, serve, discovery and authoring remain offline. Do not add a background
+updater or call upgrade implicitly from those commands.
 
 ## Rollback
 
-Apply records an immutable rollback package and identifier. Restore with:
+Both dependency states must exist locally before promotion. Restore with:
 
 ```bash
-php vendor/bin/docara update --rollback=latest
+php vendor/bin/docara upgrade --rollback=latest
 # or
-php vendor/bin/docara update --rollback=<exact-id>
+php vendor/bin/docara upgrade --rollback=<exact-id>
 ```
 
-Rollback validates its manifest, hashes, and lock before replacement. Rebuild,
-run `verify-static`, and repeat HTTP smoke after restoration. A damaged or
-unverifiable rollback package is a blocker, not a reason to copy files by hand.
+Rollback must not need network. It validates the applied lock, vendor, engine
+and build hashes before restoring the previous transaction. If a failure occurs
+during apply, compensation restores those surfaces automatically and preserves
+the last verified build.
 
-## Release package preparation
+## Legacy transition and low-level update
 
-Package preparation is a source-repository maintainer operation, not ordinary
-site authoring. Use an exact clean revision and the product's current release
-scripts. A candidate package must record:
+An old site using a separate engine gets one explicit project-local Composer
+runtime; do not delete or move the legacy engine automatically:
 
-- source revision and planned version/tag;
-- deterministic archive hash and full file ledger;
-- exact dependency and Framework tuples;
-- consumer ownership boundary;
-- dependency inventory/SBOM when the product contract requires it;
-- `published=false` until a separate release decision.
+```bash
+cd /path/to/site
+composer require simai/docara:^2.0
+php vendor/bin/docara capabilities --json
+php vendor/bin/docara update --verify --json
+```
 
-Build the candidate independently in two clean checkouts and compare byte-
-exact package artifacts. Install each into a fresh consumer and run
-init/update/build/static/browser/rollback checks required by the release plan.
+For an already selected exact package, retain the low-level engine-only flow:
 
-Do not create a version, tag, GitHub Release, package publication, or deployment
-unless the user explicitly authorizes that exact lifecycle action.
+```bash
+php vendor/bin/docara update --verify --json
+php vendor/bin/docara update --dry-run --json
+php vendor/bin/docara update --apply --json
+php vendor/bin/docara update --rollback=latest
+```
+
+Its plan may target only `.docara/engine`. It does not run Composer or change
+the dependency lock. Unknown files, dirty ownership, conflicts, symlinks or a
+stale plan fail before mutation. Never use `init --update`.
+
+## Release and skill gate
+
+Compare the new public AI contract with the previous release. Internal changes
+may reuse the current skill. A changed command, safety sequence, ownership rule
+or capability requires:
+
+1. an incremented compatible `docara.ai_contract` identity;
+2. synchronized canonical raw skill and skill graph;
+3. `skill-change-detect`, `skill-graph-sync`, Federation verify and route check;
+4. an exact canonical skill commit pinned by the Federation stable release
+   lock.
+
+Only then may the Docara package publication gate pass. Federation, not
+`docara upgrade`, physically installs that exact skill revision during its own
+atomic update. A project command never writes `~/.codex`.
+
+Package preparation remains an exact clean-revision maintainer operation. The
+candidate records source revision, planned version/tag, archive hash, file
+ledger, dependency inventory and `published=false`. Build it independently in
+two clean checkouts and compare byte-exact artifacts. Publication, tag, GitHub
+Release and deploy require their own authorization.
 
 ## Static publication
 
-1. Set the correct production `base_url` before building.
-2. Build `production` and run `verify-static`.
-3. Record a deterministic digest of the verified directory.
-4. Copy only those bytes to a new versioned staging destination.
-5. Recompute and compare the staging digest.
-6. Smoke root/nested routes, CSS/assets, search, fragments, themes, and redirect
-   boundaries on staging.
-7. Atomically switch traffic using the hosting platform's release mechanism.
-8. Repeat smoke and retain the previous successful release for rollback.
-
-Use `$ops` for hosting, access, backup, rollback, traffic switching, and live
-incident response. Build success alone never authorizes publication.
-
-## GitHub Pages
-
-Prefer Actions artifact deployment:
-
-- install exact PHP/Composer dependencies;
-- build production;
-- verify `build_production`;
-- add `.nojekyll` only as a hosting artifact after the accepted build contract
-  permits it;
-- upload the verified directory;
-- deploy with the official Pages action and required permissions.
-
-Use `/<repository>/` as `base_url` for project Pages unless a custom domain or
-owner Pages repository serves the site at `/`. Do not rewrite generated HTML
-after verification to repair paths.
-
-Pages configuration, permissions, external Actions, deployment, and rollback
-are live state. Require explicit authorization and `$ops` evidence.
+Build with the correct `base_url`, run `verify-static`, copy only those bytes
+to versioned staging, compare digests, smoke routes/assets/search/themes, then
+switch traffic atomically. Use `$ops` for hosting, access, backup, rollback and
+live changes. Build success is not deployment authorization.
 
 ## State boundaries
 
-Report these separately:
+Report separately:
 
-- engine update planned/applied/rolled back;
-- site build succeeded;
-- static output verified;
+- package capability contract read;
+- compatible upgrade checked/planned/applied/compensated/rolled back;
+- low-level engine update planned/applied/rolled back;
+- site build succeeded and static output verified;
 - browser/QA accepted;
-- release package reproducible;
+- release package reproducible and skill gate synchronized;
 - release authorized/published;
-- site staged/deployed/smoke-tested;
-- rollback proven.
+- site staged/deployed/smoke-tested.
 
 Never promote one state into another without its own evidence.

@@ -2,6 +2,45 @@
   "objects": [
     {
       "changed_surfaces": [
+        "graph/specs/objects/capability-docara-project-lifecycle.json",
+        "graph/specs/objects/capability-docara-update-release-publication.json",
+        "skills/docara/SKILL.md",
+        "skills/docara/references/architecture-and-project-model.md",
+        "skills/docara/references/developer-sdk-and-qa.md",
+        "skills/docara/references/update-release-and-publication.md"
+      ],
+      "checks": [
+        {
+          "evidence_ref": "repo://scripts/validate_skill_contract.py",
+          "id": "check.docara.skill_contract",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "repo://tests/smoke.sh",
+          "id": "check.docara.skill_smoke",
+          "verdict": "pass"
+        }
+      ],
+      "evidence_refs": [
+        "repo://scripts/validate_skill_contract.py",
+        "repo://tests/smoke.sh"
+      ],
+      "id": "evidence.continuity.4e8e1fe38bae9f8c",
+      "kind": "evidence",
+      "profile": "project_management",
+      "provenance_digest": "sha256:4e8e1fe38bae9f8c6336cb3b9f1d595c29751271d28ea46b9365e0f45c97bf24",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "repo://graph/specs/objects/capability-docara-project-lifecycle.json",
+        "repo://skills/docara/SKILL.md"
+      ],
+      "source_revision": "4c9dbe94e3e07d4351a19a00e6329737a903473c",
+      "summary": "Docara skill capabilities and project-local upgrade guidance validated before source-control delivery.",
+      "task_digest": "sha256:4bc05d5c25d294e333c17be1877bd56f5d77e5452d9d0c2aa11ec4876273bb7b",
+      "title": "Verified task result 4e8e1fe38bae9f8c"
+    },
+    {
+      "changed_surfaces": [
         "README.md",
         "graph/specs/project-continuity.json",
         "scripts/validate_skill_contract.py",
@@ -79,6 +118,25 @@
       "summary": "Docara skill documents and routes the verified source-backed documentation tracking workflow.",
       "task_digest": "sha256:18840430fcbb342898e4ca9afc54a842c989d0684dcfff21ce2b1fa8edc6820b",
       "title": "Verified task result ff3fa744daa97633"
+    },
+    {
+      "boundary": "task_complete",
+      "case_signature": "case.docara.capabilities-project-local-upgrade",
+      "evidence_refs": [
+        "evidence.continuity.4e8e1fe38bae9f8c"
+      ],
+      "id": "regression_case.continuity.4e8e1fe38bae9f8c",
+      "kind": "regression_case",
+      "profile": "implementation_control",
+      "provenance_digest": "sha256:4e8e1fe38bae9f8c6336cb3b9f1d595c29751271d28ea46b9365e0f45c97bf24",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "repo://graph/specs/objects/capability-docara-project-lifecycle.json",
+        "repo://skills/docara/SKILL.md"
+      ],
+      "summary": "Docara skill capabilities and project-local upgrade guidance validated before source-control delivery.",
+      "task_digest": "sha256:4bc05d5c25d294e333c17be1877bd56f5d77e5452d9d0c2aa11ec4876273bb7b",
+      "title": "Verified reusable case 4e8e1fe38bae9f8c"
     },
     {
       "boundary": "task_complete",

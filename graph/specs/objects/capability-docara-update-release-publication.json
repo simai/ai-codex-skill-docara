@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Update, release, and publication",
-  "summary": "Runs transactional engine updates and separates rollback, release readiness, package publication, and deployment.",
+  "summary": "Runs verified project-local same-major upgrades with offline compensation, retains low-level engine updates, and separates rollback, release readiness, package publication, and deployment.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

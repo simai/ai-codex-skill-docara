@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added the project-local capabilities handshake and compatibility range for
+  serving multiple Docara 2.x projects with one canonical skill.
+- Replaced package-selection assumptions with the verified high-level
+  `upgrade` and offline rollback workflow while retaining low-level engine
+  `update` guidance.
+- Declared Federation as the physical installation owner; a project upgrade
+  never writes the global Codex skill runtime.
 - Aligned the operational references and capability graph with Docara 2.1
   reusable project examples and non-blocking translation tracking.
 - Added the `translations status` and hash-bound `translations accept` agent

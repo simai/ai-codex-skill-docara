@@ -16,18 +16,20 @@ verification receipts. It covers:
 - full and single-page builds, preview, static verification, and browser QA;
 - Developer/AI SDK discovery, scaffolding, validation, tests, structured QA,
   and MCP integration;
-- transactional engine updates, rollback, release readiness, publication, and
-  troubleshooting.
+- generated project-local capability discovery, verified same-major upgrades,
+  offline rollback, low-level engine synchronization, release readiness,
+  publication, and troubleshooting.
 
 The installable entry point is [skills/docara/SKILL.md](skills/docara/SKILL.md).
 The compact capability graph is [graph/specs/index.json](graph/specs/index.json).
 The Docara product and the target project's exact installed package remain the
 source of truth for schemas and executable behavior.
 
-The current skill contract covers Docara 2.4 shared project examples,
-hash-bound translation and source-backed documentation acceptance, optional
-page authoring profiles, and both legacy 2.0 and layered 3.0 Federation
-repository recipes. These features remain opt-in at the project level.
+The skill supports `docara.ai_contract >=1.0.0 <2.0.0` across compatible Docara
+2.x projects. It reads the exact project-local `capabilities --json` result and
+does not copy a product-version command or schema catalogue. Older packages
+without that command use their exact package documentation as a compatibility
+fallback.
 
 ## Validation
 

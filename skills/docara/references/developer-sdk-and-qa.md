@@ -18,6 +18,7 @@ composition, and `PageBuilder`. It is not a parallel implementation path.
 Run from an initialized project:
 
 ```bash
+php vendor/bin/docara capabilities --json
 php vendor/bin/docara doctor --json
 php vendor/bin/docara list smart --json
 php vendor/bin/docara list page --json
@@ -33,6 +34,11 @@ php vendor/bin/docara schema documentation-source --json
 php vendor/bin/docara schema documentation-tracking --json
 php vendor/bin/docara atlas --json
 ```
+
+Treat `capabilities` as the package-owned compatibility handshake. It derives
+the exact installed version/revision, command definitions, schemas, SDK types,
+receipts, tracking and lifecycle support from the product runtime. Do not copy
+that catalogue into the skill or infer a newer command from another project.
 
 Available discovery kinds depend on the exact package and include page, Smart,
 binding, layout, view, section, block, provider, fixture, state, and schema
@@ -198,7 +204,7 @@ An exact package checkout may expose:
 php tools/mcp-docara/server.php
 ```
 
-The stdio adapter projects the same application operations. It is read-only by
+The stdio adapter projects the same capabilities and application operations. It is read-only by
 default. If explicitly launched with `--allow-writes`, apply still requires the
 unchanged hash-bound plan and remains confined to the current project root.
 

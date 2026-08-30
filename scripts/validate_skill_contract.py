@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills/docara/SKILL.md"
 INDEX = ROOT / "graph/specs/index.json"
+DNA = ROOT / "graph/dna/skill-dna.json"
 EXPECTED_REFERENCES = {
     "architecture-and-project-model.md",
     "settings-and-inheritance.md",
@@ -55,6 +56,19 @@ def main() -> int:
             blockers.append(f"SKILL.md front matter keys must be name, description; got {keys}")
     if "name: docara" not in text:
         blockers.append("SKILL.md name is not docara")
+    if "capabilities --json" not in text:
+        blockers.append("SKILL.md does not require exact package capability discovery")
+
+    try:
+        dna = load_json(DNA)
+        assert isinstance(dna, dict)
+        product_contracts = dna.get("product_contracts")
+        if not isinstance(product_contracts, dict) or product_contracts.get("docara.ai_contract") != ">=1.0.0 <2.0.0":
+            blockers.append("skill DNA does not declare the supported docara.ai_contract range")
+        if dna.get("physical_install_owner") != "simai-federation":
+            blockers.append("skill DNA does not leave physical installation to Federation")
+    except Exception as exc:  # noqa: BLE001
+        blockers.append(f"skill DNA is invalid: {exc}")
 
     reference_dir = SKILL.parent / "references"
     actual_references = {path.name for path in reference_dir.glob("*.md")}

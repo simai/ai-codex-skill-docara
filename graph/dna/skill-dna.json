@@ -8,6 +8,12 @@
     "graph/specs/"
   ],
   "growth_rule": "Add or change graph knowledge only with current product evidence and synchronized raw skill sources.",
+  "product_contracts": {
+    "docara.ai_contract": ">=1.0.0 <2.0.0",
+    "discovery": "project-local vendor/bin/docara capabilities --json",
+    "legacy_fallback": "Use exact installed package help and documentation when capabilities is unavailable."
+  },
+  "physical_install_owner": "simai-federation",
   "prohibited_growth": [
     "copied central schemas",
     "historical generated evidence as source",

@@ -55,6 +55,9 @@ Do not maintain a second public page catalogue or hand-edit derived output.
 ## Project files
 
 ```text
+composer.json
+composer.lock
+vendor/
 docara.json
 redirects.json                         # optional when no explicit redirects exist
 simai-framework.lock.json
@@ -108,19 +111,21 @@ by editing generated output.
 
 ## Initialize a project
 
-Run `init` only against an empty target:
+Create the exact Composer runtime in the project itself, then run `init` in the
+same directory:
 
 ```bash
-composer require simai/docara
-php vendor/bin/docara init /path/to/empty-project
-cd /path/to/empty-project
+mkdir /path/to/project && cd /path/to/project
+composer require simai/docara:^2.0
+php vendor/bin/docara init .
 php vendor/bin/docara doctor --json
 php vendor/bin/docara build production
 php vendor/bin/docara verify-static build_production
 ```
 
-`init --update` is disabled. Updating an existing portable project uses the
-transactional `update` workflow described in
+`init` accepts an empty directory or one containing only that verified
+project-local Composer runtime. `init --update` is disabled. Updating an
+existing project uses the transactional `upgrade` workflow described in
 [update-release-and-publication.md](./update-release-and-publication.md).
 
 Do not treat `init` as an importer for a legacy static-site generator, an older

@@ -1,6 +1,6 @@
 ---
 name: docara
-description: Build, author, configure, extend, inspect, preview, test, verify, update, package, and publish standalone Docara 2 documentation and landing sites. Use for Docara projects with docara.json, optional authoring profiles, Markdown content, reusable examples, translation tracking, inherited section/page settings, locales, navigation, search, reader preferences, layouts, regions, typed components, SIMAI Framework or project-owned Smart artifacts, the Developer/AI SDK, static builds, verification, troubleshooting, transactional engine updates, release readiness, or static-host deployment.
+description: Build, author, configure, extend, inspect, preview, test, verify, upgrade, package, and publish standalone Docara 2 documentation and landing sites. Use for project-local Docara projects with docara.json, machine-readable capabilities, optional authoring profiles, Markdown content, reusable examples, tracking, inherited settings, locales, navigation, layouts, components, the Developer/AI SDK, static builds, rollback, release readiness, or static-host deployment.
 ---
 
 # Docara
@@ -40,7 +40,11 @@ Docara sources remain authoritative and unavailable context fails closed.
    `section.json`, an optional page sidecar, and the Framework lock reference.
 4. Discover the executable from the project (`vendor/bin/docara`) or an exact
    package checkout; do not assume a global binary.
-5. Load only the reference that matches the task.
+5. If the exact binary supports it, run `capabilities --json` and use its real
+   commands, schemas, types and lifecycle flags. If it does not, use the
+   documented legacy path for that installed package; never assume the latest
+   surface.
+6. Load only the reference that matches the task.
 
 ## Task router
 
@@ -108,8 +112,10 @@ php vendor/bin/docara serve production \
 
 - Never edit `build_*`, build-local `.docara`, or package-owned
   `.docara/engine` as source.
-- Never use `init --update`; it is a disabled compatibility guard. Use the
-  transactional `update --verify -> --dry-run -> --apply` workflow.
+- Never use `init --update`; it is a disabled compatibility guard. Prefer the
+  project-local transactional `upgrade` workflow for compatible package
+  updates. Use `update --verify -> --dry-run -> --apply` only for low-level
+  synchronization of `.docara/engine` from an already selected exact package.
 - Never initialize a non-empty target or use `init` as a legacy converter.
 - Never replace an exact Framework lock with a branch, moving URL, or `latest`.
 - Never admit a component from catalogue prose alone. Require its real
