@@ -2,6 +2,7 @@
   "objects": [
     {
       "changed_surfaces": [
+        "README.md",
         "graph/specs/objects/capability-docara-developer-sdk-qa.json",
         "skills/docara/quality/capability-map.json",
         "skills/docara/references/content-locales-and-navigation.md",
@@ -9,19 +10,19 @@
       ],
       "checks": [
         {
-          "evidence_ref": "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29",
+          "evidence_ref": "git:d7c77bd0c2e5a88a6cef5873853cf1fa1347b8d7",
           "id": "check.docara.skill_diff",
           "verdict": "pass"
         },
         {
-          "evidence_ref": "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29",
+          "evidence_ref": "git:d7c77bd0c2e5a88a6cef5873853cf1fa1347b8d7",
           "id": "check.docara.skill_json",
           "verdict": "pass"
         }
       ],
       "evidence_refs": [
         "file:/tmp/docara-skill-change-commit.json",
-        "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29"
+        "git:d7c77bd0c2e5a88a6cef5873853cf1fa1347b8d7"
       ],
       "id": "evidence.continuity.ff3fa744daa97633",
       "kind": "evidence",

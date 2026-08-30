@@ -2,7 +2,7 @@
 
 > Generated from `graph/specs`. This document is a readable projection, not a source of truth.
 
-Graph digest: `sha256:4ea29812fc94a55ec58f63794b5ff95e6dc82029d34797cd4171ea8d5385f8c1`
+Graph digest: `sha256:5fb0f635a0df951bea763d8bba154d772009870872855de07beff052ba8cdb14`
 
 ## Accepted context
 
