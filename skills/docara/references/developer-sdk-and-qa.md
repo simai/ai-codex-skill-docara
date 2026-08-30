@@ -4,6 +4,7 @@
 
 - [Read-only discovery](#read-only-discovery)
 - [Hash-bound scaffolding](#hash-bound-scaffolding)
+- [Source-backed documentation tracking](#source-backed-documentation-tracking)
 - [Validation and tests](#validation-and-tests)
 - [Preview](#preview)
 - [Structured QA](#structured-qa)
@@ -20,12 +21,16 @@ Run from an initialized project:
 php vendor/bin/docara doctor --json
 php vendor/bin/docara list smart --json
 php vendor/bin/docara list page --json
+php vendor/bin/docara list source --json
 php vendor/bin/docara list layout --json
 php vendor/bin/docara inspect smart ui.alert --json
 php vendor/bin/docara inspect layout docara.docs --json
 php vendor/bin/docara inspect page /en/guide/ --json
+php vendor/bin/docara inspect source simai-framework:component.buttons --json
 php vendor/bin/docara schema smart --json
 php vendor/bin/docara schema authoring --json
+php vendor/bin/docara schema documentation-source --json
+php vendor/bin/docara schema documentation-tracking --json
 php vendor/bin/docara atlas --json
 ```
 
@@ -66,15 +71,60 @@ php vendor/bin/docara scaffold --apply=<exact-plan-sha256> --json
 Any changed input, namespace, config, target, or hash makes the plan stale.
 Smart/design scaffolding is create-only inside its owned roots. Page
 scaffolding creates only an absent draft Markdown file inside the selected
-locale content root. It cannot overwrite a page or write to engine, assets,
-locks, build output, or external paths. Edit existing Markdown directly, then
-validate, build and verify it.
+locale content root. Source-aware page scaffolding may also create an absent
+reusable example under `examples/`, but only from a complete source-owned
+template; it never invents markup, parameters or states. It cannot overwrite a
+page/example or write to engine, locks, build output, or external paths. Edit
+existing Markdown directly, then validate, build and verify it.
+
+```bash
+php vendor/bin/docara scaffold page components/new-component \
+  --source=simai-framework --entity=component.new-component \
+  --locale=ru --profile=reference --dry-run --json
+```
+
+## Source-backed documentation tracking
+
+When `documentation_tracking` is enabled, use the source contract as the
+machine-readable work queue for the configured base locale:
+
+```bash
+php vendor/bin/docara documentation status --json
+php vendor/bin/docara documentation status \
+  --source=simai-framework --kind=component --status=changed --json
+php vendor/bin/docara validate source simai-framework:component.buttons --json
+```
+
+Statuses are `current`, `new`, `changed`, `missing`, `missing_example`,
+`unverified`, `orphan`, and `excluded`. A compatibility-adapter diagnostic
+means the pinned source predates the neutral contract and status has limited
+public-surface precision; do not silently accept ambiguous mappings.
+
+For `new` or `changed`, inspect the exact entity and page, update Markdown and
+reusable examples while preserving public classes, parameters, states, links
+and technical structure, then validate/build/verify. Accept only a reviewed,
+unambiguous relation:
+
+```bash
+php vendor/bin/docara documentation accept \
+  --source=simai-framework --key=component.buttons \
+  --route=/ru/components/buttons/ \
+  --example=default=components/buttons/basic \
+  --review=ai_verified --dry-run --json
+php vendor/bin/docara documentation accept --apply=<exact-plan-sha256> --json
+```
+
+Any change to config, source contract, page, examples or previous lock makes
+the plan stale. `status`, `validate` and build do not call AI/network or edit
+Markdown, examples or `documentation.lock.json`. `human_reviewed` requires an
+explicit human editorial review. Translation tracking remains independent.
 
 ## Validation and tests
 
 ```bash
 php vendor/bin/docara validate project --json
 php vendor/bin/docara validate page /en/guide/ --json
+php vendor/bin/docara validate source simai-framework:component.buttons --json
 php vendor/bin/docara validate smart project.notice --json
 php vendor/bin/docara validate layout project.docs --json
 php vendor/bin/docara test smart project.notice \

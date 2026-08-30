@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "capability",
   "title": "Developer SDK and QA",
-  "summary": "Discovers registries and physical pages, inspects page provenance, scaffolds hash-bound artifacts or draft pages, validates, tests, previews, and records structured QA evidence.",
+  "summary": "Discovers registries, source-owned public API contracts and physical pages; inspects page provenance and documentation freshness; scaffolds hash-bound artifacts or draft pages; validates, tests, previews, and records structured QA evidence.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",
@@ -11,7 +11,8 @@
   "confidence_method": "verified_against_current_docara_product_baseline",
   "evidence_status": "verified",
   "source_refs": [
-    "skills/docara/references/developer-sdk-and-qa.md"
+    "skills/docara/references/developer-sdk-and-qa.md",
+    "skills/docara/references/content-locales-and-navigation.md"
   ],
   "evidence_refs": [],
   "tags": [

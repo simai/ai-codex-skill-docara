@@ -7,6 +7,7 @@
 - [Routes and assets](#routes-and-assets)
 - [Locales](#locales)
 - [Translation tracking](#translation-tracking)
+- [Documentation source tracking](#documentation-source-tracking)
 - [Navigation and reading context](#navigation-and-reading-context)
 - [Redirects](#redirects)
 - [Content workflow](#content-workflow)
@@ -140,6 +141,19 @@ an explicit editorial review. Docara never calls AI or the network and never
 edits Markdown; `status` and `build` are read-only with respect to source and
 the lock. Any changed input invalidates the plan.
 
+## Documentation source tracking
+
+`documentation_tracking` is a separate optional contour for the base locale.
+It compares Markdown and reusable Example IDs with a project-owned public API
+contract. It does not translate pages, duplicate a component registry or infer
+relations from similar prose.
+
+Read `documentation status` before creating or updating reference material.
+Treat `new`, `changed`, `missing_example`, `unverified`, and `orphan` as an
+explicit work queue. One page may document several entities, but every required
+example case must map to a concrete reusable Example ID. Leave ambiguous
+relations visible; exclusions require a specific reviewed reason.
+
 ## Navigation and reading context
 
 Docara derives canonical topology from physical Markdown routes and metadata.
@@ -174,12 +188,15 @@ HTML rather than editing redirect output.
 
 1. Map the requested public URL to its physical Markdown owner.
 2. Read inherited settings and related locale routes.
-3. Read the translation report when tracking is enabled.
-4. Edit prose and the narrowest required metadata/config owner.
-5. Validate local links, component syntax, assets, and translation structure.
-6. Choose single-page or complete build by impact.
-7. Run `verify-static`.
-8. For visible or multilingual changes, serve the verified output over HTTP
+3. Read translation and documentation-source reports when their independent
+   tracking contours are enabled.
+4. Inspect exact source entities before editing API reference pages/examples.
+5. Edit prose and the narrowest required metadata/config owner.
+6. Validate local links, component syntax, assets, examples, source relations,
+   and translation structure.
+7. Choose single-page or complete build by impact.
+8. Run `verify-static`.
+9. For visible or multilingual changes, serve the verified output over HTTP
    and inspect representative desktop/mobile, theme, locale, navigation,
    search, and fragment scenarios.
 

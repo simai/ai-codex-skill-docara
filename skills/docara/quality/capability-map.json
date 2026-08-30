@@ -252,6 +252,90 @@
       "no_fit_conditions": [
         "A required outcome remains uncovered after checking the exact owner source and project version."
       ]
+    },
+    {
+      "id": "docara.source_backed_documentation_tracking",
+      "aliases": [
+        "documentation tracking",
+        "актуальность документации по коду"
+      ],
+      "user_outcome": "Track pages and reusable examples against a project-owned public API contract without duplicating its registry.",
+      "readiness": "ready",
+      "canonical_source_refs": [
+        "references/developer-sdk-and-qa.md",
+        "references/content-locales-and-navigation.md"
+      ],
+      "extension_points": [
+        {
+          "id": "docara.source_backed_documentation_tracking.extension",
+          "kind": "extend",
+          "source_ref": "references/developer-sdk-and-qa.md",
+          "validator_ref": "federation://technology-conformance"
+        }
+      ],
+      "constraints": [
+        "The source project owns the public contract and Docara owns matching, statuses, reporting, scaffold and acceptance.",
+        "Status, validation and build never invoke AI/network or edit source content and locks."
+      ],
+      "non_goals": [
+        "Do not create a second API registry or merge translation freshness into this status engine."
+      ],
+      "validator_refs": [
+        "federation://owner-capability-map",
+        "federation://technology-conformance"
+      ],
+      "roles": [
+        "discovery",
+        "outcome_harness"
+      ],
+      "discovery": {
+        "intent_signals": [
+          "documentation tracking",
+          "актуальность документации по коду",
+          "docara.source_backed_documentation_tracking"
+        ],
+        "requirement_signals": [
+          "source contract",
+          "documentation status",
+          "documentation.lock.json"
+        ],
+        "project_signals": [
+          "docara",
+          "documentation_tracking"
+        ],
+        "dependency_signals": []
+      },
+      "applicability": {
+        "platform": "docara",
+        "editions": [],
+        "version_range": "exact-project-version-or-owner-contract",
+        "required_modules": []
+      },
+      "coverage": {
+        "provides": [
+          "Source-backed page/example status, inspection, validation, scaffold planning and hash-bound acceptance."
+        ],
+        "does_not_provide": [
+          "Automatic translation or autonomous acceptance without review."
+        ]
+      },
+      "ownership": {
+        "data": "source_project",
+        "access": "docara",
+        "lifecycle": "docara",
+        "interface": "docara",
+        "runtime": "docara"
+      },
+      "composition": {
+        "requires": [],
+        "compatible_with": [
+          "docara.documentation_contour_build"
+        ],
+        "conflicts_with": []
+      },
+      "no_fit_conditions": [
+        "The source project cannot provide a stable neutral public contract or a supported read-only adapter."
+      ]
     }
   ]
 }
