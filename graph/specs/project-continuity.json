@@ -3,6 +3,49 @@
     {
       "changed_surfaces": [
         "README.md",
+        "graph/specs/project-continuity.json",
+        "scripts/validate_skill_contract.py",
+        "skills/docara"
+      ],
+      "checks": [
+        {
+          "evidence_ref": "host-local://federation-route-check/admin",
+          "id": "check.docara.route-contract",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "repo://ai-codex-skill-docara/scripts/validate_skill_contract.py",
+          "id": "check.docara.skill-contract",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "repo://ai-codex-skill-docara/tests/smoke.sh",
+          "id": "check.docara.skill-smoke",
+          "verdict": "pass"
+        }
+      ],
+      "evidence_refs": [
+        "repo://ai-codex-skill-docara/graph.json",
+        "repo://ai-codex-skill-docara/scripts/validate_skill_contract.py",
+        "repo://ai-codex-skill-docara/tests/smoke.sh"
+      ],
+      "id": "evidence.continuity.dc8829034f401174",
+      "kind": "evidence",
+      "profile": "project_management",
+      "provenance_digest": "sha256:dc8829034f4011745065235ccea1ca84a029185304857c439c96453188a96a90",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "requirement.docara.owner-capability-map-conformance",
+        "requirement.docara.source-backed-documentation-tracking"
+      ],
+      "source_revision": null,
+      "summary": "The Docara skill documents source-backed documentation tracking, preserves the upstream owner capability map, and passes its exact runtime contract checks.",
+      "task_digest": "sha256:12def07d79b44eb5a554d4802ef8056bb9ce5bd3dee73391b7351f3e0d49c773",
+      "title": "Verified task result dc8829034f401174"
+    },
+    {
+      "changed_surfaces": [
+        "README.md",
         "graph/specs/objects/capability-docara-developer-sdk-qa.json",
         "skills/docara/quality/capability-map.json",
         "skills/docara/references/content-locales-and-navigation.md",
@@ -36,6 +79,25 @@
       "summary": "Docara skill documents and routes the verified source-backed documentation tracking workflow.",
       "task_digest": "sha256:18840430fcbb342898e4ca9afc54a842c989d0684dcfff21ce2b1fa8edc6820b",
       "title": "Verified task result ff3fa744daa97633"
+    },
+    {
+      "boundary": "task_complete",
+      "case_signature": "case.docara.source-backed-tracking-skill-v1",
+      "evidence_refs": [
+        "evidence.continuity.dc8829034f401174"
+      ],
+      "id": "regression_case.continuity.dc8829034f401174",
+      "kind": "regression_case",
+      "profile": "implementation_control",
+      "provenance_digest": "sha256:dc8829034f4011745065235ccea1ca84a029185304857c439c96453188a96a90",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "requirement.docara.owner-capability-map-conformance",
+        "requirement.docara.source-backed-documentation-tracking"
+      ],
+      "summary": "The Docara skill documents source-backed documentation tracking, preserves the upstream owner capability map, and passes its exact runtime contract checks.",
+      "task_digest": "sha256:12def07d79b44eb5a554d4802ef8056bb9ce5bd3dee73391b7351f3e0d49c773",
+      "title": "Verified reusable case dc8829034f401174"
     },
     {
       "boundary": "task_complete",
