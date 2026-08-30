@@ -22,6 +22,19 @@ EXPECTED_REFERENCES = {
     "update-release-and-publication.md",
     "security-and-troubleshooting.md",
 }
+EXPECTED_CAPABILITIES = {
+    "capability.docara.build-preview-verification",
+    "capability.docara.components-smart-design",
+    "capability.docara.content-localization-navigation",
+    "capability.docara.developer-sdk-qa",
+    "capability.docara.documentation_contour_build",
+    "capability.docara.existing_contour",
+    "capability.docara.project-lifecycle",
+    "capability.docara.runtime_reference_diagnosis",
+    "capability.docara.security-troubleshooting",
+    "capability.docara.settings-inheritance",
+    "capability.docara.update-release-publication",
+}
 FORBIDDEN = ("Jigsaw", "Laravel Mix", "source/_core", ".settings.php", "init --portable")
 
 
@@ -86,8 +99,12 @@ def main() -> int:
             blockers.append(f"invalid graph object {relative}: {exc}")
 
     capabilities = {key for key in objects if key.startswith("capability.docara.")}
-    if len(capabilities) != 8:
-        blockers.append(f"expected 8 Docara capabilities, got {len(capabilities)}")
+    if capabilities != EXPECTED_CAPABILITIES:
+        blockers.append(
+            "Docara capability set differs: "
+            f"missing={sorted(EXPECTED_CAPABILITIES - capabilities)} "
+            f"extra={sorted(capabilities - EXPECTED_CAPABILITIES)}"
+        )
 
     relation_ids: set[str] = set()
     for relative in index.get("relation_files", []):
