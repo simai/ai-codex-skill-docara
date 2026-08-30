@@ -1,0 +1,18 @@
+{
+  "authority": "owner_raw_source",
+  "evidence": [],
+  "expansion_policy": "terminal",
+  "id": "source.docara.content-locales-and-navigation-md.b34e54ba1e6e",
+  "kind": "source",
+  "lifecycle": "accepted",
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/references/content-locales-and-navigation.md"
+  ],
+  "subtype": "owner_raw_source_ref",
+  "summary": "Owner-authoritative raw source used by task-scoped context.",
+  "title": "content-locales-and-navigation.md"
+}

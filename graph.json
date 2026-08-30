@@ -8,7 +8,6 @@
   "extensions": {
     "mirai.project_technology": {
       "context_policy": "task_scoped",
-      "continuity_policy": "task_boundary",
       "contract_version": "1.0.0",
       "enabled": true,
       "source_boundary": "hybrid_sot"
@@ -38,15 +37,17 @@
       "graph/specs/objects/capability-map-capability-docara-documentation-contour-build.json",
       "graph/specs/objects/capability-map-capability-docara-existing-contour.json",
       "graph/specs/objects/capability-map-capability-docara-runtime-reference-diagnosis.json",
+      "graph/specs/objects/capability-map-capability-docara-source-backed-documentation-tracking.json",
       "graph/specs/objects/capability-map-constraint-docara-capability-map-boundary.json",
       "graph/specs/objects/capability-map-gate-docara-capability-map-conformance.json",
       "graph/specs/objects/capability-map-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
       "graph/specs/objects/capability-map-source-docara-build-preview-and-verification-md-f26452b7ea3b.json",
+      "graph/specs/objects/capability-map-source-docara-content-locales-and-navigation-md-b34e54ba1e6e.json",
+      "graph/specs/objects/capability-map-source-docara-developer-sdk-and-qa-md-fb236802201d.json",
       "graph/specs/objects/gate-docara-acceptance.json",
       "graph/specs/objects/policy-docara-lifecycle-separation.json",
       "graph/specs/objects/policy-docara-source-ownership.json",
-      "graph/specs/objects/skill-docara-core.json",
-      "graph/specs/project-continuity.json"
+      "graph/specs/objects/skill-docara-core.json"
     ],
     "raw_sources": [
       "README.md",
@@ -66,9 +67,14 @@
       "graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json",
       "graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-governed-by-constraint-docara-capability-map-boundary.json",
       "graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-validated-by-gate-docara-capability-map-conformance.json",
+      "graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-documented-by-source-docara-content-locales-and-navigation-md-b34e54ba1e6e.json",
+      "graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-documented-by-source-docara-developer-sdk-and-qa-md-fb236802201d.json",
+      "graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-governed-by-constraint-docara-capability-map-boundary.json",
+      "graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-validated-by-gate-docara-capability-map-conformance.json",
       "graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-documentation-contour-build.json",
       "graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-existing-contour.json",
       "graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-runtime-reference-diagnosis.json",
+      "graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-source-backed-documentation-tracking.json",
       "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification.json",
       "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-components-smart-design.json",
       "graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-content-localization-navigation.json",
@@ -91,7 +97,6 @@
     "root": "graph",
     "schemas": [],
     "source_of_truth": [
-      "graph/specs",
       "graph/specs/index.json"
     ]
   },

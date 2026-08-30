@@ -10,7 +10,10 @@
   "rules": [
     "Do not create a parallel data, access, status or notification subsystem.",
     "Do not create a parallel owner or duplicate an existing platform capability.",
+    "Do not create a second API registry or merge translation freshness into this status engine.",
     "Fail closed when required owner or platform evidence is unavailable.",
+    "Status, validation and build never invoke AI/network or edit source content and locks.",
+    "The source project owns the public contract and Docara owns matching, statuses, reporting, scaffold and acceptance.",
     "Use raw owner sources for methodology and judgement.",
     "Use the exact project version and native lifecycle, rights and APIs."
   ],

@@ -1,0 +1,33 @@
+{
+  "aliases": [
+    "documentation tracking",
+    "актуальность документации по коду"
+  ],
+  "applicability": {
+    "editions": [],
+    "platform": "docara",
+    "required_modules": [],
+    "version_range": "exact-project-version-or-owner-contract"
+  },
+  "authority": "owner_capability_map",
+  "evidence": [],
+  "expansion_policy": "expandable",
+  "id": "capability.docara.source_backed_documentation_tracking",
+  "kind": "capability",
+  "lifecycle": "accepted",
+  "negative_boundaries": [
+    "Do not create a second API registry or merge translation freshness into this status engine."
+  ],
+  "owner": "docara",
+  "profile": "skill_runtime",
+  "readiness": "ready",
+  "schema_version": "1.0.0",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json",
+    "skills/docara/references/content-locales-and-navigation.md",
+    "skills/docara/references/developer-sdk-and-qa.md"
+  ],
+  "subtype": "owner_capability_map_entry",
+  "summary": "Track pages and reusable examples against a project-owned public API contract without duplicating its registry.",
+  "title": "Track pages and reusable examples against a project-owned public API contract without duplicating its registry."
+}

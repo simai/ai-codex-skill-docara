@@ -33,6 +33,7 @@ EXPECTED_CAPABILITIES = {
     "capability.docara.project-lifecycle",
     "capability.docara.runtime_reference_diagnosis",
     "capability.docara.security-troubleshooting",
+    "capability.docara.source_backed_documentation_tracking",
     "capability.docara.settings-inheritance",
     "capability.docara.update-release-publication",
 }

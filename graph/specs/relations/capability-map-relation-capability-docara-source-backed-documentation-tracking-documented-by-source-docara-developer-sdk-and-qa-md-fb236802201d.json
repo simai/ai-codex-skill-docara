@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.source_backed_documentation_tracking",
+  "id": "relation.capability-docara-source-backed-documentation-tracking.documented-by.source-docara-developer-sdk-and-qa-md-fb236802201d",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "documented_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.source_backed_documentation_tracking",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "source.docara.developer-sdk-and-qa-md.fb236802201d",
+  "to": "source.docara.developer-sdk-and-qa-md.fb236802201d",
+  "type": "documented_by"
+}
