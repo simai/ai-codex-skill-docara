@@ -24,10 +24,10 @@ The compact capability graph is [graph/specs/index.json](graph/specs/index.json)
 The Docara product and the target project's exact installed package remain the
 source of truth for schemas and executable behavior.
 
-The current skill contract covers Docara 2.1 shared project examples,
-hash-bound translation acceptance, and both legacy 2.0 and layered 3.0
-Federation repository recipes. These features remain opt-in at the project
-level.
+The current skill contract covers Docara 2.4 shared project examples,
+hash-bound translation and source-backed documentation acceptance, optional
+page authoring profiles, and both legacy 2.0 and layered 3.0 Federation
+repository recipes. These features remain opt-in at the project level.
 
 ## Validation
 
