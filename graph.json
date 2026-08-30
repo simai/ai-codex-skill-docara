@@ -23,6 +23,7 @@
   "format": "mirai-graph",
   "graph": {
     "generated": [
+      "graph/docs/project-context.md",
       "graph/generated"
     ],
     "objects": [
@@ -44,7 +45,8 @@
       "graph/specs/objects/gate-docara-acceptance.json",
       "graph/specs/objects/policy-docara-lifecycle-separation.json",
       "graph/specs/objects/policy-docara-source-ownership.json",
-      "graph/specs/objects/skill-docara-core.json"
+      "graph/specs/objects/skill-docara-core.json",
+      "graph/specs/project-continuity.json"
     ],
     "raw_sources": [
       "README.md",
@@ -89,6 +91,7 @@
     "root": "graph",
     "schemas": [],
     "source_of_truth": [
+      "graph/specs",
       "graph/specs/index.json"
     ]
   },

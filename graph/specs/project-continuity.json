@@ -1,0 +1,59 @@
+{
+  "objects": [
+    {
+      "changed_surfaces": [
+        "graph/specs/objects/capability-docara-developer-sdk-qa.json",
+        "skills/docara/quality/capability-map.json",
+        "skills/docara/references/content-locales-and-navigation.md",
+        "skills/docara/references/developer-sdk-and-qa.md"
+      ],
+      "checks": [
+        {
+          "evidence_ref": "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29",
+          "id": "check.docara.skill_diff",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29",
+          "id": "check.docara.skill_json",
+          "verdict": "pass"
+        }
+      ],
+      "evidence_refs": [
+        "file:/tmp/docara-skill-change-commit.json",
+        "git:5f67d5d7ac89a41bbc29fe2cb80b8fe944e54c29"
+      ],
+      "id": "evidence.continuity.ff3fa744daa97633",
+      "kind": "evidence",
+      "profile": "project_management",
+      "provenance_digest": "sha256:ff3fa744daa97633f8922aca6f8cd4723c0b92c2654335ba68c2616964b8e0fb",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "capability.docara.developer_sdk_qa"
+      ],
+      "source_revision": null,
+      "summary": "Docara skill documents and routes the verified source-backed documentation tracking workflow.",
+      "task_digest": "sha256:18840430fcbb342898e4ca9afc54a842c989d0684dcfff21ce2b1fa8edc6820b",
+      "title": "Verified task result ff3fa744daa97633"
+    },
+    {
+      "boundary": "task_complete",
+      "case_signature": "case.docara.source_backed_documentation_tracking",
+      "evidence_refs": [
+        "evidence.continuity.ff3fa744daa97633"
+      ],
+      "id": "regression_case.continuity.ff3fa744daa97633",
+      "kind": "regression_case",
+      "profile": "implementation_control",
+      "provenance_digest": "sha256:ff3fa744daa97633f8922aca6f8cd4723c0b92c2654335ba68c2616964b8e0fb",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "capability.docara.developer_sdk_qa"
+      ],
+      "summary": "Docara skill documents and routes the verified source-backed documentation tracking workflow.",
+      "task_digest": "sha256:18840430fcbb342898e4ca9afc54a842c989d0684dcfff21ce2b1fa8edc6820b",
+      "title": "Verified reusable case ff3fa744daa97633"
+    }
+  ],
+  "schema_version": "1.0.0"
+}
