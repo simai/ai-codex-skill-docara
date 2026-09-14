@@ -41,6 +41,40 @@
     },
     {
       "changed_surfaces": [
+        "graph.json",
+        "graph/**",
+        "skills/**"
+      ],
+      "checks": [
+        {
+          "evidence_ref": "graph.json",
+          "id": "active_sf5_absent",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "graph.json",
+          "id": "git_exact_clean",
+          "verdict": "pass"
+        }
+      ],
+      "evidence_refs": [
+        "graph.json"
+      ],
+      "id": "evidence.continuity.90b4feec1f30c0fc",
+      "kind": "evidence",
+      "profile": "project_management",
+      "provenance_digest": "sha256:90b4feec1f30c0fcff116a42ee4e040d5db0d586c2dec1fe85246deb0e5f08f0",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "requirement.federation.architecture-conformance"
+      ],
+      "source_revision": null,
+      "summary": "The exact committed owner source and manifest were validated for the Federation 9.18.0 Framework terminology migration.",
+      "task_digest": "sha256:6b3454bd4d3bd80f7eef32e93935dccf460b56c0a934ef437984c13e6589d498",
+      "title": "Verified task result 90b4feec1f30c0fc"
+    },
+    {
+      "changed_surfaces": [
         "README.md",
         "graph/specs/project-continuity.json",
         "scripts/validate_skill_contract.py",
@@ -137,6 +171,24 @@
       "summary": "Docara skill capabilities and project-local upgrade guidance validated before source-control delivery.",
       "task_digest": "sha256:4bc05d5c25d294e333c17be1877bd56f5d77e5452d9d0c2aa11ec4876273bb7b",
       "title": "Verified reusable case 4e8e1fe38bae9f8c"
+    },
+    {
+      "boundary": "stage_complete",
+      "case_signature": "523d93b67e632f7ac29bd879",
+      "evidence_refs": [
+        "evidence.continuity.90b4feec1f30c0fc"
+      ],
+      "id": "regression_case.continuity.90b4feec1f30c0fc",
+      "kind": "regression_case",
+      "profile": "implementation_control",
+      "provenance_digest": "sha256:90b4feec1f30c0fcff116a42ee4e040d5db0d586c2dec1fe85246deb0e5f08f0",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "requirement.federation.architecture-conformance"
+      ],
+      "summary": "The exact committed owner source and manifest were validated for the Federation 9.18.0 Framework terminology migration.",
+      "task_digest": "sha256:6b3454bd4d3bd80f7eef32e93935dccf460b56c0a934ef437984c13e6589d498",
+      "title": "Verified reusable case 90b4feec1f30c0fc"
     },
     {
       "boundary": "task_complete",
