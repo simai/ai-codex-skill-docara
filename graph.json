@@ -8,6 +8,7 @@
   "extensions": {
     "mirai.project_technology": {
       "context_policy": "task_scoped",
+      "continuity_policy": "task_boundary",
       "contract_version": "1.0.0",
       "enabled": true,
       "source_boundary": "hybrid_sot"
