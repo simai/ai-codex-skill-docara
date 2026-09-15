@@ -72,17 +72,27 @@ and build hashes before restoring the previous transaction. If a failure occurs
 during apply, compensation restores those surfaces automatically and preserves
 the last verified build.
 
-## Legacy transition and low-level update
+## Pre-manifest transition and low-level update
 
-An old site using a separate engine gets one explicit project-local Composer
-runtime; do not delete or move the legacy engine automatically:
+An existing site without the package-owned `.docara/engine` manifest gets one
+explicit project-local Composer runtime and one reviewed engine adoption. Do
+not delete or move any older engine automatically:
 
 ```bash
 cd /path/to/site
 composer require simai/docara:^2.0
 php vendor/bin/docara capabilities --json
+php vendor/bin/docara update --dry-run --adopt --json
+php vendor/bin/docara update --apply --json
 php vendor/bin/docara update --verify --json
+php vendor/bin/docara upgrade --check --json
 ```
+
+Review the adoption plan before apply. It may create only package-owned
+`.docara/engine`; it must not change Markdown, configuration, examples or
+assets. If `upgrade` reports `UPGRADE_ENGINE_ADOPTION_REQUIRED`, follow this
+same route and retry upgrade. Do not replace the explicit adoption with
+`init`, a manual directory copy or an implicit write.
 
 For an already selected exact package, retain the low-level engine-only flow:
 

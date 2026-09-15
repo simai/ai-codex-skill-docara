@@ -116,6 +116,10 @@ php vendor/bin/docara serve production \
   project-local transactional `upgrade` workflow for compatible package
   updates. Use `update --verify -> --dry-run -> --apply` only for low-level
   synchronization of `.docara/engine` from an already selected exact package.
+- When a pre-manifest project has no `.docara/engine`, do not start with
+  `update --verify`: use the explicit hash-bound
+  `update --dry-run --adopt -> update --apply -> update --verify` route, then
+  retry `upgrade`.
 - Never initialize a non-empty target or use `init` as a legacy converter.
 - Never replace an exact Framework lock with a branch, moving URL, or `latest`.
 - Never admit a component from catalogue prose alone. Require its real

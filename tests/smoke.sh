@@ -6,6 +6,8 @@ SKILL="$ROOT/skills/docara"
 
 grep -q '^name: docara$' "$SKILL/SKILL.md"
 grep -q 'update --verify' "$SKILL/SKILL.md"
+grep -q 'update --dry-run --adopt' "$SKILL/SKILL.md"
+grep -q 'UPGRADE_ENGINE_ADOPTION_REQUIRED' "$SKILL/references/update-release-and-publication.md"
 grep -q 'verify-static' "$SKILL/SKILL.md"
 grep -q 'Smart' "$SKILL/references/components-smart-and-design.md"
 grep -q 'examples/<stable-id>/' "$SKILL/references/components-smart-and-design.md"

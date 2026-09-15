@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Corrected the pre-manifest project transition: a missing `.docara/engine`
+  now routes through reviewed `update --dry-run --adopt`, explicit apply and
+  verification before the high-level upgrade is retried.
+
 - Added the project-local capabilities handshake and compatibility range for
   serving multiple Docara 2.x projects with one canonical skill.
 - Replaced package-selection assumptions with the verified high-level
