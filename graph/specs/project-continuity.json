@@ -75,6 +75,43 @@
     },
     {
       "changed_surfaces": [
+        "graph/specs/objects/capability-docara-update-release-publication.json",
+        "skills/docara/SKILL.md",
+        "skills/docara/references/update-release-and-publication.md",
+        "tests/smoke.sh"
+      ],
+      "checks": [
+        {
+          "evidence_ref": "repo://graph.json",
+          "id": "check.docara.graph_validate",
+          "verdict": "pass"
+        },
+        {
+          "evidence_ref": "repo://tests/smoke.sh",
+          "id": "check.docara.skill_smoke",
+          "verdict": "pass"
+        }
+      ],
+      "evidence_refs": [
+        "repo://graph.json",
+        "repo://tests/smoke.sh"
+      ],
+      "id": "evidence.continuity.b5a8148acfd0d292",
+      "kind": "evidence",
+      "profile": "project_management",
+      "provenance_digest": "sha256:b5a8148acfd0d2925cf5e537ef5bf8a0b57c571888b5a1c657578d5975a0ace5",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "repo://skills/docara/SKILL.md",
+        "requirement.federation.architecture-conformance"
+      ],
+      "source_revision": null,
+      "summary": "Published Docara owner update is included in the clean Federation 9.18.0 line without changing the Framework migration or product deployment state.",
+      "task_digest": "sha256:0d7a4e6333ab14cbeffe3266b8331d3412dd726c5421d9b9185f4e05a7170684",
+      "title": "Verified task result b5a8148acfd0d292"
+    },
+    {
+      "changed_surfaces": [
         "README.md",
         "graph/specs/project-continuity.json",
         "scripts/validate_skill_contract.py",
@@ -189,6 +226,25 @@
       "summary": "The exact committed owner source and manifest were validated for the Federation 9.18.0 Framework terminology migration.",
       "task_digest": "sha256:6b3454bd4d3bd80f7eef32e93935dccf460b56c0a934ef437984c13e6589d498",
       "title": "Verified reusable case 90b4feec1f30c0fc"
+    },
+    {
+      "boundary": "stage_complete",
+      "case_signature": "case.federation-9.18.0.docara-owner-merge",
+      "evidence_refs": [
+        "evidence.continuity.b5a8148acfd0d292"
+      ],
+      "id": "regression_case.continuity.b5a8148acfd0d292",
+      "kind": "regression_case",
+      "profile": "implementation_control",
+      "provenance_digest": "sha256:b5a8148acfd0d2925cf5e537ef5bf8a0b57c571888b5a1c657578d5975a0ace5",
+      "readiness": "accepted",
+      "requirement_refs": [
+        "repo://skills/docara/SKILL.md",
+        "requirement.federation.architecture-conformance"
+      ],
+      "summary": "Published Docara owner update is included in the clean Federation 9.18.0 line without changing the Framework migration or product deployment state.",
+      "task_digest": "sha256:0d7a4e6333ab14cbeffe3266b8331d3412dd726c5421d9b9185f4e05a7170684",
+      "title": "Verified reusable case b5a8148acfd0d292"
     },
     {
       "boundary": "task_complete",
