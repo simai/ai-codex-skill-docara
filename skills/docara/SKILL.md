@@ -1,6 +1,6 @@
 ---
 name: docara
-description: Build, author, configure, extend, inspect, preview, test, verify, upgrade, package, and publish standalone Docara 2 documentation and landing sites. Use for project-local Docara projects with docara.json, machine-readable capabilities, optional authoring profiles, Markdown content, reusable examples, tracking, inherited settings, locales, navigation, layouts, components, the Developer/AI SDK, static builds, rollback, release readiness, or static-host deployment.
+description: "Docara 2: отдельный сайт документации и лендинг. docara.json, Markdown-контент, навигация, локали, layouts, компоненты, примеры, Developer/AI SDK, статическая сборка, откат, публикация."
 ---
 
 # Docara
