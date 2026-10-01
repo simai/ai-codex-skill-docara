@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-09-14T21:15:55.487786+00:00",
+  "repo": "repo://ai-codex-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "7c0ebc4b0982f2d2ccd75fb759d50042f5ef7b0c",
+  "base_commit": "7c0ebc4b0982f2d2ccd75fb759d50042f5ef7b0c",
+  "comparison_mode": "baseline_to_worktree",
+  "git": {
+    "dirty": false,
+    "ahead": 0,
+    "head": "c5f6635"
+  },
+  "changed_files": [
+    {
+      "path": "skills/docara/repository-recipes/docara.project/recipe.json",
+      "source_path": "repository-recipes/docara.project/recipe.json",
+      "change_types": [
+        "federation-impact",
+        "methodology",
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "2bc0e8653a073dfaa16cbdcc86d89800cdf2a4ff3da3bc143f759c6af1afb1ce",
+      "source_bytes": 4646,
+      "baseline_path": "skills/docara/repository-recipes/docara.project/recipe.json",
+      "baseline_mode": "100644",
+      "baseline_sha256": "592a652c4fd446662519f8ba52712aa8ec81cdaebbd5bd40118c4d0aa1e532b6",
+      "baseline_bytes": 4640
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "8034f5c27e1df3e15876c379b4cf157cbc111f38564d39dda54e115cd0031c15"
+}
