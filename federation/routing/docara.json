@@ -1,0 +1,39 @@
+{
+  "routing": {
+    "capabilities": [
+      "docara",
+      "документационный сайт",
+      "front matter",
+      "меню"
+    ],
+    "companion_skills": [
+      "docs"
+    ],
+    "evidence_refs": [
+      "graph/generated/mirai-graph/gga10-owner-approved-apply-plans/docara-owner-approved-apply-plan-20260530/owner-approved-apply-plan.json",
+      "graph/generated/mirai-graph/gga10-apply-verdicts/docara-owner-approved-gga10-apply-validated-20260530/apply-verdict.json"
+    ],
+    "gga_status": "GGA10",
+    "graph_context_ref": "/Users/rim/Documents/GitHub/ai-codex-skill-docara/graph",
+    "keywords": [
+      "docara",
+      "документационный сайт",
+      "front matter",
+      "меню"
+    ],
+    "owner_boundary": "docara owns its domain methodology and judgement; federation graph owns routing/contracts/readiness/evidence only.",
+    "raw_fallback_required": true,
+    "required_gates": [
+      "publication_check"
+    ],
+    "skill": "docara",
+    "task_types": [
+      "docara",
+      "документационный сайт",
+      "front matter",
+      "меню"
+    ]
+  },
+  "schema": "simai.skill_routing.v1",
+  "skill": "docara"
+}
